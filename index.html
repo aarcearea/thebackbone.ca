@@ -6,8 +6,8 @@
 
 <!-- ── PRIMARY SEO ── -->
 <title>The Backbone — Bookkeeping & Admin for Canadian Creatives & Construction | Vancouver BC</title>
-<meta name="description" content="The Backbone Ops & Design Inc. offers bookkeeping, document digitization, and admin support for artists, influencers, and entrepreneurs (Studio Side) plus construction bookkeeping and carpenter placement (Backbone Construction). Serving Vancouver and Vancouver Island, BC. From $256/week.">
-<meta name="keywords" content="bookkeeping Vancouver, bookkeeper for artists Vancouver, influencer bookkeeping Canada, construction bookkeeping BC, small business bookkeeper Vancouver Island, creative business admin, GST HST filing Vancouver, first time entrepreneur Canada, carpenter placement Vancouver, Studio Side, Backbone Construction">
+<meta name="description" content="The Backbone Ops & Design Inc. offers bookkeeping, document digitization, and admin support for artists, influencers, and entrepreneurs (Studio Side) plus construction bookkeeping and per-project P&amp;L analysis (Backbone Construction). Serving Vancouver and Vancouver Island, BC. From $256/week.">
+<meta name="keywords" content="bookkeeping Vancouver, bookkeeper for artists Vancouver, influencer bookkeeping Canada, construction bookkeeping BC, small business bookkeeper Vancouver Island, creative business admin, GST HST filing Vancouver, first time entrepreneur Canada, Studio Side, Backbone Construction">
 <meta name="author" content="The Backbone Ops & Design Inc.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://thebackbone.ca">
@@ -16,7 +16,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://thebackbone.ca">
 <meta property="og:title" content="The Backbone — Bookkeeping & Admin for Canadian Creatives & Construction">
-<meta property="og:description" content="Studio Side for artists, influencers & entrepreneurs. Backbone Construction for small Canadian construction companies. Bookkeeping, P&L analysis, carpenter placement. Vancouver & Vancouver Island.">
+<meta property="og:description" content="Studio Side for artists, influencers & entrepreneurs. Backbone Construction for small Canadian construction companies. Bookkeeping &amp; per-project P&amp;L analysis. Vancouver & Vancouver Island.">
 <meta property="og:locale" content="en_CA">
 <meta property="og:site_name" content="The Backbone Ops & Design Inc.">
 
@@ -49,7 +49,6 @@
     "Document Digitization",
     "Administrative Support",
     "Construction Bookkeeping",
-    "Carpenter Placement",
     "GST/HST Filing Preparation"
   ],
   "priceRange": "From $256/week CAD",
@@ -78,10 +77,10 @@
   --ss-dark:   #c03d22;
 
   /* Backbone Construction — slate/amber */
-  --bc:        #e67e22;
-  --bc-light:  #fef5eb;
-  --bc-dark:   #1a2535;
-  --bc-slate:  #1e2d3d;
+  --bc:        #2d6a8f;
+  --bc-light:  #e8f0f7;
+  --bc-dark:   #1a3a52;
+  --bc-slate:  #0e2233;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -155,7 +154,7 @@ nav {
   transition: opacity 0.5s;
 }
 .slide.ss .slide-bg-word { color: rgba(255,85,51,0.05); }
-.slide.bc .slide-bg-word { color: rgba(230,126,34,0.07); }
+.slide.bc .slide-bg-word { color: rgba(45,106,143,0.07); }
 
 .slide-content { position: relative; z-index: 1; max-width: 640px; }
 
@@ -213,7 +212,7 @@ nav {
   padding: 0.35rem 0.9rem; border-radius: 100px;
 }
 .slide.ss .slide-pill { background: var(--ss-light); color: var(--ss); }
-.slide.bc .slide-pill { background: rgba(230,126,34,0.12); color: var(--bc); }
+.slide.bc .slide-pill { background: rgba(45,106,143,0.2); color: var(--bc); }
 
 .slide-actions {
   display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
@@ -272,7 +271,7 @@ nav {
   border: none;
 }
 .slider-dot.ss-dot { background: rgba(255,85,51,0.25); }
-.slider-dot.bc-dot { background: rgba(230,126,34,0.25); }
+.slider-dot.bc-dot { background: rgba(45,106,143,0.25); }
 .slider-dot.active { width: 1.8rem; border-radius: 100px; }
 .slider-dot.ss-dot.active { background: var(--ss); }
 .slider-dot.bc-dot.active { background: var(--bc); }
@@ -311,7 +310,7 @@ nav {
 
 /* nav adapts to active slide */
 nav { transition: background 0.4s, border-color 0.4s; }
-nav.on-bc { background: rgba(30,45,61,0.95); border-bottom-color: rgba(230,126,34,0.15); }
+nav.on-bc { background: rgba(10,25,40,0.95); border-bottom-color: rgba(45,106,143,0.3); }
 nav.on-bc .nav-logo { color: #fff; }
 nav.on-bc .nav-links a { color: rgba(255,255,255,0.4); }
 nav.on-bc .nav-links a:hover { color: #fff; }
@@ -570,7 +569,7 @@ nav.on-bc .nav-cta { background: var(--bc); }
 .pl-step.unlocked .pl-step-dot { background: var(--bc); color: #fff; font-size: 0.85rem; }
 .pl-step-title { font-size: 0.85rem; font-weight: 700; color: var(--ink); margin-bottom: 0.15rem; }
 .pl-step-desc { font-family: 'Outfit', sans-serif; font-size: 0.78rem; line-height: 1.5; color: var(--mist); }
-.pl-warning { background: rgba(230,126,34,0.06); border-left: 3px solid var(--bc); padding: 0.9rem 1.1rem; font-family: 'Outfit', sans-serif; font-size: 0.8rem; line-height: 1.65; color: var(--mist); font-style: italic; margin-top: 1.5rem; }
+.pl-warning { background: rgba(45,106,143,0.06); border-left: 3px solid var(--bc); padding: 0.9rem 1.1rem; font-family: 'Outfit', sans-serif; font-size: 0.8rem; line-height: 1.65; color: var(--mist); font-style: italic; margin-top: 1.5rem; }
 
 .pl-demo { display: flex; flex-direction: column; gap: 1.5rem; }
 .pl-demo-label { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; color: var(--bc); display: flex; align-items: center; gap: 0.5rem; }
@@ -588,31 +587,6 @@ nav.on-bc .nav-cta { background: var(--bc); }
 .pl-bar.cost { background: rgba(239,68,68,0.1); color: #dc2626; }
 .pl-bar.profit { background: rgba(52,211,153,0.15); color: #059669; }
 
-/* talent pool */
-.talent-section { background: var(--bc-slate); padding: 6rem 4rem; }
-.talent-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
-.talent-why { margin-top: 2.5rem; border-top: 1px solid rgba(255,255,255,0.08); }
-.tw { display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
-.tw:last-child { border-bottom: none; }
-.tw-num { font-family: 'Fraunces', serif; font-size: 2rem; font-weight: 700; color: rgba(230,126,34,0.2); min-width: 2.2rem; line-height: 1; flex-shrink: 0; transition: color 0.25s; }
-.tw:hover .tw-num { color: var(--bc); }
-.tw-title { font-size: 0.88rem; font-weight: 700; color: #fff; margin-bottom: 0.25rem; }
-.tw-desc { font-family: 'Outfit', sans-serif; font-size: 0.82rem; line-height: 1.65; color: rgba(255,255,255,0.45); }
-
-.talent-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(230,126,34,0.2); padding: 2.2rem; }
-.tc-lbl { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; color: var(--bc); margin-bottom: 1.8rem; display: flex; align-items: center; gap: 0.5rem; }
-.tc-lbl::before { content: '●'; animation: pulse 2s ease-in-out infinite; }
-.tc-roles { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.8rem; }
-.tc-role { display: flex; align-items: center; gap: 1rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); padding: 0.9rem 1.1rem; transition: border-color 0.25s; }
-.tc-role:hover { border-color: rgba(230,126,34,0.3); }
-.tc-role-icon { font-size: 1.2rem; flex-shrink: 0; }
-.tc-role-body { flex: 1; }
-.tc-role-title { font-size: 0.85rem; font-weight: 700; color: #fff; }
-.tc-role-desc { font-size: 0.72rem; color: rgba(255,255,255,0.35); font-family: 'Outfit', sans-serif; }
-.tc-badge { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.25rem 0.6rem; background: rgba(52,211,153,0.12); color: #34d399; border: 1px solid rgba(52,211,153,0.25); flex-shrink: 0; }
-.tc-cta { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.6rem; }
-.tc-cta-text { font-family: 'Outfit', sans-serif; font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 1rem; line-height: 1.6; }
-.tc-cta-text strong { color: #fff; }
 
 /* constr limit bar */
 .constr-limit { background: var(--bc-slate); padding: 1.6rem 4rem; display: flex; align-items: center; gap: 1.5rem; border-top: 1px solid rgba(255,255,255,0.06); }
@@ -626,7 +600,7 @@ nav.on-bc .nav-cta { background: var(--bc); }
 .cta-section.bc-cta { background: var(--bc-slate); }
 .cta-bg { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-family: 'Fraunces', serif; font-size: 22vw; font-weight: 700; font-style: italic; white-space: nowrap; pointer-events: none; user-select: none; }
 .cta-section.ss-cta .cta-bg { color: rgba(255,255,255,0.06); }
-.cta-section.bc-cta .cta-bg { color: rgba(230,126,34,0.06); }
+.cta-section.bc-cta .cta-bg { color: rgba(45,106,143,0.06); }
 .cta-inner { position: relative; z-index: 1; max-width: 600px; margin: 0 auto; }
 .cta-h { font-family: 'Fraunces', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700; line-height: 1.2; color: #fff; margin-bottom: 1rem; }
 .cta-h em { font-style: italic; }
@@ -646,12 +620,22 @@ footer { background: var(--ink); padding: 4rem 4rem 2.5rem; }
 .footer-top { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.07); }
 .footer-brand {}
 .f-logo { font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 700; color: #fff; text-decoration: none; display: block; margin-bottom: 0.25rem; }
-.f-logo em { font-style: italic; color: var(--ss); }
+.f-logo em { font-style: italic; color: var(--ss); transition: color 0.5s ease; }
+body.on-construction .f-logo em { color: var(--bc); }
 .f-tagline { font-family: 'Outfit', sans-serif; font-size: 0.85rem; line-height: 1.7; color: rgba(255,255,255,0.35); max-width: 280px; margin-bottom: 1.2rem; margin-top: 0.75rem; }
 .f-badges { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-.f-badge { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.7rem; }
+.f-badge {
+  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 0.3rem 0.7rem; cursor: pointer;
+  transition: opacity 0.3s, transform 0.2s;
+  opacity: 0.45;
+}
+.f-badge:hover { transform: translateY(-1px); opacity: 0.8; }
+.f-badge.active { opacity: 1; }
 .f-badge.ss { background: rgba(255,85,51,0.12); color: var(--ss); border: 1px solid rgba(255,85,51,0.2); }
-.f-badge.bc { background: rgba(230,126,34,0.12); color: var(--bc); border: 1px solid rgba(230,126,34,0.2); }
+.f-badge.bc { background: rgba(45,106,143,0.2); color: var(--bc); border: 1px solid rgba(45,106,143,0.2); }
+.f-badge.ss.active { background: rgba(255,85,51,0.2); border-color: var(--ss); }
+.f-badge.bc.active { background: rgba(45,106,143,0.3); border-color: var(--bc); }
 .footer-col h4 { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700; color: rgba(255,255,255,0.25); margin-bottom: 1.2rem; }
 .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
 .footer-col a { font-size: 0.83rem; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
@@ -666,10 +650,10 @@ footer { background: var(--ink); padding: 4rem 4rem 2.5rem; }
   .split-hero { grid-template-columns: 1fr; min-height: auto; }
   .sh-side { padding: 4rem 2rem; }
   .sh-side::after { display: none; }
-  .why-grid, .receipt-grid, .how-grid, .partner-grid, .constr-intro-inner, .pl-inner, .talent-inner, .faq-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .why-grid, .receipt-grid, .how-grid, .partner-grid, .constr-intro-inner, .pl-inner, .faq-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .pl-unlock { position: static; }
   .svc-grid, .who-grid, .cs-grid, .test-grid { grid-template-columns: 1fr; }
-  .sec, .constr-intro, .constr-services, .pl-section, .talent-section, .cta-section { padding: 4rem 1.5rem; }
+  .sec, .constr-intro, .constr-services, .pl-section, .cta-section { padding: 4rem 1.5rem; }
   .constr-limit { padding: 1.4rem 1.5rem; }
   .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
   footer { padding: 3rem 1.5rem 2rem; }
@@ -688,7 +672,7 @@ footer { background: var(--ink); padding: 4rem 4rem 2.5rem; }
     <div class="nav-divider"></div>
     <li><a class="bc-link" href="#" onclick="goToSlide(1);window.scrollTo({top:0});return false;">Construction</a></li>
     <li><a class="bc-link" href="#" onclick="goToSlide(1);setTimeout(()=>{document.getElementById('pl-analysis').scrollIntoView({behavior:'smooth'})},100);return false;">P&amp;L Analysis</a></li>
-    <li><a class="bc-link" href="#" onclick="goToSlide(1);setTimeout(()=>{document.getElementById('talent').scrollIntoView({behavior:'smooth'})},100);return false;">Hiring Pool</a></li>
+    <li><a class="bc-link" href="#" onclick="goToSlide(1);setTimeout(()=>{document.getElementById('bc-tax').scrollIntoView({behavior:'smooth'})},100);return false;">Tax Partners</a></li>
   </ul>
   <a class="nav-cta" href="#" onclick="goToSlide(0);setTimeout(()=>{document.getElementById('contact').scrollIntoView({behavior:'smooth'})},100);return false;">Get a Quote</a>
 </nav>
@@ -736,11 +720,10 @@ footer { background: var(--ink); padding: 4rem 4rem 2.5rem; }
         <p class="slide-tag">For the Trades</p>
         <h1 class="slide-subbrand">Backbone<br><em>Construction</em></h1>
         <p class="slide-parent">by The Backbone</p>
-        <p class="slide-body">Bookkeeping, per-project P&amp;L analysis, and carpenter placement for small Canadian construction companies. Up to 20 employees.</p>
+        <p class="slide-body">Bookkeeping and per-project P&amp;L analysis for small Canadian construction companies. Up to 20 employees.</p>
         <div class="slide-pills">
           <span class="slide-pill">Bookkeeping</span>
           <span class="slide-pill">P&amp;L per Project</span>
-          <span class="slide-pill">Hiring Pool</span>
           <span class="slide-pill">Max 20 Employees</span>
         </div>
         <div class="slide-actions">
@@ -1064,14 +1047,12 @@ footer { background: var(--ink); padding: 4rem 4rem 2.5rem; }
       <span class="ticker-item">P&amp;L Per Project</span>
       <span class="ticker-item">Max 20 Employees</span>
       <span class="ticker-item">Canadian Companies Only</span>
-      <span class="ticker-item">Carpenter Placement</span>
       <span class="ticker-item">48hr Matching</span>
       <span class="ticker-item">Backbone Construction</span>
       <span class="ticker-item">Job-by-Job Bookkeeping</span>
       <span class="ticker-item">P&amp;L Per Project</span>
       <span class="ticker-item">Max 20 Employees</span>
       <span class="ticker-item">Canadian Companies Only</span>
-      <span class="ticker-item">Carpenter Placement</span>
       <span class="ticker-item">48hr Matching</span>
     </div>
   </div>
@@ -1091,7 +1072,6 @@ footer { background: var(--ink); padding: 4rem 4rem 2.5rem; }
           <div class="ci-stat"><div class="ci-stat-val">20</div><div class="ci-stat-label">Max employees — we stay small so we stay focused</div></div>
           <div class="ci-stat"><div class="ci-stat-val">🇨🇦</div><div class="ci-stat-label">Canadian companies only — no exceptions</div></div>
           <div class="ci-stat"><div class="ci-stat-val">P&amp;L</div><div class="ci-stat-label">Per-project analysis — when we manage your books</div></div>
-          <div class="ci-stat"><div class="ci-stat-val">48h</div><div class="ci-stat-label">Typical carpenter placement turnaround</div></div>
         </div>
       </div>
     </div>
@@ -1162,31 +1142,38 @@ footer { background: var(--ink); padding: 4rem 4rem 2.5rem; }
     </div>
   </section>
 
-  <!-- TALENT POOL -->
-  <section class="talent-section" id="talent">
-    <div class="talent-inner">
-      <div class="on-dark">
-        <p class="sec-tag" style="color:var(--bc);">Construction Staffing</p>
-        <h2 class="sec-h">Need a carpenter<br>or crew member?<br><em style="color:var(--bc);">We have them.</em></h2>
-        <p class="sec-p" style="margin-bottom:0;">We maintain an active pool of vetted Canadian construction workers — ready to place. No job boards, no weeks of waiting.</p>
-        <div class="talent-why">
-          <div class="tw"><div class="tw-num">01</div><div><div class="tw-title">Pre-screened workers</div><div class="tw-desc">Experience, references, and eligibility to work in Canada verified before we send anyone your way.</div></div></div>
-          <div class="tw"><div class="tw-num">02</div><div><div class="tw-title">Fast placement — typically 48 hours</div><div class="tw-desc">Our pool is active. When you need someone, we move — not in weeks, in days.</div></div></div>
-          <div class="tw"><div class="tw-num">03</div><div><div class="tw-title">Admin handled on our end</div><div class="tw-desc">Once you hire through us, we manage the bookkeeping side of onboarding that worker.</div></div></div>
+  <!-- BC TAX PARTNER -->
+  <section class="sec" id="bc-tax" style="background:var(--white);">
+    <div class="partner-grid">
+      <div>
+        <p class="sec-tag" style="color:#2d6a8f;">Tax Professional Network</p>
+        <h2 class="sec-h" style="color:var(--ink);">We do the books.<br>Our CPA partners <em style="color:#2d6a8f;">file your taxes.</em></h2>
+        <p class="sec-p" style="margin-bottom:1rem;">Construction businesses have specific tax obligations — T2 corporate returns, GST/HST annual filings, WCB reconciliation, holdback accounting. Our CPA network knows the trades inside out and handles it all using the clean books we built for you.</p>
+        <p class="sec-p">One relationship. Full compliance. No scrambling at year-end.</p>
+        <div class="partner-flow">
+          <div class="pf-step"><div class="pf-badge us">Backbone</div><div><div class="pf-title">We keep your books clean all year</div><div class="pf-desc">Job-by-job categorization, payroll records, subcontractor tracking — always CRA-ready.</div></div></div>
+          <div class="pf-step"><div class="pf-badge us">Backbone</div><div><div class="pf-title">We prepare your year-end package</div><div class="pf-desc">Income, expenses, payroll summaries — clean and ready for your CPA to file without back-and-forth.</div></div></div>
+          <div class="pf-step"><div class="pf-badge them">CPA Partner</div><div><div class="pf-title">They file your annual return</div><div class="pf-desc">T2 corporate return, GST/HST annual filing, WCB reconciliation — handled by licensed professionals.</div></div></div>
+          <div class="pf-step"><div class="pf-badge them">CPA Partner</div><div><div class="pf-title">You stay 100% CRA compliant</div><div class="pf-desc">Filed correctly and on time. No penalties, no missed deadlines.</div></div></div>
         </div>
       </div>
-      <div class="talent-card">
-        <div class="tc-lbl">Active Talent Pool</div>
-        <div class="tc-roles">
-          <div class="tc-role"><div class="tc-role-icon">🔨</div><div class="tc-role-body"><div class="tc-role-title">Carpenters</div><div class="tc-role-desc">Rough &amp; finish, framing, formwork, cabinetry</div></div><div class="tc-badge">Available</div></div>
-          <div class="tc-role"><div class="tc-role-icon">🪚</div><div class="tc-role-body"><div class="tc-role-title">Framers</div><div class="tc-role-desc">Wood frame, steel stud, residential &amp; commercial</div></div><div class="tc-badge">Available</div></div>
-          <div class="tc-role"><div class="tc-role-icon">🏗️</div><div class="tc-role-body"><div class="tc-role-title">General Labour</div><div class="tc-role-desc">Site prep, demo, materials handling, cleanup</div></div><div class="tc-badge">Available</div></div>
-          <div class="tc-role"><div class="tc-role-icon">🪟</div><div class="tc-role-body"><div class="tc-role-title">Finish Carpenters</div><div class="tc-role-desc">Trim, moulding, doors, stairs, custom millwork</div></div><div class="tc-badge">Available</div></div>
+      <div class="partner-card">
+        <div class="pc-top">
+          <div class="pc-icon">🤝</div>
+          <div>
+            <div class="pc-name">Our Tax Network</div>
+            <div class="pc-sub">Vetted CPAs · Canada · incl. Liberty Tax</div>
+          </div>
         </div>
-        <div class="tc-cta">
-          <p class="tc-cta-text">Tell us what you need and we'll match you within <strong>48 hours.</strong></p>
-          <a href="#bc-contact" class="sh-cta" style="background:var(--bc);color:#fff;width:100%;justify-content:center;">Request a Worker →</a>
+        <div class="pc-points">
+          <div class="pc-row"><span class="pc-check">✦</span><span>T2 corporate income tax returns</span></div>
+          <div class="pc-row"><span class="pc-check">✦</span><span>GST/HST annual return filing</span></div>
+          <div class="pc-row"><span class="pc-check">✦</span><span>WCB/WSBC annual reconciliation</span></div>
+          <div class="pc-row"><span class="pc-check">✦</span><span>Payroll year-end — T4s and ROEs</span></div>
+          <div class="pc-row"><span class="pc-check">✦</span><span>CRA representation if you're ever reviewed</span></div>
+          <div class="pc-row"><span class="pc-check">✦</span><span>Seamless handoff — no re-explaining your finances</span></div>
         </div>
+        <div class="pc-note"><strong>The result:</strong> your books and taxes handled by one coordinated team — nothing falls through the cracks at year-end.</div>
       </div>
     </div>
   </section>
@@ -1204,9 +1191,9 @@ footer { background: var(--ink); padding: 4rem 4rem 2.5rem; }
   <section class="cta-section bc-cta" id="bc-contact">
     <div class="cta-bg">Build</div>
     <div class="cta-inner">
-      <p class="sec-tag" style="color:rgba(230,126,34,0.7);justify-content:center;margin-bottom:1rem;">Backbone Construction</p>
-      <h2 class="cta-h">Let's talk about <em>your books</em><br>and your next hire.</h2>
-      <p class="cta-p">Free consultation for construction clients. We'll scope your bookkeeping needs and check the talent pool for your open roles — one conversation.</p>
+      <p class="sec-tag" style="color:rgba(45,106,143,0.9);justify-content:center;margin-bottom:1rem;">Backbone Construction</p>
+      <h2 class="cta-h">Let's talk about <em>your books.</em></h2>
+      <p class="cta-p">Free consultation for construction clients. We'll scope your bookkeeping needs, show you what per-project P&amp;L analysis looks like, and connect you with the right CPA for your year-end filing.</p>
       <div class="cta-btns">
         <a class="btn-white" href="mailto:construction@thebackbone.ca">Email Construction Team</a>
         <a class="btn-outline-white" href="tel:+1">Book a Free Call</a>
@@ -1226,8 +1213,8 @@ footer { background: var(--ink); padding: 4rem 4rem 2.5rem; }
       <a class="f-logo" href="#">The <em>Backbone</em></a>
       <p class="f-tagline">Bookkeeping, admin, and staffing services for Canadian creatives and construction companies. Vancouver · Vancouver Island · BC.</p>
       <div class="f-badges">
-        <span class="f-badge ss">Studio Side</span>
-        <span class="f-badge bc">Construction</span>
+        <span class="f-badge ss active" id="badgeSS" onclick="goToSlide(0);window.scrollTo({top:0});">Studio Side</span>
+        <span class="f-badge bc" id="badgeBC" onclick="goToSlide(1);window.scrollTo({top:0});">Construction</span>
       </div>
     </div>
     <div class="footer-col">
@@ -1243,9 +1230,9 @@ footer { background: var(--ink); padding: 4rem 4rem 2.5rem; }
     <div class="footer-col">
       <h4>Construction</h4>
       <ul>
-        <li><a href="#bc-services">Construction Bookkeeping</a></li>
-        <li><a href="#pl-analysis">P&amp;L Per Project</a></li>
-        <li><a href="#talent">Carpenter Placement</a></li>
+        <li><a href="#" onclick="goToSlide(1);setTimeout(()=>{document.getElementById('bc-services').scrollIntoView({behavior:'smooth'})},100);return false;">Construction Bookkeeping</a></li>
+        <li><a href="#" onclick="goToSlide(1);setTimeout(()=>{document.getElementById('pl-analysis').scrollIntoView({behavior:'smooth'})},100);return false;">P&amp;L Per Project</a></li>
+        <li><a href="#" onclick="goToSlide(1);setTimeout(()=>{document.getElementById('bc-tax').scrollIntoView({behavior:'smooth'})},100);return false;">Tax Filing via CPA Network</a></li>
         <li><a href="#bc-contact">Get a Quote</a></li>
       </ul>
     </div>
@@ -1270,7 +1257,7 @@ footer { background: var(--ink); padding: 4rem 4rem 2.5rem; }
 // ── SLIDER ──
 let current = 0;
 let autoTimer = null;
-const DURATION = 5000;
+const DURATION = 8000;
 
 const track  = document.getElementById('sliderTrack');
 const slider = document.getElementById('heroSlider');
@@ -1311,10 +1298,16 @@ function goToSlide(n) {
     track.classList.remove('show-bc');
     slider.classList.remove('on-bc');
     nav.classList.remove('on-bc');
+    document.body.classList.remove('on-construction');
+    document.getElementById('badgeSS').classList.add('active');
+    document.getElementById('badgeBC').classList.remove('active');
   } else {
     track.classList.add('show-bc');
     slider.classList.add('on-bc');
     nav.classList.add('on-bc');
+    document.body.classList.add('on-construction');
+    document.getElementById('badgeBC').classList.add('active');
+    document.getElementById('badgeSS').classList.remove('active');
   }
 
   counter.textContent = (current+1).toString().padStart(2,'0') + ' / 02';
@@ -1348,6 +1341,16 @@ slider.addEventListener('touchend', e => {
 
 slider.addEventListener('mouseenter', () => clearTimeout(autoTimer));
 slider.addEventListener('mouseleave', () => { autoTimer = setTimeout(nextSlide, DURATION); });
+
+// Stop auto-advance when user scrolls down to read — restart when they scroll back to top
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 100) {
+    clearTimeout(autoTimer);
+  } else {
+    clearTimeout(autoTimer);
+    autoTimer = setTimeout(nextSlide, DURATION);
+  }
+}, { passive: true });
 
 document.querySelectorAll('.slide-cta, .panel a[href^="#"]').forEach(a => {
   a.addEventListener('click', () => clearTimeout(autoTimer));
