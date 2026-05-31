@@ -6,8 +6,8 @@
 
 <!-- ── PRIMARY SEO ── -->
 <title>The Backbone — Bookkeeping & Admin for Canadian Creatives & Construction | Vancouver BC</title>
-<meta name="description" content="The Backbone Ops & Design Inc. offers bookkeeping, document digitization, and admin support for artists, influencers, and entrepreneurs (Studio Side) plus construction bookkeeping and per-project P&amp;L analysis (Field Side). Serving Vancouver and Vancouver Island, BC. From $320/week.">
-<meta name="keywords" content="bookkeeping Vancouver, bookkeeper for artists Vancouver, influencer bookkeeping Canada, construction bookkeeping BC, small business bookkeeper Vancouver Island, creative business admin, GST HST filing Vancouver, first time entrepreneur Canada, Studio Side, Field Side">
+<meta name="description" content="The Backbone Ops & Design Inc. offers bookkeeping, document digitization, and admin support for artists, influencers, and entrepreneurs (Studio Side) plus construction bookkeeping and carpenter placement (Backbone Construction). Serving Vancouver and Vancouver Island, BC. From $256/week.">
+<meta name="keywords" content="bookkeeping Vancouver, bookkeeper for artists Vancouver, influencer bookkeeping Canada, construction bookkeeping BC, small business bookkeeper Vancouver Island, creative business admin, GST HST filing Vancouver, first time entrepreneur Canada, carpenter placement Vancouver, Studio Side, Backbone Construction">
 <meta name="author" content="The Backbone Ops & Design Inc.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://thebackbone.ca">
@@ -16,14 +16,14 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://thebackbone.ca">
 <meta property="og:title" content="The Backbone — Bookkeeping & Admin for Canadian Creatives & Construction">
-<meta property="og:description" content="Studio Side for artists, influencers & entrepreneurs. Field Side for small Canadian construction companies. Bookkeeping &amp; per-project P&amp;L analysis. Vancouver & Vancouver Island.">
+<meta property="og:description" content="Studio Side for artists, influencers & entrepreneurs. Backbone Construction for small Canadian construction companies. Bookkeeping, P&L analysis, carpenter placement. Vancouver & Vancouver Island.">
 <meta property="og:locale" content="en_CA">
 <meta property="og:site_name" content="The Backbone Ops & Design Inc.">
 
 <!-- ── TWITTER/X CARD ── -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The Backbone — Bookkeeping for Creatives & Construction · Vancouver BC">
-<meta name="twitter:description" content="From $320/week. Studio Side for artists & influencers. Field Side for small Canadian construction companies. Vancouver & Vancouver Island.">
+<meta name="twitter:description" content="From $256/week. Studio Side for artists & influencers. Backbone Construction for small Canadian construction companies. Vancouver & Vancouver Island.">
 
 <!-- ── LOCAL BUSINESS SEO ── -->
 <meta name="geo.region" content="CA-BC">
@@ -35,8 +35,8 @@
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "The Backbone Ops & Design Inc.",
-  "alternateName": ["Studio Side", "Field Side"],
-  "description": "Bookkeeping, document digitization, and admin support for Canadian creatives, influencers, entrepreneurs, and small construction companies. Studio Side and Field Side.",
+  "alternateName": ["Studio Side", "Backbone Construction"],
+  "description": "Bookkeeping, document digitization, and admin support for Canadian creatives, influencers, entrepreneurs, and small construction companies. Studio Side and Backbone Construction.",
   "url": "https://thebackbone.ca",
   "email": "hello@thebackbone.ca",
   "areaServed": [
@@ -49,9 +49,10 @@
     "Document Digitization",
     "Administrative Support",
     "Construction Bookkeeping",
+    "Carpenter Placement",
     "GST/HST Filing Preparation"
   ],
-  "priceRange": "From $320/week CAD",
+  "priceRange": "From $256/week CAD",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Vancouver",
@@ -67,20 +68,20 @@
   /* shared */
   --ink:    #0e1117;
   --white:  #ffffff;
-  --light:  #f8f8f8;
+  --light:  #f5f6f8;
   --mist:   #6b7280;
   --border: rgba(14,17,23,0.09);
 
-  /* Studio Side — coral #6392b6 */
-  --ss:        #6392b6;
-  --ss-light:  #eaf0f7;
-  --ss-dark:   #4a7299;
+  /* Studio Side — coral/warm */
+  --ss:        #ff5533;
+  --ss-light:  #fff2ef;
+  --ss-dark:   #c03d22;
 
-  /* Field Side — coral #6392b6 */
-  --bc:        #6392b6;
-  --bc-light:  #eaf0f7;
-  --bc-dark:   #4a7299;
-  --bc-slate:  #14161c;
+  /* Backbone Construction — slate/amber */
+  --bc:        #e67e22;
+  --bc-light:  #fef5eb;
+  --bc-dark:   #1a2535;
+  --bc-slate:  #1e2d3d;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -94,15 +95,9 @@ nav {
   border-bottom: 1px solid var(--border);
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 3rem; height: 4rem;
-  transform: translateY(-100%); opacity: 0; pointer-events: none;
-  transition: transform 0.4s ease, opacity 0.4s ease;
 }
-body.panel-active nav {
-  transform: translateY(0); opacity: 1; pointer-events: all;
-}
-.nav-logo { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 700; color: var(--ink); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; white-space: nowrap; }
+.nav-logo { font-family: 'Fraunces', serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); text-decoration: none; }
 .nav-logo em { font-style: italic; color: var(--ss); }
-.nav-logo .nav-divider-text { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.65rem; font-weight: 400; letter-spacing: 0.05em; color: var(--mist); font-style: normal; }
 .nav-links { display: flex; gap: 0; list-style: none; }
 .nav-links a {
   display: block; padding: 0 1.1rem; height: 4rem; line-height: 4rem;
@@ -122,177 +117,261 @@ body.panel-active nav {
 .nav-cta:hover { background: var(--ss); }
 .nav-divider { width: 1px; height: 1.5rem; background: var(--border); margin: 0 0.5rem; }
 
-/* ─── SPLIT HERO ─── */
-.split-hero {
+/* ─── HERO SLIDER ─── */
+.hero-slider {
+  position: relative;
   height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   overflow: hidden;
-  min-height: 100vh;
-  position: relative;
+  padding-top: 4rem;
 }
 
-/* ── LEFT SIDE ── */
-.split-left {
+/* the two slides sit in a track that moves horizontally */
+.slider-track {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 3rem 3rem 3.5rem;
-  position: relative;
-  overflow: hidden;
-  border-right: 1px solid rgba(14,17,23,0.06);
-  background:
-    linear-gradient(rgba(255,255,255,0.72), rgba(255,255,255,0.72)),
-    url('https://images.unsplash.com/photo-1470770903676-69b98201ea1c?w=900&q=80&auto=format&fit=crop') center/cover no-repeat;
+  width: 200%;
+  height: 100%;
+  transition: transform 0.7s cubic-bezier(0.77, 0, 0.18, 1);
 }
+.slider-track.show-bc { transform: translateX(-50%); }
 
-.split-wave path {
-  fill: #ffffff;
+.slide {
+  width: 50%;
+  height: 100%;
+  flex-shrink: 0;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 5rem 5rem 4rem;
+  position: relative; overflow: hidden;
 }
+.slide.ss { background: var(--white); }
+.slide.bc { background: var(--bc-slate); }
 
-.split-brand {
+/* big background word */
+.slide-bg-word {
+  position: absolute; bottom: -3rem; right: -1rem;
+  font-family: 'Fraunces', serif; font-weight: 700; font-style: italic;
+  font-size: clamp(10rem, 18vw, 22rem);
+  line-height: 1; letter-spacing: -0.04em;
+  pointer-events: none; user-select: none;
+  transition: opacity 0.5s;
+}
+.slide.ss .slide-bg-word { color: rgba(255,85,51,0.05); }
+.slide.bc .slide-bg-word { color: rgba(230,126,34,0.07); }
+
+.slide-content { position: relative; z-index: 1; max-width: 640px; }
+
+.slide-tag {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 700;
+  margin-bottom: 1.8rem;
+  opacity: 0; transform: translateY(16px);
+  transition: opacity 0.5s 0.15s, transform 0.5s 0.15s;
+}
+.slide-tag::before { content: ''; width: 1.5rem; height: 2px; background: currentColor; display: block; }
+.slide.ss .slide-tag { color: var(--ss); }
+.slide.bc .slide-tag { color: var(--bc); }
+
+.slide-subbrand {
   font-family: 'Fraunces', serif;
-  font-size: clamp(4.5rem, 8.5vw, 10rem);
-  font-weight: 700;
-  line-height: 0.88;
-  letter-spacing: -0.04em;
-  color: var(--ink);
-  margin-bottom: 1.2rem;
-  position: relative; z-index: 1;
+  font-size: clamp(3.5rem, 6.5vw, 6.5rem);
+  font-weight: 700; line-height: 0.95;
+  margin-bottom: 0.6rem;
+  opacity: 0; transform: translateY(20px);
+  transition: opacity 0.55s 0.25s, transform 0.55s 0.25s;
 }
-.split-brand em {
-  font-style: italic;
-  color: var(--ss);
-  transition: color 0.35s ease;
-}
+.slide.ss .slide-subbrand { color: var(--ink); }
+.slide.bc .slide-subbrand { color: #fff; }
+.slide-subbrand em { font-style: italic; }
+.slide.ss .slide-subbrand em { color: var(--ss); }
+.slide.bc .slide-subbrand em { color: var(--bc); }
 
-.split-sub {
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--mist);
-  margin-bottom: 1rem;
-  position: relative; z-index: 1;
+.slide-parent {
+  font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600;
+  margin-bottom: 2rem;
+  opacity: 0; transform: translateY(14px);
+  transition: opacity 0.5s 0.3s, transform 0.5s 0.3s;
 }
+.slide.ss .slide-parent { color: var(--mist); }
+.slide.bc .slide-parent { color: rgba(255,255,255,0.3); }
 
-.split-tagline {
+.slide-body {
   font-family: 'Outfit', sans-serif;
-  font-size: 0.92rem;
-  line-height: 1.7;
-  color: var(--mist);
-  position: relative; z-index: 1;
+  font-size: 1.05rem; line-height: 1.75; max-width: 500px;
+  margin-bottom: 2rem;
+  opacity: 0; transform: translateY(14px);
+  transition: opacity 0.5s 0.38s, transform 0.5s 0.38s;
 }
-.split-socials {
-  display: flex; gap: 1rem; margin-top: 1.2rem;
-  position: relative; z-index: 1;
-}
-.split-social {
-  color: var(--mist);
-  text-decoration: none;
-  transition: color 0.2s, transform 0.2s;
-  display: flex; align-items: center;
-}
-.split-social:hover { color: var(--ss); transform: translateY(-2px); }
+.slide.ss .slide-body { color: var(--mist); }
+.slide.bc .slide-body { color: rgba(255,255,255,0.5); }
 
-/* ── RIGHT SIDE — colored rectangles ── */
-.split-right {
-  display: flex;
-  flex-direction: column;
+.slide-pills {
+  display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2.5rem;
+  opacity: 0; transform: translateY(12px);
+  transition: opacity 0.5s 0.46s, transform 0.5s 0.46s;
 }
-
-.split-rect {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 2.5rem;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(255,255,255,0.07);
-  transition: flex 0.45s cubic-bezier(0.77,0,0.18,1), filter 0.3s;
-  position: relative;
-  overflow: hidden;
+.slide-pill {
+  font-size: 0.7rem; font-weight: 600; letter-spacing: 0.05em;
+  padding: 0.35rem 0.9rem; border-radius: 100px;
 }
-.split-rect:last-child { border-bottom: none; }
-.split-rect:hover { flex: 2; }
+.slide.ss .slide-pill { background: var(--ss-light); color: var(--ss); }
+.slide.bc .slide-pill { background: rgba(230,126,34,0.12); color: var(--bc); }
 
-/* individual colors */
-.split-rect.r1 { background: #6392b6; } /* Artist — steel blue */
-.split-rect.r2 { background: #f4f1e8; } /* Influencer — warm cream */
-.split-rect.r3 { background: #ffc700; } /* Entrepreneur — golden yellow */
-.split-rect.r4 { background: #7a976b; } /* Activist — sage green */
-.split-rect.r5 { background: #1a1a1a; } /* Trades — near black */
+.slide-actions {
+  display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+  opacity: 0; transform: translateY(12px);
+  transition: opacity 0.5s 0.54s, transform 0.5s 0.54s;
+}
+.slide-cta {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 0.9rem 2.2rem; text-decoration: none; border-radius: 2px;
+  transition: transform 0.2s, opacity 0.2s;
+}
+.slide-cta:hover { transform: translateY(-2px); opacity: 0.9; }
+.slide.ss .slide-cta { background: var(--ss); color: #fff; }
+.slide.bc .slide-cta { background: var(--bc); color: #fff; }
 
-.rect-label {
+.slide-geo {
+  font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600;
+  display: flex; align-items: center; gap: 0.4rem;
+}
+.slide-geo::before { content: '📍'; font-size: 0.75rem; }
+.slide.ss .slide-geo { color: rgba(14,17,23,0.3); }
+.slide.bc .slide-geo { color: rgba(255,255,255,0.2); }
+
+/* animate content in when slide is active */
+.slide.active .slide-tag,
+.slide.active .slide-subbrand,
+.slide.active .slide-parent,
+.slide.active .slide-body,
+.slide.active .slide-pills,
+.slide.active .slide-actions { opacity: 1; transform: translateY(0); }
+
+/* ── SLIDER CONTROLS ── */
+.slider-controls {
+  position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+  z-index: 10;
+  display: flex; align-items: center; gap: 1.2rem;
+}
+.slider-btn {
+  width: 2.6rem; height: 2.6rem; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; border: none;
+  font-size: 1rem;
+  transition: transform 0.2s, background 0.2s;
+}
+.slider-btn:hover { transform: scale(1.1); }
+.slider-btn.prev { background: rgba(14,17,23,0.08); color: var(--ink); }
+.slider-btn.next { background: var(--ss); color: #fff; }
+.show-bc .slider-btn.prev { background: rgba(255,255,255,0.1); color: #fff; }
+.show-bc .slider-btn.next { background: var(--bc); color: #fff; }
+
+.slider-dots { display: flex; gap: 0.5rem; align-items: center; }
+.slider-dot {
+  width: 0.5rem; height: 0.5rem; border-radius: 50%;
+  cursor: pointer; transition: all 0.3s;
+  border: none;
+}
+.slider-dot.ss-dot { background: rgba(255,85,51,0.25); }
+.slider-dot.bc-dot { background: rgba(230,126,34,0.25); }
+.slider-dot.active { width: 1.8rem; border-radius: 100px; }
+.slider-dot.ss-dot.active { background: var(--ss); }
+.slider-dot.bc-dot.active { background: var(--bc); }
+
+/* slide counter */
+.slider-counter {
+  position: absolute; top: 5.5rem; right: 3rem;
   font-family: 'Fraunces', serif;
-  font-size: clamp(1.6rem, 2.8vw, 2.8rem);
-  font-weight: 700;
-  color: rgba(255,255,255,0.9);
-  letter-spacing: -0.01em;
-  transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
+  font-size: 0.75rem; letter-spacing: 0.1em;
+  z-index: 10; transition: color 0.4s;
 }
-.split-rect:hover .rect-label { transform: translateX(6px); }
-.split-rect.r2 .rect-label { color: rgba(20,20,20,0.8); }
-.split-rect.r2 .rect-arrow { color: rgba(20,20,20,0.5); }
-.split-rect.r3 .rect-label { color: rgba(20,20,20,0.85); }
-.split-rect.r3 .rect-arrow { color: rgba(20,20,20,0.6); }
+.hero-slider:not(.on-bc) .slider-counter { color: rgba(14,17,23,0.25); }
+.hero-slider.on-bc .slider-counter { color: rgba(255,255,255,0.25); }
 
-.split-rect.r5 .rect-label { font-style: italic; color: rgba(255,255,255,0.85); }
-.split-rect.r5 .rect-arrow { color: rgba(255,255,255,0.6); }
+/* slide label tabs — top left of slider */
+.slider-tabs {
+  position: absolute; top: 4rem; left: 0; right: 0;
+  z-index: 10;
+  display: flex;
+}
+.slider-tab {
+  flex: 1; height: 3px;
+  cursor: pointer;
+  position: relative; overflow: hidden;
+  background: rgba(14,17,23,0.06);
+  transition: background 0.3s;
+}
+.slider-tab.bc-tab { background: rgba(255,255,255,0.08); }
+.slider-tab-fill {
+  position: absolute; top: 0; left: 0; bottom: 0;
+  width: 0%; transition: width 0s;
+}
+.slider-tab.active .slider-tab-fill { width: 100%; transition: width 5s linear; }
+.slider-tab.ss-tab .slider-tab-fill { background: var(--ss); }
+.slider-tab.bc-tab .slider-tab-fill { background: var(--bc); }
 
-.rect-arrow {
-  font-size: 1.3rem;
-  color: rgba(255,255,255,0.6);
+/* nav adapts to active slide */
+nav { transition: background 0.4s, border-color 0.4s; }
+nav.on-bc { background: rgba(30,45,61,0.95); border-bottom-color: rgba(230,126,34,0.15); }
+nav.on-bc .nav-logo { color: #fff; }
+nav.on-bc .nav-links a { color: rgba(255,255,255,0.4); }
+nav.on-bc .nav-links a:hover { color: #fff; }
+nav.on-bc .nav-cta { background: var(--bc); }
+
+/* ─── PAGE PANELS ─── */
+.page-panels { position: relative; }
+
+.panel {
+  display: none;
   opacity: 0;
-  transform: translateX(-8px);
-  transition: opacity 0.25s, transform 0.25s;
+  transition: opacity 0.5s ease;
 }
-.split-rect:hover .rect-arrow {
+.panel.active {
+  display: block;
   opacity: 1;
-  transform: translateX(0);
+}
+.panel.entering {
+  display: block;
+  opacity: 0;
+  animation: panelFadeIn 0.5s ease forwards;
+}
+@keyframes panelFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-/* subtle texture overlay per rect */
-.split-rect::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, transparent 60%);
-  pointer-events: none;
-}
 
-@media (max-width: 768px) {
-  .split-hero {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr;
-    height: auto;
-    min-height: 100vh;
-  }
-  .split-left {
-    padding: 2.5rem 1.8rem 2rem;
-    border-right: none;
-    border-bottom: 1px solid rgba(14,17,23,0.08);
-    min-height: 40vh;
-  }
-  .split-illustration { width: 45%; right: -1rem; }
-  .split-brand { font-size: clamp(3.5rem, 14vw, 6rem); }
-  .split-right { min-height: 60vh; }
-  .split-rect { padding: 0 1.8rem; flex: 1 !important; filter: none !important; }
-  .rect-label { font-size: clamp(1.4rem, 6vw, 2rem); }
-  .rect-arrow { opacity: 1; transform: none; }
+/* ─── SHARED SECTION STYLES ─── */
+.sec { padding: 6rem 4rem; }
+.sec-tag {
+  font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 700;
+  display: flex; align-items: center; gap: 0.65rem; margin-bottom: 1rem;
 }
+.sec-tag::before { content: ''; width: 1.5rem; height: 2px; background: currentColor; display: block; }
+.sec-h {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 700; line-height: 1.15;
+  margin-bottom: 1.2rem;
+}
+.sec-h em { font-style: italic; }
+.sec-p { font-family: 'Outfit', sans-serif; font-size: 1rem; line-height: 1.8; color: var(--mist); }
+
+/* on dark background */
+.on-dark .sec-h { color: #fff; }
+.on-dark .sec-tag { }
+.on-dark .sec-p { color: rgba(255,255,255,0.55); }
+.on-dark .sec-h em { }
 
 /* ─── TICKER ─── */
 .ticker { overflow: hidden; padding: 1.1rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-.ticker.ss-ticker { background: var(--ss); }
-.ticker.bc-ticker { background: #14161c; }
+.ticker.ss-ticker { background: var(--ss-light); }
+.ticker.bc-ticker { background: var(--bc-slate); }
 .ticker-track { display: flex; gap: 3rem; animation: ticker 22s linear infinite; white-space: nowrap; }
 .ticker-item {
   font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
   display: flex; align-items: center; gap: 1rem; white-space: nowrap;
 }
 .ticker-item::after { content: '✦'; font-size: 0.5rem; }
-.ss-ticker .ticker-item { color: #ffffff; }
+.ss-ticker .ticker-item { color: var(--ss); }
 .bc-ticker .ticker-item { color: var(--bc); }
 @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
@@ -312,161 +391,7 @@ body.panel-active nav {
 .wc-title { font-size: 0.88rem; font-weight: 700; color: var(--ink); margin-bottom: 0.25rem; }
 .wc-body { font-family: 'Outfit', sans-serif; font-size: 0.83rem; line-height: 1.65; color: var(--mist); }
 
-/* ── PRICING ── */
-.pricing-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem; margin-bottom: 2rem;
-}
-.price-card {
-  background: var(--white); border: 1px solid var(--border);
-  padding: 2.5rem 2.2rem; display: flex; flex-direction: column;
-  position: relative; transition: transform 0.25s, box-shadow 0.25s;
-}
-.price-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(14,17,23,0.08); }
-.price-card.featured { border-color: var(--ss); border-width: 2px; }
-.price-badge {
-  position: absolute; top: -1px; left: 2rem;
-  background: var(--ss); color: #fff;
-  font-size: 0.6rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
-  padding: 0.3rem 0.8rem;
-}
-.price-tier { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mist); margin-bottom: 1rem; }
-.price-card.featured .price-tier { color: var(--ss); }
-.price-amount { font-family: 'Fraunces', serif; font-size: 2.8rem; font-weight: 700; line-height: 1; color: var(--ink); margin-bottom: 0.3rem; }
-.price-per { font-size: 1rem; font-weight: 400; color: var(--mist); }
-.price-detail { font-size: 0.72rem; color: var(--mist); letter-spacing: 0.05em; margin-bottom: 1rem; }
-.price-desc { font-family: 'Outfit', sans-serif; font-size: 0.85rem; line-height: 1.65; color: var(--mist); margin-bottom: 1.2rem; flex: 0; }
-.price-divider { height: 1px; background: var(--border); margin-bottom: 1.5rem; }
-.price-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; flex: 1; margin-bottom: 2rem; }
-.price-list li { font-family: 'Outfit', sans-serif; font-size: 0.82rem; line-height: 1.4; display: flex; align-items: flex-start; gap: 0.6rem; }
-.price-list li::before { flex-shrink: 0; margin-top: 0.1rem; }
-.price-list li.included { color: var(--ink); }
-.price-list li.included::before { content: '✓'; color: var(--ss); font-weight: 700; }
-.price-list li.not-included { color: #c4c9d4; }
-.price-list li.not-included::before { content: '–'; color: #d8dce3; }
-.price-list li.quote { color: var(--mist); font-style: italic; }
-.price-list li.quote::before { content: '→'; color: var(--ss); }
-.price-commitment {
-  font-family: 'Outfit', sans-serif;
-  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
-  color: var(--ink); background: var(--light);
-  display: inline-flex; align-items: center; gap: 0.4rem;
-  padding: 0.3rem 0.7rem; margin-bottom: 0.6rem;
-  border-left: 2px solid var(--ss);
-}
-.price-card.featured .price-commitment { background: rgba(99,146,182,0.06); }
-  font-family: 'Outfit', sans-serif;
-  font-size: 0.72rem; color: var(--ss);
-  font-weight: 600; letter-spacing: 0.03em;
-  margin-bottom: 0.75rem;
-  display: flex; align-items: center; gap: 0.4rem;
-}
-.price-overage::before { content: '→'; } text-align: center; padding: 0.9rem 1.5rem; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: background 0.2s, transform 0.2s; }
-.price-cta:hover { transform: translateY(-2px); }
-.price-cta.solid { background: var(--ss); color: #fff; }
-.price-cta.solid:hover { background: var(--ss-dark); }
-.price-cta.ghost { background: transparent; color: var(--ink); border: 2px solid var(--border); }
-.price-cta.ghost:hover { border-color: var(--ss); color: var(--ss); }
-.fs-terms {
-  background: var(--light); border: 1px solid var(--border);
-  padding: 1rem 1.2rem; margin-bottom: 1.5rem;
-  display: flex; flex-direction: column; gap: 0.6rem;
-}
-.fs-term { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
-.fs-term-label { font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mist); flex-shrink: 0; }
-.fs-term-value { font-size: 0.82rem; font-weight: 700; color: var(--ink); text-align: right; }
-.pricing-note { background: var(--white); border: 1px solid var(--border); padding: 1.2rem 1.8rem; font-family: 'Outfit', sans-serif; font-size: 0.88rem; line-height: 1.65; color: var(--mist); text-align: center; }
-.pricing-note strong { color: var(--ink); }
-@media (max-width: 1024px) { .pricing-grid { grid-template-columns: 1fr; } }
-
-.pricing-track-label {
-  display: flex; align-items: center; gap: 1rem;
-  margin-bottom: 1.5rem; flex-wrap: wrap;
-}
-.ptl-tag {
-  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
-  background: var(--ss); color: #fff; padding: 0.3rem 0.9rem;
-}
-.ptl-note {
-  font-family: 'Outfit', sans-serif;
-  font-size: 0.8rem; color: var(--mist);
-}
-
-.catchup-box {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 3rem; margin-top: 3rem; margin-bottom: 2rem;
-  background: var(--ink); padding: 3rem;
-}
-.catchup-label {
-  font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700;
-  color: var(--ss); margin-bottom: 0.75rem;
-}
-.catchup-title {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 700; line-height: 1.15;
-  color: #fff; margin-bottom: 1.2rem;
-}
-.catchup-body {
-  font-family: 'Outfit', sans-serif;
-  font-size: 0.88rem; line-height: 1.75; color: rgba(255,255,255,0.55);
-}
-.catchup-card {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(99,146,182,0.2);
-  padding: 2rem;
-}
-.catchup-card-label {
-  font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700;
-  color: var(--ss); margin-bottom: 1.5rem;
-  display: flex; align-items: center; gap: 0.5rem;
-}
-.catchup-card-label::before { content: ''; width: 1.2rem; height: 1.5px; background: var(--ss); display: block; }
-.catchup-steps { display: flex; flex-direction: column; border-top: 1px solid rgba(255,255,255,0.08); }
-.catchup-step {
-  display: flex; gap: 1.2rem; align-items: flex-start;
-  padding: 1.2rem 0; border-bottom: 1px solid rgba(255,255,255,0.06);
-}
-.catchup-step:last-child { border-bottom: none; }
-.catchup-step-num {
-  font-family: 'Fraunces', serif; font-size: 1.8rem; font-weight: 700;
-  color: rgba(99,146,182,0.25); line-height: 1; min-width: 2rem; flex-shrink: 0;
-  transition: color 0.25s;
-}
-.catchup-step:hover .catchup-step-num { color: var(--ss); }
-.catchup-step-title { font-size: 0.85rem; font-weight: 700; color: #fff; margin-bottom: 0.2rem; }
-.catchup-step-desc { font-family: 'Outfit', sans-serif; font-size: 0.78rem; line-height: 1.55; color: rgba(255,255,255,0.4); }
-
-@media (max-width: 1024px) { .catchup-box { grid-template-columns: 1fr; padding: 2rem 1.5rem; } }
-
-/* ── STORY BOX ── */
-.story-box {
-  background: var(--ink);
-  border-left: 3px solid var(--ss);
-  padding: 2rem 2.2rem;
-}
-.story-quote-mark {
-  font-family: 'Fraunces', serif;
-  font-size: 4rem; line-height: 0.8;
-  color: rgba(99,146,182,0.2);
-  margin-bottom: 0.75rem;
-}
-.story-text {
-  font-family: 'Outfit', sans-serif;
-  font-size: 0.95rem; line-height: 1.8;
-  color: rgba(255,255,255,0.75);
-  font-style: italic;
-  margin-bottom: 1.5rem;
-}
-.story-author { display: flex; flex-direction: column; gap: 0.2rem; }
-.story-author-name {
-  font-size: 0.85rem; font-weight: 700;
-  color: var(--ss);
-  letter-spacing: 0.04em;
-}
-.story-author-role {
-  font-size: 0.72rem; color: rgba(255,255,255,0.35);
-  font-family: 'Outfit', sans-serif; letter-spacing: 0.04em;
-}
+.savings-box {
   background: var(--ink); padding: 2rem 2.2rem;
   border-left: 3px solid var(--ss);
 }
@@ -481,7 +406,7 @@ body.panel-active nav {
 .sb-val { font-family: 'Fraunces', serif; font-size: 1rem; }
 .sb-val.crossed { text-decoration: line-through; color: #f87171; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.85rem; }
 .sb-val.saved { color: #34d399; }
-.sb-total { margin-top: 1.2rem; padding-top: 1.2rem; border-top: 1px solid rgba(99,146,182,0.25); display: flex; justify-content: space-between; align-items: baseline; }
+.sb-total { margin-top: 1.2rem; padding-top: 1.2rem; border-top: 1px solid rgba(255,85,51,0.3); display: flex; justify-content: space-between; align-items: baseline; }
 .sb-total-label { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 700; color: var(--ss); }
 .sb-total-val { font-family: 'Fraunces', serif; font-size: 1.8rem; color: #34d399; }
 
@@ -492,7 +417,7 @@ body.panel-active nav {
 .svc-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--ss); transform: scaleX(0); transform-origin: left; transition: transform 0.35s; }
 .svc-card:hover::before { transform: scaleX(1); }
 .svc-card:hover { background: var(--ss-light); }
-.svc-num { font-family: 'Fraunces', serif; font-size: 3rem; font-weight: 700; color: rgba(99,146,182,0.08); line-height: 1; margin-bottom: 1.2rem; }
+.svc-num { font-family: 'Fraunces', serif; font-size: 3rem; font-weight: 700; color: rgba(255,85,51,0.08); line-height: 1; margin-bottom: 1.2rem; }
 .svc-title { font-size: 1rem; font-weight: 700; color: var(--ink); margin-bottom: 0.75rem; }
 .svc-body { font-family: 'Outfit', sans-serif; font-size: 0.85rem; line-height: 1.7; color: var(--mist); margin-bottom: 1.2rem; }
 .svc-list { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
@@ -524,64 +449,6 @@ body.panel-active nav {
 .vi-tag { display: inline-block; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; background: var(--ss-light); color: var(--ss); padding: 0.2rem 0.6rem; margin-right: 0.4rem; margin-bottom: 0.4rem; }
 
 /* receipt steps */
-/* ── WHAT WE HANDLE — editorial layout ── */
-.qt-editorial {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  border: 1px solid var(--border);
-  background: var(--border);
-  gap: 1px;
-  margin-bottom: 0;
-}
-.qt-ed-item {
-  background: var(--white);
-  padding: 2.5rem 2rem;
-  display: flex; flex-direction: column; gap: 1.2rem;
-  transition: background 0.25s;
-}
-.qt-ed-item:hover { background: #fafafa; }
-.qt-ed-num {
-  font-family: 'Fraunces', serif;
-  font-size: 3.5rem; font-weight: 700; line-height: 1;
-  color: var(--ss);
-  opacity: 0.25;
-  transition: opacity 0.25s;
-}
-.qt-ed-item:hover .qt-ed-num { opacity: 0.6; }
-.qt-ed-title {
-  font-size: 1rem; font-weight: 700; color: var(--ink);
-  line-height: 1.3;
-}
-.qt-ed-body {
-  font-family: 'Outfit', sans-serif;
-  font-size: 0.88rem; line-height: 1.7; color: var(--mist);
-}
-.qt-note {
-  background: var(--ss-light);
-  border-left: 3px solid var(--ss);
-  padding: 1rem 1.4rem;
-  font-family: 'Outfit', sans-serif;
-  font-size: 0.85rem; line-height: 1.65; color: var(--mist);
-}
-@media (max-width: 768px) {
-  .qt-editorial { grid-template-columns: 1fr; }
-}
-
-
-/* ── SOLE PROP BOX ── */
-.sole-prop-box {
-  display: flex; gap: 1.2rem; align-items: flex-start;
-  background: var(--ss-light);
-  border-left: 3px solid var(--ss);
-  padding: 1.4rem 1.6rem;
-  margin-bottom: 0.5rem;
-}
-.sp-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 0.1rem; }
-.sp-title { font-size: 0.9rem; font-weight: 700; color: var(--ink); margin-bottom: 0.4rem; }
-.sp-body { font-family: 'Outfit', sans-serif; font-size: 0.85rem; line-height: 1.7; color: var(--mist); }
-.sp-body strong { color: var(--ink); font-weight: 700; }
-
-/* ── RECEIPTS ── */
 .receipt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
 .receipt-steps { display: flex; flex-direction: column; gap: 0; margin-top: 2rem; }
 .rs { display: flex; gap: 1.2rem; align-items: flex-start; padding: 1.2rem 0; border-bottom: 1px solid var(--border); }
@@ -592,7 +459,7 @@ body.panel-active nav {
 
 .receipt-visual { background: var(--ink); padding: 2.2rem; }
 .rv-label { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; color: var(--ss); margin-bottom: 1.5rem; }
-.rv-envelope { border: 1.5px dashed rgba(99,146,182,0.25); padding: 1.8rem; text-align: center; margin-bottom: 1.2rem; }
+.rv-envelope { border: 1.5px dashed rgba(255,85,51,0.25); padding: 1.8rem; text-align: center; margin-bottom: 1.2rem; }
 .rv-envelope-icon { font-size: 2rem; margin-bottom: 0.5rem; }
 .rv-envelope-text { font-family: 'Outfit', sans-serif; font-size: 0.82rem; color: rgba(255,255,255,0.45); line-height: 1.5; }
 .rv-arrow { text-align: center; font-size: 1.2rem; color: var(--ss); margin: 0.8rem 0; animation: pulse 2s ease-in-out infinite; }
@@ -600,7 +467,7 @@ body.panel-active nav {
 .rv-items { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.2rem; }
 .rv-item { display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.04); padding: 0.65rem 0.9rem; font-size: 0.76rem; }
 .rv-item-name { color: rgba(255,255,255,0.5); }
-.rv-item-cat { font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; background: rgba(99,146,182,0.15); color: var(--ss); padding: 0.15rem 0.5rem; }
+.rv-item-cat { font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; background: rgba(255,85,51,0.15); color: var(--ss); padding: 0.15rem 0.5rem; }
 .rv-item-amt { color: #fff; font-family: 'Fraunces', serif; }
 .rv-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1rem; display: flex; justify-content: space-between; }
 .rv-bl { font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.3); }
@@ -616,7 +483,7 @@ body.panel-active nav {
 .how-steps { border-top: 1px solid var(--border); }
 .how-step { display: flex; gap: 1.8rem; padding: 1.6rem 0; border-bottom: 1px solid var(--border); }
 .how-step:last-child { border-bottom: none; }
-.hs-num { font-family: 'Fraunces', serif; font-size: 2.5rem; font-weight: 700; color: rgba(99,146,182,0.12); min-width: 2.5rem; line-height: 1; flex-shrink: 0; transition: color 0.25s; }
+.hs-num { font-family: 'Fraunces', serif; font-size: 2.5rem; font-weight: 700; color: rgba(255,85,51,0.12); min-width: 2.5rem; line-height: 1; flex-shrink: 0; transition: color 0.25s; }
 .how-step:hover .hs-num { color: var(--ss); }
 .hs-title { font-size: 0.9rem; font-weight: 700; color: var(--ink); margin-bottom: 0.3rem; padding-top: 0.4rem; }
 .hs-desc { font-family: 'Outfit', sans-serif; font-size: 0.83rem; line-height: 1.65; color: var(--mist); }
@@ -628,19 +495,19 @@ body.panel-active nav {
 .pf-step:last-child { border-bottom: none; }
 .pf-badge { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.3rem 0.7rem; flex-shrink: 0; white-space: nowrap; }
 .pf-badge.us { background: var(--ink); color: var(--ss); }
-.pf-badge.them { background: rgba(99,146,182,0.15); color: var(--ss); border: 1px solid rgba(99,146,182,0.3); }
+.pf-badge.them { background: rgba(45,106,143,0.15); color: #2d6a8f; border: 1px solid rgba(45,106,143,0.3); }
 .pf-title { font-size: 0.88rem; font-weight: 700; color: var(--ink); margin-bottom: 0.2rem; }
 .pf-desc { font-family: 'Outfit', sans-serif; font-size: 0.8rem; line-height: 1.6; color: var(--mist); }
 
-.partner-card { background: var(--ink); padding: 2.5rem; border-left: 3px solid var(--ss); }
+.partner-card { background: var(--ink); padding: 2.5rem; border-left: 3px solid #2d6a8f; }
 .pc-top { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.8rem; padding-bottom: 1.8rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
-.pc-icon { width: 3rem; height: 3rem; border-radius: 50%; background: rgba(99,146,182,0.2); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; }
+.pc-icon { width: 3rem; height: 3rem; border-radius: 50%; background: rgba(45,106,143,0.2); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; }
 .pc-name { font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 700; color: #fff; line-height: 1.1; }
 .pc-sub { font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-top: 0.2rem; }
 .pc-points { display: flex; flex-direction: column; gap: 0.8rem; margin-bottom: 1.5rem; }
 .pc-row { display: flex; gap: 0.7rem; align-items: flex-start; font-family: 'Outfit', sans-serif; font-size: 0.82rem; color: rgba(255,255,255,0.6); line-height: 1.5; }
-.pc-check { color: var(--ss); flex-shrink: 0; }
-.pc-note { background: rgba(99,146,182,0.1); border: 1px solid rgba(99,146,182,0.2); padding: 0.9rem 1.1rem; font-family: 'Outfit', sans-serif; font-style: italic; font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.6; }
+.pc-check { color: #2d6a8f; flex-shrink: 0; }
+.pc-note { background: rgba(45,106,143,0.1); border: 1px solid rgba(45,106,143,0.2); padding: 0.9rem 1.1rem; font-family: 'Outfit', sans-serif; font-style: italic; font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.6; }
 .pc-note strong { color: #fff; font-style: normal; }
 
 /* testimonials */
@@ -672,7 +539,7 @@ body.panel-active nav {
 .constr-intro-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
 .ci-right { }
 .ci-stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.06); margin-top: 2rem; }
-.ci-stat { background: rgba(255,255,255,0.06); padding: 1.5rem; border: 1px solid rgba(255,255,255,0.08); }
+.ci-stat { background: var(--bc-slate); padding: 1.5rem; }
 .ci-stat-val { font-family: 'Fraunces', serif; font-size: 2.2rem; font-weight: 700; color: var(--bc); line-height: 1; }
 .ci-stat-label { font-family: 'Outfit', sans-serif; font-size: 0.72rem; color: rgba(255,255,255,0.4); margin-top: 0.3rem; letter-spacing: 0.05em; }
 
@@ -703,7 +570,7 @@ body.panel-active nav {
 .pl-step.unlocked .pl-step-dot { background: var(--bc); color: #fff; font-size: 0.85rem; }
 .pl-step-title { font-size: 0.85rem; font-weight: 700; color: var(--ink); margin-bottom: 0.15rem; }
 .pl-step-desc { font-family: 'Outfit', sans-serif; font-size: 0.78rem; line-height: 1.5; color: var(--mist); }
-.pl-warning { background: rgba(99,146,182,0.06); border-left: 3px solid var(--bc); padding: 0.9rem 1.1rem; font-family: 'Outfit', sans-serif; font-size: 0.8rem; line-height: 1.65; color: var(--mist); font-style: italic; margin-top: 1.5rem; }
+.pl-warning { background: rgba(230,126,34,0.06); border-left: 3px solid var(--bc); padding: 0.9rem 1.1rem; font-family: 'Outfit', sans-serif; font-size: 0.8rem; line-height: 1.65; color: var(--mist); font-style: italic; margin-top: 1.5rem; }
 
 .pl-demo { display: flex; flex-direction: column; gap: 1.5rem; }
 .pl-demo-label { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; color: var(--bc); display: flex; align-items: center; gap: 0.5rem; }
@@ -717,10 +584,35 @@ body.panel-active nav {
 .pl-bar-lbl { font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mist); min-width: 3.5rem; flex-shrink: 0; }
 .pl-bar-track { flex: 1; height: 1.5rem; background: var(--light); overflow: hidden; }
 .pl-bar { height: 100%; display: flex; align-items: center; padding: 0 0.5rem; font-size: 0.7rem; font-weight: 700; }
-.pl-bar.rev { background: rgba(99,146,182,0.15); color: var(--ss); }
+.pl-bar.rev { background: rgba(45,106,143,0.15); color: #2d6a8f; }
 .pl-bar.cost { background: rgba(239,68,68,0.1); color: #dc2626; }
 .pl-bar.profit { background: rgba(52,211,153,0.15); color: #059669; }
 
+/* talent pool */
+.talent-section { background: var(--bc-slate); padding: 6rem 4rem; }
+.talent-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+.talent-why { margin-top: 2.5rem; border-top: 1px solid rgba(255,255,255,0.08); }
+.tw { display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.tw:last-child { border-bottom: none; }
+.tw-num { font-family: 'Fraunces', serif; font-size: 2rem; font-weight: 700; color: rgba(230,126,34,0.2); min-width: 2.2rem; line-height: 1; flex-shrink: 0; transition: color 0.25s; }
+.tw:hover .tw-num { color: var(--bc); }
+.tw-title { font-size: 0.88rem; font-weight: 700; color: #fff; margin-bottom: 0.25rem; }
+.tw-desc { font-family: 'Outfit', sans-serif; font-size: 0.82rem; line-height: 1.65; color: rgba(255,255,255,0.45); }
+
+.talent-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(230,126,34,0.2); padding: 2.2rem; }
+.tc-lbl { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; color: var(--bc); margin-bottom: 1.8rem; display: flex; align-items: center; gap: 0.5rem; }
+.tc-lbl::before { content: '●'; animation: pulse 2s ease-in-out infinite; }
+.tc-roles { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.8rem; }
+.tc-role { display: flex; align-items: center; gap: 1rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); padding: 0.9rem 1.1rem; transition: border-color 0.25s; }
+.tc-role:hover { border-color: rgba(230,126,34,0.3); }
+.tc-role-icon { font-size: 1.2rem; flex-shrink: 0; }
+.tc-role-body { flex: 1; }
+.tc-role-title { font-size: 0.85rem; font-weight: 700; color: #fff; }
+.tc-role-desc { font-size: 0.72rem; color: rgba(255,255,255,0.35); font-family: 'Outfit', sans-serif; }
+.tc-badge { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.25rem 0.6rem; background: rgba(52,211,153,0.12); color: #34d399; border: 1px solid rgba(52,211,153,0.25); flex-shrink: 0; }
+.tc-cta { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.6rem; }
+.tc-cta-text { font-family: 'Outfit', sans-serif; font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 1rem; line-height: 1.6; }
+.tc-cta-text strong { color: #fff; }
 
 /* constr limit bar */
 .constr-limit { background: var(--bc-slate); padding: 1.6rem 4rem; display: flex; align-items: center; gap: 1.5rem; border-top: 1px solid rgba(255,255,255,0.06); }
@@ -734,7 +626,7 @@ body.panel-active nav {
 .cta-section.bc-cta { background: var(--bc-slate); }
 .cta-bg { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-family: 'Fraunces', serif; font-size: 22vw; font-weight: 700; font-style: italic; white-space: nowrap; pointer-events: none; user-select: none; }
 .cta-section.ss-cta .cta-bg { color: rgba(255,255,255,0.06); }
-.cta-section.bc-cta .cta-bg { color: rgba(99,146,182,0.06); }
+.cta-section.bc-cta .cta-bg { color: rgba(230,126,34,0.06); }
 .cta-inner { position: relative; z-index: 1; max-width: 600px; margin: 0 auto; }
 .cta-h { font-family: 'Fraunces', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700; line-height: 1.2; color: #fff; margin-bottom: 1rem; }
 .cta-h em { font-style: italic; }
@@ -742,8 +634,6 @@ body.panel-active nav {
 .cta-section.bc-cta .cta-h em { color: var(--bc); }
 .cta-p { font-family: 'Outfit', sans-serif; font-size: 1rem; line-height: 1.75; color: rgba(255,255,255,0.65); margin-bottom: 2.5rem; }
 .cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-.btn-solid { display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.9rem 2.2rem; background: var(--ss); color: #fff; text-decoration: none; border-radius: 2px; transition: filter 0.2s, transform 0.2s; }
-.btn-solid:hover { filter: brightness(1.1); transform: translateY(-2px); }
 .btn-white { background: #fff; padding: 0.9rem 2.2rem; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: transform 0.2s, opacity 0.2s; }
 .btn-white:hover { transform: translateY(-2px); opacity: 0.9; }
 .cta-section.ss-cta .btn-white { color: var(--ss); }
@@ -752,101 +642,34 @@ body.panel-active nav {
 .btn-outline-white:hover { border-color: #fff; transform: translateY(-2px); }
 
 /* ─── FOOTER ─── */
-footer { background: var(--ink); padding: 4rem 4rem 2.5rem; display: none; }
-body.panel-active footer { display: block; }
+footer { background: var(--ink); padding: 4rem 4rem 2.5rem; }
 .footer-top { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.07); }
 .footer-brand {}
 .f-logo { font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 700; color: #fff; text-decoration: none; display: block; margin-bottom: 0.25rem; }
-.f-logo em { font-style: italic; color: var(--ss); transition: color 0.5s ease; }
-body.on-construction .f-logo em { color: var(--bc); }
+.f-logo em { font-style: italic; color: var(--ss); }
 .f-tagline { font-family: 'Outfit', sans-serif; font-size: 0.85rem; line-height: 1.7; color: rgba(255,255,255,0.35); max-width: 280px; margin-bottom: 1.2rem; margin-top: 0.75rem; }
 .f-badges { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-.f-badge {
-  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-  padding: 0.3rem 0.7rem; cursor: pointer;
-  transition: opacity 0.3s, transform 0.2s;
-  opacity: 0.45;
-}
-.f-badge:hover { transform: translateY(-1px); opacity: 0.8; }
-.f-badge.active { opacity: 1; }
-.f-badge.ss { background: rgba(99,146,182,0.12); color: var(--ss); border: 1px solid rgba(99,146,182,0.2); }
-.f-badge.bc { background: rgba(99,146,182,0.2); color: var(--bc); border: 1px solid rgba(99,146,182,0.2); }
-.f-badge.ss.active { background: rgba(99,146,182,0.2); border-color: var(--ss); }
-.f-badge.bc.active { background: rgba(99,146,182,0.3); border-color: var(--bc); }
+.f-badge { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.7rem; }
+.f-badge.ss { background: rgba(255,85,51,0.12); color: var(--ss); border: 1px solid rgba(255,85,51,0.2); }
+.f-badge.bc { background: rgba(230,126,34,0.12); color: var(--bc); border: 1px solid rgba(230,126,34,0.2); }
 .footer-col h4 { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700; color: rgba(255,255,255,0.25); margin-bottom: 1.2rem; }
 .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
 .footer-col a { font-size: 0.83rem; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
 .footer-col a:hover { color: #fff; }
 .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; }
 .f-copy { font-size: 0.7rem; color: rgba(255,255,255,0.2); letter-spacing: 0.06em; }
-.f-socials { display: flex; gap: 0.6rem; align-items: center; }
-.f-social {
-  width: 2rem; height: 2rem;
-  display: flex; align-items: center; justify-content: center;
-  border: 1px solid rgba(255,255,255,0.1);
-  color: rgba(255,255,255,0.35);
-  text-decoration: none; font-size: 0.85rem;
-  transition: border-color 0.2s, color 0.2s, transform 0.2s;
-}
-.f-social:hover { color: #fff; border-color: rgba(255,255,255,0.4); transform: translateY(-2px); }
-body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc); }
-
-
 
 /* ─── RESPONSIVE ─── */
-@media (max-width: 768px) {
-
-  /* nav */
-  nav { padding: 0 1.2rem; height: 3.5rem; }
-  .nav-links { display: none; }
-  .nav-logo { font-size: 1.1rem; }
-  .nav-cta { font-size: 0.65rem; padding: 0.45rem 1rem; }
-
-  /* hero slider — full height, content centered */
-  .hero-slider { min-height: 100vh; }
-  .slide { padding: 5rem 1.8rem 6rem; }
-  .slide-subbrand { font-size: clamp(2.8rem, 12vw, 4.5rem); }
-  .slide-body { font-size: 0.95rem; }
-  .slide-pills { gap: 0.4rem; }
-  .slide-pill { font-size: 0.65rem; padding: 0.3rem 0.7rem; }
-  .slide-actions { flex-direction: column; align-items: flex-start; gap: 1rem; }
-  .slide-cta { font-size: 0.72rem; padding: 0.8rem 1.8rem; }
-  .slide-geo { font-size: 0.6rem; }
-
-  /* slider controls — bigger tap targets */
-  .slider-controls { bottom: 4rem; gap: 1rem; }
-  .slider-btn { width: 3rem; height: 3rem; font-size: 1.1rem; }
-
-  /* slider tab labels — show brand names on mobile */
-    display: block;
-    position: absolute; bottom: 8px; left: 0; right: 0;
-    text-align: center;
-    font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
-  }
-
-  /* all section grids single column */
-  .why-grid, .receipt-grid, .how-grid, .partner-grid,
-  .constr-intro-inner, .pl-inner, .faq-grid { grid-template-columns: 1fr; gap: 2rem; }
-  .pl-unlock { position: static; }
-  .svc-grid, .who-grid, .cs-grid, .test-grid { grid-template-columns: 1fr; }
-
-  /* padding */
-  .sec, .constr-intro, .constr-services, .pl-section, .cta-section { padding: 3.5rem 1.2rem; }
-  .constr-limit { padding: 1.2rem 1.2rem; }
-  .footer-top { grid-template-columns: 1fr; gap: 2rem; }
-  footer { padding: 2.5rem 1.2rem 2rem; }
-
-  /* counter hidden on mobile — too small */
-  .slider-counter { display: none; }
-}
-
-@media (max-width: 1024px) and (min-width: 769px) {
+@media (max-width: 1024px) {
   nav { padding: 0 1.5rem; }
   .nav-links { display: none; }
-  .why-grid, .receipt-grid, .how-grid, .partner-grid, .constr-intro-inner, .pl-inner, .faq-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .split-hero { grid-template-columns: 1fr; min-height: auto; }
+  .sh-side { padding: 4rem 2rem; }
+  .sh-side::after { display: none; }
+  .why-grid, .receipt-grid, .how-grid, .partner-grid, .constr-intro-inner, .pl-inner, .talent-inner, .faq-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .pl-unlock { position: static; }
   .svc-grid, .who-grid, .cs-grid, .test-grid { grid-template-columns: 1fr; }
-  .sec, .constr-intro, .constr-services, .pl-section, .cta-section { padding: 4rem 1.5rem; }
+  .sec, .constr-intro, .constr-services, .pl-section, .talent-section, .cta-section { padding: 4rem 1.5rem; }
   .constr-limit { padding: 1.4rem 1.5rem; }
   .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
   footer { padding: 3rem 1.5rem 2rem; }
@@ -857,145 +680,144 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
 
 <!-- NAV -->
 <nav>
-  <a class="nav-logo" href="#">The <em>Backbone</em> <span class="nav-divider-text">| Ops &amp; Design</span></a>
+  <a class="nav-logo" href="#">The <em>Backbone</em></a>
   <ul class="nav-links">
-    <li><a class="ss-link" href="#" onclick="activatePanel(0);window.scrollTo({top:0});return false;">Studio Side</a></li>
-    <li><a class="ss-link" href="#" onclick="activatePanel(0);setTimeout(()=>{document.getElementById('ss-services').scrollIntoView({behavior:'smooth'})},100);return false;">SS Services</a></li>
-    <li><a class="ss-link" href="#" onclick="activatePanel(0);setTimeout(()=>{document.getElementById('ss-how').scrollIntoView({behavior:'smooth'})},100);return false;">How It Works</a></li>
-    <li><a class="ss-link" href="#" onclick="activatePanel(0);setTimeout(()=>{document.getElementById('pricing').scrollIntoView({behavior:'smooth'})},100);return false;">Pricing</a></li>
+    <li><a class="ss-link" href="#" onclick="goToSlide(0);window.scrollTo({top:0});return false;">Studio Side</a></li>
+    <li><a class="ss-link" href="#" onclick="goToSlide(0);setTimeout(()=>{document.getElementById('ss-services').scrollIntoView({behavior:'smooth'})},100);return false;">SS Services</a></li>
+    <li><a class="ss-link" href="#" onclick="goToSlide(0);setTimeout(()=>{document.getElementById('ss-how').scrollIntoView({behavior:'smooth'})},100);return false;">How It Works</a></li>
     <div class="nav-divider"></div>
-    <li><a class="bc-link" href="#" onclick="activatePanel(1);window.scrollTo({top:0});return false;">Field Side</a></li>
-    <li><a class="bc-link" href="#" onclick="activatePanel(1);setTimeout(()=>{document.getElementById('pl-analysis').scrollIntoView({behavior:'smooth'})},100);return false;">P&amp;L Analysis</a></li>
-    <li><a class="bc-link" href="#" onclick="activatePanel(1);setTimeout(()=>{document.getElementById('bc-tax').scrollIntoView({behavior:'smooth'})},100);return false;">Tax Partners</a></li>
+    <li><a class="bc-link" href="#" onclick="goToSlide(1);window.scrollTo({top:0});return false;">Construction</a></li>
+    <li><a class="bc-link" href="#" onclick="goToSlide(1);setTimeout(()=>{document.getElementById('pl-analysis').scrollIntoView({behavior:'smooth'})},100);return false;">P&amp;L Analysis</a></li>
+    <li><a class="bc-link" href="#" onclick="goToSlide(1);setTimeout(()=>{document.getElementById('talent').scrollIntoView({behavior:'smooth'})},100);return false;">Hiring Pool</a></li>
   </ul>
-  <a class="nav-cta" href="#" onclick="activatePanel(0);setTimeout(()=>{document.getElementById('contact').scrollIntoView({behavior:'smooth'})},100);return false;">Get a Quote</a>
+  <a class="nav-cta" href="#" onclick="goToSlide(0);setTimeout(()=>{document.getElementById('contact').scrollIntoView({behavior:'smooth'})},100);return false;">Get a Quote</a>
 </nav>
 
-<!-- SPLIT HERO -->
-<div class="split-hero" id="splitHero">
+<!-- HERO SLIDER -->
+<div class="hero-slider" id="heroSlider">
 
-  <!-- LEFT — brand statement + illustration -->
-  <div class="split-left">
+  <!-- progress tabs -->
+  <div class="slider-tabs">
+    <div class="slider-tab ss-tab active" onclick="goToSlide(0)"><div class="slider-tab-fill"></div></div>
+    <div class="slider-tab bc-tab" onclick="goToSlide(1)"><div class="slider-tab-fill"></div></div>
+  </div>
 
-    <div class="split-brand">The<br><em>Back</em><br>bone</div>
-    <div class="split-sub">Ops &amp; Design Inc.</div>
-    <div class="split-tagline">Bookkeeping &amp; admin<br>for the people building<br>something real.</div>
-    <div class="split-socials">
-      <a class="split-social" href="https://instagram.com/thebackboneca" target="_blank" rel="noopener" title="Instagram">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
-      </a>
-      <a class="split-social" href="mailto:hello@thebackbone.ca" title="Email">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
-      </a>
+  <!-- counter -->
+  <div class="slider-counter" id="slideCounter">01 / 02</div>
+
+  <!-- track -->
+  <div class="slider-track" id="sliderTrack">
+
+    <!-- SLIDE 1 — Studio Side -->
+    <div class="slide ss active" id="slide0">
+      <div class="slide-bg-word">Studio</div>
+      <div class="slide-content">
+        <p class="slide-tag">For Creatives</p>
+        <h1 class="slide-subbrand">Studio<br><em>Side</em></h1>
+        <p class="slide-parent">by The Backbone</p>
+        <p class="slide-body">Bookkeeping, admin support, and tax filing for artists, influencers, and first-time Canadian entrepreneurs. Vancouver &amp; Vancouver Island.</p>
+        <div class="slide-pills">
+          <span class="slide-pill">Artists &amp; Makers</span>
+          <span class="slide-pill">Influencers</span>
+          <span class="slide-pill">Entrepreneurs</span>
+          <span class="slide-pill">$256 / week</span>
+        </div>
+        <div class="slide-actions">
+          <a class="slide-cta" href="#" onclick="goToSlide(0);setTimeout(()=>{document.getElementById('studio-side').scrollIntoView({behavior:'smooth'})},100);return false;">Explore Studio Side →</a>
+          <span class="slide-geo">Vancouver · Vancouver Island · Remote</span>
+        </div>
+      </div>
     </div>
+
+    <!-- SLIDE 2 — Backbone Construction -->
+    <div class="slide bc" id="slide1">
+      <div class="slide-bg-word">Build</div>
+      <div class="slide-content">
+        <p class="slide-tag">For the Trades</p>
+        <h1 class="slide-subbrand">Backbone<br><em>Construction</em></h1>
+        <p class="slide-parent">by The Backbone</p>
+        <p class="slide-body">Bookkeeping, per-project P&amp;L analysis, and carpenter placement for small Canadian construction companies. Up to 20 employees.</p>
+        <div class="slide-pills">
+          <span class="slide-pill">Bookkeeping</span>
+          <span class="slide-pill">P&amp;L per Project</span>
+          <span class="slide-pill">Hiring Pool</span>
+          <span class="slide-pill">Max 20 Employees</span>
+        </div>
+        <div class="slide-actions">
+          <a class="slide-cta" href="#" onclick="goToSlide(1);setTimeout(()=>{document.getElementById('construction-side').scrollIntoView({behavior:'smooth'})},100);return false;">Explore Construction →</a>
+          <span class="slide-geo">Canadian Companies Only · BC Focus</span>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /track -->
+
+  <!-- controls -->
+  <div class="slider-controls">
+    <button class="slider-btn prev" onclick="manualPrev()" aria-label="Previous">←</button>
+    <div class="slider-dots">
+      <button class="slider-dot ss-dot active" onclick="goToSlide(0)" aria-label="Studio Side"></button>
+      <button class="slider-dot bc-dot" onclick="goToSlide(1)" aria-label="Construction"></button>
+    </div>
+    <button class="slider-btn next" onclick="manualNext()" aria-label="Next">→</button>
   </div>
 
-  <!-- RIGHT — audience rectangles -->
-  <div class="split-right">
-    <a class="split-rect r1" href="#" onclick="activatePanel(0);return false;">
-      <span class="rect-label">Artist</span>
-      <span class="rect-arrow">→</span>
-    </a>
-    <a class="split-rect r2" href="#" onclick="activatePanel(0);return false;">
-      <span class="rect-label">Influencer</span>
-      <span class="rect-arrow">→</span>
-    </a>
-    <a class="split-rect r3" href="#" onclick="activatePanel(0);return false;">
-      <span class="rect-label">Entrepreneur</span>
-      <span class="rect-arrow">→</span>
-    </a>
-    <a class="split-rect r4" href="#" onclick="activatePanel(0);return false;">
-      <span class="rect-label">Activist</span>
-      <span class="rect-arrow">→</span>
-    </a>
-    <a class="split-rect r5" href="#" onclick="activatePanel(1);return false;">
-      <span class="rect-label">Trades</span>
-      <span class="rect-arrow">→</span>
-    </a>
-  </div>
-
-</div><!-- /split-hero -->
+</div><!-- /hero-slider -->
 
 <!-- PAGE PANELS — switch with hero slider -->
 <div class="page-panels">
 
-<div class="panel ss-panel" id="studio-side">
+<div class="panel ss-panel active" id="studio-side">
 
   <!-- SS TICKER -->
   <div class="ticker ss-ticker">
     <div class="ticker-track">
       <span class="ticker-item">Studio Side</span>
       <span class="ticker-item">Bookkeeping for Creatives</span>
-      <span class="ticker-item">From $320 / Week</span>
+      <span class="ticker-item">$256 / Week</span>
       <span class="ticker-item">No Employee Costs</span>
       <span class="ticker-item">Physical Receipt Pickup</span>
-      <span class="ticker-item">Powered by QuickBooks</span>
       <span class="ticker-item">CPA Tax Network</span>
       <span class="ticker-item">Vancouver &amp; VI</span>
       <span class="ticker-item">Schedule Assistant</span>
       <span class="ticker-item">Studio Side</span>
       <span class="ticker-item">Bookkeeping for Creatives</span>
-      <span class="ticker-item">From $320 / Week</span>
+      <span class="ticker-item">$256 / Week</span>
       <span class="ticker-item">No Employee Costs</span>
       <span class="ticker-item">Physical Receipt Pickup</span>
-      <span class="ticker-item">Powered by QuickBooks</span>
       <span class="ticker-item">CPA Tax Network</span>
       <span class="ticker-item">Vancouver &amp; VI</span>
       <span class="ticker-item">Schedule Assistant</span>
     </div>
   </div>
 
-  <!-- WHAT WE DO — quick explainer right after slider -->
-  <section class="sec" style="background:#ffffff;padding-top:4rem;padding-bottom:4rem;">
-    <div style="max-width:900px;margin:0 auto;">
-      <p class="sec-tag" style="color:var(--ss);">What We Handle</p>
-      <h2 class="sec-h" style="color:var(--ink);margin-bottom:0.75rem;">Whether you have a corporation,<br>are self-employed, or <em style="color:var(--ss);">both —</em> we've got you.</h2>
-      <p class="sec-p" style="max-width:600px;margin-bottom:3rem;">A lot of artists and creatives wear multiple hats at once. Most bookkeepers make you figure that out yourself. We don't.</p>
-
-      <div class="qt-editorial">
-        <div class="qt-ed-item">
-          <div class="qt-ed-num">01</div>
-          <div class="qt-ed-content">
-            <div class="qt-ed-title">You have a corporation</div>
-            <div class="qt-ed-body">We keep your business books clean all year so your accountant can file your corporate taxes without the chaos.</div>
-          </div>
-        </div>
-        <div class="qt-ed-item">
-          <div class="qt-ed-num">02</div>
-          <div class="qt-ed-content">
-            <div class="qt-ed-title">You're self-employed</div>
-            <div class="qt-ed-body">Freelance, commissions, brand deals — we track all your income and expenses so nothing gets missed at tax time.</div>
-          </div>
-        </div>
-        <div class="qt-ed-item">
-          <div class="qt-ed-num">03</div>
-          <div class="qt-ed-content">
-            <div class="qt-ed-title">You need to file personal taxes too</div>
-            <div class="qt-ed-body">Our CPA partners file your personal tax return alongside everything else — one team, one process, nothing falls through.</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="qt-note" style="margin-top:2rem;">
-        <span style="color:var(--ss);font-weight:700;">Note —</span> Been mixing your personal and business money together? It happens — especially at the start. We untangle it for you, no judgment.
-      </div>
-    </div>
-  </section>
-
   <!-- WHY US -->
   <section class="sec" style="background:var(--white);">
     <div class="why-grid">
       <div>
         <p class="sec-tag" style="color:var(--ss);">Why Studio Side</p>
-        <h2 class="sec-h" style="color:var(--ink);">We get how<br>creatives <em style="color:var(--ss);">actually work.</em></h2>
-        <p class="sec-p" style="margin-bottom:1.5rem;">Receipts in bags. Invoices in email threads. Personal and business accounts mixed together. Income that comes in waves — feast one month, nothing the next. That's not disorganization. That's just how creative work flows.</p>
-        <p class="sec-p" style="margin-bottom:2rem;">Studio Side was built for exactly this. We don't need your books to be perfect before we start. We start where you are.</p>
+        <h2 class="sec-h" style="color:var(--ink);">Skip the hire.<br>Get the <em style="color:var(--ss);">support.</em></h2>
+        <p class="sec-p">Hiring a part-time bookkeeper in Canada means payroll, CPP, EI premiums, vacation pay, and onboarding. With Studio Side you pay only for the hours you need — from $256/week for 8 hours of dedicated support.</p>
+        <div class="savings-box" style="margin-top:2rem;">
+          <div class="sb-label">What you never pay for</div>
+          <div class="sb-rows">
+            <div class="sb-row"><span class="sb-name">CPP Employer Contributions</span><span class="sb-val crossed">~$1,500/yr</span></div>
+            <div class="sb-row"><span class="sb-name">EI Premiums</span><span class="sb-val crossed">~$500/yr</span></div>
+            <div class="sb-row"><span class="sb-name">Vacation Pay (4%)</span><span class="sb-val crossed">~$700/yr</span></div>
+            <div class="sb-row"><span class="sb-name">Onboarding &amp; Training</span><span class="sb-val crossed">~$800+</span></div>
+            <div class="sb-row"><span class="sb-name">With Studio Side</span><span class="sb-val saved">$0</span></div>
+          </div>
+          <div class="sb-total">
+            <span class="sb-total-label">You keep</span>
+            <span class="sb-total-val">$3,500+/yr</span>
+          </div>
+        </div>
       </div>
       <div class="why-cards">
-        <div class="why-card"><div class="wc-icon">🎨</div><div><div class="wc-title">Messy books are our starting point</div><div class="wc-body">Receipts in a bag, mixed accounts, months behind — we've seen it all and we never judge. We just get to work.</div></div></div>
-        <div class="why-card"><div class="wc-icon">🌊</div><div><div class="wc-title">We understand irregular income</div><div class="wc-body">Commission one month, nothing the next, three brand deals at once. We know how creative income works and we track it properly.</div></div></div>
-        <div class="why-card"><div class="wc-icon">🗓</div><div><div class="wc-title">Works around your schedule</div><div class="wc-body">Busy season, slow season, one-time catch-up or ongoing — we fit into your life, not the other way around. No contracts, no lock-in.</div></div></div>
-        <div class="why-card"><div class="wc-icon">🍁</div><div><div class="wc-title">Built for Canadian self-employment</div><div class="wc-body">GST/HST, T2125, CRA deadlines, sole proprietor filings — we know the rules for self-employed Canadians inside out.</div></div></div>
+        <div class="why-card"><div class="wc-icon">⏱</div><div><div class="wc-title">Pay only for what you use</div><div class="wc-body">8 hours/week at $32/hr. Predictable, budgetable, no idle time.</div></div></div>
+        <div class="why-card"><div class="wc-icon">📋</div><div><div class="wc-title">Zero HR obligations</div><div class="wc-body">We're a service, not staff. No T4s, no performance reviews. Pause or stop anytime.</div></div></div>
+        <div class="why-card"><div class="wc-icon">🗽</div><div><div class="wc-title">Tax filing through our CPA network</div><div class="wc-body">We do your books. Our CPA partners — including Liberty Tax — file your return.</div></div></div>
+        <div class="why-card"><div class="wc-icon">🍁</div><div><div class="wc-title">Canadian-specific knowledge</div><div class="wc-body">GST/HST, T2125, CRA deadlines — we know the self-employed rules in Canada cold.</div></div></div>
       </div>
     </div>
   </section>
@@ -1092,7 +914,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
           <div class="rs"><div class="rs-dot">1</div><div><div class="rs-title">Collect everything — sorting optional</div><div class="rs-desc">Receipts, invoices, bank slips. Throw it all in an envelope.</div></div></div>
           <div class="rs"><div class="rs-dot">2</div><div><div class="rs-title">Drop off (Vancouver) or mail in (Island)</div><div class="rs-desc">Vancouver clients drop off locally. VI clients use Canada Post — we confirm when it arrives.</div></div></div>
           <div class="rs"><div class="rs-dot">3</div><div><div class="rs-title">We scan, sort &amp; categorize</div><div class="rs-desc">Every document scanned at 300 DPI, data extracted, transactions categorized.</div></div></div>
-          <div class="rs"><div class="rs-dot">4</div><div><div class="rs-title">CRA-compliant records delivered in 1 week</div><div class="rs-desc">Standard turnaround for up to 200 receipts. Need it faster? Ask about our 48-hour fast-track at a premium rate.</div></div></div>
+          <div class="rs"><div class="rs-dot">4</div><div><div class="rs-title">CRA-compliant records delivered</div><div class="rs-desc">Originals returned or shredded per your instructions.</div></div></div>
         </div>
       </div>
       <div>
@@ -1106,16 +928,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
             <div class="rv-item"><span class="rv-item-name">Adobe CC</span><span class="rv-item-cat">Software</span><span class="rv-item-amt">$65.99</span></div>
             <div class="rv-item"><span class="rv-item-name">FedEx — client shipping</span><span class="rv-item-cat">Expense</span><span class="rv-item-amt">$22.50</span></div>
           </div>
-          <div class="rv-bottom">
-            <div>
-              <div style="font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:0.4rem;">Standard</div>
-              <div style="font-family:'Fraunces',serif;font-size:1rem;color:var(--ss);">1 week <span style="font-family:'Outfit',sans-serif;font-size:0.7rem;color:rgba(255,255,255,0.35);font-style:normal;">up to 200 receipts</span></div>
-            </div>
-            <div style="text-align:right;">
-              <div style="font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:0.4rem;">Fast Track</div>
-              <div style="font-family:'Fraunces',serif;font-size:1rem;color:var(--ss);">48 hrs <span style="font-family:'Outfit',sans-serif;font-size:0.7rem;color:rgba(255,255,255,0.35);font-style:normal;">premium rate</span></div>
-            </div>
-          </div>
+          <div class="rv-bottom"><span class="rv-bl">Turnaround</span><span class="rv-bv">3–5 business days</span></div>
         </div>
       </div>
     </div>
@@ -1129,10 +942,10 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
         <h2 class="sec-h" style="color:var(--ink);">Simple from <em style="color:var(--ss);">day one.</em></h2>
         <p class="sec-p">No complicated contracts. No software to learn. You tell us what you need, we get to work.</p>
         <div class="rate-box">
-          <div class="rb-num">$320</div>
+          <div class="rb-num">$256</div>
           <div class="rb-detail">
-            <div class="rb-per">Starting From / Week CAD</div>
-            <div class="rb-note">8 hrs · from $40/hr · No contracts · Pause anytime</div>
+            <div class="rb-per">Per Week CAD</div>
+            <div class="rb-note">8 hrs · $32/hr · No contracts · Pause anytime</div>
           </div>
         </div>
       </div>
@@ -1150,25 +963,15 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
   <section class="sec" style="background:var(--light);">
     <div class="partner-grid">
       <div>
-        <p class="sec-tag" style="color:var(--ss);">Tax Professional Network</p>
-        <h2 class="sec-h" style="color:var(--ink);">We do the books.<br>Our CPA partners <em style="color:var(--ss);">file your taxes.</em></h2>
+        <p class="sec-tag" style="color:#2d6a8f;">Tax Professional Network</p>
+        <h2 class="sec-h" style="color:var(--ink);">We do the books.<br>Our CPA partners <em style="color:#2d6a8f;">file your taxes.</em></h2>
         <p class="sec-p" style="margin-bottom:1rem;">Most bookkeepers leave you on your own at tax time. Not us. We work with a network of trusted Canadian CPAs — including Liberty Tax — who handle your annual filing using the clean books we built.</p>
-        <p class="sec-p" style="margin-bottom:1.5rem;">We match you with the right professional for your situation. You never hunt for a tax person in April.</p>
-
-        <div class="sole-prop-box">
-          <div class="sp-icon">💡</div>
-          <div>
-            <div class="sp-title">Have a business AND personal taxes to file?</div>
-            <p class="sp-body">Whether you have a corporation, are self-employed, or both — we handle it all together. Your <strong>business books</strong>, your <strong>business taxes</strong>, and your <strong>personal tax return</strong> — one team, one handoff, nothing missed.</p>
-          </div>
-        </div>
-
-        <div class="partner-flow" style="margin-top:1.5rem;">
-          <div class="pf-step"><div class="pf-badge us">Studio Side</div><div><div class="pf-title">We clean and separate your books</div><div class="pf-desc">Personal vs. business expenses sorted out — even if they've been mixed. No judgment, just clean records.</div></div></div>
-          <div class="pf-step"><div class="pf-badge us">Studio Side</div><div><div class="pf-title">We prepare your full year-end package</div><div class="pf-desc">Business income, personal income, deductions — everything packaged cleanly for your CPA.</div></div></div>
-          <div class="pf-step"><div class="pf-badge them">CPA Partner</div><div><div class="pf-title">They file all your returns</div><div class="pf-desc">Personal, business, and any other filings — all handled together by licensed professionals.</div></div></div>
-          <div class="pf-step"><div class="pf-badge us">Studio Side</div><div><div class="pf-title">If there's an audit — we align everything</div><div class="pf-desc">We work directly with your CPA to organize your records exactly the way they need them for review. You don't have to figure out what to pull together — we do that with them.</div></div></div>
-          <div class="pf-step"><div class="pf-badge them">CPA Partner</div><div><div class="pf-title">They represent you with CRA</div><div class="pf-desc">Your CPA handles all communication with the CRA. You just stay informed — no stress, no surprises.</div></div></div>
+        <p class="sec-p">We match you with the right professional for your situation. You never hunt for a tax person in April.</p>
+        <div class="partner-flow">
+          <div class="pf-step"><div class="pf-badge us">Studio Side</div><div><div class="pf-title">We keep your books clean all year</div><div class="pf-desc">Monthly bookkeeping, GST/HST prep, receipt digitization — always CRA-ready.</div></div></div>
+          <div class="pf-step"><div class="pf-badge us">Studio Side</div><div><div class="pf-title">We prepare your year-end package</div><div class="pf-desc">Income, expenses, deductions — packaged clean for any CPA to file with ease.</div></div></div>
+          <div class="pf-step"><div class="pf-badge them">CPA Partner</div><div><div class="pf-title">They file your T1 &amp; T2125</div><div class="pf-desc">Licensed professionals handle your personal and self-employment return.</div></div></div>
+          <div class="pf-step"><div class="pf-badge them">CPA Partner</div><div><div class="pf-title">You're 100% CRA compliant</div><div class="pf-desc">Filed correctly, on time. No penalties, no stress.</div></div></div>
         </div>
       </div>
       <div class="partner-card">
@@ -1180,162 +983,14 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
           </div>
         </div>
         <div class="pc-points">
-          <div class="pc-row"><span class="pc-check">✦</span><span>Personal income tax return</span></div>
-          <div class="pc-row"><span class="pc-check">✦</span><span>Business income tax filing</span></div>
-          <div class="pc-row"><span class="pc-check">✦</span><span>Sales tax (GST/HST) annual filing</span></div>
-          <div class="pc-row"><span class="pc-check">✦</span><span>Personal + business filed together if you're self-employed</span></div>
-          <div class="pc-row"><span class="pc-check">✦</span><span>Audit support — we organize your records to match exactly what the CPA needs for review</span></div>
-          <div class="pc-row"><span class="pc-check">✦</span><span>CRA representation — your CPA handles all communication on your behalf</span></div>
+          <div class="pc-row"><span class="pc-check">✦</span><span>T1 personal returns for self-employed Canadians</span></div>
+          <div class="pc-row"><span class="pc-check">✦</span><span>T2125 Statement of Business Activities</span></div>
+          <div class="pc-row"><span class="pc-check">✦</span><span>GST/HST annual return filing</span></div>
+          <div class="pc-row"><span class="pc-check">✦</span><span>CRA representation if you're ever reviewed</span></div>
+          <div class="pc-row"><span class="pc-check">✦</span><span>Seamless handoff — no re-explaining your finances</span></div>
         </div>
-        <div class="pc-note"><strong>If CRA ever comes knocking:</strong> we don't leave you to figure it out alone. We align your records with your CPA so everything is ready, clean, and in order — before they even ask for it.</div>
+        <div class="pc-note"><strong>The result:</strong> your books and taxes handled by one coordinated team. Nothing falls through the cracks at year-end.</div>
       </div>
-    </div>
-  </section>
-
-  <!-- PRICING -->
-  <section class="sec" id="pricing" style="background:var(--light);">
-    <p class="sec-tag" style="color:var(--ss);">Pricing</p>
-    <h2 class="sec-h" style="color:var(--ink);margin-bottom:0.5rem;">Simple, honest <em style="color:var(--ss);">pricing.</em></h2>
-    <p class="sec-p" style="max-width:580px;margin-bottom:0.75rem;">All monthly plans are ongoing retainers — we show up every week, keep your books current, and you always know what it costs. CPA tax filing is quoted separately through our partner network.</p>
-
-    <div class="pricing-track-label">
-      <span class="ptl-tag">Monthly Retainers</span>
-      <span class="ptl-note">Basic: month-to-month · Standard: 3-month min · Full Service: 6-month min</span>
-    </div>
-
-    <div class="pricing-grid">
-
-      <!-- BASIC -->
-      <div class="price-card">
-        <div class="price-tier">Basic</div>
-        <div class="price-amount">$320<span class="price-per">/week</span></div>
-        <div class="price-detail">8 hrs · $40/hr · CAD · QuickBooks</div>
-        <div class="price-commitment">Month-to-month · cancel anytime</div>
-        <p class="price-desc">For creatives who need their books in order and nothing else. Clean, simple monthly bookkeeping in QuickBooks. Suited for up to 10–20 receipts or invoices per day.</p>
-        <div class="price-divider"></div>
-        <ul class="price-list">
-          <li class="included">Monthly income &amp; expense tracking</li>
-          <li class="included">Bank &amp; credit card reconciliation</li>
-          <li class="included">GST/HST tracking</li>
-          <li class="included">Clean records ready for your CPA</li>
-          <li class="not-included">Receipt digitization</li>
-          <li class="not-included">Tax prep package</li>
-          <li class="not-included">CPA tax filing — quoted separately</li>
-          <li class="not-included">Audit support</li>
-        </ul>
-        <a class="price-cta ghost" href="#contact" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});return false;">Get Started</a>
-      </div>
-
-      <!-- STANDARD -->
-      <div class="price-card featured">
-        <div class="price-badge">Most Popular</div>
-        <div class="price-tier">Standard</div>
-        <div class="price-amount">$416<span class="price-per">/week</span></div>
-        <div class="price-detail">8 hrs · $52/hr · CAD · QuickBooks</div>
-        <div class="price-commitment">3-month minimum commitment</div>
-        <p class="price-desc">Everything in Basic plus physical receipt handling and monthly financial reports — all managed in QuickBooks.</p>
-        <div class="price-divider"></div>
-        <ul class="price-list">
-          <li class="included">Everything in Basic</li>
-          <li class="included">Physical receipt digitization</li>
-          <li class="included">Standard turnaround — 1 week · up to 200 receipts</li>
-          <li class="included">Monthly P&amp;L report</li>
-          <li class="included">Monthly Balance Sheet</li>
-          <li class="included">Sole proprietor books + personal separation</li>
-          <li class="not-included">CPA tax filing — quoted separately</li>
-          <li class="not-included">Audit support</li>
-        </ul>
-        <a class="price-cta solid" href="#contact" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});return false;">Get Started</a>
-      </div>
-
-      <!-- FULL SERVICE -->
-      <div class="price-card">
-        <div class="price-tier">Full Service</div>
-        <div class="price-amount">From $640<span class="price-per">/week</span></div>
-        <div class="price-detail">16+ hrs · $40/hr · CAD · scoped per client</div>
-        <p class="price-desc">For clients with multiple business structures. We manage all three sets of books in QuickBooks — corporation, sole proprietorship, and personal finances — properly separated and organized.</p>
-        <div class="price-divider"></div>
-        <ul class="price-list">
-          <li class="included">Corporation bookkeeping</li>
-          <li class="included">Sole proprietorship bookkeeping</li>
-          <li class="included">Personal finances tracked &amp; separated</li>
-          <li class="included">Receipt digitization across all structures</li>
-          <li class="included">Year-end package prepared for your CPA</li>
-          <li class="included">Audit support — records aligned for review</li>
-          <li class="included">Priority receipt turnaround available</li>
-          <li class="not-included">CPA tax filing — quoted separately</li>
-          <li class="quote">Final price scoped after consultation — setup may affect total</li>
-        </ul>
-
-        <div class="fs-terms">
-          <div class="fs-term">
-            <div class="fs-term-label">Minimum commitment</div>
-            <div class="fs-term-value">6-month contract</div>
-          </div>
-          <div class="fs-term">
-            <div class="fs-term-label">Required access</div>
-            <div class="fs-term-value">All bank statements &amp; accounts</div>
-          </div>
-          <div class="fs-term">
-            <div class="fs-term-label">Pricing</div>
-            <div class="fs-term-value">Subject to setup requirements</div>
-          </div>
-        </div>
-
-        <a class="price-cta ghost" href="#contact" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});return false;">Book a Free Consultation</a>
-      </div>
-
-    </div>
-
-    <!-- CATCH-UP PROJECT -->
-    <div class="catchup-box">
-      <div class="catchup-left">
-        <div class="catchup-label">Behind on your books?</div>
-        <h3 class="catchup-title">That's a project,<br>not a <em style="color:var(--ss);">retainer.</em></h3>
-        <p class="catchup-body">If you haven't filed in a year — or three — the monthly plans above aren't the right fit. A catch-up is a different scope entirely. We assess how far behind you are, how many years need to be untangled, and quote the full project as a flat engagement.</p>
-        <p class="catchup-body" style="margin-top:0.75rem;">As a general guide, expect roughly a couple of months of work per year that's unfiled. Two years behind? Around 4 months. Three years, like some of our most significant cases, can mean close to a year of dedicated work. Missing documentation, mixed personal and business finances, and incomplete records can all affect the timeline. We'll tell you exactly what you're looking at in the free consultation, no surprises.</p>
-        <p class="catchup-body" style="margin-top:0.75rem;">Once your books are caught up, you move to a monthly retainer to stay current going forward.</p>
-      </div>
-      <div class="catchup-right">
-        <div class="catchup-card">
-          <div class="catchup-card-label">How a catch-up works</div>
-          <div class="catchup-steps">
-            <div class="catchup-step">
-              <div class="catchup-step-num">01</div>
-              <div>
-                <div class="catchup-step-title">Free consultation</div>
-                <div class="catchup-step-desc">We assess how many years are behind, what records exist, and what needs to be reconstructed.</div>
-              </div>
-            </div>
-            <div class="catchup-step">
-              <div class="catchup-step-num">02</div>
-              <div>
-                <div class="catchup-step-title">Flat project quote</div>
-                <div class="catchup-step-desc">You get a clear price for the full catch-up — no surprises mid-project.</div>
-              </div>
-            </div>
-            <div class="catchup-step">
-              <div class="catchup-step-num">03</div>
-              <div>
-                <div class="catchup-step-title">We do the work</div>
-                <div class="catchup-step-desc">Every year gets untangled, organized, and handed to your CPA ready to file.</div>
-              </div>
-            </div>
-            <div class="catchup-step">
-              <div class="catchup-step-num">04</div>
-              <div>
-                <div class="catchup-step-title">Move to a retainer</div>
-                <div class="catchup-step-desc">Once you're current, stay current. Never fall behind again.</div>
-              </div>
-            </div>
-          </div>
-          <a class="price-cta solid" style="margin-top:1.5rem;" href="#contact" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});return false;">Get a Catch-Up Quote</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="pricing-note">
-      <strong>Not sure which applies to you?</strong> Book a free 30-minute consultation — we'll figure it out together and quote exactly what you need. No commitment.
     </div>
   </section>
 
@@ -1373,14 +1028,10 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
         <p class="sec-p">No surprises. We'd rather you know exactly what working with Studio Side looks like before you reach out.</p>
       </div>
       <div class="faq-list">
-        <div class="faq-item"><div class="faq-q">I'm years behind — can you still help? <span class="faq-toggle">+</span></div><div class="faq-a">Yes — and it's more common than you think. Significant catch-ups aren't handled on a monthly retainer, they're scoped as a flat project. We assess everything in the free consultation — how many years, what records exist, what needs to be reconstructed — and give you a clear quote for the full project. Some take weeks, some take longer. Once you're caught up, you move to a monthly plan to stay current.</div></div>
         <div class="faq-item"><div class="faq-q">How does the weekly retainer work? <span class="faq-toggle">+</span></div><div class="faq-a">$256 CAD per week covers 8 hours of dedicated work at $32/hr. Before we start, we tell you exactly what those hours will be used for. No surprise invoices.</div></div>
-        <div class="faq-item"><div class="faq-q">Do I need to sign a long-term contract? <span class="faq-toggle">+</span></div><div class="faq-a">It depends on the plan. Basic is month-to-month — cancel anytime. Standard requires a 3-month minimum so we can actually build a reliable routine with your books. Full Service is a 6-month commitment given the complexity of managing multiple business structures. Catch-up projects are flat-quoted separately.</div></div>
+        <div class="faq-item"><div class="faq-q">Do I need to sign a long-term contract? <span class="faq-toggle">+</span></div><div class="faq-a">Not at all. One-time catch-up, a specific project, or ongoing monthly — everything is flexible. Start, pause, or stop anytime.</div></div>
         <div class="faq-item"><div class="faq-q">I'm on Vancouver Island — can I still use Studio Side? <span class="faq-toggle">+</span></div><div class="faq-a">Yes — all bookkeeping, admin, and tax services are available remotely. For document digitization, you mail your physical receipts via Canada Post and we handle everything from there. The only thing not available for VI clients is in-person drop-off.</div></div>
-        <div class="faq-item"><div class="faq-q">Why does Full Service require a 3-month contract? <span class="faq-toggle">+</span></div><div class="faq-a">Full Service involves managing books across multiple structures — corporation, sole proprietorship, and personal finances. The setup phase alone takes time: getting full access to all bank statements, building the right categorization structure, and making sure nothing is mixed. Six months ensures we can actually deliver clean, reliable results across all three. We'll walk you through exactly what's needed in your free consultation. We'll walk you through exactly what's needed in your free consultation.</div></div>
-        <div class="faq-item"><div class="faq-q">What happens if I get audited? <span class="faq-toggle">+</span></div><div class="faq-a">We've got you. If CRA reviews your file, we work directly with your CPA to organize your records exactly the way they need them for the audit. You don't have to figure out what to pull together or how to present it — that's our job. Your CPA handles all communication with CRA on your behalf.</div></div>
         <div class="faq-item"><div class="faq-q">Do I still need to find a tax person? <span class="faq-toggle">+</span></div><div class="faq-a">No. We have a network of trusted Canadian CPAs — including Liberty Tax — who handle annual tax filing for our clients. We prepare your year-end package and connect you with the right professional.</div></div>
-        <div class="faq-item"><div class="faq-q">How long does receipt digitization take? <span class="faq-toggle">+</span></div><div class="faq-a">Standard turnaround is 1 week for up to 200 receipts. If you need it faster, we offer a 48-hour fast-track option at a premium rate — just ask when you reach out and we'll quote you.</div></div>
         <div class="faq-item"><div class="faq-q">How far back can you catch up my books? <span class="faq-toggle">+</span></div><div class="faq-a">As far back as you need. We've helped clients catch up from 3 months to 3 years behind. There's no judgment — it's more common than you think.</div></div>
       </div>
     </div>
@@ -1408,17 +1059,19 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
   <!-- BC TICKER -->
   <div class="ticker bc-ticker">
     <div class="ticker-track">
-      <span class="ticker-item">Field Side</span>
+      <span class="ticker-item">Backbone Construction</span>
       <span class="ticker-item">Job-by-Job Bookkeeping</span>
       <span class="ticker-item">P&amp;L Per Project</span>
       <span class="ticker-item">Max 20 Employees</span>
       <span class="ticker-item">Canadian Companies Only</span>
+      <span class="ticker-item">Carpenter Placement</span>
       <span class="ticker-item">48hr Matching</span>
-      <span class="ticker-item">Field Side</span>
+      <span class="ticker-item">Backbone Construction</span>
       <span class="ticker-item">Job-by-Job Bookkeeping</span>
       <span class="ticker-item">P&amp;L Per Project</span>
       <span class="ticker-item">Max 20 Employees</span>
       <span class="ticker-item">Canadian Companies Only</span>
+      <span class="ticker-item">Carpenter Placement</span>
       <span class="ticker-item">48hr Matching</span>
     </div>
   </div>
@@ -1427,17 +1080,18 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
   <section class="constr-intro">
     <div class="constr-intro-inner">
       <div class="on-dark">
-        <p class="sec-tag" style="color:var(--bc);">For Construction</p>
-        <h2 class="sec-h on-dark">Field <em style="color:var(--bc);">Side</em></h2>
+        <p class="sec-tag" style="color:var(--bc);">For the Trades</p>
+        <h2 class="sec-h">Backbone <em style="color:var(--bc);">Construction</em></h2>
         <p class="sec-p" style="margin-bottom:1.5rem;">Running a small construction crew means receipts everywhere, subcontractors to pay, payroll to track, and no time to do any of it. We handle the books — then show you exactly which jobs are making you money.</p>
         <p class="sec-p">Available to Canadian construction companies with up to 20 employees. BC focus.</p>
-        <a class="btn-solid" href="#bc-contact" style="margin-top:2rem;">Get a Construction Quote →</a>
+        <a class="slide-cta" href="#bc-contact" style="margin-top:2rem;background:var(--bc);color:#fff;display:inline-flex;align-items:center;gap:.6rem;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.9rem 2.2rem;text-decoration:none;border-radius:2px;">Get a Construction Quote →</a>
       </div>
       <div>
         <div class="ci-stat-grid">
           <div class="ci-stat"><div class="ci-stat-val">20</div><div class="ci-stat-label">Max employees — we stay small so we stay focused</div></div>
           <div class="ci-stat"><div class="ci-stat-val">🇨🇦</div><div class="ci-stat-label">Canadian companies only — no exceptions</div></div>
           <div class="ci-stat"><div class="ci-stat-val">P&amp;L</div><div class="ci-stat-label">Per-project analysis — when we manage your books</div></div>
+          <div class="ci-stat"><div class="ci-stat-val">48h</div><div class="ci-stat-label">Typical carpenter placement turnaround</div></div>
         </div>
       </div>
     </div>
@@ -1508,38 +1162,31 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
     </div>
   </section>
 
-  <!-- BC TAX PARTNER -->
-  <section class="sec" id="bc-tax" style="background:var(--white);">
-    <div class="partner-grid">
-      <div>
-        <p class="sec-tag" style="color:var(--ss);">Tax Professional Network</p>
-        <h2 class="sec-h" style="color:var(--ink);">We do the books.<br>Our CPA partners <em style="color:var(--ss);">file your taxes.</em></h2>
-        <p class="sec-p" style="margin-bottom:1rem;">Construction businesses have specific tax obligations — T2 corporate returns, GST/HST annual filings, WCB reconciliation, holdback accounting. Our CPA network knows the trades inside out and handles it all using the clean books we built for you.</p>
-        <p class="sec-p">One relationship. Full compliance. No scrambling at year-end.</p>
-        <div class="partner-flow">
-          <div class="pf-step"><div class="pf-badge us">Backbone</div><div><div class="pf-title">We keep your books clean all year</div><div class="pf-desc">Job-by-job categorization, payroll records, subcontractor tracking — always CRA-ready.</div></div></div>
-          <div class="pf-step"><div class="pf-badge us">Backbone</div><div><div class="pf-title">We prepare your year-end package</div><div class="pf-desc">Income, expenses, payroll summaries — clean and ready for your CPA to file without back-and-forth.</div></div></div>
-          <div class="pf-step"><div class="pf-badge them">CPA Partner</div><div><div class="pf-title">They file your annual return</div><div class="pf-desc">T2 corporate return, GST/HST annual filing, WCB reconciliation — handled by licensed professionals.</div></div></div>
-          <div class="pf-step"><div class="pf-badge them">CPA Partner</div><div><div class="pf-title">You stay 100% CRA compliant</div><div class="pf-desc">Filed correctly and on time. No penalties, no missed deadlines.</div></div></div>
+  <!-- TALENT POOL -->
+  <section class="talent-section" id="talent">
+    <div class="talent-inner">
+      <div class="on-dark">
+        <p class="sec-tag" style="color:var(--bc);">Construction Staffing</p>
+        <h2 class="sec-h">Need a carpenter<br>or crew member?<br><em style="color:var(--bc);">We have them.</em></h2>
+        <p class="sec-p" style="margin-bottom:0;">We maintain an active pool of vetted Canadian construction workers — ready to place. No job boards, no weeks of waiting.</p>
+        <div class="talent-why">
+          <div class="tw"><div class="tw-num">01</div><div><div class="tw-title">Pre-screened workers</div><div class="tw-desc">Experience, references, and eligibility to work in Canada verified before we send anyone your way.</div></div></div>
+          <div class="tw"><div class="tw-num">02</div><div><div class="tw-title">Fast placement — typically 48 hours</div><div class="tw-desc">Our pool is active. When you need someone, we move — not in weeks, in days.</div></div></div>
+          <div class="tw"><div class="tw-num">03</div><div><div class="tw-title">Admin handled on our end</div><div class="tw-desc">Once you hire through us, we manage the bookkeeping side of onboarding that worker.</div></div></div>
         </div>
       </div>
-      <div class="partner-card">
-        <div class="pc-top">
-          <div class="pc-icon">🤝</div>
-          <div>
-            <div class="pc-name">Our Tax Network</div>
-            <div class="pc-sub">Vetted CPAs · Canada · incl. Liberty Tax</div>
-          </div>
+      <div class="talent-card">
+        <div class="tc-lbl">Active Talent Pool</div>
+        <div class="tc-roles">
+          <div class="tc-role"><div class="tc-role-icon">🔨</div><div class="tc-role-body"><div class="tc-role-title">Carpenters</div><div class="tc-role-desc">Rough &amp; finish, framing, formwork, cabinetry</div></div><div class="tc-badge">Available</div></div>
+          <div class="tc-role"><div class="tc-role-icon">🪚</div><div class="tc-role-body"><div class="tc-role-title">Framers</div><div class="tc-role-desc">Wood frame, steel stud, residential &amp; commercial</div></div><div class="tc-badge">Available</div></div>
+          <div class="tc-role"><div class="tc-role-icon">🏗️</div><div class="tc-role-body"><div class="tc-role-title">General Labour</div><div class="tc-role-desc">Site prep, demo, materials handling, cleanup</div></div><div class="tc-badge">Available</div></div>
+          <div class="tc-role"><div class="tc-role-icon">🪟</div><div class="tc-role-body"><div class="tc-role-title">Finish Carpenters</div><div class="tc-role-desc">Trim, moulding, doors, stairs, custom millwork</div></div><div class="tc-badge">Available</div></div>
         </div>
-        <div class="pc-points">
-          <div class="pc-row"><span class="pc-check">✦</span><span>T2 corporate income tax returns</span></div>
-          <div class="pc-row"><span class="pc-check">✦</span><span>GST/HST annual return filing</span></div>
-          <div class="pc-row"><span class="pc-check">✦</span><span>WCB/WSBC annual reconciliation</span></div>
-          <div class="pc-row"><span class="pc-check">✦</span><span>Payroll year-end — T4s and ROEs</span></div>
-          <div class="pc-row"><span class="pc-check">✦</span><span>CRA representation if you're ever reviewed</span></div>
-          <div class="pc-row"><span class="pc-check">✦</span><span>Seamless handoff — no re-explaining your finances</span></div>
+        <div class="tc-cta">
+          <p class="tc-cta-text">Tell us what you need and we'll match you within <strong>48 hours.</strong></p>
+          <a href="#bc-contact" class="sh-cta" style="background:var(--bc);color:#fff;width:100%;justify-content:center;">Request a Worker →</a>
         </div>
-        <div class="pc-note"><strong>The result:</strong> your books and taxes handled by one coordinated team — nothing falls through the cracks at year-end.</div>
       </div>
     </div>
   </section>
@@ -1549,7 +1196,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
     <span class="cl-icon">🇨🇦</span>
     <div>
       <div class="cl-title">Canadian companies only · Maximum 20 employees</div>
-      <div class="cl-sub">Field Side is designed specifically for small Canadian operations. We keep our focus tight so we can serve you well.</div>
+      <div class="cl-sub">Backbone Construction is designed specifically for small Canadian operations. We keep our focus tight so we can serve you well.</div>
     </div>
   </div>
 
@@ -1557,9 +1204,9 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
   <section class="cta-section bc-cta" id="bc-contact">
     <div class="cta-bg">Build</div>
     <div class="cta-inner">
-      <p class="sec-tag" style="color:rgba(45,106,143,0.9);justify-content:center;margin-bottom:1rem;">Field Side</p>
-      <h2 class="cta-h">Let's talk about <em>your books.</em></h2>
-      <p class="cta-p">Free consultation for construction clients. We'll scope your bookkeeping needs, show you what per-project P&amp;L analysis looks like, and connect you with the right CPA for your year-end filing.</p>
+      <p class="sec-tag" style="color:rgba(230,126,34,0.7);justify-content:center;margin-bottom:1rem;">Backbone Construction</p>
+      <h2 class="cta-h">Let's talk about <em>your books</em><br>and your next hire.</h2>
+      <p class="cta-p">Free consultation for construction clients. We'll scope your bookkeeping needs and check the talent pool for your open roles — one conversation.</p>
       <div class="cta-btns">
         <a class="btn-white" href="mailto:construction@thebackbone.ca">Email Construction Team</a>
         <a class="btn-outline-white" href="tel:+1">Book a Free Call</a>
@@ -1577,10 +1224,10 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
   <div class="footer-top">
     <div class="footer-brand">
       <a class="f-logo" href="#">The <em>Backbone</em></a>
-      <p class="f-tagline">Bookkeeping, admin, and staffing services for Canadian creatives and construction companies (Field Side). Vancouver · Vancouver Island · BC.</p>
+      <p class="f-tagline">Bookkeeping, admin, and staffing services for Canadian creatives and construction companies. Vancouver · Vancouver Island · BC.</p>
       <div class="f-badges">
-        <span class="f-badge ss active" id="badgeSS" onclick="activatePanel(0);window.scrollTo({top:0});">Studio Side</span>
-        <span class="f-badge bc" id="badgeBC" onclick="activatePanel(1);window.scrollTo({top:0});">Field Side</span>
+        <span class="f-badge ss">Studio Side</span>
+        <span class="f-badge bc">Construction</span>
       </div>
     </div>
     <div class="footer-col">
@@ -1594,11 +1241,11 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
       </ul>
     </div>
     <div class="footer-col">
-      <h4>Field Side</h4>
+      <h4>Construction</h4>
       <ul>
-        <li><a href="#" onclick="activatePanel(1);setTimeout(()=>{document.getElementById('bc-services').scrollIntoView({behavior:'smooth'})},100);return false;">Construction Bookkeeping</a></li>
-        <li><a href="#" onclick="activatePanel(1);setTimeout(()=>{document.getElementById('pl-analysis').scrollIntoView({behavior:'smooth'})},100);return false;">P&amp;L Per Project</a></li>
-        <li><a href="#" onclick="activatePanel(1);setTimeout(()=>{document.getElementById('bc-tax').scrollIntoView({behavior:'smooth'})},100);return false;">Tax Filing via CPA Network</a></li>
+        <li><a href="#bc-services">Construction Bookkeeping</a></li>
+        <li><a href="#pl-analysis">P&amp;L Per Project</a></li>
+        <li><a href="#talent">Carpenter Placement</a></li>
         <li><a href="#bc-contact">Get a Quote</a></li>
       </ul>
     </div>
@@ -1606,7 +1253,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
       <h4>Company</h4>
       <ul>
         <li><a href="#studio-side">Studio Side</a></li>
-        <li><a href="#construction-side">Field Side</a></li>
+        <li><a href="#construction-side">Backbone Construction</a></li>
         <li><a href="mailto:hello@thebackbone.ca">hello@thebackbone.ca</a></li>
         <li><a href="#">Privacy Policy</a></li>
       </ul>
@@ -1614,93 +1261,116 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
   </div>
   <div class="footer-bottom">
     <p class="f-copy">© 2026 The Backbone Ops & Design Inc. · Vancouver, BC, Canada 🍁</p>
-    <div class="f-socials">
-      <a class="f-social" href="https://instagram.com/thebackboneca" target="_blank" rel="noopener" title="Instagram">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
-      </a>
-      <a class="f-social" href="https://linkedin.com/company/thebackboneca" target="_blank" rel="noopener" title="LinkedIn">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-      </a>
-      <a class="f-social" href="https://youtube.com/@thebackboneca" target="_blank" rel="noopener" title="YouTube">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.96-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/></svg>
-      </a>
-      <a class="f-social" href="https://facebook.com/thebackboneca" target="_blank" rel="noopener" title="Facebook">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-      </a>
-      <a class="f-social" href="https://tiktok.com/@thebackboneca" target="_blank" rel="noopener" title="TikTok">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.17 8.17 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg>
-      </a>
-    </div>
-    <p class="f-copy">Studio Side · Field Side</p>
+    <p class="f-copy">Studio Side · Backbone Construction</p>
   </div>
 </footer>
 
 
 <script>
+// ── SLIDER ──
+let current = 0;
+let autoTimer = null;
+const DURATION = 5000;
+
+const track  = document.getElementById('sliderTrack');
+const slider = document.getElementById('heroSlider');
+const nav    = document.querySelector('nav');
+const counter = document.getElementById('slideCounter');
+const slides = document.querySelectorAll('.slide');
+const dots   = document.querySelectorAll('.slider-dot');
+const tabs   = document.querySelectorAll('.slider-tab');
+const fills  = document.querySelectorAll('.slider-tab-fill');
 const panels = document.querySelectorAll('.panel');
 
-function activatePanel(n) {
-  panels.forEach(p => {
-    p.classList.remove('active', 'entering');
-    p.style.display = 'none';
+function goToSlide(n) {
+  if (n === current) return;
+
+  slides[current].classList.remove('active');
+  dots[current].classList.remove('active');
+  tabs[current].classList.remove('active');
+  fills[current].style.transition = 'none';
+  fills[current].style.width = '0%';
+  panels[current].classList.remove('active','entering');
+  panels[current].style.display = 'none';
+
+  current = n;
+
+  slides[current].classList.add('active');
+  dots[current].classList.add('active');
+  tabs[current].classList.add('active');
+  panels[current].style.display = 'block';
+  panels[current].classList.remove('active');
+  panels[current].classList.add('entering');
+  panels[current].addEventListener('animationend', function h() {
+    panels[current].classList.remove('entering');
+    panels[current].classList.add('active');
+    panels[current].removeEventListener('animationend', h);
   });
-  panels[n].style.display = 'block';
-  panels[n].classList.add('entering');
-  panels[n].addEventListener('animationend', function h() {
-    panels[n].classList.remove('entering');
-    panels[n].classList.add('active');
-    panels[n].removeEventListener('animationend', h);
-  });
-  document.body.classList.add('panel-active');
-  const nav = document.querySelector('nav');
-  if (n === 0) {
+
+  if (current === 0) {
+    track.classList.remove('show-bc');
+    slider.classList.remove('on-bc');
     nav.classList.remove('on-bc');
-    document.body.classList.remove('on-construction');
   } else {
+    track.classList.add('show-bc');
+    slider.classList.add('on-bc');
     nav.classList.add('on-bc');
-    document.body.classList.add('on-construction');
   }
-  const bSS = document.getElementById('badgeSS');
-  const bBC = document.getElementById('badgeBC');
-  if (n === 0) {
-    bSS && bSS.classList.add('active');
-    bBC && bBC.classList.remove('active');
-  } else {
-    bBC && bBC.classList.add('active');
-    bSS && bSS.classList.remove('active');
-  }
-  setTimeout(() => {
-    const t = n === 0 ? document.getElementById('studio-side') : document.getElementById('construction-side');
-    if (t) t.scrollIntoView({ behavior: 'smooth' });
-  }, 150);
+
+  counter.textContent = (current+1).toString().padStart(2,'0') + ' / 02';
+
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    fills[current].style.transition = 'width '+(DURATION/1000)+'s linear';
+    fills[current].style.width = '100%';
+  }));
+
+  window.scrollTo({ top: 0, behavior: 'instant' });
+  clearTimeout(autoTimer);
+  autoTimer = setTimeout(nextSlide, DURATION + 2000);
 }
 
-// hide panels on load
-panels.forEach(p => { p.style.display = 'none'; p.classList.remove('active'); });
+function nextSlide() { goToSlide((current + 1) % 2); }
+function prevSlide()  { goToSlide(current === 0 ? 1 : 0); }
+function manualNext() { clearTimeout(autoTimer); nextSlide(); }
+function manualPrev() { clearTimeout(autoTimer); prevSlide(); }
 
-// ── BACK color switcher ──
-const brandEm = document.querySelector('.split-brand em');
-const rectColors = {
-  r1: '#6392b6',
-  r2: '#f4f1e8',
-  r3: '#ffc700',
-  r4: '#7a976b',
-  r5: '#e8e8e8'
-};
-const defaultColor = '#6392b6';
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight') manualNext();
+  if (e.key === 'ArrowLeft')  manualPrev();
+});
 
-if (brandEm) {
-  document.querySelectorAll('.split-rect').forEach(rect => {
-    const cls = Array.from(rect.classList).find(c => /^r\d$/.test(c));
-    rect.addEventListener('mouseenter', () => {
-      brandEm.style.color = rectColors[cls] || defaultColor;
-    });
-    rect.addEventListener('mouseleave', () => {
-      brandEm.style.color = defaultColor;
-    });
-  });
-}
+let touchStartX = 0;
+slider.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, {passive:true});
+slider.addEventListener('touchend', e => {
+  const diff = touchStartX - e.changedTouches[0].clientX;
+  if (Math.abs(diff) > 50) diff > 0 ? manualNext() : manualPrev();
+});
 
+slider.addEventListener('mouseenter', () => clearTimeout(autoTimer));
+slider.addEventListener('mouseleave', () => { autoTimer = setTimeout(nextSlide, DURATION); });
+
+document.querySelectorAll('.slide-cta, .panel a[href^="#"]').forEach(a => {
+  a.addEventListener('click', () => clearTimeout(autoTimer));
+});
+
+// ── BOOT: set slide 0 visible without triggering goToSlide guard ──
+slides[0].classList.add('active');
+dots[0].classList.add('active');
+tabs[0].classList.add('active');
+panels[0].classList.add('active');
+panels[0].style.display = 'block';
+panels[1].style.display = 'none';
+requestAnimationFrame(() => requestAnimationFrame(() => {
+  fills[0].style.transition = 'width '+(DURATION/1000)+'s linear';
+  fills[0].style.width = '100%';
+}));
+autoTimer = setTimeout(nextSlide, DURATION);
+</script>
+
+
+
+
+<script>
 // FAQ accordion
 document.querySelectorAll('.faq-q').forEach(q => {
   q.addEventListener('click', () => {
@@ -1711,10 +1381,5 @@ document.querySelectorAll('.faq-q').forEach(q => {
   });
 });
 </script>
-
-
-
-
-
 </body>
 </html>
