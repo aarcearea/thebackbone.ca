@@ -682,15 +682,15 @@ footer { background: var(--ink); padding: 4rem 4rem 2.5rem; }
 <nav>
   <a class="nav-logo" href="#">The <em>Backbone</em></a>
   <ul class="nav-links">
-    <li><a class="ss-link" href="#studio-side">Studio Side</a></li>
-    <li><a class="ss-link" href="#ss-services">SS Services</a></li>
-    <li><a class="ss-link" href="#ss-how">How It Works</a></li>
+    <li><a class="ss-link" href="#" onclick="goToSlide(0);window.scrollTo({top:0});return false;">Studio Side</a></li>
+    <li><a class="ss-link" href="#" onclick="goToSlide(0);setTimeout(()=>{document.getElementById('ss-services').scrollIntoView({behavior:'smooth'})},100);return false;">SS Services</a></li>
+    <li><a class="ss-link" href="#" onclick="goToSlide(0);setTimeout(()=>{document.getElementById('ss-how').scrollIntoView({behavior:'smooth'})},100);return false;">How It Works</a></li>
     <div class="nav-divider"></div>
-    <li><a class="bc-link" href="#construction-side">Construction</a></li>
-    <li><a class="bc-link" href="#pl-analysis">P&amp;L Analysis</a></li>
-    <li><a class="bc-link" href="#talent">Hiring Pool</a></li>
+    <li><a class="bc-link" href="#" onclick="goToSlide(1);window.scrollTo({top:0});return false;">Construction</a></li>
+    <li><a class="bc-link" href="#" onclick="goToSlide(1);setTimeout(()=>{document.getElementById('pl-analysis').scrollIntoView({behavior:'smooth'})},100);return false;">P&amp;L Analysis</a></li>
+    <li><a class="bc-link" href="#" onclick="goToSlide(1);setTimeout(()=>{document.getElementById('talent').scrollIntoView({behavior:'smooth'})},100);return false;">Hiring Pool</a></li>
   </ul>
-  <a class="nav-cta" href="#contact">Get a Quote</a>
+  <a class="nav-cta" href="#" onclick="goToSlide(0);setTimeout(()=>{document.getElementById('contact').scrollIntoView({behavior:'smooth'})},100);return false;">Get a Quote</a>
 </nav>
 
 <!-- HERO SLIDER -->
@@ -723,7 +723,7 @@ footer { background: var(--ink); padding: 4rem 4rem 2.5rem; }
           <span class="slide-pill">$256 / week</span>
         </div>
         <div class="slide-actions">
-          <a class="slide-cta" href="#studio-side">Explore Studio Side →</a>
+          <a class="slide-cta" href="#" onclick="goToSlide(0);setTimeout(()=>{document.getElementById('studio-side').scrollIntoView({behavior:'smooth'})},100);return false;">Explore Studio Side →</a>
           <span class="slide-geo">Vancouver · Vancouver Island · Remote</span>
         </div>
       </div>
@@ -744,7 +744,7 @@ footer { background: var(--ink); padding: 4rem 4rem 2.5rem; }
           <span class="slide-pill">Max 20 Employees</span>
         </div>
         <div class="slide-actions">
-          <a class="slide-cta" href="#construction-side">Explore Construction →</a>
+          <a class="slide-cta" href="#" onclick="goToSlide(1);setTimeout(()=>{document.getElementById('construction-side').scrollIntoView({behavior:'smooth'})},100);return false;">Explore Construction →</a>
           <span class="slide-geo">Canadian Companies Only · BC Focus</span>
         </div>
       </div>
@@ -754,12 +754,12 @@ footer { background: var(--ink); padding: 4rem 4rem 2.5rem; }
 
   <!-- controls -->
   <div class="slider-controls">
-    <button class="slider-btn prev" onclick="prevSlide()" aria-label="Previous">←</button>
+    <button class="slider-btn prev" onclick="manualPrev()" aria-label="Previous">←</button>
     <div class="slider-dots">
       <button class="slider-dot ss-dot active" onclick="goToSlide(0)" aria-label="Studio Side"></button>
       <button class="slider-dot bc-dot" onclick="goToSlide(1)" aria-label="Construction"></button>
     </div>
-    <button class="slider-btn next" onclick="nextSlide()" aria-label="Next">→</button>
+    <button class="slider-btn next" onclick="manualNext()" aria-label="Next">→</button>
   </div>
 
 </div><!-- /hero-slider -->
@@ -1272,47 +1272,41 @@ let current = 0;
 let autoTimer = null;
 const DURATION = 5000;
 
-const track    = document.getElementById('sliderTrack');
-const slider   = document.getElementById('heroSlider');
-const nav      = document.querySelector('nav');
-const counter  = document.getElementById('slideCounter');
-const slides   = document.querySelectorAll('.slide');
-const dots     = document.querySelectorAll('.slider-dot');
-const tabs     = document.querySelectorAll('.slider-tab');
-const fills    = document.querySelectorAll('.slider-tab-fill');
-const panels   = document.querySelectorAll('.panel');
+const track  = document.getElementById('sliderTrack');
+const slider = document.getElementById('heroSlider');
+const nav    = document.querySelector('nav');
+const counter = document.getElementById('slideCounter');
+const slides = document.querySelectorAll('.slide');
+const dots   = document.querySelectorAll('.slider-dot');
+const tabs   = document.querySelectorAll('.slider-tab');
+const fills  = document.querySelectorAll('.slider-tab-fill');
+const panels = document.querySelectorAll('.panel');
 
 function goToSlide(n) {
-  // deactivate old slide
+  if (n === current) return;
+
   slides[current].classList.remove('active');
   dots[current].classList.remove('active');
   tabs[current].classList.remove('active');
   fills[current].style.transition = 'none';
   fills[current].style.width = '0%';
-
-  // hide old panel
-  panels[current].classList.remove('active', 'entering');
+  panels[current].classList.remove('active','entering');
   panels[current].style.display = 'none';
 
   current = n;
 
-  // activate new slide
   slides[current].classList.add('active');
   dots[current].classList.add('active');
   tabs[current].classList.add('active');
-
-  // show new panel with animation
   panels[current].style.display = 'block';
   panels[current].classList.remove('active');
   panels[current].classList.add('entering');
-  // after animation ends, swap classes
-  panels[current].addEventListener('animationend', function handler() {
+  panels[current].addEventListener('animationend', function h() {
     panels[current].classList.remove('entering');
     panels[current].classList.add('active');
-    panels[current].removeEventListener('animationend', handler);
+    panels[current].removeEventListener('animationend', h);
   });
 
-  // move hero track
   if (current === 0) {
     track.classList.remove('show-bc');
     slider.classList.remove('on-bc');
@@ -1323,53 +1317,54 @@ function goToSlide(n) {
     nav.classList.add('on-bc');
   }
 
-  // update counter
-  counter.textContent = (current + 1).toString().padStart(2,'0') + ' / 02';
+  counter.textContent = (current+1).toString().padStart(2,'0') + ' / 02';
 
-  // restart fill animation
-  requestAnimationFrame(() => {
-    requestAnimationFrame(() => {
-      fills[current].style.transition = 'width ' + (DURATION/1000) + 's linear';
-      fills[current].style.width = '100%';
-    });
-  });
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    fills[current].style.transition = 'width '+(DURATION/1000)+'s linear';
+    fills[current].style.width = '100%';
+  }));
 
-  // scroll to top of content smoothly
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-
-  // restart auto
+  window.scrollTo({ top: 0, behavior: 'instant' });
   clearTimeout(autoTimer);
-  autoTimer = setTimeout(nextSlide, DURATION);
+  autoTimer = setTimeout(nextSlide, DURATION + 2000);
 }
 
 function nextSlide() { goToSlide((current + 1) % 2); }
-function prevSlide()  { goToSlide((current + 1) % 2 === 0 ? 1 : 0); }
+function prevSlide()  { goToSlide(current === 0 ? 1 : 0); }
+function manualNext() { clearTimeout(autoTimer); nextSlide(); }
+function manualPrev() { clearTimeout(autoTimer); prevSlide(); }
 
-// Keyboard
 document.addEventListener('keydown', e => {
-  if (e.key === 'ArrowRight') nextSlide();
-  if (e.key === 'ArrowLeft')  prevSlide();
+  if (e.key === 'ArrowRight') manualNext();
+  if (e.key === 'ArrowLeft')  manualPrev();
 });
 
-// Touch swipe
 let touchStartX = 0;
-slider.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+slider.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, {passive:true});
 slider.addEventListener('touchend', e => {
   const diff = touchStartX - e.changedTouches[0].clientX;
-  if (Math.abs(diff) > 50) diff > 0 ? nextSlide() : prevSlide();
+  if (Math.abs(diff) > 50) diff > 0 ? manualNext() : manualPrev();
 });
 
-// Pause on hover
 slider.addEventListener('mouseenter', () => clearTimeout(autoTimer));
 slider.addEventListener('mouseleave', () => { autoTimer = setTimeout(nextSlide, DURATION); });
 
-// Stop auto when user deliberately navigates into a section
 document.querySelectorAll('.slide-cta, .panel a[href^="#"]').forEach(a => {
   a.addEventListener('click', () => clearTimeout(autoTimer));
 });
 
-// Boot
-goToSlide(0);
+// ── BOOT: set slide 0 visible without triggering goToSlide guard ──
+slides[0].classList.add('active');
+dots[0].classList.add('active');
+tabs[0].classList.add('active');
+panels[0].classList.add('active');
+panels[0].style.display = 'block';
+panels[1].style.display = 'none';
+requestAnimationFrame(() => requestAnimationFrame(() => {
+  fills[0].style.transition = 'width '+(DURATION/1000)+'s linear';
+  fills[0].style.width = '100%';
+}));
+autoTimer = setTimeout(nextSlide, DURATION);
 </script>
 
 
