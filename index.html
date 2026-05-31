@@ -724,6 +724,7 @@ nav.on-bc .nav-cta { background: var(--bc); }
 .pf-step:last-child { border-bottom: none; }
 .pf-badge { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.3rem 0.7rem; flex-shrink: 0; white-space: nowrap; }
 .pf-badge.us { background: var(--ink); color: var(--ss); }
+.pf-badge.us-direct { background: var(--bc); color: #fff; }
 .pf-badge.them { background: rgba(99,146,182,0.15); color: #6392B6; border: 1px solid rgba(99,146,182,0.3); }
 .pf-title { font-size: 0.88rem; font-weight: 700; color: var(--ink); margin-bottom: 0.2rem; }
 .pf-desc { font-family: 'Outfit', sans-serif; font-size: 0.8rem; line-height: 1.6; color: var(--mist); }
@@ -1244,6 +1245,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
 /* ── WHY SECTION VIDEO ── */
 .why-left { position: relative; }
 .why-video-wrap {
+  width: 100%;
   position: relative; width: 100%; margin-top: 2rem;
   aspect-ratio: 16/9; background: var(--ink);
   border-radius: 2px; overflow: hidden;
@@ -1349,6 +1351,65 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
 .ts-price-note-box strong { color: rgba(255,255,255,0.75); }
 @media (max-width: 1024px) { .ts-pricing-grid { grid-template-columns: 1fr; } }
 
+
+/* ── PL DEMO TOGGLE ── */
+.pl-toggle {
+  display: flex; gap: 0; margin-bottom: 1.5rem;
+  border: 1px solid var(--border); width: fit-content;
+}
+.pl-toggle-btn {
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 0.5rem 1.1rem; cursor: pointer; border: none; background: transparent;
+  color: var(--mist); transition: background 0.2s, color 0.2s;
+}
+.pl-toggle-btn.active { background: var(--bc); color: #fff; }
+.pl-view { display: none; }
+.pl-view.active { display: block; }
+
+/* Detail report mock */
+.pl-report {
+  background: var(--white); border: 1px solid var(--border);
+  overflow: hidden;
+}
+.pl-report-header {
+  background: var(--bc); padding: 1rem 1.4rem;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.pl-report-title { font-family: 'Fraunces', serif; font-size: 1rem; font-weight: 700; color: #fff; }
+.pl-report-sub { font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+.pl-report-meta { font-size: 0.65rem; color: rgba(255,255,255,0.6); font-family: 'Outfit', sans-serif; text-align: right; }
+.pl-report-table { width: 100%; border-collapse: collapse; }
+.pl-report-table th {
+  font-size: 0.6rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--mist); padding: 0.75rem 1.4rem; text-align: left;
+  border-bottom: 2px solid var(--border); background: var(--light);
+}
+.pl-report-table th:not(:first-child) { text-align: right; }
+.pl-report-table td {
+  padding: 0.6rem 1.4rem; font-size: 0.82rem; font-family: 'Outfit', sans-serif;
+  border-bottom: 1px solid var(--border); color: var(--ink);
+}
+.pl-report-table td:not(:first-child) { text-align: right; font-family: 'Fraunces', serif; font-size: 0.88rem; }
+.pl-report-table tr:last-child td { border-bottom: none; }
+.pl-report-table .cat-row td { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mist); background: var(--light); padding: 0.4rem 1.4rem; }
+.pl-report-table .total-row td { font-weight: 700; background: rgba(122,151,107,0.08); border-top: 2px solid var(--bc); }
+.pl-report-table .total-row td:not(:first-child) { color: var(--bc); }
+.pl-report-table .neg { color: #dc2626 !important; }
+.pl-report-footer {
+  padding: 0.75rem 1.4rem; background: var(--light); border-top: 1px solid var(--border);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.pl-report-footer-note { font-size: 0.65rem; color: var(--mist); font-family: 'Outfit', sans-serif; }
+.pl-report-footer-badge {
+  font-size: 0.6rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  background: var(--bc); color: #fff; padding: 0.2rem 0.6rem;
+}
+.pl-format-note {
+  margin-top: 0.75rem; font-family: 'Outfit', sans-serif; font-size: 0.75rem;
+  color: var(--mist); display: flex; align-items: center; gap: 0.5rem;
+}
+.pl-format-note::before { content: '↳'; color: var(--bc); font-weight: 700; }
+
 </style>
 </head>
 <body>
@@ -1360,7 +1421,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
     <li><a class="ss-link" href="#" onclick="goToSlide(0);window.scrollTo({top:0});return false;">Studio Side</a></li>
     <li><a class="ss-link" href="#" onclick="goToSlide(0);setTimeout(()=>{document.getElementById('ss-how').scrollIntoView({behavior:'smooth'})},100);return false;">How It Works</a></li>
     <li><a class="ss-link" href="#" onclick="goToSlide(0);setTimeout(()=>{document.getElementById('digitization').scrollIntoView({behavior:'smooth'})},100);return false;">Digitization</a></li>
-    <li><a class="ss-link" href="#" onclick="goToSlide(0);setTimeout(()=>{document.getElementById('pricing').scrollIntoView({behavior:'smooth'})},100);return false;">Pricing</a></li>
+    <li><a class="ss-link" href="#" onclick="goToSlide(0);setTimeout(()=>{document.getElementById('pricing').scrollIntoView({behavior:'smooth'})},100);return false;">Bookkeeping Pricing</a></li>
     <div class="nav-divider"></div>
     <li><a class="bc-link" href="#" onclick="goToSlide(1);window.scrollTo({top:0});return false;">Trade Side</a></li>
     <li><a class="bc-link" href="#" onclick="goToSlide(1);setTimeout(()=>{document.getElementById('pl-analysis').scrollIntoView({behavior:'smooth'})},100);return false;">P&amp;L Analysis</a></li>
@@ -1409,7 +1470,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
         <p class="slide-tag">For Creatives</p>
         <h1 class="slide-subbrand">Studio<br><em>Side</em></h1>
         <p class="slide-parent">by The Backbone</p>
-        <p class="slide-body">Bookkeeping, admin support, and tax filing for artists, influencers, and first-time Canadian entrepreneurs. Vancouver &amp; Vancouver Island.</p>
+        <p class="slide-body">Bookkeeping and admin support for artists, influencers, and first-time Canadian entrepreneurs. Vancouver &amp; Vancouver Island.</p>
         <div class="slide-pills">
           <a class="slide-pill" href="#" onclick="goToSlide(0);setTimeout(()=>{document.getElementById('who-artists').scrollIntoView({behavior:'smooth',block:'center'})},120);return false;">Artists &amp; Makers</a>
           <a class="slide-pill" href="#" onclick="goToSlide(0);setTimeout(()=>{document.getElementById('who-influencers').scrollIntoView({behavior:'smooth',block:'center'})},120);return false;">Influencers</a>
@@ -1531,20 +1592,6 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
         <h2 class="sec-h" style="color:var(--ink);">We get how<br>creatives <em style="color:var(--ss);">actually work.</em></h2>
         <p class="sec-p" style="margin-bottom:1.5rem;">Receipts in bags. Invoices in email threads. Personal and business accounts mixed together. Income that comes in waves — feast one month, nothing the next. That's not disorganization. That's just how creative work flows.</p>
         <p class="sec-p" style="margin-bottom:2rem;">Studio Side was built for exactly this. We don't need your books to be perfect before we start. We start where you are.</p>
-        <!-- VIDEO PLACEHOLDER — replace src with real URL when ready -->
-        <div class="why-video-wrap">
-          <div class="why-video-placeholder">
-            <div class="wvp-coming">Coming soon</div>
-            <div class="wvp-play">
-              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
-            </div>
-            <div class="wvp-title">How Studio Side works</div>
-            <div class="wvp-label">2-minute explainer</div>
-            <div class="wvp-duration">Drop your video URL in the src attribute below</div>
-          </div>
-          <!-- When ready: uncomment and add your YouTube/Vimeo/Loom URL -->
-          <!-- <iframe src="YOUR_VIDEO_EMBED_URL" allowfullscreen></iframe> -->
-        </div>
       </div>
       <div class="why-cards">
         <div class="why-card"><div class="wc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6l9-4 9 4v6c0 5-4 9-9 10C7 21 3 17 3 12V6z"/><path d="M9 12l2 2 4-4"/></svg></div><div><div class="wc-title">Messy books are our starting point</div><div class="wc-body">Receipts in a bag, mixed accounts, months behind — we've seen it all and we never judge. We just get to work.</div></div></div>
@@ -1552,6 +1599,20 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
         <div class="why-card"><div class="wc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><div class="wc-title">Works around your schedule</div><div class="wc-body">Busy season, slow season, one-time catch-up or ongoing — we fit into your life, not the other way around. No contracts, no lock-in.</div></div></div>
         <div class="why-card"><div class="wc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l4-4h10l4 4-2 4 2 4H5l2-4z"/><line x1="12" y1="13" x2="12" y2="22"/></svg></div><div><div class="wc-title">Built for Canadian self-employment</div><div class="wc-body">GST/HST, T2125, CRA deadlines, sole proprietor filings — we know the rules for self-employed Canadians inside out.</div></div></div>
       </div>
+    </div>
+    <!-- VIDEO PLACEHOLDER — replace src with real URL when ready -->
+    <div class="why-video-wrap" style="margin-top:2.5rem;">
+      <div class="why-video-placeholder">
+        <div class="wvp-coming">Coming soon</div>
+        <div class="wvp-play">
+          <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+        </div>
+        <div class="wvp-title">How Studio Side works</div>
+        <div class="wvp-label">2-minute explainer</div>
+        <div class="wvp-duration">Drop your YouTube, Vimeo, or Loom URL in the src attribute below when ready</div>
+      </div>
+      <!-- When ready: replace the placeholder div above with: -->
+      <!-- <iframe src="YOUR_VIDEO_EMBED_URL" allowfullscreen style="width:100%;height:100%;border:none;"></iframe> -->
     </div>
   </section>
 
@@ -1686,6 +1747,191 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
     </div>
   </section>
 
+  <!-- PRICING -->
+  <section class="sec" id="pricing" style="background:var(--light);">
+    <p class="sec-tag" style="color:var(--ss);">Bookkeeping Pricing</p>
+    <h2 class="sec-h" style="color:var(--ink);margin-bottom:0.5rem;">Simple, honest <em style="color:var(--ss);">pricing.</em></h2>
+    <p class="sec-p" style="max-width:580px;margin-bottom:0.75rem;">All monthly plans are ongoing retainers — we show up every week, keep your books current, and you always know what it costs. CPA tax filing is quoted separately through our partner network.</p>
+
+    <div class="pricing-track-label">
+      <span class="ptl-tag">Monthly Retainers</span>
+      <span class="ptl-note">Basic: month-to-month · Standard: 3-month min · Full Service: 6-month min</span>
+      <span class="ptl-note" style="color:var(--ss);font-weight:700;">All prices exclude GST (5%)</span>
+    </div>
+
+    <div class="pricing-grid">
+
+      <!-- BASIC -->
+      <div class="price-card">
+        <div class="price-tier">Basic</div>
+        <div class="price-amount">$320<span class="price-per">/week</span></div>
+        <div class="price-detail">8 hrs · $40/hr · CAD · QuickBooks</div>
+        <p class="price-desc">For creatives who need their books in order and nothing else. Clean, simple monthly bookkeeping in QuickBooks. Suited for up to 10–20 receipts or invoices per day.</p>
+        <div class="fs-terms">
+          <div class="fs-term"><div class="fs-term-label">Commitment</div><div class="fs-term-value">Month-to-month</div></div>
+          <div class="fs-term"><div class="fs-term-label">Cancellation</div><div class="fs-term-value">Anytime, no penalty</div></div>
+          <div class="fs-term"><div class="fs-term-label">Hours</div><div class="fs-term-value">8 hrs/week · $40/hr</div></div>
+        </div>
+        <div class="price-divider"></div>
+        <ul class="price-list">
+          <li class="included">Monthly income &amp; expense tracking</li>
+          <li class="included">Bank &amp; credit card reconciliation</li>
+          <li class="included">GST/HST tracking</li>
+          <li class="included">Clean records ready for your CPA</li>
+          <li class="not-included">Receipt digitization</li>
+          <li class="not-included">Tax prep package</li>
+          <li class="not-included">CPA tax filing — quoted separately</li>
+          <li class="not-included">Audit support</li>
+        </ul>
+        <a class="price-cta ghost" href="#contact" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});return false;">Get Started</a>
+      </div>
+
+      <!-- STANDARD -->
+      <div class="price-card featured">
+        <div class="price-badge">Most Popular</div>
+        <div class="price-tier">Standard</div>
+        <div class="price-amount">$416<span class="price-per">/week</span></div>
+        <div class="price-detail">8 hrs · $52/hr · CAD · QuickBooks</div>
+        <p class="price-desc">Everything in Basic plus physical receipt handling and monthly financial reports — all managed in QuickBooks.</p>
+        <div class="fs-terms">
+          <div class="fs-term"><div class="fs-term-label">Commitment</div><div class="fs-term-value">3-month minimum</div></div>
+          <div class="fs-term"><div class="fs-term-label">Cancellation</div><div class="fs-term-value">After minimum term</div></div>
+          <div class="fs-term"><div class="fs-term-label">Hours</div><div class="fs-term-value">8 hrs/week · $52/hr</div></div>
+        </div>
+        <div class="price-divider"></div>
+        <ul class="price-list">
+          <li class="included">Everything in Basic</li>
+          <li class="included">Physical receipt digitization</li>
+          <li class="included">Standard turnaround — 1 week · up to 200 receipts</li>
+          <li class="included">Monthly P&amp;L report</li>
+          <li class="included">Monthly Balance Sheet</li>
+          <li class="included">Sole proprietor books + personal separation</li>
+          <li class="not-included">CPA tax filing — quoted separately</li>
+          <li class="not-included">Audit support</li>
+        </ul>
+        <a class="price-cta solid" href="#contact" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});return false;">Get Started</a>
+      </div>
+
+      <!-- FULL SERVICE -->
+      <div class="price-card">
+        <div class="price-tier">Full Service</div>
+        <div class="price-amount">From $640<span class="price-per">/week</span></div>
+        <div class="price-detail">16+ hrs · $40/hr · CAD · scoped per client</div>
+        <p class="price-desc">For clients with multiple business structures. We manage all three sets of books in QuickBooks — corporation, sole proprietorship, and personal finances — properly separated and organized.</p>
+        <div class="price-divider"></div>
+        <ul class="price-list">
+          <li class="included">Corporation bookkeeping</li>
+          <li class="included">Sole proprietorship bookkeeping</li>
+          <li class="included">Personal finances tracked &amp; separated</li>
+          <li class="included">Receipt digitization across all structures</li>
+          <li class="included">Year-end package prepared for your CPA</li>
+          <li class="included">Audit support — records aligned for review</li>
+          <li class="included">Priority receipt turnaround available</li>
+          <li class="not-included">CPA tax filing — quoted separately</li>
+          <li class="quote">Final price scoped after consultation — setup may affect total</li>
+        </ul>
+
+        <div class="fs-terms">
+          <div class="fs-term">
+            <div class="fs-term-label">Minimum commitment</div>
+            <div class="fs-term-value">6-month contract</div>
+          </div>
+          <div class="fs-term">
+            <div class="fs-term-label">Required access</div>
+            <div class="fs-term-value">All bank statements &amp; accounts</div>
+          </div>
+          <div class="fs-term">
+            <div class="fs-term-label">Pricing</div>
+            <div class="fs-term-value">Subject to setup requirements</div>
+          </div>
+        </div>
+
+        <a class="price-cta ghost" href="#contact" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});return false;">Book a Free Consultation</a>
+      </div>
+
+    </div>
+
+    <!-- CATCH-UP PROJECT -->
+    <div class="catchup-box">
+      <div class="catchup-left">
+        <div class="catchup-label">Behind on your books?</div>
+        <h3 class="catchup-title">That's a project,<br>not a <em style="color:var(--ss);">retainer.</em></h3>
+        <p class="catchup-body">If you haven't filed in a year — or three — the monthly plans above aren't the right fit. A catch-up is a different scope entirely. We assess how far behind you are, how many years need to be untangled, and quote the full project as a flat engagement.</p>
+        <p class="catchup-body" style="margin-top:0.75rem;">As a general guide, expect roughly a couple of months of work per year that's unfiled. Two years behind? Around 4 months. Three years, like some of our most significant cases, can mean close to a year of dedicated work. Missing documentation, mixed personal and business finances, and incomplete records can all affect the timeline. We'll tell you exactly what you're looking at in the free consultation, no surprises.</p>
+        <p class="catchup-body" style="margin-top:0.75rem;">Once your books are caught up, you move to a monthly retainer to stay current going forward.</p>
+      </div>
+      <div class="catchup-right">
+        <div class="catchup-card">
+          <div class="catchup-card-label">How a catch-up works</div>
+          <div class="catchup-steps">
+            <div class="catchup-step">
+              <div class="catchup-step-num">01</div>
+              <div>
+                <div class="catchup-step-title">Free consultation</div>
+                <div class="catchup-step-desc">We assess how many years are behind, what records exist, and what needs to be reconstructed.</div>
+              </div>
+            </div>
+            <div class="catchup-step">
+              <div class="catchup-step-num">02</div>
+              <div>
+                <div class="catchup-step-title">Flat project quote</div>
+                <div class="catchup-step-desc">You get a clear price for the full catch-up — no surprises mid-project.</div>
+              </div>
+            </div>
+            <div class="catchup-step">
+              <div class="catchup-step-num">03</div>
+              <div>
+                <div class="catchup-step-title">We do the work</div>
+                <div class="catchup-step-desc">Every year gets untangled, organized, and handed to your CPA ready to file.</div>
+              </div>
+            </div>
+            <div class="catchup-step">
+              <div class="catchup-step-num">04</div>
+              <div>
+                <div class="catchup-step-title">Move to a retainer</div>
+                <div class="catchup-step-desc">Once you're current, stay current. Never fall behind again.</div>
+              </div>
+            </div>
+          </div>
+          <a class="price-cta solid" style="margin-top:1.5rem;" href="#contact" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});return false;">Get a Catch-Up Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pricing-note" style="margin-bottom:0.75rem;"><strong>GST (5%) is not included in the prices listed above</strong> and will be added to all invoices.</div>
+    <div class="pricing-note">
+      <strong>Not sure which applies to you?</strong> Book a free 30-minute consultation — we'll figure it out together and quote exactly what you need. No commitment.
+    </div>
+    <!-- DIGITIZATION ADD-ON SUMMARY -->
+    <div style="margin-top:2.5rem;border-top:1px solid var(--border);padding-top:2.5rem;">
+      <p class="sec-tag" style="color:var(--ss);margin-bottom:0.75rem;">Add-On · Receipt Digitization</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:1rem;">
+        <div style="background:var(--white);border:1px solid var(--border);padding:1.2rem 1rem;">
+          <div style="font-size:0.62rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--mist);margin-bottom:0.4rem;">Up to 100</div>
+          <div style="font-family:'Fraunces',serif;font-size:1.4rem;font-weight:700;color:var(--ink);">$250</div>
+          <div style="font-family:'Outfit',sans-serif;font-size:0.7rem;color:var(--mist);margin-top:0.2rem;">CAD · one-time</div>
+        </div>
+        <div style="background:var(--white);border:1px solid var(--border);padding:1.2rem 1rem;">
+          <div style="font-size:0.62rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--mist);margin-bottom:0.4rem;">101–250</div>
+          <div style="font-family:'Fraunces',serif;font-size:1.4rem;font-weight:700;color:var(--ink);">$450</div>
+          <div style="font-family:'Outfit',sans-serif;font-size:0.7rem;color:var(--mist);margin-top:0.2rem;">CAD · one-time</div>
+        </div>
+        <div style="background:var(--white);border:1px solid var(--border);padding:1.2rem 1rem;">
+          <div style="font-size:0.62rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--mist);margin-bottom:0.4rem;">251–450</div>
+          <div style="font-family:'Fraunces',serif;font-size:1.4rem;font-weight:700;color:var(--ink);">$600</div>
+          <div style="font-family:'Outfit',sans-serif;font-size:0.7rem;color:var(--mist);margin-top:0.2rem;">CAD · one-time</div>
+        </div>
+        <div style="background:var(--white);border:1px solid var(--border);padding:1.2rem 1rem;">
+          <div style="font-size:0.62rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--mist);margin-bottom:0.4rem;">451–750</div>
+          <div style="font-family:'Fraunces',serif;font-size:1.4rem;font-weight:700;color:var(--ink);">$850</div>
+          <div style="font-family:'Outfit',sans-serif;font-size:0.7rem;color:var(--mist);margin-top:0.2rem;">CAD · one-time</div>
+        </div>
+      </div>
+      <p style="font-family:'Outfit',sans-serif;font-size:0.8rem;line-height:1.65;color:var(--mist);margin-top:1rem;">Already on a retainer? Digitization is included in Standard and Full Service plans. <a href="#" onclick="document.getElementById('digitization').scrollIntoView({behavior:'smooth'});return false;" style="color:var(--ss);font-weight:700;">See full packages and conditions →</a></p>
+    </div>
+
+  </section>
+
   <!-- DIGITIZATION PACKAGES -->
   <section class="sec dig-section" id="digitization">
     <div class="dig-intro">
@@ -1795,6 +2041,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
       </div>
     </div>
 
+    <div class="dig-note" style="margin-bottom:0.75rem;"><strong>All digitization prices exclude GST (5%)</strong>, added to all invoices.</div>
     <div class="dig-note">
       <strong>We keep everything simple so you can focus on running your business, not sorting receipts.</strong>
     </div>
@@ -1871,181 +2118,6 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
     </div>
   </section>
 
-  <!-- PRICING -->
-  <section class="sec" id="pricing" style="background:var(--light);">
-    <p class="sec-tag" style="color:var(--ss);">Pricing</p>
-    <h2 class="sec-h" style="color:var(--ink);margin-bottom:0.5rem;">Simple, honest <em style="color:var(--ss);">pricing.</em></h2>
-    <p class="sec-p" style="max-width:580px;margin-bottom:0.75rem;">All monthly plans are ongoing retainers — we show up every week, keep your books current, and you always know what it costs. CPA tax filing is quoted separately through our partner network.</p>
-
-    <div class="pricing-track-label">
-      <span class="ptl-tag">Monthly Retainers</span>
-      <span class="ptl-note">Basic: month-to-month · Standard: 3-month min · Full Service: 6-month min</span>
-    </div>
-
-    <div class="pricing-grid">
-
-      <!-- BASIC -->
-      <div class="price-card">
-        <div class="price-tier">Basic</div>
-        <div class="price-amount">$320<span class="price-per">/week</span></div>
-        <div class="price-detail">8 hrs · $40/hr · CAD · QuickBooks</div>
-        <div class="price-commitment">Month-to-month · cancel anytime</div>
-        <p class="price-desc">For creatives who need their books in order and nothing else. Clean, simple monthly bookkeeping in QuickBooks. Suited for up to 10–20 receipts or invoices per day.</p>
-        <div class="price-divider"></div>
-        <ul class="price-list">
-          <li class="included">Monthly income &amp; expense tracking</li>
-          <li class="included">Bank &amp; credit card reconciliation</li>
-          <li class="included">GST/HST tracking</li>
-          <li class="included">Clean records ready for your CPA</li>
-          <li class="not-included">Receipt digitization</li>
-          <li class="not-included">Tax prep package</li>
-          <li class="not-included">CPA tax filing — quoted separately</li>
-          <li class="not-included">Audit support</li>
-        </ul>
-        <a class="price-cta ghost" href="#contact" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});return false;">Get Started</a>
-      </div>
-
-      <!-- STANDARD -->
-      <div class="price-card featured">
-        <div class="price-badge">Most Popular</div>
-        <div class="price-tier">Standard</div>
-        <div class="price-amount">$416<span class="price-per">/week</span></div>
-        <div class="price-detail">8 hrs · $52/hr · CAD · QuickBooks</div>
-        <div class="price-commitment">3-month minimum commitment</div>
-        <p class="price-desc">Everything in Basic plus physical receipt handling and monthly financial reports — all managed in QuickBooks.</p>
-        <div class="price-divider"></div>
-        <ul class="price-list">
-          <li class="included">Everything in Basic</li>
-          <li class="included">Physical receipt digitization</li>
-          <li class="included">Standard turnaround — 1 week · up to 200 receipts</li>
-          <li class="included">Monthly P&amp;L report</li>
-          <li class="included">Monthly Balance Sheet</li>
-          <li class="included">Sole proprietor books + personal separation</li>
-          <li class="not-included">CPA tax filing — quoted separately</li>
-          <li class="not-included">Audit support</li>
-        </ul>
-        <a class="price-cta solid" href="#contact" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});return false;">Get Started</a>
-      </div>
-
-      <!-- FULL SERVICE -->
-      <div class="price-card">
-        <div class="price-tier">Full Service</div>
-        <div class="price-amount">From $640<span class="price-per">/week</span></div>
-        <div class="price-detail">16+ hrs · $40/hr · CAD · scoped per client</div>
-        <p class="price-desc">For clients with multiple business structures. We manage all three sets of books in QuickBooks — corporation, sole proprietorship, and personal finances — properly separated and organized.</p>
-        <div class="price-divider"></div>
-        <ul class="price-list">
-          <li class="included">Corporation bookkeeping</li>
-          <li class="included">Sole proprietorship bookkeeping</li>
-          <li class="included">Personal finances tracked &amp; separated</li>
-          <li class="included">Receipt digitization across all structures</li>
-          <li class="included">Year-end package prepared for your CPA</li>
-          <li class="included">Audit support — records aligned for review</li>
-          <li class="included">Priority receipt turnaround available</li>
-          <li class="not-included">CPA tax filing — quoted separately</li>
-          <li class="quote">Final price scoped after consultation — setup may affect total</li>
-        </ul>
-
-        <div class="fs-terms">
-          <div class="fs-term">
-            <div class="fs-term-label">Minimum commitment</div>
-            <div class="fs-term-value">6-month contract</div>
-          </div>
-          <div class="fs-term">
-            <div class="fs-term-label">Required access</div>
-            <div class="fs-term-value">All bank statements &amp; accounts</div>
-          </div>
-          <div class="fs-term">
-            <div class="fs-term-label">Pricing</div>
-            <div class="fs-term-value">Subject to setup requirements</div>
-          </div>
-        </div>
-
-        <a class="price-cta ghost" href="#contact" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});return false;">Book a Free Consultation</a>
-      </div>
-
-    </div>
-
-    <!-- CATCH-UP PROJECT -->
-    <div class="catchup-box">
-      <div class="catchup-left">
-        <div class="catchup-label">Behind on your books?</div>
-        <h3 class="catchup-title">That's a project,<br>not a <em style="color:var(--ss);">retainer.</em></h3>
-        <p class="catchup-body">If you haven't filed in a year — or three — the monthly plans above aren't the right fit. A catch-up is a different scope entirely. We assess how far behind you are, how many years need to be untangled, and quote the full project as a flat engagement.</p>
-        <p class="catchup-body" style="margin-top:0.75rem;">As a general guide, expect roughly a couple of months of work per year that's unfiled. Two years behind? Around 4 months. Three years, like some of our most significant cases, can mean close to a year of dedicated work. Missing documentation, mixed personal and business finances, and incomplete records can all affect the timeline. We'll tell you exactly what you're looking at in the free consultation, no surprises.</p>
-        <p class="catchup-body" style="margin-top:0.75rem;">Once your books are caught up, you move to a monthly retainer to stay current going forward.</p>
-      </div>
-      <div class="catchup-right">
-        <div class="catchup-card">
-          <div class="catchup-card-label">How a catch-up works</div>
-          <div class="catchup-steps">
-            <div class="catchup-step">
-              <div class="catchup-step-num">01</div>
-              <div>
-                <div class="catchup-step-title">Free consultation</div>
-                <div class="catchup-step-desc">We assess how many years are behind, what records exist, and what needs to be reconstructed.</div>
-              </div>
-            </div>
-            <div class="catchup-step">
-              <div class="catchup-step-num">02</div>
-              <div>
-                <div class="catchup-step-title">Flat project quote</div>
-                <div class="catchup-step-desc">You get a clear price for the full catch-up — no surprises mid-project.</div>
-              </div>
-            </div>
-            <div class="catchup-step">
-              <div class="catchup-step-num">03</div>
-              <div>
-                <div class="catchup-step-title">We do the work</div>
-                <div class="catchup-step-desc">Every year gets untangled, organized, and handed to your CPA ready to file.</div>
-              </div>
-            </div>
-            <div class="catchup-step">
-              <div class="catchup-step-num">04</div>
-              <div>
-                <div class="catchup-step-title">Move to a retainer</div>
-                <div class="catchup-step-desc">Once you're current, stay current. Never fall behind again.</div>
-              </div>
-            </div>
-          </div>
-          <a class="price-cta solid" style="margin-top:1.5rem;" href="#contact" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});return false;">Get a Catch-Up Quote</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="pricing-note">
-      <strong>Not sure which applies to you?</strong> Book a free 30-minute consultation — we'll figure it out together and quote exactly what you need. No commitment.
-    </div>
-    <!-- DIGITIZATION ADD-ON SUMMARY -->
-    <div style="margin-top:2.5rem;border-top:1px solid var(--border);padding-top:2.5rem;">
-      <p class="sec-tag" style="color:var(--ss);margin-bottom:0.75rem;">Add-On · Receipt Digitization</p>
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:1rem;">
-        <div style="background:var(--white);border:1px solid var(--border);padding:1.2rem 1rem;">
-          <div style="font-size:0.62rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--mist);margin-bottom:0.4rem;">Up to 100</div>
-          <div style="font-family:'Fraunces',serif;font-size:1.4rem;font-weight:700;color:var(--ink);">$250</div>
-          <div style="font-family:'Outfit',sans-serif;font-size:0.7rem;color:var(--mist);margin-top:0.2rem;">CAD · one-time</div>
-        </div>
-        <div style="background:var(--white);border:1px solid var(--border);padding:1.2rem 1rem;">
-          <div style="font-size:0.62rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--mist);margin-bottom:0.4rem;">101–250</div>
-          <div style="font-family:'Fraunces',serif;font-size:1.4rem;font-weight:700;color:var(--ink);">$450</div>
-          <div style="font-family:'Outfit',sans-serif;font-size:0.7rem;color:var(--mist);margin-top:0.2rem;">CAD · one-time</div>
-        </div>
-        <div style="background:var(--white);border:1px solid var(--border);padding:1.2rem 1rem;">
-          <div style="font-size:0.62rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--mist);margin-bottom:0.4rem;">251–450</div>
-          <div style="font-family:'Fraunces',serif;font-size:1.4rem;font-weight:700;color:var(--ink);">$600</div>
-          <div style="font-family:'Outfit',sans-serif;font-size:0.7rem;color:var(--mist);margin-top:0.2rem;">CAD · one-time</div>
-        </div>
-        <div style="background:var(--white);border:1px solid var(--border);padding:1.2rem 1rem;">
-          <div style="font-size:0.62rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--mist);margin-bottom:0.4rem;">451–750</div>
-          <div style="font-family:'Fraunces',serif;font-size:1.4rem;font-weight:700;color:var(--ink);">$850</div>
-          <div style="font-family:'Outfit',sans-serif;font-size:0.7rem;color:var(--mist);margin-top:0.2rem;">CAD · one-time</div>
-        </div>
-      </div>
-      <p style="font-family:'Outfit',sans-serif;font-size:0.8rem;line-height:1.65;color:var(--mist);margin-top:1rem;">Already on a retainer? Digitization is included in Standard and Full Service plans. <a href="#" onclick="document.getElementById('digitization').scrollIntoView({behavior:'smooth'});return false;" style="color:var(--ss);font-weight:700;">See full packages and conditions →</a></p>
-    </div>
-
-  </section>
-
   <!-- TESTIMONIALS -->
   <section class="sec" style="background:var(--ink);">
     <div class="on-dark">
@@ -2120,13 +2192,13 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
       <span class="ticker-item">P&amp;L Per Project</span>
       <span class="ticker-item">Max 20 Employees</span>
       <span class="ticker-item">Canadian Companies Only</span>
-      <span class="ticker-item">48hr Matching</span>
+      <span class="ticker-item">Safety Workshops</span>
       <span class="ticker-item">Trade Side</span>
       <span class="ticker-item">Job-by-Job Bookkeeping</span>
       <span class="ticker-item">P&amp;L Per Project</span>
       <span class="ticker-item">Max 20 Employees</span>
       <span class="ticker-item">Canadian Companies Only</span>
-      <span class="ticker-item">48hr Matching</span>
+      <span class="ticker-item">Safety Workshops</span>
     </div>
   </div>
 
@@ -2159,9 +2231,9 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
     <div class="cs-grid">
       <div class="cs-card"><div class="cs-icon">📋</div><div class="cs-title">Job-by-Job Bookkeeping</div><p class="cs-body">Every transaction tagged to the right project — materials, labour, subs, equipment. The foundation for P&amp;L analysis.</p></div>
       <div class="cs-card"><div class="cs-icon">👷</div><div class="cs-title">Payroll Records (Up to 20)</div><p class="cs-body">Hours, rates, deductions organized and documented. Ready for T4s and ROEs at year-end.</p></div>
-      <div class="cs-card"><div class="cs-icon">🧾</div><div class="cs-title">Subcontractor &amp; Supplier Tracking</div><p class="cs-body">Know what you owe and what's overdue before it becomes a dispute.</p></div>
+      <div class="cs-card"><div class="cs-icon">🧾</div><div class="cs-title">Subcontractor &amp; Supplier Tracking</div><p class="cs-body">Know what you owe and what's overdue before it becomes a dispute. T5018 slips filed for all sub payments — most trades companies miss this CRA requirement.</p></div>
       <div class="cs-card"><div class="cs-icon">🏗️</div><div class="cs-title">Equipment &amp; Materials</div><p class="cs-body">Tool purchases, deliveries, fuel — categorized correctly including CCA items for tax time.</p></div>
-      <div class="cs-card"><div class="cs-icon">🇨🇦</div><div class="cs-title">Canadian Trades Compliance</div><p class="cs-body">GST/HST, holdback requirements, WCB/WSBC records — we know the rules.</p></div>
+      <div class="cs-card"><div class="cs-icon">🇨🇦</div><div class="cs-title">Canadian Trades Compliance</div><p class="cs-body">GST/HST filing, EHT, WorkSafeBC, payroll remittances — filed directly as your authorized representative. We know the rules.</p></div>
       <div class="cs-card"><div class="cs-icon">📁</div><div class="cs-title">Receipt Digitization</div><p class="cs-body">Lumber yard, hardware, fuel receipts — drop them off or mail them in. Available as a standalone package or bundled with your bookkeeping. <a href="#" onclick="goToSlide(0);setTimeout(()=>{document.getElementById('digitization').scrollIntoView({behavior:'smooth'})},100);return false;" style="color:var(--bc);font-weight:700;">See packages →</a></p></div>
     </div>
   </section>
@@ -2175,29 +2247,80 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
       <!-- demo charts -->
       <div class="pl-demo">
         <div class="pl-demo-label">Sample project reports</div>
-        <div class="pl-project">
-          <div class="pl-proj-name">🏠 Residential Reno — Burnaby <span class="pl-proj-margin">32% margin ↑</span></div>
-          <div class="pl-bars">
-            <div class="pl-bar-row"><span class="pl-bar-lbl">Revenue</span><div class="pl-bar-track"><div class="pl-bar rev" style="width:100%">$48,200</div></div></div>
-            <div class="pl-bar-row"><span class="pl-bar-lbl">Costs</span><div class="pl-bar-track"><div class="pl-bar cost" style="width:68%">$32,700</div></div></div>
-            <div class="pl-bar-row"><span class="pl-bar-lbl">Profit</span><div class="pl-bar-track"><div class="pl-bar profit" style="width:32%">$15,500</div></div></div>
+
+        <!-- Toggle -->
+        <div class="pl-toggle">
+          <button class="pl-toggle-btn active" onclick="plSwitch('chart', this)">Overview Chart</button>
+          <button class="pl-toggle-btn" onclick="plSwitch('detail', this)">Detail Report</button>
+        </div>
+
+        <!-- CHART VIEW -->
+        <div class="pl-view active" id="pl-chart">
+          <div class="pl-project">
+            <div class="pl-proj-name">🏠 Residential Reno — Burnaby <span class="pl-proj-margin">32% margin ↑</span></div>
+            <div class="pl-bars">
+              <div class="pl-bar-row"><span class="pl-bar-lbl">Revenue</span><div class="pl-bar-track"><div class="pl-bar rev" style="width:100%">$48,200</div></div></div>
+              <div class="pl-bar-row"><span class="pl-bar-lbl">Costs</span><div class="pl-bar-track"><div class="pl-bar cost" style="width:68%">$32,700</div></div></div>
+              <div class="pl-bar-row"><span class="pl-bar-lbl">Profit</span><div class="pl-bar-track"><div class="pl-bar profit" style="width:32%">$15,500</div></div></div>
+            </div>
+          </div>
+          <div class="pl-project">
+            <div class="pl-proj-name">🏢 Commercial Framing — Surrey <span class="pl-proj-margin low">18% margin ↓</span></div>
+            <div class="pl-bars">
+              <div class="pl-bar-row"><span class="pl-bar-lbl">Revenue</span><div class="pl-bar-track"><div class="pl-bar rev" style="width:100%">$91,500</div></div></div>
+              <div class="pl-bar-row"><span class="pl-bar-lbl">Costs</span><div class="pl-bar-track"><div class="pl-bar cost" style="width:82%">$75,000</div></div></div>
+              <div class="pl-bar-row"><span class="pl-bar-lbl">Profit</span><div class="pl-bar-track"><div class="pl-bar profit" style="width:18%">$16,500</div></div></div>
+            </div>
+          </div>
+          <div class="pl-project">
+            <div class="pl-proj-name">🏘️ Spec Home Framing — Langley <span class="pl-proj-margin">28% margin ↑</span></div>
+            <div class="pl-bars">
+              <div class="pl-bar-row"><span class="pl-bar-lbl">Revenue</span><div class="pl-bar-track"><div class="pl-bar rev" style="width:100%">$134,000</div></div></div>
+              <div class="pl-bar-row"><span class="pl-bar-lbl">Costs</span><div class="pl-bar-track"><div class="pl-bar cost" style="width:72%">$96,500</div></div></div>
+              <div class="pl-bar-row"><span class="pl-bar-lbl">Profit</span><div class="pl-bar-track"><div class="pl-bar profit" style="width:28%">$37,500</div></div></div>
+            </div>
           </div>
         </div>
-        <div class="pl-project">
-          <div class="pl-proj-name">🏢 Commercial Framing — Surrey <span class="pl-proj-margin low">18% margin ↓</span></div>
-          <div class="pl-bars">
-            <div class="pl-bar-row"><span class="pl-bar-lbl">Revenue</span><div class="pl-bar-track"><div class="pl-bar rev" style="width:100%">$91,500</div></div></div>
-            <div class="pl-bar-row"><span class="pl-bar-lbl">Costs</span><div class="pl-bar-track"><div class="pl-bar cost" style="width:82%">$75,000</div></div></div>
-            <div class="pl-bar-row"><span class="pl-bar-lbl">Profit</span><div class="pl-bar-track"><div class="pl-bar profit" style="width:18%">$16,500</div></div></div>
+
+        <!-- DETAIL REPORT VIEW -->
+        <div class="pl-view" id="pl-detail">
+          <div class="pl-report">
+            <div class="pl-report-header">
+              <div>
+                <div class="pl-report-title">Residential Reno — Burnaby</div>
+                <div class="pl-report-sub">P&amp;L Report · Per Project · Managed by The Backbone</div>
+              </div>
+              <div class="pl-report-meta">Period: Jan–Mar 2024<br>Prepared by: The Backbone Ops &amp; Design Inc.</div>
+            </div>
+            <table class="pl-report-table">
+              <thead>
+                <tr>
+                  <th>Category</th>
+                  <th>Budgeted</th>
+                  <th>Actual</th>
+                  <th>Variance</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="cat-row"><td colspan="4">Revenue</td></tr>
+                <tr><td>Contract Value</td><td>$45,000</td><td>$48,200</td><td style="color:#059669">+$3,200</td></tr>
+                <tr><td>Change Orders</td><td>—</td><td>$0</td><td>—</td></tr>
+                <tr class="cat-row"><td colspan="4">Direct Costs</td></tr>
+                <tr><td>Labour</td><td>$18,000</td><td>$19,400</td><td class="neg">–$1,400</td></tr>
+                <tr><td>Materials</td><td>$10,000</td><td>$9,800</td><td style="color:#059669">+$200</td></tr>
+                <tr><td>Subcontractors</td><td>$3,500</td><td>$3,500</td><td>$0</td></tr>
+                <tr class="cat-row"><td colspan="4">Overhead Allocated</td></tr>
+                <tr><td>Equipment &amp; Fuel</td><td>—</td><td>$1,200</td><td class="neg">–$1,200</td></tr>
+                <tr><td>Permits &amp; Fees</td><td>—</td><td>$800</td><td class="neg">–$800</td></tr>
+                <tr class="total-row"><td>Net Profit</td><td>$13,500</td><td>$15,500</td><td style="color:#059669">+$2,000</td></tr>
+              </tbody>
+            </table>
+            <div class="pl-report-footer">
+              <div class="pl-report-footer-note">Margin: 32.2% · All figures CAD · GST excluded</div>
+              <div class="pl-report-footer-badge">PDF + Excel delivered</div>
+            </div>
           </div>
-        </div>
-        <div class="pl-project">
-          <div class="pl-proj-name">🏘️ Spec Home Framing — Langley <span class="pl-proj-margin">28% margin ↑</span></div>
-          <div class="pl-bars">
-            <div class="pl-bar-row"><span class="pl-bar-lbl">Revenue</span><div class="pl-bar-track"><div class="pl-bar rev" style="width:100%">$134,000</div></div></div>
-            <div class="pl-bar-row"><span class="pl-bar-lbl">Costs</span><div class="pl-bar-track"><div class="pl-bar cost" style="width:72%">$96,500</div></div></div>
-            <div class="pl-bar-row"><span class="pl-bar-lbl">Profit</span><div class="pl-bar-track"><div class="pl-bar profit" style="width:28%">$37,500</div></div></div>
-          </div>
+          <div class="pl-format-note">Delivered as a formatted PDF report and an Excel workbook with all transactions — one file per project, every month.</div>
         </div>
       </div>
 
@@ -2220,34 +2343,43 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
   <section class="sec" id="bc-tax" style="background:var(--white);">
     <div class="partner-grid">
       <div>
-        <p class="sec-tag" style="color:var(--bc);">Tax Professional Network</p>
-        <h2 class="sec-h" style="color:var(--ink);">We do the books.<br>Our CPA partners <em style="color:var(--bc);">file your taxes.</em></h2>
-        <p class="sec-p" style="margin-bottom:1rem;">Construction businesses have specific tax obligations — T2 corporate returns, GST/HST annual filings, WCB reconciliation, holdback accounting. Our CPA network knows the trades inside out and handles it all using the clean books we built for you.</p>
-        <p class="sec-p">One relationship. Full compliance. No scrambling at year-end.</p>
+        <p class="sec-tag" style="color:var(--bc);">Compliance &amp; Tax Filing</p>
+        <h2 class="sec-h" style="color:var(--ink);">Some filings we do.<br>Some go to our <em style="color:var(--bc);">CPA partners.</em></h2>
+        <p class="sec-p" style="margin-bottom:1rem;">We are not a CPA firm. But as your authorized representative, we handle several filings directly — GST/HST, EHT, and WorkSafeBC. Corporate income tax goes to our vetted CPA network, coordinated seamlessly with the books we built for you.</p>
+        <p class="sec-p" style="margin-bottom:2rem;">One team. Clear responsibilities. Nothing falls through.</p>
         <div class="partner-flow">
           <div class="pf-step"><div class="pf-badge us">Backbone</div><div><div class="pf-title">We keep your books clean all year</div><div class="pf-desc">Job-by-job categorization, payroll records, subcontractor tracking — always CRA-ready.</div></div></div>
-          <div class="pf-step"><div class="pf-badge us">Backbone</div><div><div class="pf-title">We prepare your year-end package</div><div class="pf-desc">Income, expenses, payroll summaries — clean and ready for your CPA to file without back-and-forth.</div></div></div>
-          <div class="pf-step"><div class="pf-badge them">CPA Partner</div><div><div class="pf-title">They file your annual return</div><div class="pf-desc">T2 corporate return, GST/HST annual filing, WCB reconciliation — handled by licensed professionals.</div></div></div>
-          <div class="pf-step"><div class="pf-badge them">CPA Partner</div><div><div class="pf-title">You stay 100% CRA compliant</div><div class="pf-desc">Filed correctly and on time. No penalties, no missed deadlines.</div></div></div>
+          <div class="pf-step"><div class="pf-badge us-direct">Backbone — Direct</div><div><div class="pf-title">GST/HST filing — we file this</div><div class="pf-desc">As your authorized representative, we prepare and file your GST/HST returns directly with CRA. No CPA needed for this.</div></div></div>
+          <div class="pf-step"><div class="pf-badge us-direct">Backbone — Direct</div><div><div class="pf-title">EHT filing — we file this when due</div><div class="pf-desc">BC Employer Health Tax is not filed every month — it depends on your payroll amount and filing frequency. When an EHT remittance or return falls within your contracted period, we handle it as your authorized representative.</div></div></div>
+          <div class="pf-step"><div class="pf-badge us-direct">Backbone — Direct</div><div><div class="pf-title">WorkSafeBC filing — we file this</div><div class="pf-desc">We are an authorized representative for WorkSafeBC. Payroll reporting and annual reconciliation filed directly — no scrambling at year-end.</div></div></div>
+          <div class="pf-step"><div class="pf-badge us-direct">Backbone — Direct</div><div><div class="pf-title">Payroll remittances — we send these</div><div class="pf-desc">When you have employees, we handle the payroll remittances to CRA — CPP, EI, and income tax deductions — on time, every time, as your authorized representative.</div></div></div>
+          <div class="pf-step"><div class="pf-badge us-direct">Backbone — Direct</div><div><div class="pf-title">T4s — we prepare and file these</div><div class="pf-desc">Year-end T4 slips prepared and filed for all your employees directly with CRA. ROEs also prepared when needed.</div></div></div>
+          <div class="pf-step"><div class="pf-badge us-direct">Backbone — Direct</div><div><div class="pf-title">T5018 slips — we file these</div><div class="pf-desc">If you pay subcontractors for construction services, CRA requires T5018 Statement of Contract Payments slips. We prepare and file them on your behalf — most trades companies miss this one.</div></div></div>
+          <div class="pf-step"><div class="pf-badge us">Backbone</div><div><div class="pf-title">Quarterly P&amp;L review with you</div><div class="pf-desc">Every quarter we sit down with you and your stakeholders — owners, partners, foremen — and walk through where the business stands. Revenue, costs, margins per project. No surprises at year-end.</div></div></div>
+          <div class="pf-step"><div class="pf-badge us">Backbone</div><div><div class="pf-title">We prepare your corporate year-end package</div><div class="pf-desc">Income, expenses, payroll summaries — packaged cleanly for your CPA to file the T2 without back-and-forth.</div></div></div>
+          <div class="pf-step"><div class="pf-badge them">CPA Partner</div><div><div class="pf-title">They file your T2 corporate return</div><div class="pf-desc">Corporate income tax is filed by a licensed CPA. We hand off everything they need — clean, organized, ready to go.</div></div></div>
         </div>
       </div>
       <div class="partner-card">
         <div class="pc-top">
-          <div class="pc-icon">🤝</div>
+          <div class="pc-icon" style="background:rgba(122,151,107,0.15);">📋</div>
           <div>
-            <div class="pc-name">Our Tax Network</div>
-            <div class="pc-sub">Vetted CPAs · Canada · incl. Liberty Tax</div>
+            <div class="pc-name">What we handle directly</div>
+            <div class="pc-sub">As your authorized representative · No CPA required</div>
           </div>
         </div>
         <div class="pc-points">
-          <div class="pc-row"><span class="pc-check">✦</span><span>T2 corporate income tax returns</span></div>
-          <div class="pc-row"><span class="pc-check">✦</span><span>GST/HST annual return filing</span></div>
-          <div class="pc-row"><span class="pc-check">✦</span><span>WCB/WSBC annual reconciliation</span></div>
-          <div class="pc-row"><span class="pc-check">✦</span><span>Payroll year-end — T4s and ROEs</span></div>
-          <div class="pc-row"><span class="pc-check">✦</span><span>CRA representation if you're ever reviewed</span></div>
-          <div class="pc-row"><span class="pc-check">✦</span><span>Seamless handoff — no re-explaining your finances</span></div>
+          <div class="pc-row"><span class="pc-check" style="color:var(--bc);">✦</span><span>GST/HST quarterly &amp; annual filing</span></div>
+          <div class="pc-row"><span class="pc-check" style="color:var(--bc);">✦</span><span>BC Employer Health Tax (EHT) — filed when due within your contract period</span></div>
+          <div class="pc-row"><span class="pc-check" style="color:var(--bc);">✦</span><span>WorkSafeBC payroll reporting &amp; annual reconciliation</span></div>
+          <div class="pc-row"><span class="pc-check" style="color:var(--bc);">✦</span><span>Payroll remittances to CRA — CPP, EI &amp; income tax deductions (when you have employees)</span></div>
+          <div class="pc-row"><span class="pc-check" style="color:var(--bc);">✦</span><span>Payroll records — T4s and ROEs prepared</span></div>
+          <div class="pc-row"><span class="pc-check" style="color:var(--bc);">✦</span><span>Quarterly P&amp;L review with owners &amp; stakeholders</span></div>
+          <div class="pc-row"><span class="pc-check" style="color:var(--bc);">✦</span><span>Year-end package handed to CPA — zero back-and-forth</span></div>
         </div>
-        <div class="pc-note"><strong>The result:</strong> your books and taxes handled by one coordinated team — nothing falls through the cracks at year-end.</div>
+        <div class="pc-note" style="background:rgba(122,151,107,0.08);border-color:rgba(122,151,107,0.2);">
+          <strong>T2 corporate income tax</strong> is filed by our CPA partner network — not by us. We are not a CPA firm and we're upfront about that. What we do is make sure your books are so clean that the CPA files fast and bills you less.
+        </div>
       </div>
     </div>
   </section>
@@ -2256,20 +2388,29 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
   <section class="sec dig-section" id="ts-pricing" style="background:var(--bc-slate);">
     <p class="sec-tag" style="color:var(--bc);">Pricing</p>
     <h2 class="sec-h" style="color:#fff;margin-bottom:0.5rem;">Clear rates.<br><em style="color:var(--bc);">No surprises.</em></h2>
-    <p class="sec-p" style="color:rgba(255,255,255,0.5);max-width:560px;margin-bottom:2.5rem;">Bookkeeping billed at $32 CAD/hr with a minimum of 10 hours per week. P&L analysis is available as an add-on once your books are under our management.</p>
+    <p class="sec-p" style="color:rgba(255,255,255,0.5);max-width:560px;margin-bottom:2.5rem;">Bookkeeping billed at $38 CAD/hr with a 10-hour/week minimum ($380/week min.). All Trade Side engagements start with a 3-month initial term, then renew annually. P&amp;L analysis available as an add-on.</p>
     <div class="ts-pricing-grid">
 
       <div class="ts-price-card">
         <div class="ts-price-tier">Bookkeeping</div>
         <div class="ts-price-name">Books Only</div>
-        <div class="ts-price-amount">$320<span>/week min.</span></div>
-        <div class="ts-price-note">$32/hr · 10 hr minimum · CAD · billed weekly</div>
+        <div class="ts-price-amount">$380<span>/week min.</span></div>
+        <div class="ts-price-note">CAD · billed weekly</div>
+        <div class="fs-terms" style="background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.1);">
+          <div class="fs-term"><div class="fs-term-label" style="color:rgba(255,255,255,0.35);">Rate</div><div class="fs-term-value" style="color:#fff;">$38/hr · 10 hr minimum</div></div>
+          <div class="fs-term"><div class="fs-term-label" style="color:rgba(255,255,255,0.35);">Initial term</div><div class="fs-term-value" style="color:#fff;">3-month minimum</div></div>
+          <div class="fs-term"><div class="fs-term-label" style="color:rgba(255,255,255,0.35);">Renewal</div><div class="fs-term-value" style="color:#fff;">Annual</div></div>
+          <div class="fs-term"><div class="fs-term-label" style="color:rgba(255,255,255,0.35);">Scope</div><div class="fs-term-value" style="color:#fff;">Up to 20 employees</div></div>
+        </div>
         <div class="ts-price-divider"></div>
         <ul class="ts-price-list">
           <li>Job-by-job income &amp; expense tracking</li>
           <li>Subcontractor &amp; supplier records</li>
-          <li>Payroll records — up to 20 employees</li>
-          <li>GST/HST tracking &amp; remittance prep</li>
+          <li>Payroll records — T4s filed directly</li>
+          <li>T5018 slips for subcontractors</li>
+          <li>GST/HST filing (authorized representative)</li>
+          <li>EHT &amp; WorkSafeBC filing</li>
+          <li>Payroll remittances to CRA</li>
           <li>Equipment &amp; materials categorized</li>
           <li>Year-end package for your CPA</li>
           <li>Field receipt digitization included</li>
@@ -2280,8 +2421,14 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
       <div class="ts-price-card featured">
         <div class="ts-price-tier">Bookkeeping + P&amp;L</div>
         <div class="ts-price-name">Books + Analysis</div>
-        <div class="ts-price-amount">$320<span>/week min. + add-on</span></div>
-        <div class="ts-price-note">Bookkeeping rate + P&L scoped per number of active projects</div>
+        <div class="ts-price-amount">$420<span>/week min.</span></div>
+        <div class="ts-price-note">CAD · $42/hr · 10 hr minimum · P&amp;L scoped per active projects</div>
+        <div class="fs-terms" style="background:rgba(122,151,107,0.08);border-color:rgba(122,151,107,0.2);">
+          <div class="fs-term"><div class="fs-term-label" style="color:rgba(255,255,255,0.35);">Rate</div><div class="fs-term-value" style="color:#fff;">$42/hr + P&amp;L add-on</div></div>
+          <div class="fs-term"><div class="fs-term-label" style="color:rgba(255,255,255,0.35);">Initial term</div><div class="fs-term-value" style="color:#fff;">3-month minimum</div></div>
+          <div class="fs-term"><div class="fs-term-label" style="color:rgba(255,255,255,0.35);">Renewal</div><div class="fs-term-value" style="color:#fff;">Annual</div></div>
+          <div class="fs-term"><div class="fs-term-label" style="color:rgba(255,255,255,0.35);">Review</div><div class="fs-term-value" style="color:#fff;">Quarterly with owners</div></div>
+        </div>
         <div class="ts-price-divider"></div>
         <ul class="ts-price-list">
           <li>Everything in Books Only</li>
@@ -2289,6 +2436,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
           <li>Revenue vs cost breakdown per job</li>
           <li>Margin analysis — see which jobs made money</li>
           <li>Monthly summary across all active projects</li>
+          <li>Quarterly P&amp;L review with owners &amp; stakeholders</li>
           <li>Requires books managed by us first</li>
         </ul>
         <a class="ts-price-cta" href="#bc-contact" onclick="document.getElementById('bc-contact').scrollIntoView({behavior:'smooth'});return false;">Get a Quote</a>
@@ -2296,7 +2444,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
 
     </div>
     <div class="ts-price-note-box">
-      <strong>Hours scale with your operation.</strong> 10 hours/week is the minimum — busier sites, more employees, or multiple active projects will require more hours. We scope accurately in the free consultation so you know exactly what to expect before you commit.
+      <strong>All prices exclude GST (5%)</strong>, which will be added to all invoices. &nbsp;·&nbsp; <strong>All Trade Side engagements start with a 3-month initial term, then renew annually.</strong> This gives us enough time to properly set up your books, establish filing rhythms, and deliver reliable results. Hours scale with your operation — 10 hrs/week is the floor. We scope accurately in the free consultation so there are no surprises.
     </div>
   </section>
 
@@ -2313,7 +2461,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
   <section class="cta-section bc-cta" id="bc-contact">
     <div class="cta-bg">Build</div>
     <div class="cta-inner">
-      <p class="sec-tag" style="color:rgba(45,106,143,0.9);justify-content:center;margin-bottom:1rem;">Trade Side</p>
+      <p class="sec-tag" style="color:rgba(122,151,107,0.9);justify-content:center;margin-bottom:1rem;">Trade Side</p>
       <h2 class="cta-h">Let's talk about <em>your books.</em></h2>
       <p class="cta-p">Free consultation for construction clients. We'll scope your bookkeeping needs, show you what per-project P&amp;L analysis looks like, and connect you with the right CPA for your year-end filing.</p>
       <div class="cta-btns">
@@ -2548,6 +2696,17 @@ document.querySelectorAll('.faq-q').forEach(q => {
 </script>
 
 
+
+
+<script>
+// ── P&L VIEW TOGGLE ──
+function plSwitch(view, btn) {
+  document.querySelectorAll('.pl-view').forEach(v => v.classList.remove('active'));
+  document.querySelectorAll('.pl-toggle-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('pl-' + view).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
 
 </body>
 </html>
