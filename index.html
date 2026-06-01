@@ -1024,6 +1024,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
   .nav-links { display: none; }
   .nav-logo { font-size: 1.1rem; }
   .nav-cta { display: none; }
+  .nav-hamburger { display: none; }
 
   /* hero slider — full height, content centered */
   .hero-slider { min-height: 100vh; }
@@ -1072,11 +1073,11 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
   .slider-counter { display: none; }
 
   /* fix slide hero overflow on mobile */
-  .slide { width: 100%; padding: 4rem 1.5rem 3rem; }
+  .slide { width: 100%; padding: 2rem 1.5rem 2rem; }
   .slide-body { font-size: 0.95rem; max-width: 100%; }
   .slide-bg-word { font-size: clamp(6rem, 28vw, 10rem); }
   .slide-content { max-width: 100%; }
-  .slide-chips { flex-wrap: wrap; }
+  .slide-chips { flex-wrap: wrap; max-width: 100%; overflow: hidden; }
 
   /* fix large section headings overflowing */
   .sec-h, .cta-h { font-size: clamp(1.8rem, 7vw, 2.8rem); }
@@ -1526,6 +1527,73 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
   color: var(--mist); display: flex; align-items: center; gap: 0.5rem;
 }
 .pl-format-note::before { content: '↳'; color: var(--bc); font-weight: 700; }
+
+
+/* ─── ANNUAL PLANNER ─── */
+.planner-section { background: var(--white); }
+.bc-planner { background: #0e1014; }
+.planner-inner { display: grid; grid-template-columns: 1fr 1.4fr; gap: 5rem; align-items: start; }
+.planner-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+.planner-tag {
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 0.3rem 0.75rem; border: 1px solid var(--ss); color: var(--ss); border-radius: 2px;
+}
+.planner-tag.bc { border-color: var(--bc); color: var(--bc); }
+.planner-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.planner-card {
+  border: 1px solid var(--border); border-radius: 2px;
+  padding: 2rem 1.5rem; position: relative;
+  background: #fff;
+}
+.planner-card.bc { background: #14161c; border-color: rgba(255,255,255,0.08); }
+.planner-card.featured { border-color: var(--ss); }
+.planner-card.bc.featured { border-color: var(--bc); }
+.planner-card-badge {
+  position: absolute; top: -1px; right: 1.2rem;
+  background: var(--ss); color: #fff;
+  font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+}
+.planner-card-badge.bc { background: var(--bc); color: var(--ink); }
+.planner-card-label {
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--mist); margin-bottom: 0.75rem;
+}
+.planner-card-price {
+  font-family: "Fraunces", serif; font-size: 2.4rem; font-weight: 700;
+  color: var(--ink); line-height: 1; margin-bottom: 0.25rem;
+}
+.planner-card.bc .planner-card-price { color: #fff; }
+.planner-card-price span { font-size: 0.9rem; font-weight: 400; color: var(--mist); }
+.planner-card-note {
+  font-size: 0.75rem; color: var(--mist); margin-bottom: 1.25rem;
+  padding-bottom: 1.25rem; border-bottom: 1px solid var(--border);
+}
+.planner-card.bc .planner-card-note { border-bottom-color: rgba(255,255,255,0.08); }
+.planner-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.5rem; }
+.planner-list li {
+  font-size: 0.8rem; color: var(--mist); padding-left: 1.1rem; position: relative;
+}
+.planner-list li::before { content: "✦"; position: absolute; left: 0; color: var(--ss); font-size: 0.55rem; top: 2px; }
+.planner-card.bc .planner-list li::before { color: var(--bc); }
+.planner-cta {
+  display: block; text-align: center;
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 0.75rem; text-decoration: none; border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+}
+.planner-cta.ss { background: var(--ss); color: #fff; }
+.planner-cta.ss:hover { background: var(--ss-dark); }
+.planner-cta.bc { background: var(--bc); color: var(--ink); }
+.planner-cta.bc:hover { background: #8faa7a; }
+
+@media (max-width: 768px) {
+  .planner-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .planner-cards { grid-template-columns: 1fr; }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .planner-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+}
 
 /* ─── HERO WORD WHEEL ─── */
 .hero-wheel {
@@ -2405,6 +2473,60 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
   </section>
 
   <!-- SS CTA -->
+
+  <!-- ANNUAL PLANNER ADD-ON — Studio Side -->
+  <section class="sec planner-section" id="annual-planner">
+    <div class="planner-inner">
+      <div class="planner-intro">
+        <p class="sec-tag" style="color:var(--ss);">Add-On · Physical Product</p>
+        <h2 class="sec-h">The Backbone<br><em style="color:var(--ss);">Annual Planner.</em></h2>
+        <p class="sec-p">A physical desk calendar built around your business — CRA deadlines, GST &amp; PST filing dates, T4 season, payroll remittances, and every recurring date that matters to your year. No more scrambling. It&apos;s all on your wall.</p>
+        <div class="planner-tags">
+          <span class="planner-tag">CRA Deadlines</span>
+          <span class="planner-tag">GST &amp; PST Filing</span>
+          <span class="planner-tag">T4 Season</span>
+          <span class="planner-tag">Payroll Dates</span>
+          <span class="planner-tag">Remittances</span>
+          <span class="planner-tag">Physical &amp; Branded</span>
+        </div>
+      </div>
+      <div class="planner-cards">
+        <div class="planner-card">
+          <div class="planner-card-label">Standard</div>
+          <div class="planner-card-price">$35 <span>CAD</span></div>
+          <div class="planner-card-note">You provide your key dates</div>
+          <ul class="planner-list">
+            <li>Custom-built annual planner</li>
+            <li>CRA &amp; BC tax deadlines pre-filled</li>
+            <li>You supply payroll &amp; remittance dates</li>
+            <li>Physical copy mailed to you</li>
+            <li>PDF version included</li>
+          </ul>
+          <a class="planner-cta ss" href="mailto:support@thebackbone.ca?subject=Annual Planner — Standard">Order Now</a>
+        </div>
+        <div class="planner-card featured">
+          <div class="planner-card-badge">Most Popular</div>
+          <div class="planner-card-label">Premium</div>
+          <div class="planner-card-price">$85 <span>CAD</span></div>
+          <div class="planner-card-note">We research all your dates</div>
+          <ul class="planner-list">
+            <li>Everything in Standard</li>
+            <li>We source your payroll schedule</li>
+            <li>Remittance &amp; filing dates researched</li>
+            <li>Annual returns tracked</li>
+            <li>Municipal permit renewal dates</li>
+            <li>Incorporation anniversary tracked</li>
+            <li>WorkSafeBC &amp; EHT dates included</li>
+            <li>All dates added to your Google Calendar</li>
+            <li>Reminders &amp; notifications set up</li>
+            <li>Physical copy mailed to you</li>
+          </ul>
+          <a class="planner-cta ss" href="mailto:support@thebackbone.ca?subject=Annual Planner — Premium">Order Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="cta-section ss-cta" id="contact">
     <div class="cta-bg">Studio</div>
     <div class="cta-inner">
@@ -2697,6 +2819,60 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
   </div>
 
   <!-- BC CTA -->
+
+  <!-- ANNUAL PLANNER ADD-ON — Trade Side -->
+  <section class="sec planner-section bc-planner" id="bc-annual-planner">
+    <div class="planner-inner">
+      <div class="planner-intro">
+        <p class="sec-tag" style="color:var(--bc);">Add-On · Physical Product</p>
+        <h2 class="sec-h" style="color:#fff;">The Backbone<br><em style="color:var(--bc);">Annual Planner.</em></h2>
+        <p class="sec-p" style="color:rgba(255,255,255,0.5);">A physical desk calendar built around your trade business — CRA deadlines, GST &amp; PST filing dates, payroll remittances, WorkSafeBC, EHT, and every recurring date that keeps your crew running clean.</p>
+        <div class="planner-tags">
+          <span class="planner-tag bc">CRA Deadlines</span>
+          <span class="planner-tag bc">GST &amp; PST Filing</span>
+          <span class="planner-tag bc">Payroll Dates</span>
+          <span class="planner-tag bc">Remittances</span>
+          <span class="planner-tag bc">WorkSafeBC</span>
+          <span class="planner-tag bc">EHT</span>
+        </div>
+      </div>
+      <div class="planner-cards">
+        <div class="planner-card bc">
+          <div class="planner-card-label">Standard</div>
+          <div class="planner-card-price">$35 <span>CAD</span></div>
+          <div class="planner-card-note">You provide your key dates</div>
+          <ul class="planner-list">
+            <li>Custom-built annual planner</li>
+            <li>CRA &amp; BC tax deadlines pre-filled</li>
+            <li>You supply payroll &amp; remittance dates</li>
+            <li>Physical copy mailed to you</li>
+            <li>PDF version included</li>
+          </ul>
+          <a class="planner-cta bc" href="mailto:support@thebackbone.ca?subject=Annual Planner — Standard (Trade)">Order Now</a>
+        </div>
+        <div class="planner-card bc featured">
+          <div class="planner-card-badge bc">Most Popular</div>
+          <div class="planner-card-label">Premium</div>
+          <div class="planner-card-price">$85 <span>CAD</span></div>
+          <div class="planner-card-note">We research all your dates</div>
+          <ul class="planner-list">
+            <li>Everything in Standard</li>
+            <li>We source your payroll schedule</li>
+            <li>Remittance &amp; filing dates researched</li>
+            <li>Annual returns tracked</li>
+            <li>Municipal permit renewal dates</li>
+            <li>WorkSafeBC &amp; EHT dates included</li>
+            <li>Incorporation anniversary tracked</li>
+            <li>All dates added to your Google Calendar</li>
+            <li>Reminders &amp; notifications set up</li>
+            <li>Physical copy mailed to you</li>
+          </ul>
+          <a class="planner-cta bc" href="mailto:support@thebackbone.ca?subject=Annual Planner — Premium (Trade)">Order Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="cta-section bc-cta" id="bc-contact">
     <div class="cta-bg">Build</div>
     <div class="cta-inner">
