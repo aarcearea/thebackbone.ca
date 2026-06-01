@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- ── PRIMARY SEO ── -->
-<title>The Backbone — Bookkeeping & Admin for Canadian Creatives & Construction | Vancouver BC</title>
+<title>The Backbone — Bookkeeping & Admin for Canadian Creatives & Trades | Vancouver BC</title>
 <meta name="description" content="The Backbone Ops & Design Inc. offers bookkeeping, document digitization, and admin support for artists, influencers, and entrepreneurs (Studio Side) plus construction bookkeeping and per-project P&amp;L analysis (Trade Side). Serving Vancouver and Vancouver Island, BC. From $320/week.">
-<meta name="keywords" content="bookkeeping Vancouver, bookkeeper for artists Vancouver, influencer bookkeeping Canada, construction bookkeeping BC, small business bookkeeper Vancouver Island, creative business admin, GST HST filing Vancouver, first time entrepreneur Canada, Studio Side, Trade Side">
+<meta name="keywords" content="bookkeeping Vancouver, bookkeeper for artists Vancouver, influencer bookkeeping Canada, construction bookkeeping BC, small business bookkeeper Vancouver Island, creative business admin, GST & PST filing Vancouver, first time entrepreneur Canada, Studio Side, Trade Side">
 <meta name="author" content="The Backbone Ops & Design Inc.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://thebackbone.ca">
@@ -15,7 +15,7 @@
 <!-- ── OPEN GRAPH (Facebook, LinkedIn previews) ── -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://thebackbone.ca">
-<meta property="og:title" content="The Backbone — Bookkeeping & Admin for Canadian Creatives & Construction">
+<meta property="og:title" content="The Backbone — Bookkeeping & Admin for Canadian Creatives & Trades">
 <meta property="og:description" content="Studio Side for artists, influencers & entrepreneurs. Trade Side for small Canadian construction companies. Bookkeeping &amp; per-project P&amp;L analysis. Vancouver & Vancouver Island.">
 <meta property="og:locale" content="en_CA">
 <meta property="og:site_name" content="The Backbone Ops & Design Inc.">
@@ -48,8 +48,8 @@
     "Bookkeeping",
     "Document Digitization",
     "Administrative Support",
-    "Construction Bookkeeping",
-    "GST/HST Filing Preparation"
+    "Trade Bookkeeping",
+    "GST Filing Preparation"
   ],
   "priceRange": "From $320/week CAD",
   "address": {
@@ -307,7 +307,7 @@ nav.on-bc + .nav-drawer,
 }
 .slide-pill {
   font-size: 0.7rem; font-weight: 600; letter-spacing: 0.05em;
-  padding: 0.35rem 0.9rem; border-radius: 100px;
+  padding: 0.35rem 0.9rem; border-radius: 2px;
 }
 .slide.ss .slide-pill { background: var(--ss-light); color: var(--ss); text-decoration: none; cursor: pointer; transition: background 0.2s; }
 .slide.ss a.slide-pill:hover { background: var(--ss); color: #fff; }
@@ -371,7 +371,7 @@ nav.on-bc + .nav-drawer,
 }
 .slider-dot.ss-dot { background: rgba(99,146,182,0.25); }
 .slider-dot.bc-dot { background: rgba(99,146,182,0.25); }
-.slider-dot.active { width: 1.8rem; border-radius: 100px; }
+.slider-dot.active { width: 1.8rem; border-radius: 2px; }
 .slider-dot.ss-dot.active { background: var(--ss); }
 .slider-dot.bc-dot.active { background: var(--bc); }
 
@@ -1013,7 +1013,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
 /* ─── RESPONSIVE ─── */
 @media (max-width: 768px) {
   /* show mobile switcher */
-  .mobile-switcher { display: grid; }
+  .mobile-switcher { display: none !important; }
 
   /* add padding so content doesn't hide behind switcher */
   .page-panels { padding-bottom: 56px; }
@@ -1023,7 +1023,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
   nav { padding: 0 1.2rem; height: 3.5rem; }
   .nav-links { display: none; }
   .nav-logo { font-size: 1.1rem; }
-  .nav-cta { font-size: 0.65rem; padding: 0.45rem 1rem; }
+  .nav-cta { display: none; }
 
   /* hero slider — full height, content centered */
   .hero-slider { min-height: 100vh; }
@@ -1255,7 +1255,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
   font-size: 0.62rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
   padding: 0.25rem 0.7rem;
   border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.4);
-  border-radius: 100px;
+  border-radius: 2px;
 }
 
 
@@ -1384,7 +1384,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
   position: absolute; top: 1rem; right: 1rem;
   font-size: 0.58rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
   background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.4);
-  padding: 0.25rem 0.6rem; border-radius: 100px;
+  padding: 0.25rem 0.6rem; border-radius: 2px;
 }
 
 
@@ -1561,6 +1561,36 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
   .hero-wheel { display: none; }
 }
 
+
+/* ─── FLOATING BOOK A CALL (mobile) ─── */
+.float-cta {
+  display: none;
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 250;
+  background: var(--ink);
+  color: #fff;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.85rem 2rem;
+  border-radius: 2px;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  transition: background 0.2s, transform 0.2s, opacity 0.3s;
+}
+.float-cta:hover { background: var(--ss); transform: translateX(-50%) scale(1.04); }
+.float-cta.bc-mode { background: var(--bc); color: var(--ink); }
+.float-cta.bc-mode:hover { background: #8faa7a; }
+.float-cta.hidden { opacity: 0; pointer-events: none; }
+@media (max-width: 768px) {
+  .float-cta { display: block; }
+}
 </style>
 </head>
 <body>
@@ -1593,7 +1623,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
     <span></span><span></span><span></span>
   </button>
 
-  <a class="nav-cta" href="#" onclick="goToSlide(0);setTimeout(()=>{document.getElementById('contact').scrollIntoView({behavior:'smooth'})},100);return false;">Get a Quote</a>
+  <a class="nav-cta" href="#" onclick="goToSlide(0);setTimeout(()=>{document.getElementById('contact').scrollIntoView({behavior:'smooth'})},100);return false;">Book a Call</a>
 </nav>
 
 <!-- drawer — sits just below nav -->
@@ -1652,7 +1682,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
       <div class="hero-wheel" aria-hidden="true">
         <div class="wheel-track" id="wheelTrack">
           <span class="wheel-word">Bookkeeping</span>
-          <span class="wheel-word">GST / HST Filing</span>
+          <span class="wheel-word">GST Filing</span>
           <span class="wheel-word">Doc Digitization</span>
           <span class="wheel-word">Admin Support</span>
           <span class="wheel-word">Financial Clarity</span>
@@ -1691,7 +1721,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
           <span class="slide-pill">Max 20 Employees</span>
         </div>
         <div class="slide-actions">
-          <a class="slide-cta" href="#" onclick="goToSlide(1);setTimeout(()=>{document.getElementById('construction-side').scrollIntoView({behavior:'smooth'})},100);return false;">Explore Construction →</a>
+          <a class="slide-cta" href="#" onclick="goToSlide(1);setTimeout(()=>{document.getElementById('construction-side').scrollIntoView({behavior:'smooth'})},100);return false;">Explore Trade Side →</a>
           <span class="slide-geo">Canadian Companies Only · BC Focus</span>
         </div>
       </div>
@@ -1704,7 +1734,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
     <button class="slider-btn prev" onclick="manualPrev()" aria-label="Previous">←</button>
     <div class="slider-dots">
       <button class="slider-dot ss-dot active" onclick="goToSlide(0)" aria-label="Studio Side"></button>
-      <button class="slider-dot bc-dot" onclick="goToSlide(1)" aria-label="Construction"></button>
+      <button class="slider-dot bc-dot" onclick="goToSlide(1)" aria-label="Trade Side"></button>
     </div>
     <button class="slider-btn next" onclick="manualNext()" aria-label="Next">→</button>
   </div>
@@ -1790,7 +1820,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
         <div class="why-card"><div class="wc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6l9-4 9 4v6c0 5-4 9-9 10C7 21 3 17 3 12V6z"/><path d="M9 12l2 2 4-4"/></svg></div><div><div class="wc-title">Messy books are our starting point</div><div class="wc-body">Receipts in a bag, mixed accounts, months behind — we've seen it all and we never judge. We just get to work.</div></div></div>
         <div class="why-card"><div class="wc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10c1.5-2 3-2 4.5 0s3 2 4.5 0 3-2 4.5 0 3 2 4.5 0"/><path d="M3 14c1.5-2 3-2 4.5 0s3 2 4.5 0 3-2 4.5 0 3 2 4.5 0"/><path d="M3 18c1.5-2 3-2 4.5 0s3 2 4.5 0 3-2 4.5 0 3 2 4.5 0"/></svg></div><div><div class="wc-title">We understand irregular income</div><div class="wc-body">Commission one month, nothing the next, three brand deals at once. We know how creative income works and we track it properly.</div></div></div>
         <div class="why-card"><div class="wc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><div class="wc-title">Works around your schedule</div><div class="wc-body">Busy season, slow season, one-time catch-up or ongoing — we fit into your life, not the other way around. No contracts, no lock-in.</div></div></div>
-        <div class="why-card"><div class="wc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l4-4h10l4 4-2 4 2 4H5l2-4z"/><line x1="12" y1="13" x2="12" y2="22"/></svg></div><div><div class="wc-title">Built for Canadian self-employment</div><div class="wc-body">GST/HST, T2125, CRA deadlines, sole proprietor filings — we know the rules for self-employed Canadians inside out.</div></div></div>
+        <div class="why-card"><div class="wc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l4-4h10l4 4-2 4 2 4H5l2-4z"/><line x1="12" y1="13" x2="12" y2="22"/></svg></div><div><div class="wc-title">Built for Canadian self-employment</div><div class="wc-body">GST, PST, T2125, CRA deadlines, sole proprietor filings — we know the rules for self-employed Canadians inside out.</div></div></div>
       </div>
     </div>
     <!-- VIDEO PLACEHOLDER — replace src with real URL when ready -->
@@ -1846,7 +1876,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
           <div class="wsp-card">
             <div class="wsp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
             <div class="wsp-card-title">Bookkeeping</div>
-            <div class="wsp-card-body">Commissions, print sales, market income — all tracked. GST/HST prep included. CRA-ready year-round. <a href="#" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'});return false;" style="color:var(--ss);font-weight:700;white-space:nowrap;">See plans →</a></div>
+            <div class="wsp-card-body">Commissions, print sales, market income — all tracked. GST & PST prep included. CRA-ready year-round. <a href="#" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'});return false;" style="color:var(--ss);font-weight:700;white-space:nowrap;">See plans →</a></div>
           </div>
           <div class="wsp-card">
             <div class="wsp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
@@ -1870,7 +1900,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
           <div class="wsp-card">
             <div class="wsp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
             <div class="wsp-card-title">Bookkeeping</div>
-            <div class="wsp-card-body">Brand deals, affiliate income, sponsorships, merch — all tracked per stream. GST/HST included. No income source missed. <a href="#" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'});return false;" style="color:var(--ss);font-weight:700;white-space:nowrap;">See plans →</a></div>
+            <div class="wsp-card-body">Brand deals, affiliate income, sponsorships, merch — all tracked per stream. GST & PST included. No income source missed. <a href="#" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'});return false;" style="color:var(--ss);font-weight:700;white-space:nowrap;">See plans →</a></div>
           </div>
           <div class="wsp-card top-pick">
             <div class="wsp-badge">Most Requested</div>
@@ -1895,12 +1925,12 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
           <div class="wsp-card">
             <div class="wsp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
             <div class="wsp-card-title">Bookkeeping from Day One</div>
-            <div class="wsp-card-body">We set up your books properly from the start — right categories, GST/HST tracking, no bad habits to undo later. <a href="#" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'});return false;" style="color:var(--ss);font-weight:700;white-space:nowrap;">See plans →</a></div>
+            <div class="wsp-card-body">We set up your books properly from the start — right categories, GST & PST tracking, no bad habits to undo later. <a href="#" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'});return false;" style="color:var(--ss);font-weight:700;white-space:nowrap;">See plans →</a></div>
           </div>
           <div class="wsp-card top-pick">
             <div class="wsp-badge">Most Requested</div>
             <div class="wsp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg></div>
-            <div class="wsp-card-title">GST/HST Guidance</div>
+            <div class="wsp-card-title">GST & PST Guidance</div>
             <div class="wsp-card-body">We explain what you need to register for, when to remit, and what you can claim — in plain language, no jargon.</div>
           </div>
           <div class="wsp-card">
@@ -1969,7 +1999,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
         <ul class="price-list">
           <li class="included">Monthly income &amp; expense tracking</li>
           <li class="included">Bank &amp; credit card reconciliation</li>
-          <li class="included">GST/HST tracking</li>
+          <li class="included">GST & PST tracking</li>
           <li class="included">Clean records ready for your CPA</li>
           <li class="not-included">Receipt digitization</li>
           <li class="not-included">Tax prep package</li>
@@ -2301,7 +2331,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
         <div class="pc-points">
           <div class="pc-row"><span class="pc-check">✦</span><span>Personal income tax return</span></div>
           <div class="pc-row"><span class="pc-check">✦</span><span>Business income tax filing</span></div>
-          <div class="pc-row"><span class="pc-check">✦</span><span>Sales tax (GST/HST) annual filing</span></div>
+          <div class="pc-row"><span class="pc-check">✦</span><span>Sales tax (GST & PST) filing</span></div>
           <div class="pc-row"><span class="pc-check">✦</span><span>Personal + business filed together if you're self-employed</span></div>
           <div class="pc-row"><span class="pc-check">✦</span><span>Audit support — we organize your records to match exactly what the CPA needs for review</span></div>
           <div class="pc-row"><span class="pc-check">✦</span><span>CRA representation — your CPA handles all communication on your behalf</span></div>
@@ -2399,11 +2429,11 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
   <section class="constr-intro">
     <div class="constr-intro-inner">
       <div class="on-dark">
-        <p class="sec-tag" style="color:var(--bc);">For Construction</p>
+        <p class="sec-tag" style="color:var(--bc);">For Trades</p>
         <h2 class="sec-h on-dark">Field <em style="color:var(--bc);">Side</em></h2>
         <p class="sec-p" style="margin-bottom:1.5rem;">Running a small construction crew means receipts everywhere, subcontractors to pay, payroll to track, and no time to do any of it. We handle the books — then show you exactly which jobs are making you money.</p>
         <p class="sec-p">Available to Canadian construction companies with up to 20 employees. BC focus.</p>
-        <a class="slide-cta" href="#bc-contact" style="margin-top:2rem;background:var(--bc);color:#fff;display:inline-flex;align-items:center;gap:.6rem;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.9rem 2.2rem;text-decoration:none;border-radius:2px;">Get a Construction Quote →</a>
+        <a class="slide-cta" href="#bc-contact" style="margin-top:2rem;background:var(--bc);color:#fff;display:inline-flex;align-items:center;gap:.6rem;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.9rem 2.2rem;text-decoration:none;border-radius:2px;">Get a Trade Side Quote →</a>
       </div>
       <div>
         <div class="ci-stat-grid">
@@ -2426,7 +2456,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
       <div class="cs-card"><div class="cs-icon">👷</div><div class="cs-title">Payroll Records (Up to 20)</div><p class="cs-body">Hours, rates, deductions organized and documented. Ready for T4s and ROEs at year-end.</p></div>
       <div class="cs-card"><div class="cs-icon">🧾</div><div class="cs-title">Subcontractor &amp; Supplier Tracking</div><p class="cs-body">Know what you owe and what's overdue before it becomes a dispute. T5018 slips filed for all sub payments — most trades companies miss this CRA requirement.</p></div>
       <div class="cs-card"><div class="cs-icon">🏗️</div><div class="cs-title">Equipment &amp; Materials</div><p class="cs-body">Tool purchases, deliveries, fuel — categorized correctly including CCA items for tax time.</p></div>
-      <div class="cs-card"><div class="cs-icon">🇨🇦</div><div class="cs-title">Canadian Trades Compliance</div><p class="cs-body">GST/HST filing, EHT, WorkSafeBC, payroll remittances — filed directly as your authorized representative. We know the rules.</p></div>
+      <div class="cs-card"><div class="cs-icon">🇨🇦</div><div class="cs-title">Canadian Trades Compliance</div><p class="cs-body">GST & PST filing, EHT, WorkSafeBC, payroll remittances — filed directly as your authorized representative. We know the rules.</p></div>
       <div class="cs-card"><div class="cs-icon">📁</div><div class="cs-title">Receipt Digitization</div><p class="cs-body">Lumber yard, hardware, fuel receipts — drop them off or mail them in. Available as a standalone package or bundled with your bookkeeping. <a href="#" onclick="goToSlide(0);setTimeout(()=>{document.getElementById('digitization').scrollIntoView({behavior:'smooth'})},100);return false;" style="color:var(--bc);font-weight:700;">See packages →</a></p></div>
     </div>
   </section>
@@ -2538,11 +2568,11 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
       <div>
         <p class="sec-tag" style="color:var(--bc);">Compliance &amp; Tax Filing</p>
         <h2 class="sec-h" style="color:var(--ink);">Some filings we do.<br>Some go to our <em style="color:var(--bc);">CPA partners.</em></h2>
-        <p class="sec-p" style="margin-bottom:1rem;">We are not a CPA firm. But as your authorized representative, we handle several filings directly — GST/HST, EHT, and WorkSafeBC. Corporate income tax goes to our vetted CPA network, coordinated seamlessly with the books we built for you.</p>
+        <p class="sec-p" style="margin-bottom:1rem;">We are not a CPA firm. But as your authorized representative, we handle several filings directly — GST, EHT, and WorkSafeBC. Corporate income tax goes to our vetted CPA network, coordinated seamlessly with the books we built for you.</p>
         <p class="sec-p" style="margin-bottom:2rem;">One team. Clear responsibilities. Nothing falls through.</p>
         <div class="partner-flow">
           <div class="pf-step"><div class="pf-badge us">Backbone</div><div><div class="pf-title">We keep your books clean all year</div><div class="pf-desc">Job-by-job categorization, payroll records, subcontractor tracking — always CRA-ready.</div></div></div>
-          <div class="pf-step"><div class="pf-badge us-direct">Backbone — Direct</div><div><div class="pf-title">GST/HST filing — we file this</div><div class="pf-desc">As your authorized representative, we prepare and file your GST/HST returns directly with CRA. No CPA needed for this.</div></div></div>
+          <div class="pf-step"><div class="pf-badge us-direct">Backbone — Direct</div><div><div class="pf-title">GST & PST filing — we file this</div><div class="pf-desc">As your authorized representative, we prepare and file your GST and PST returns directly with CRA. No CPA needed for this.</div></div></div>
           <div class="pf-step"><div class="pf-badge us-direct">Backbone — Direct</div><div><div class="pf-title">EHT filing — we file this when due</div><div class="pf-desc">BC Employer Health Tax is not filed every month — it depends on your payroll amount and filing frequency. When an EHT remittance or return falls within your contracted period, we handle it as your authorized representative.</div></div></div>
           <div class="pf-step"><div class="pf-badge us-direct">Backbone — Direct</div><div><div class="pf-title">WorkSafeBC filing — we file this</div><div class="pf-desc">We are an authorized representative for WorkSafeBC. Payroll reporting and annual reconciliation filed directly — no scrambling at year-end.</div></div></div>
           <div class="pf-step"><div class="pf-badge us-direct">Backbone — Direct</div><div><div class="pf-title">Payroll remittances — we send these</div><div class="pf-desc">When you have employees, we handle the payroll remittances to CRA — CPP, EI, and income tax deductions — on time, every time, as your authorized representative.</div></div></div>
@@ -2562,7 +2592,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
           </div>
         </div>
         <div class="pc-points">
-          <div class="pc-row"><span class="pc-check" style="color:var(--bc);">✦</span><span>GST/HST quarterly &amp; annual filing</span></div>
+          <div class="pc-row"><span class="pc-check" style="color:var(--bc);">✦</span><span>GST &amp; PST quarterly &amp; annual filing</span></div>
           <div class="pc-row"><span class="pc-check" style="color:var(--bc);">✦</span><span>BC Employer Health Tax (EHT) — filed when due within your contract period</span></div>
           <div class="pc-row"><span class="pc-check" style="color:var(--bc);">✦</span><span>WorkSafeBC payroll reporting &amp; annual reconciliation</span></div>
           <div class="pc-row"><span class="pc-check" style="color:var(--bc);">✦</span><span>Payroll remittances to CRA — CPP, EI &amp; income tax deductions (when you have employees)</span></div>
@@ -2601,14 +2631,14 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
           <li>Subcontractor &amp; supplier records</li>
           <li>Payroll records — T4s filed directly</li>
           <li>T5018 slips for subcontractors</li>
-          <li>GST/HST filing (authorized representative)</li>
+          <li>GST &amp; PST filing (authorized representative)</li>
           <li>EHT &amp; WorkSafeBC filing</li>
           <li>Payroll remittances to CRA</li>
           <li>Equipment &amp; materials categorized</li>
           <li>Year-end package for your CPA</li>
           <li>Field receipt digitization included</li>
         </ul>
-        <a class="ts-price-cta" href="#bc-contact" onclick="document.getElementById('bc-contact').scrollIntoView({behavior:'smooth'});return false;">Get a Quote</a>
+        <a class="ts-price-cta" href="#bc-contact" onclick="document.getElementById('bc-contact').scrollIntoView({behavior:'smooth'});return false;">Book a Call</a>
       </div>
 
       <div class="ts-price-card featured">
@@ -2632,7 +2662,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
           <li>Quarterly P&amp;L review with owners &amp; stakeholders</li>
           <li>Requires books managed by us first</li>
         </ul>
-        <a class="ts-price-cta" href="#bc-contact" onclick="document.getElementById('bc-contact').scrollIntoView({behavior:'smooth'});return false;">Get a Quote</a>
+        <a class="ts-price-cta" href="#bc-contact" onclick="document.getElementById('bc-contact').scrollIntoView({behavior:'smooth'});return false;">Book a Call</a>
       </div>
 
     </div>
@@ -2686,18 +2716,18 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
       <h4>Studio Side</h4>
       <ul>
         <li><a href="#ss-how">How It Works</a></li>
-        <li><a href="#contact">Get a Quote</a></li>
+        <li><a href="#contact">Book a Call</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Trade Side</h4>
       <ul>
-        <li><a href="#" onclick="goToSlide(1);setTimeout(()=>{document.getElementById('bc-services').scrollIntoView({behavior:'smooth'})},100);return false;">Construction Bookkeeping</a></li>
+        <li><a href="#" onclick="goToSlide(1);setTimeout(()=>{document.getElementById('bc-services').scrollIntoView({behavior:'smooth'})},100);return false;">Trade Bookkeeping</a></li>
         <li><a href="#" onclick="goToSlide(1);setTimeout(()=>{document.getElementById('pl-analysis').scrollIntoView({behavior:'smooth'})},100);return false;">P&amp;L Per Project</a></li>
         <li><a href="#" onclick="goToSlide(1);setTimeout(()=>{document.getElementById('bc-tax').scrollIntoView({behavior:'smooth'})},100);return false;">Tax Filing via CPA Network</a></li>
         <li><a href="#ts-pricing">Pricing</a></li>
         <li><a href="#digitization">Digitization Packages</a></li>
-        <li><a href="#bc-contact">Get a Quote</a></li>
+        <li><a href="#bc-contact">Book a Call</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -3003,5 +3033,23 @@ function plSwitch(view, btn) {
 })();
 </script>
 
+
+<!-- FLOATING BOOK A CALL (mobile) -->
+<a class="float-cta" id="floatCta" href="#" onclick="goToSlide(0);setTimeout(()=>{document.getElementById('contact').scrollIntoView({behavior:'smooth'})},100);return false;">Book a Call</a>
+<script>
+// ── FLOATING CTA THEME SYNC ──
+(function() {
+  const floatCta = document.getElementById('floatCta');
+  if (!floatCta) return;
+  const nav = document.getElementById('mainNav');
+  new MutationObserver(() => {
+    if (nav.classList.contains('on-bc')) {
+      floatCta.classList.add('bc-mode');
+    } else {
+      floatCta.classList.remove('bc-mode');
+    }
+  }).observe(nav, { attributes: true, attributeFilter: ['class'] });
+})();
+</script>
 </body>
 </html>
