@@ -1028,6 +1028,9 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
   .nav-hamburger { display: none; }
 
   /* hero slider — full height, content centered */
+  /* global mobile overflow fix */
+  .sec, .pl-section, .why-section, .receipt-section { overflow-x: hidden; padding-left: 1.5rem !important; padding-right: 1.5rem !important; }
+
   /* mobile: stack slides, show/hide instead of horizontal track */
   .hero-slider { height: auto !important; min-height: auto !important; overflow: visible !important; padding-top: 0 !important; }
   .slider-track { display: block !important; width: 100% !important; height: auto !important; transform: none !important; }
@@ -1064,7 +1067,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
   /* all section grids single column */
   .why-grid, .receipt-grid, .how-grid, .partner-grid,
   .constr-intro-inner, .pl-inner, .faq-grid { grid-template-columns: 1fr; gap: 2rem; }
-  .pl-unlock { position: static; }
+  .pl-unlock { position: static; max-width: 100%; overflow: hidden; padding: 1.5rem; }
   .svc-grid, .who-grid, .cs-grid, .test-grid { grid-template-columns: 1fr; }
 
   /* padding */
@@ -1500,7 +1503,8 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
 .pl-report-title { font-family: 'Fraunces', serif; font-size: 1rem; font-weight: 700; color: #fff; }
 .pl-report-sub { font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.6); }
 .pl-report-meta { font-size: 0.65rem; color: rgba(255,255,255,0.6); font-family: 'Outfit', sans-serif; text-align: right; }
-.pl-report-table { width: 100%; border-collapse: collapse; }
+.pl-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.pl-report-table { width: 100%; border-collapse: collapse; min-width: 420px; }
 .pl-report-table th {
   font-size: 0.6rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
   color: var(--mist); padding: 0.75rem 1.4rem; text-align: left;
@@ -2603,7 +2607,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
               </div>
               <div class="pl-report-meta">Period: Jan–Mar 2024<br>Prepared by: The Backbone Ops &amp; Design Inc.</div>
             </div>
-            <table class="pl-report-table">
+            <div class="pl-table-wrap"><table class="pl-report-table">
               <thead>
                 <tr>
                   <th>Category</th>
@@ -2625,7 +2629,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
                 <tr><td>Permits &amp; Fees</td><td>—</td><td>$800</td><td class="neg">–$800</td></tr>
                 <tr class="total-row"><td>Net Profit</td><td>$13,500</td><td>$15,500</td><td style="color:#059669">+$2,000</td></tr>
               </tbody>
-            </table>
+            </table></div>
             <div class="pl-report-footer">
               <div class="pl-report-footer-note">Margin: 32.2% · All figures CAD · GST excluded</div>
               <div class="pl-report-footer-badge">PDF + Excel delivered</div>
