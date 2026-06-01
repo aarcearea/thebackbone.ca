@@ -1530,6 +1530,15 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
 
 
 /* ─── ANNUAL PLANNER ─── */
+.planner-preview-link {
+  display: inline-flex; align-items: center;
+  font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em;
+  color: var(--ss); text-decoration: none; margin: 1rem 0 0.5rem;
+  border-bottom: 1px solid transparent; transition: border-color 0.2s;
+}
+.planner-preview-link:hover { border-bottom-color: var(--ss); }
+.planner-preview-link.bc { color: var(--bc); }
+.planner-preview-link.bc:hover { border-bottom-color: var(--bc); }
 .planner-section { background: var(--white); }
 .bc-planner { background: #0e1014; }
 .planner-inner { display: grid; grid-template-columns: 1fr 1.4fr; gap: 5rem; align-items: start; }
@@ -2481,6 +2490,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
         <p class="sec-tag" style="color:var(--ss);">Add-On · Physical Product</p>
         <h2 class="sec-h">The Backbone<br><em style="color:var(--ss);">Annual Planner.</em></h2>
         <p class="sec-p">A physical desk calendar built around your business — CRA deadlines, GST &amp; PST filing dates, T4 season, payroll remittances, and every recurring date that matters to your year. No more scrambling. It&apos;s all on your wall.</p>
+        <a href="planner.html?side=studio" target="_blank" class="planner-preview-link">Preview all 12 months →</a>
         <div class="planner-tags">
           <span class="planner-tag">CRA Deadlines</span>
           <span class="planner-tag">GST &amp; PST Filing</span>
@@ -2827,6 +2837,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
         <p class="sec-tag" style="color:var(--bc);">Add-On · Physical Product</p>
         <h2 class="sec-h" style="color:#fff;">The Backbone<br><em style="color:var(--bc);">Annual Planner.</em></h2>
         <p class="sec-p" style="color:rgba(255,255,255,0.5);">A physical desk calendar built around your trade business — CRA deadlines, GST &amp; PST filing dates, payroll remittances, WorkSafeBC, EHT, and every recurring date that keeps your crew running clean.</p>
+        <a href="planner.html?side=trade" target="_blank" class="planner-preview-link bc">Preview all 12 months →</a>
         <div class="planner-tags">
           <span class="planner-tag bc">CRA Deadlines</span>
           <span class="planner-tag bc">GST &amp; PST Filing</span>
