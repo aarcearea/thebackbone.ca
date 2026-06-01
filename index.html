@@ -87,6 +87,7 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
+html { overflow-x: hidden; }
 body { background: var(--white); color: var(--ink); font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
 
 /* ─── NAV ─── */
@@ -934,7 +935,7 @@ nav.on-bc .nav-cta { background: var(--bc); }
 
 /* ─── FOOTER ─── */
 footer { background: var(--ink); padding: 5rem 5rem 2.5rem; }
-.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 4rem; margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.07); }
+.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 4rem; margin-bottom: 3rem; padding-bottom: 3rem; }
 .footer-brand {}
 .f-logo { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; display: block; margin-bottom: 0.5rem; }
 .f-logo em { font-style: italic; color: var(--ss); transition: color 0.5s ease; }
@@ -960,7 +961,6 @@ body.on-construction .f-logo em { color: var(--bc); }
 .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; }
 .f-address { font-family: 'Outfit', sans-serif; font-size: 0.72rem; color: rgba(255,255,255,0.3); margin-top: 0.75rem; margin-bottom: 1.2rem; letter-spacing: 0.03em; }
 .land-ack {
-  border-top: 1px solid rgba(255,255,255,0.07);
   padding: 1.5rem 0 1.2rem;
   margin-bottom: 0.5rem;
 }
@@ -1070,6 +1070,22 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
 
   /* counter hidden on mobile — too small */
   .slider-counter { display: none; }
+
+  /* fix slide hero overflow on mobile */
+  .slide { width: 100%; padding: 4rem 1.5rem 3rem; }
+  .slide-body { font-size: 0.95rem; max-width: 100%; }
+  .slide-bg-word { font-size: clamp(6rem, 28vw, 10rem); }
+  .slide-content { max-width: 100%; }
+  .slide-chips { flex-wrap: wrap; }
+
+  /* fix large section headings overflowing */
+  .sec-h, .cta-h { font-size: clamp(1.8rem, 7vw, 2.8rem); }
+  .catchup-h { font-size: clamp(1.6rem, 6vw, 2.4rem); }
+
+  /* hero wheel hidden already, but also hide bg word on very small screens */
+  @media (max-width: 400px) {
+    .slide-bg-word { display: none; }
+  }
 }
 
 @media (max-width: 1024px) and (min-width: 769px) {
@@ -1832,7 +1848,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
         </div>
         <div class="wvp-title">How Studio Side works</div>
         <div class="wvp-label">2-minute explainer</div>
-        <div class="wvp-duration">Drop your YouTube, Vimeo, or Loom URL in the src attribute below when ready</div>
+        <div class="wvp-duration">Video coming soon</div>
       </div>
       <!-- When ready: replace the placeholder div above with: -->
       <!-- <iframe src="YOUR_VIDEO_EMBED_URL" allowfullscreen style="width:100%;height:100%;border:none;"></iframe> -->
