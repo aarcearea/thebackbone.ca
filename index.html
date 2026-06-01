@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- ── PRIMARY SEO ── -->
-<title>The Backbone — Bookkeeping & Admin for Canadian Creatives & Trades | Vancouver BC</title>
+<title>The Backbone: Bookkeeping & Admin for Canadian Creatives & Trades | Vancouver BC</title>
 <meta name="description" content="The Backbone Ops & Design Inc. offers bookkeeping, document digitization, and admin support for artists, influencers, and entrepreneurs (Studio Side) plus construction bookkeeping and per-project P&amp;L analysis (Trade Side). Serving Vancouver and Vancouver Island, BC. From $320/week.">
 <meta name="keywords" content="bookkeeping Vancouver, bookkeeper for artists Vancouver, influencer bookkeeping Canada, construction bookkeeping BC, small business bookkeeper Vancouver Island, creative business admin, GST & PST filing Vancouver, first time entrepreneur Canada, Studio Side, Trade Side">
 <meta name="author" content="The Backbone Ops & Design Inc.">
@@ -15,14 +15,14 @@
 <!-- ── OPEN GRAPH (Facebook, LinkedIn previews) ── -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://thebackbone.ca">
-<meta property="og:title" content="The Backbone — Bookkeeping & Admin for Canadian Creatives & Trades">
+<meta property="og:title" content="The Backbone: Bookkeeping & Admin for Canadian Creatives & Trades">
 <meta property="og:description" content="Studio Side for artists, influencers & entrepreneurs. Trade Side for small Canadian construction companies. Bookkeeping &amp; per-project P&amp;L analysis. Vancouver & Vancouver Island.">
 <meta property="og:locale" content="en_CA">
 <meta property="og:site_name" content="The Backbone Ops & Design Inc.">
 
 <!-- ── TWITTER/X CARD ── -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="The Backbone — Bookkeeping for Creatives & Construction · Vancouver BC">
+<meta name="twitter:title" content="The Backbone: Bookkeeping for Creatives & Construction · Vancouver BC">
 <meta name="twitter:description" content="From $320/week. Studio Side for artists & influencers. Trade Side for small Canadian construction companies. Vancouver & Vancouver Island.">
 
 <!-- ── LOCAL BUSINESS SEO ── -->
@@ -208,6 +208,7 @@ nav.on-bc + .nav-drawer,
 .hero-slider {
   position: relative;
   height: 100vh;
+  height: 100svh;
   overflow: hidden;
   padding-top: 4rem;
 }
@@ -1027,8 +1028,11 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
   .nav-hamburger { display: none; }
 
   /* hero slider — full height, content centered */
-  .hero-slider { min-height: 100vh; }
-  .slide { padding: 5rem 1.8rem 6rem; }
+  /* mobile: stack slides, show/hide instead of horizontal track */
+  .hero-slider { height: auto !important; min-height: auto !important; overflow: visible !important; padding-top: 0 !important; }
+  .slider-track { display: block !important; width: 100% !important; height: auto !important; transform: none !important; }
+  .slide.ss, .slide.bc { display: none !important; width: 100% !important; height: auto !important; padding: 5.5rem 1.5rem 2rem !important; }
+  .slide.ss.active, .slide.bc.active { display: flex !important; }
   .slide-subbrand { font-size: clamp(2.8rem, 12vw, 4.5rem); }
   .slide-body { font-size: 0.95rem; }
   .slide-pills { gap: 0.4rem; }
@@ -1038,7 +1042,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
   .slide-geo { font-size: 0.6rem; }
 
   /* slider controls — bigger tap targets */
-  .slider-controls { bottom: 4rem; gap: 1rem; }
+  .slider-controls { display: none !important; }
   .slider-btn { width: 3rem; height: 3rem; font-size: 1.1rem; }
   .slider-dot { width: 0.6rem; height: 0.6rem; }
   .slider-dot.active { width: 2rem; }
@@ -1073,11 +1077,11 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
   .slider-counter { display: none; }
 
   /* fix slide hero overflow on mobile */
-  .slide { width: 100%; padding: 2rem 1.5rem 2rem; }
+  .slide { width: 100% !important; height: auto !important; padding: 5rem 1.5rem 2rem; }
   .slide-body { font-size: 0.95rem; max-width: 100%; }
   .slide-bg-word { font-size: clamp(6rem, 28vw, 10rem); }
   .slide-content { max-width: 100%; }
-  .slide-chips { flex-wrap: wrap; max-width: 100%; overflow: hidden; }
+  .slide-chips { flex-wrap: wrap; max-width: 100%; overflow: hidden; max-height: 5rem; }
 
   /* fix large section headings overflowing */
   .sec-h, .cta-h { font-size: clamp(1.8rem, 7vw, 2.8rem); }
@@ -1604,62 +1608,11 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
   .planner-inner { grid-template-columns: 1fr; gap: 2.5rem; }
 }
 
-/* ─── HERO WORD WHEEL ─── */
-.hero-wheel {
-  position: absolute;
-  right: 0;
-  left: 50%;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 14rem;
-  overflow: hidden;
-  pointer-events: none;
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
-  mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
-}
-
-.wheel-track {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0;
-  transition: transform 0.65s cubic-bezier(0.77, 0, 0.18, 1);
-}
-
-.wheel-word {
-  font-family: 'Fraunces', serif;
-  font-style: italic;
-  font-weight: 700;
-  font-size: clamp(1.6rem, 2.8vw, 2.8rem);
-  line-height: 1;
-  color: var(--ss);
-  opacity: 0.12;
-  padding: 1.1rem 0;
-  white-space: nowrap;
-  transition: opacity 0.65s ease, transform 0.65s ease;
-  display: block;
-  transform: scale(0.88);
-}
-
-.wheel-word.active {
-  opacity: 1;
-  transform: scale(1);
-}
-
-/* hide wheel at narrow widths where slide is single-column */
-@media (max-width: 900px) {
-  .hero-wheel { display: none; }
-}
-
-
 /* ─── FLOATING BOOK A CALL (mobile) ─── */
 .float-cta {
   display: none;
   position: fixed;
-  bottom: 1.5rem;
+  bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
   z-index: 250;
@@ -1771,17 +1724,6 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
     <div class="slide ss active" id="slide0">
       <div class="slide-bg-word">Studio</div>
 
-      <!-- WORD WHEEL — right side of hero -->
-      <div class="hero-wheel" aria-hidden="true">
-        <div class="wheel-track" id="wheelTrack">
-          <span class="wheel-word">Bookkeeping</span>
-          <span class="wheel-word">GST Filing</span>
-          <span class="wheel-word">Doc Digitization</span>
-          <span class="wheel-word">Admin Support</span>
-          <span class="wheel-word">Financial Clarity</span>
-        </div>
-      </div>
-
       <div class="slide-content">
         <p class="slide-tag">For Creatives</p>
         <h1 class="slide-subbrand">Studio<br><em>Side</em></h1>
@@ -1811,7 +1753,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
         <div class="slide-pills">
           <span class="slide-pill">Bookkeeping</span>
           <span class="slide-pill">P&amp;L per Project</span>
-          <span class="slide-pill">Max 20 Employees</span>
+          
         </div>
         <div class="slide-actions">
           <a class="slide-cta" href="#" onclick="goToSlide(1);setTimeout(()=>{document.getElementById('construction-side').scrollIntoView({behavior:'smooth'})},100);return false;">Explore Trade Side →</a>
@@ -1845,7 +1787,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
       <span class="ticker-item">Studio Side</span>
       <span class="ticker-item">Bookkeeping for Creatives</span>
       <span class="ticker-item">From $320 / Week</span>
-      <span class="ticker-item">No Employee Costs</span>
+      <span class="ticker-item">GST &amp; PST Filing</span>
       <span class="ticker-item">Physical Receipt Pickup</span>
       <span class="ticker-item">Powered by QuickBooks</span>
       <span class="ticker-item">CPA Tax Network</span>
@@ -1854,7 +1796,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
       <span class="ticker-item">Studio Side</span>
       <span class="ticker-item">Bookkeeping for Creatives</span>
       <span class="ticker-item">From $320 / Week</span>
-      <span class="ticker-item">No Employee Costs</span>
+      <span class="ticker-item">GST &amp; PST Filing</span>
       <span class="ticker-item">Physical Receipt Pickup</span>
       <span class="ticker-item">Powered by QuickBooks</span>
       <span class="ticker-item">CPA Tax Network</span>
@@ -1882,20 +1824,20 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
           <div class="qt-ed-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/><path d="M16 3.5C17.5 4.5 18 6 18 8"/></svg></div>
           <div class="qt-ed-content">
             <div class="qt-ed-title">You're self-employed</div>
-            <div class="qt-ed-body">Freelance, commissions, brand deals — we track all your income and expenses so nothing gets missed at tax time.</div>
+            <div class="qt-ed-body">Freelance, commissions, brand deals. We track all your income and expenses so nothing gets missed at tax time.</div>
           </div>
         </div>
         <div class="qt-ed-item">
           <div class="qt-ed-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="9 12 11 14 15 10"/></svg></div>
           <div class="qt-ed-content">
             <div class="qt-ed-title">Personal taxes, handled too</div>
-            <div class="qt-ed-body">Our CPA partners file your personal tax return alongside everything else — one team, one process, nothing falls through.</div>
+            <div class="qt-ed-body">We prep your books and year-end package. Your CPA files your return. We coordinate with them, or connect you with ours. One process, nothing falls through.</div>
           </div>
         </div>
       </div>
 
       <div class="qt-note" style="margin-top:2rem;">
-        <span style="color:var(--ss);font-weight:700;">Note —</span> Been mixing your personal and business money together? It happens — especially at the start. We untangle it for you, no judgment.
+        <span style="color:var(--ss);font-weight:700;">Note:</span> Been mixing your personal and business money together? It happens — especially at the start. We untangle it for you, no judgment.
       </div>
     </div>
   </section>
@@ -1913,7 +1855,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
         <div class="why-card"><div class="wc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6l9-4 9 4v6c0 5-4 9-9 10C7 21 3 17 3 12V6z"/><path d="M9 12l2 2 4-4"/></svg></div><div><div class="wc-title">Messy books are our starting point</div><div class="wc-body">Receipts in a bag, mixed accounts, months behind — we've seen it all and we never judge. We just get to work.</div></div></div>
         <div class="why-card"><div class="wc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10c1.5-2 3-2 4.5 0s3 2 4.5 0 3-2 4.5 0 3 2 4.5 0"/><path d="M3 14c1.5-2 3-2 4.5 0s3 2 4.5 0 3-2 4.5 0 3 2 4.5 0"/><path d="M3 18c1.5-2 3-2 4.5 0s3 2 4.5 0 3-2 4.5 0 3 2 4.5 0"/></svg></div><div><div class="wc-title">We understand irregular income</div><div class="wc-body">Commission one month, nothing the next, three brand deals at once. We know how creative income works and we track it properly.</div></div></div>
         <div class="why-card"><div class="wc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><div class="wc-title">Works around your schedule</div><div class="wc-body">Busy season, slow season, one-time catch-up or ongoing — we fit into your life, not the other way around. No contracts, no lock-in.</div></div></div>
-        <div class="why-card"><div class="wc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l4-4h10l4 4-2 4 2 4H5l2-4z"/><line x1="12" y1="13" x2="12" y2="22"/></svg></div><div><div class="wc-title">Built for Canadian self-employment</div><div class="wc-body">GST, PST, T2125, CRA deadlines, sole proprietor filings — we know the rules for self-employed Canadians inside out.</div></div></div>
+        <div class="why-card"><div class="wc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l4-4h10l4 4-2 4 2 4H5l2-4z"/><line x1="12" y1="13" x2="12" y2="22"/></svg></div><div><div class="wc-title">Built for Canadian self-employment</div><div class="wc-body">GST, PST, CRA deadlines, sole proprietor filings. We know the rules for self-employed Canadians inside out.</div></div></div>
       </div>
     </div>
     <!-- VIDEO PLACEHOLDER — replace src with real URL when ready -->
@@ -1940,19 +1882,19 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
       <div class="who-card who-card-selectable" id="who-artists" onclick="selectWho('artists', this)">
         <div class="who-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/><path d="M15 5l3 3"/></svg></div>
         <h3 class="who-title">Artists &amp; Makers</h3>
-        <p class="who-body">Commissions, prints, handmade goods — you're busy creating. None of it gets tracked until tax season hits.</p>
+        <p class="who-body">Commissions, prints, handmade goods. You're busy creating. None of it gets tracked until tax season hits.</p>
         <div class="who-pain">"I have two years of receipts in a bag and I'm scared to open it."</div>
       </div>
       <div class="who-card who-card-selectable active-who" id="who-influencers" onclick="selectWho('influencers', this)">
         <div class="who-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18" stroke-width="2"/><path d="M9 7h6"/><path d="M9 11h4"/></svg></div>
         <h3 class="who-title">Influencers &amp; Creators</h3>
-        <p class="who-body">Brand deals, sponsored posts, affiliate income — messy, fast, and all in different places. We track it all.</p>
+        <p class="who-body">Brand deals, sponsored posts, affiliate income. Messy, fast, and all in different places. We track it all.</p>
         <div class="who-pain">"I don't even know what I made last quarter or what I owe CRA."</div>
       </div>
       <div class="who-card who-card-selectable" id="who-entrepreneurs" onclick="selectWho('entrepreneurs', this)">
         <div class="who-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"/><path d="M12 12C12 12 7 10 5 6c4 0 7 2 7 6z"/><path d="M12 12c0 0 5-2 7-6-4 0-7 2-7 6z"/></svg></div>
         <h3 class="who-title">First-Time Entrepreneurs</h3>
-        <p class="who-body">Just registered in Canada. You know your craft — not bookkeeping. We build good habits from day one.</p>
+        <p class="who-body">Just registered in Canada. You know your craft, not bookkeeping. We build good habits from day one.</p>
         <div class="who-pain">"I don't know what I can deduct or how GST even works."</div>
       </div>
     </div>
@@ -1969,7 +1911,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
           <div class="wsp-card">
             <div class="wsp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
             <div class="wsp-card-title">Bookkeeping</div>
-            <div class="wsp-card-body">Commissions, print sales, market income — all tracked. GST & PST prep included. CRA-ready year-round. <a href="#" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'});return false;" style="color:var(--ss);font-weight:700;white-space:nowrap;">See plans →</a></div>
+            <div class="wsp-card-body">Commissions, print sales, market income. All tracked. GST & PST prep included. CRA-ready year-round. <a href="#" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'});return false;" style="color:var(--ss);font-weight:700;white-space:nowrap;">See plans →</a></div>
           </div>
           <div class="wsp-card">
             <div class="wsp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
@@ -1979,7 +1921,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
           <div class="wsp-card">
             <div class="wsp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="9 12 11 14 15 10"/></svg></div>
             <div class="wsp-card-title">Year-End Package</div>
-            <div class="wsp-card-body">Everything packaged cleanly for your CPA to file your T2125 or corporate return without back-and-forth.</div>
+            <div class="wsp-card-body">Everything packaged cleanly for your CPA to file without back-and-forth.</div>
           </div>
         </div>
       </div>
@@ -1993,7 +1935,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
           <div class="wsp-card">
             <div class="wsp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
             <div class="wsp-card-title">Bookkeeping</div>
-            <div class="wsp-card-body">Brand deals, affiliate income, sponsorships, merch — all tracked per stream. GST & PST included. No income source missed. <a href="#" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'});return false;" style="color:var(--ss);font-weight:700;white-space:nowrap;">See plans →</a></div>
+            <div class="wsp-card-body">Brand deals, affiliate income, sponsorships, merch. All tracked per stream. GST & PST included. No income source missed. <a href="#" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'});return false;" style="color:var(--ss);font-weight:700;white-space:nowrap;">See plans →</a></div>
           </div>
           <div class="wsp-card top-pick">
             <div class="wsp-badge">Most Requested</div>
@@ -2004,7 +1946,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
           <div class="wsp-card">
             <div class="wsp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="12" y2="17"/></svg></div>
             <div class="wsp-card-title">Document Digitization</div>
-            <div class="wsp-card-body">Contracts, receipts, brand deal paperwork — physical or digital. Available standalone or as part of your plan. <a href="#" onclick="goToSlide(0);setTimeout(()=>{document.getElementById('digitization').scrollIntoView({behavior:'smooth'})},100);return false;" style="color:var(--ss);font-weight:700;">See packages →</a></div>
+            <div class="wsp-card-body">Contracts, receipts, brand deal paperwork. Physical or digital. Available standalone or as part of your plan. <a href="#" onclick="goToSlide(0);setTimeout(()=>{document.getElementById('digitization').scrollIntoView({behavior:'smooth'})},100);return false;" style="color:var(--ss);font-weight:700;">See packages →</a></div>
           </div>
         </div>
       </div>
@@ -2018,18 +1960,18 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
           <div class="wsp-card">
             <div class="wsp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
             <div class="wsp-card-title">Bookkeeping from Day One</div>
-            <div class="wsp-card-body">We set up your books properly from the start — right categories, GST & PST tracking, no bad habits to undo later. <a href="#" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'});return false;" style="color:var(--ss);font-weight:700;white-space:nowrap;">See plans →</a></div>
+            <div class="wsp-card-body">We set up your books properly from the start. Right categories, GST & PST tracking, no bad habits to undo later. <a href="#" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'});return false;" style="color:var(--ss);font-weight:700;white-space:nowrap;">See plans →</a></div>
           </div>
           <div class="wsp-card top-pick">
             <div class="wsp-badge">Most Requested</div>
             <div class="wsp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg></div>
             <div class="wsp-card-title">GST & PST Guidance</div>
-            <div class="wsp-card-body">We explain what you need to register for, when to remit, and what you can claim — in plain language, no jargon.</div>
+            <div class="wsp-card-body">We explain what you need to register for, when to remit, and what you can claim, in plain language, no jargon.</div>
           </div>
           <div class="wsp-card">
             <div class="wsp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
             <div class="wsp-card-title">CPA Tax Network</div>
-            <div class="wsp-card-body">We prep your year-end package. Our CPA partners file your return. One team, one process — nothing falls through at tax time.</div>
+            <div class="wsp-card-body">We prep your year-end package. Our CPA partners file your return, or we hand it off cleanly to your own CPA. Nothing falls through at tax time.</div>
           </div>
         </div>
       </div>
@@ -2067,7 +2009,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
   <section class="sec" id="pricing" style="background:var(--light);">
     <p class="sec-tag" style="color:var(--ss);">Bookkeeping Pricing</p>
     <h2 class="sec-h" style="color:var(--ink);margin-bottom:0.5rem;">Simple, honest <em style="color:var(--ss);">pricing.</em></h2>
-    <p class="sec-p" style="max-width:580px;margin-bottom:0.75rem;">All monthly plans are ongoing retainers — we show up every week, keep your books current, and you always know what it costs. CPA tax filing is quoted separately through our partner network.</p>
+    <p class="sec-p" style="max-width:580px;margin-bottom:0.75rem;">All monthly plans are ongoing retainers. We show up every week, keep your books current, and you always know what it costs. CPA tax filing is quoted separately through our partner network.</p>
 
     <div class="pricing-track-label">
       <span class="ptl-tag">Monthly Retainers</span>
@@ -2096,7 +2038,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
           <li class="included">Clean records ready for your CPA</li>
           <li class="not-included">Receipt digitization</li>
           <li class="not-included">Tax prep package</li>
-          <li class="not-included">CPA tax filing — quoted separately</li>
+          <li class="not-included">CPA tax filing (quoted separately)</li>
           <li class="not-included">Audit support</li>
         </ul>
         <a class="price-cta ghost" href="#contact" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});return false;">Get Started</a>
@@ -2118,11 +2060,11 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
         <ul class="price-list">
           <li class="included">Everything in Basic</li>
           <li class="included">Physical receipt digitization</li>
-          <li class="included">Standard turnaround — 1 week · up to 200 receipts</li>
+          <li class="included">Standard turnaround: 1 week · up to 200 receipts</li>
           <li class="included">Monthly P&amp;L report</li>
           <li class="included">Monthly Balance Sheet</li>
           <li class="included">Sole proprietor books + personal separation</li>
-          <li class="not-included">CPA tax filing — quoted separately</li>
+          <li class="not-included">CPA tax filing (quoted separately)</li>
           <li class="not-included">Audit support</li>
         </ul>
         <a class="price-cta solid" href="#contact" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});return false;">Get Started</a>
@@ -2133,7 +2075,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
         <div class="price-tier">Full Service</div>
         <div class="price-amount">From $640<span class="price-per">/week</span></div>
         <div class="price-detail">16+ hrs · $40/hr · CAD · scoped per client</div>
-        <p class="price-desc">For clients with multiple business structures. We manage all three sets of books in QuickBooks — corporation, sole proprietorship, and personal finances — properly separated and organized.</p>
+        <p class="price-desc">For clients with multiple business structures. We manage all your books in QuickBooks, properly separated and organized across your business structures.</p>
         <div class="price-divider"></div>
         <ul class="price-list">
           <li class="included">Corporation bookkeeping</li>
@@ -2141,10 +2083,10 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
           <li class="included">Personal finances tracked &amp; separated</li>
           <li class="included">Receipt digitization across all structures</li>
           <li class="included">Year-end package prepared for your CPA</li>
-          <li class="included">Audit support — records aligned for review</li>
+          <li class="included">Audit support: records aligned for review</li>
           <li class="included">Priority receipt turnaround available</li>
-          <li class="not-included">CPA tax filing — quoted separately</li>
-          <li class="quote">Final price scoped after consultation — setup may affect total</li>
+          <li class="not-included">CPA tax filing (quoted separately)</li>
+          <li class="quote">Final price scoped after consultation. Setup may affect total</li>
         </ul>
 
         <div class="fs-terms">
@@ -2172,7 +2114,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
       <div class="catchup-left">
         <div class="catchup-label">Behind on your books?</div>
         <h3 class="catchup-title">That's a project,<br>not a <em style="color:var(--ss);">retainer.</em></h3>
-        <p class="catchup-body">If you haven't filed in a year — or three — the monthly plans above aren't the right fit. A catch-up is a different scope entirely. We assess how far behind you are, how many years need to be untangled, and quote the full project as a flat engagement.</p>
+        <p class="catchup-body">If you haven't filed in a year or three, the monthly plans above aren't the right fit. A catch-up is a different scope entirely. We assess how far behind you are, how many years need to be untangled, and quote the full project as a flat engagement.</p>
         <p class="catchup-body" style="margin-top:0.75rem;">As a general guide, expect roughly a couple of months of work per year that's unfiled. Two years behind? Around 4 months. Three years, like some of our most significant cases, can mean close to a year of dedicated work. Missing documentation, mixed personal and business finances, and incomplete records can all affect the timeline. We'll tell you exactly what you're looking at in the free consultation, no surprises.</p>
         <p class="catchup-body" style="margin-top:0.75rem;">Once your books are caught up, you move to a monthly retainer to stay current going forward.</p>
       </div>
@@ -2383,7 +2325,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
         <div class="how-step"><div class="hs-num">02</div><div><div class="hs-title">We give you a clear quote</div><div class="hs-desc">Estimated hours, breakdown of work. You approve before we start anything.</div></div></div>
         <div class="how-step"><div class="hs-num">03</div><div><div class="hs-title">Drop off or mail your documents</div><div class="hs-desc">Vancouver — local drop-off. Vancouver Island — Canada Post. We handle it from there.</div></div></div>
         <div class="how-step"><div class="hs-num">04</div><div><div class="hs-title">We work, you stay informed</div><div class="hs-desc">Updates as we go. When done, we walk you through the results.</div></div></div>
-        <div class="how-step"><div class="hs-num">05</div><div><div class="hs-title">Ongoing or one-time — your call</div><div class="hs-desc">Monthly retainer or a one-time catch-up. No pressure either way.</div></div></div>
+        <div class="how-step"><div class="hs-num">05</div><div><div class="hs-title">Ongoing or one-time. Your call</div><div class="hs-desc">Monthly retainer or a one-time catch-up. No pressure either way.</div></div></div>
       </div>
     </div>
   </section>
@@ -2393,23 +2335,23 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
     <div class="partner-grid">
       <div>
         <p class="sec-tag" style="color:#6392B6;">Tax Professional Network</p>
-        <h2 class="sec-h" style="color:var(--ink);">We do the books.<br>Our CPA partners <em style="color:#6392B6;">file your taxes.</em></h2>
-        <p class="sec-p" style="margin-bottom:1rem;">Most bookkeepers leave you on your own at tax time. Not us. We work with a network of trusted Canadian CPAs — including Liberty Tax — who handle your annual filing using the clean books we built.</p>
+        <h2 class="sec-h" style="color:var(--ink);">We do the books.<br><em style="color:#6392B6;">Your CPA files your taxes.</em></h2>
+        <p class="sec-p" style="margin-bottom:1rem;">Most bookkeepers leave you on your own at tax time. We don't. We work with a network of trusted Canadian CPAs — including Liberty Tax — who handle your annual filing using the clean books we built.</p>
         <p class="sec-p" style="margin-bottom:1.5rem;">We match you with the right professional for your situation. You never hunt for a tax person in April.</p>
 
         <div class="sole-prop-box">
           <div class="sp-icon">💡</div>
           <div>
-            <div class="sp-title">Have a business AND personal taxes to file?</div>
-            <p class="sp-body">Whether you have a corporation, are self-employed, or both — we handle it all together. Your <strong>business books</strong>, your <strong>business taxes</strong>, and your <strong>personal tax return</strong> — one team, one handoff, nothing missed.</p>
+            <div class="sp-title">Corporation, sole proprietor, or both?</div>
+            <p class="sp-body">Whether you have one business structure or several, we keep your books clean and organized across all of them. Your CPA gets a tidy package. One handoff, nothing missed.</p>
           </div>
         </div>
 
         <div class="partner-flow" style="margin-top:1.5rem;">
           <div class="pf-step"><div class="pf-badge us">Studio Side</div><div><div class="pf-title">We clean and separate your books</div><div class="pf-desc">Personal vs. business expenses sorted out — even if they've been mixed. No judgment, just clean records.</div></div></div>
-          <div class="pf-step"><div class="pf-badge us">Studio Side</div><div><div class="pf-title">We prepare your full year-end package</div><div class="pf-desc">Business income, personal income, deductions — everything packaged cleanly for your CPA.</div></div></div>
+          <div class="pf-step"><div class="pf-badge us">Studio Side</div><div><div class="pf-title">We prepare your full year-end package</div><div class="pf-desc">Business income, expenses, deductions. Everything packaged cleanly for your CPA.</div></div></div>
           <div class="pf-step"><div class="pf-badge them">CPA Partner</div><div><div class="pf-title">They file all your returns</div><div class="pf-desc">Personal, business, and any other filings — all handled together by licensed professionals.</div></div></div>
-          <div class="pf-step"><div class="pf-badge us">Studio Side</div><div><div class="pf-title">If there's an audit — we align everything</div><div class="pf-desc">We work directly with your CPA to organize your records exactly the way they need them for review. You don't have to figure out what to pull together — we do that with them.</div></div></div>
+          <div class="pf-step"><div class="pf-badge us">Studio Side</div><div><div class="pf-title">If there's an audit, we align everything</div><div class="pf-desc">We work directly with your CPA to organize your records exactly the way they need them for review. You don't have to figure out what to pull together — we do that with them.</div></div></div>
           <div class="pf-step"><div class="pf-badge them">CPA Partner</div><div><div class="pf-title">They represent you with CRA</div><div class="pf-desc">Your CPA handles all communication with the CRA. You just stay informed — no stress, no surprises.</div></div></div>
         </div>
       </div>
@@ -2426,8 +2368,8 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
           <div class="pc-row"><span class="pc-check">✦</span><span>Business income tax filing</span></div>
           <div class="pc-row"><span class="pc-check">✦</span><span>Sales tax (GST & PST) filing</span></div>
           <div class="pc-row"><span class="pc-check">✦</span><span>Personal + business filed together if you're self-employed</span></div>
-          <div class="pc-row"><span class="pc-check">✦</span><span>Audit support — we organize your records to match exactly what the CPA needs for review</span></div>
-          <div class="pc-row"><span class="pc-check">✦</span><span>CRA representation — your CPA handles all communication on your behalf</span></div>
+          <div class="pc-row"><span class="pc-check">✦</span><span>Audit support: we organize your records to match exactly what the CPA needs for review</span></div>
+          <div class="pc-row"><span class="pc-check">✦</span><span>CRA representation: your CPA handles all communication on your behalf</span></div>
         </div>
         <div class="pc-note"><strong>If CRA ever comes knocking:</strong> we don't leave you to figure it out alone. We align your records with your CPA so everything is ready, clean, and in order — before they even ask for it.</div>
       </div>
@@ -2468,12 +2410,12 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
         <p class="sec-p">No surprises. We'd rather you know exactly what working with Studio Side looks like before you reach out.</p>
       </div>
       <div class="faq-list">
-        <div class="faq-item"><div class="faq-q">I'm years behind — can you still help? <span class="faq-toggle">+</span></div><div class="faq-a">Yes — and it's more common than you think. Significant catch-ups aren't handled on a monthly retainer, they're scoped as a flat project. We assess everything in the free consultation — how many years, what records exist, what needs to be reconstructed — and give you a clear quote for the full project. Some take weeks, some take longer. Once you're caught up, you move to a monthly plan to stay current.</div></div>
+        <div class="faq-item"><div class="faq-q">I'm years behind. Can you still help? <span class="faq-toggle">+</span></div><div class="faq-a">Yes — and it's more common than you think. Significant catch-ups aren't handled on a monthly retainer, they're scoped as a flat project. We assess everything in the free consultation — how many years, what records exist, what needs to be reconstructed — and give you a clear quote for the full project. Some take weeks, some take longer. Once you're caught up, you move to a monthly plan to stay current.</div></div>
         <div class="faq-item"><div class="faq-q">How does the weekly retainer work? <span class="faq-toggle">+</span></div><div class="faq-a">$256 CAD per week covers 8 hours of dedicated work at $32/hr. Before we start, we tell you exactly what those hours will be used for. No surprise invoices.</div></div>
         <div class="faq-item"><div class="faq-q">Do I need to sign a long-term contract? <span class="faq-toggle">+</span></div><div class="faq-a">It depends on the plan. Basic is month-to-month — cancel anytime. Standard requires a 3-month minimum so we can actually build a reliable routine with your books. Full Service is a 6-month commitment given the complexity of managing multiple business structures. Catch-up projects are flat-quoted separately.</div></div>
-        <div class="faq-item"><div class="faq-q">I'm on Vancouver Island — can I still use Studio Side? <span class="faq-toggle">+</span></div><div class="faq-a">Yes — all bookkeeping, admin, and tax services are available remotely. For document digitization, you mail your physical receipts via Canada Post and we handle everything from there. The only thing not available for VI clients is in-person drop-off.</div></div>
-        <div class="faq-item"><div class="faq-q">Why does Full Service require a 3-month contract? <span class="faq-toggle">+</span></div><div class="faq-a">Full Service involves managing books across multiple structures — corporation, sole proprietorship, and personal finances. The setup phase alone takes time: getting full access to all bank statements, building the right categorization structure, and making sure nothing is mixed. Six months ensures we can actually deliver clean, reliable results across all three. We'll walk you through exactly what's needed in your free consultation.</div></div>
-        <div class="faq-item"><div class="faq-q">What happens if I get audited? <span class="faq-toggle">+</span></div><div class="faq-a">We've got you. If CRA reviews your file, we work directly with your CPA to organize your records exactly the way they need them for the audit. You don't have to figure out what to pull together or how to present it — that's our job. Your CPA handles all communication with CRA on your behalf.</div></div>
+        <div class="faq-item"><div class="faq-q">I'm on Vancouver Island. Can I still use Studio Side? <span class="faq-toggle">+</span></div><div class="faq-a">Yes — all bookkeeping, admin, and tax services are available remotely. For document digitization, you mail your physical receipts via Canada Post and we handle everything from there. The only thing not available for VI clients is in-person drop-off.</div></div>
+        <div class="faq-item"><div class="faq-q">Why does Full Service require a 3-month contract? <span class="faq-toggle">+</span></div><div class="faq-a">Full Service involves managing books across multiple business structures. The setup phase alone takes time: getting full access to all bank statements, building the right categorization structure, and making sure nothing is mixed. The 3-month term ensures we can actually deliver clean, reliable results. We'll walk you through exactly what's needed in your free consultation.</div></div>
+        <div class="faq-item"><div class="faq-q">What happens if I get audited? <span class="faq-toggle">+</span></div><div class="faq-a">We've got you. If CRA reviews your file, we work directly with your CPA (or ours) to organize your records exactly the way they need them for the audit. You don't have to figure out what to pull together or how to present it. That's our job.</div></div>
         <div class="faq-item"><div class="faq-q">Do I still need to find a tax person? <span class="faq-toggle">+</span></div><div class="faq-a">No. We have a network of trusted Canadian CPAs — including Liberty Tax — who handle annual tax filing for our clients. We prepare your year-end package and connect you with the right professional.</div></div>
         <div class="faq-item"><div class="faq-q">How long does receipt digitization take? <span class="faq-toggle">+</span></div><div class="faq-a">Standard turnaround is 1 week for up to 200 receipts. If you need it faster, we offer a 48-hour fast-track option at a premium rate — just ask when you reach out and we'll quote you.</div></div>
         <div class="faq-item"><div class="faq-q">How far back can you catch up my books? <span class="faq-toggle">+</span></div><div class="faq-a">As far back as you need. We've helped clients catch up from 3 months to 3 years behind. There's no judgment — it's more common than you think.</div></div>
@@ -2489,7 +2431,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
       <div class="planner-intro">
         <p class="sec-tag" style="color:var(--ss);">Add-On · Physical Product</p>
         <h2 class="sec-h">The Backbone<br><em style="color:var(--ss);">Annual Planner.</em></h2>
-        <p class="sec-p">A physical desk calendar built around your business — CRA deadlines, GST &amp; PST filing dates, T4 season, payroll remittances, and every recurring date that matters to your year. No more scrambling. It&apos;s all on your wall.</p>
+        <p class="sec-p">A physical desk calendar built around your business. CRA deadlines, GST &amp; PST filing dates, T4 season, payroll remittances, and every recurring date that matters to your year. No more scrambling. It&apos;s all on your wall.</p>
         <a href="planner.html?side=studio" target="_blank" class="planner-preview-link">Preview all 12 months →</a>
         <div class="planner-tags">
           <span class="planner-tag">CRA Deadlines</span>
@@ -2542,7 +2484,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
     <div class="cta-inner">
       <p class="sec-tag" style="color:rgba(255,255,255,0.6);justify-content:center;margin-bottom:1rem;">Studio Side</p>
       <h2 class="cta-h">Ready to get your books<br><em>off your plate?</em></h2>
-      <p class="cta-p">Free 30-minute consultation. We figure out exactly what you need and quote clearly — no pressure, no commitment.</p>
+      <p class="cta-p">Free 30-minute consultation. We figure out exactly what you need and quote clearly. No pressure, no commitment.</p>
       <div class="cta-btns">
         <a class="btn-white" href="mailto:support@thebackbone.ca">Email Us</a>
         <a class="btn-outline-white" href="tel:+1">Book a Free Call</a>
@@ -2561,13 +2503,13 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
       <span class="ticker-item">Trade Side</span>
       <span class="ticker-item">Job-by-Job Bookkeeping</span>
       <span class="ticker-item">P&amp;L Per Project</span>
-      <span class="ticker-item">Max 20 Employees</span>
+      
       <span class="ticker-item">Canadian Companies Only</span>
       <span class="ticker-item">Safety Workshops</span>
       <span class="ticker-item">Trade Side</span>
       <span class="ticker-item">Job-by-Job Bookkeeping</span>
       <span class="ticker-item">P&amp;L Per Project</span>
-      <span class="ticker-item">Max 20 Employees</span>
+      
       <span class="ticker-item">Canadian Companies Only</span>
       <span class="ticker-item">Safety Workshops</span>
     </div>
@@ -2579,16 +2521,14 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
       <div class="on-dark">
         <p class="sec-tag" style="color:var(--bc);">For Trades</p>
         <h2 class="sec-h on-dark">Field <em style="color:var(--bc);">Side</em></h2>
-        <p class="sec-p" style="margin-bottom:1.5rem;">Running a small construction crew means receipts everywhere, subcontractors to pay, payroll to track, and no time to do any of it. We handle the books — then show you exactly which jobs are making you money.</p>
+        <p class="sec-p" style="margin-bottom:1.5rem;">Running a small construction crew means receipts everywhere, subcontractors to pay, and payroll to track with no time to do any of it. We handle the books — then show you exactly which jobs are making you money.</p>
         <p class="sec-p">Available to Canadian construction companies with up to 20 employees. BC focus.</p>
         <a class="slide-cta" href="#bc-contact" style="margin-top:2rem;background:var(--bc);color:#fff;display:inline-flex;align-items:center;gap:.6rem;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.9rem 2.2rem;text-decoration:none;border-radius:2px;">Get a Trade Side Quote →</a>
       </div>
       <div>
         <div class="ci-stat-grid">
-          <div class="ci-stat"><div class="ci-stat-val">20</div><div class="ci-stat-label">Max employees — we stay small so we stay focused</div></div>
-          <div class="ci-stat"><div class="ci-stat-val">BC</div><div class="ci-stat-label">Canadian companies only — no exceptions</div></div>
-          <div class="ci-stat"><div class="ci-stat-val">P&amp;L</div><div class="ci-stat-label">Per-project analysis — when we manage your books</div></div>
-          <div class="ci-stat"><div class="ci-stat-val">Safe</div><div class="ci-stat-label">On-site safety workshops for small trades crews</div></div>
+          <div class="ci-stat"><div class="ci-stat-val">P&amp;L</div><div class="ci-stat-label">Per-project profit &amp; loss analysis. Know exactly which jobs made money</div></div>
+          <div class="ci-stat"><div class="ci-stat-val">Safety</div><div class="ci-stat-label">On-site safety workshops for small trades crews</div></div>
         </div>
       </div>
     </div>
@@ -2598,9 +2538,9 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
   <section class="constr-services" id="bc-services">
     <p class="sec-tag" style="color:var(--bc);">Bookkeeping Services</p>
     <h2 class="sec-h" style="color:var(--ink);margin-bottom:0.5rem;">Everything the <em style="color:var(--bc);">job site</em> generates,<br>we organize.</h2>
-    <p class="sec-p" style="max-width:560px;">From lumber receipts to subcontractor invoices to payroll records — properly categorized by project, every time.</p>
+    <p class="sec-p" style="max-width:560px;">From lumber receipts to subcontractor invoices to payroll records. All of it properly categorized by project.</p>
     <div class="cs-grid">
-      <div class="cs-card"><div class="cs-icon">📋</div><div class="cs-title">Job-by-Job Bookkeeping</div><p class="cs-body">Every transaction tagged to the right project — materials, labour, subs, equipment. The foundation for P&amp;L analysis.</p></div>
+      <div class="cs-card"><div class="cs-icon">📋</div><div class="cs-title">Job-by-Job Bookkeeping</div><p class="cs-body">Every transaction tagged to the right project: materials, labour, subs, equipment. The foundation for P&amp;L analysis.</p></div>
       <div class="cs-card"><div class="cs-icon">👷</div><div class="cs-title">Payroll Records (Up to 20)</div><p class="cs-body">Hours, rates, deductions organized and documented. Ready for T4s and ROEs at year-end.</p></div>
       <div class="cs-card"><div class="cs-icon">🧾</div><div class="cs-title">Subcontractor &amp; Supplier Tracking</div><p class="cs-body">Know what you owe and what's overdue before it becomes a dispute. T5018 slips filed for all sub payments — most trades companies miss this CRA requirement.</p></div>
       <div class="cs-card"><div class="cs-icon">🏗️</div><div class="cs-title">Equipment &amp; Materials</div><p class="cs-body">Tool purchases, deliveries, fuel — categorized correctly including CCA items for tax time.</p></div>
@@ -2613,7 +2553,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
   <section class="pl-section" id="pl-analysis">
     <p class="sec-tag" style="color:var(--bc);">Add-On Service</p>
     <h2 class="sec-h" style="color:var(--ink);margin-bottom:0.5rem;">Profit &amp; Loss analysis, <em style="color:var(--bc);">per project.</em></h2>
-    <p class="sec-p" style="max-width:600px;margin-bottom:3rem;">Know exactly which jobs made money — and which ones didn't. Only available when we manage your books.</p>
+    <p class="sec-p" style="max-width:600px;margin-bottom:3rem;">Know exactly which jobs made money and which ones didn't. Only available when we manage your books.</p>
     <div class="pl-inner">
       <!-- demo charts -->
       <div class="pl-demo">
@@ -2621,14 +2561,14 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
 
         <!-- Toggle -->
         <div class="pl-toggle">
-          <button class="pl-toggle-btn active" onclick="plSwitch('chart', this)">Overview Chart</button>
-          <button class="pl-toggle-btn" onclick="plSwitch('detail', this)">Detail Report</button>
+          <button class="pl-toggle-btn" onclick="plSwitch('chart', this)">Overview Chart</button>
+          <button class="pl-toggle-btn active" onclick="plSwitch('detail', this)">Detail Report</button>
         </div>
 
         <!-- CHART VIEW -->
-        <div class="pl-view active" id="pl-chart">
+        <div class="pl-view" id="pl-chart">
           <div class="pl-project">
-            <div class="pl-proj-name">🏠 Residential Reno — Burnaby <span class="pl-proj-margin">32% margin ↑</span></div>
+            <div class="pl-proj-name">🏠 Residential Reno · Burnaby <span class="pl-proj-margin">32% margin ↑</span></div>
             <div class="pl-bars">
               <div class="pl-bar-row"><span class="pl-bar-lbl">Revenue</span><div class="pl-bar-track"><div class="pl-bar rev" style="width:100%">$48,200</div></div></div>
               <div class="pl-bar-row"><span class="pl-bar-lbl">Costs</span><div class="pl-bar-track"><div class="pl-bar cost" style="width:68%">$32,700</div></div></div>
@@ -2636,7 +2576,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
             </div>
           </div>
           <div class="pl-project">
-            <div class="pl-proj-name">🏢 Commercial Framing — Surrey <span class="pl-proj-margin low">18% margin ↓</span></div>
+            <div class="pl-proj-name">🏢 Commercial Framing · Surrey <span class="pl-proj-margin low">18% margin ↓</span></div>
             <div class="pl-bars">
               <div class="pl-bar-row"><span class="pl-bar-lbl">Revenue</span><div class="pl-bar-track"><div class="pl-bar rev" style="width:100%">$91,500</div></div></div>
               <div class="pl-bar-row"><span class="pl-bar-lbl">Costs</span><div class="pl-bar-track"><div class="pl-bar cost" style="width:82%">$75,000</div></div></div>
@@ -2644,7 +2584,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
             </div>
           </div>
           <div class="pl-project">
-            <div class="pl-proj-name">🏘️ Spec Home Framing — Langley <span class="pl-proj-margin">28% margin ↑</span></div>
+            <div class="pl-proj-name">🏘️ Spec Home Framing · Langley <span class="pl-proj-margin">28% margin ↑</span></div>
             <div class="pl-bars">
               <div class="pl-bar-row"><span class="pl-bar-lbl">Revenue</span><div class="pl-bar-track"><div class="pl-bar rev" style="width:100%">$134,000</div></div></div>
               <div class="pl-bar-row"><span class="pl-bar-lbl">Costs</span><div class="pl-bar-track"><div class="pl-bar cost" style="width:72%">$96,500</div></div></div>
@@ -2654,11 +2594,11 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
         </div>
 
         <!-- DETAIL REPORT VIEW -->
-        <div class="pl-view" id="pl-detail">
+        <div class="pl-view active" id="pl-detail">
           <div class="pl-report">
             <div class="pl-report-header">
               <div>
-                <div class="pl-report-title">Residential Reno — Burnaby</div>
+                <div class="pl-report-title">Residential Reno · Burnaby</div>
                 <div class="pl-report-sub">P&amp;L Report · Per Project · Managed by The Backbone</div>
               </div>
               <div class="pl-report-meta">Period: Jan–Mar 2024<br>Prepared by: The Backbone Ops &amp; Design Inc.</div>
@@ -2705,7 +2645,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
           <div class="pl-step done"><div class="pl-step-dot">✓</div><div><div class="pl-step-title">Books are clean &amp; project-tagged</div><div class="pl-step-desc">All income and costs tied to the correct job. No gaps, no guesses.</div></div></div>
           <div class="pl-step unlocked"><div class="pl-step-dot">🔓</div><div><div class="pl-step-title">P&amp;L per project — unlocked</div><div class="pl-step-desc">Full profit &amp; loss report per job. See exactly what each site made.</div></div></div>
         </div>
-        <div class="pl-warning">If you bring us books that aren't categorized — or that we didn't manage — we can't offer this analysis. The numbers won't be reliable, and we won't put our name on results we can't stand behind.</div>
+        <div class="pl-warning">If you bring us books that aren't categorized, or that we didn't manage, we can't offer this analysis. The numbers won't be reliable, and we won't put our name on results we can't stand behind.</div>
       </div>
     </div>
   </section>
@@ -2715,19 +2655,19 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
     <div class="partner-grid">
       <div>
         <p class="sec-tag" style="color:var(--bc);">Compliance &amp; Tax Filing</p>
-        <h2 class="sec-h" style="color:var(--ink);">Some filings we do.<br>Some go to our <em style="color:var(--bc);">CPA partners.</em></h2>
-        <p class="sec-p" style="margin-bottom:1rem;">We are not a CPA firm. But as your authorized representative, we handle several filings directly — GST, EHT, and WorkSafeBC. Corporate income tax goes to our vetted CPA network, coordinated seamlessly with the books we built for you.</p>
+        <h2 class="sec-h" style="color:var(--ink);">Some filings we do.<br>The rest goes to <em style="color:var(--bc);">your CPA.</em></h2>
+        <p class="sec-p" style="margin-bottom:1rem;">We are not a CPA firm. But as your authorized representative, we handle several filings directly — GST, EHT, and WorkSafeBC. Corporate income tax goes to our vetted CPA network, or we coordinate with your existing CPA. Either way, the books we hand off are clean and ready to file.</p>
         <p class="sec-p" style="margin-bottom:2rem;">One team. Clear responsibilities. Nothing falls through.</p>
         <div class="partner-flow">
-          <div class="pf-step"><div class="pf-badge us">Backbone</div><div><div class="pf-title">We keep your books clean all year</div><div class="pf-desc">Job-by-job categorization, payroll records, subcontractor tracking — always CRA-ready.</div></div></div>
-          <div class="pf-step"><div class="pf-badge us-direct">Backbone — Direct</div><div><div class="pf-title">GST & PST filing — we file this</div><div class="pf-desc">As your authorized representative, we prepare and file your GST and PST returns directly with CRA. No CPA needed for this.</div></div></div>
-          <div class="pf-step"><div class="pf-badge us-direct">Backbone — Direct</div><div><div class="pf-title">EHT filing — we file this when due</div><div class="pf-desc">BC Employer Health Tax is not filed every month — it depends on your payroll amount and filing frequency. When an EHT remittance or return falls within your contracted period, we handle it as your authorized representative.</div></div></div>
-          <div class="pf-step"><div class="pf-badge us-direct">Backbone — Direct</div><div><div class="pf-title">WorkSafeBC filing — we file this</div><div class="pf-desc">We are an authorized representative for WorkSafeBC. Payroll reporting and annual reconciliation filed directly — no scrambling at year-end.</div></div></div>
-          <div class="pf-step"><div class="pf-badge us-direct">Backbone — Direct</div><div><div class="pf-title">Payroll remittances — we send these</div><div class="pf-desc">When you have employees, we handle the payroll remittances to CRA — CPP, EI, and income tax deductions — on time, every time, as your authorized representative.</div></div></div>
-          <div class="pf-step"><div class="pf-badge us-direct">Backbone — Direct</div><div><div class="pf-title">T4s — we prepare and file these</div><div class="pf-desc">Year-end T4 slips prepared and filed for all your employees directly with CRA. ROEs also prepared when needed.</div></div></div>
-          <div class="pf-step"><div class="pf-badge us-direct">Backbone — Direct</div><div><div class="pf-title">T5018 slips — we file these</div><div class="pf-desc">If you pay subcontractors for construction services, CRA requires T5018 Statement of Contract Payments slips. We prepare and file them on your behalf — most trades companies miss this one.</div></div></div>
+          <div class="pf-step"><div class="pf-badge us">Backbone</div><div><div class="pf-title">We keep your books clean all year</div><div class="pf-desc">Job-by-job categorization, payroll records, subcontractor tracking — organized and up to date for CRA requirements.</div></div></div>
+          <div class="pf-step"><div class="pf-badge us-direct">Backbone Direct</div><div><div class="pf-title">GST & PST filing — we file this</div><div class="pf-desc">As your authorized representative, we prepare and file your GST returns directly with CRA. PST returns are filed with the BC Ministry of Finance. No CPA required for these filings.</div></div></div>
+          <div class="pf-step"><div class="pf-badge us-direct">Backbone Direct</div><div><div class="pf-title">EHT filing — we file this when due</div><div class="pf-desc">BC Employer Health Tax is not filed every month — it depends on your payroll amount and filing frequency. When an EHT remittance or return falls within your contracted period, we handle it as your authorized representative.</div></div></div>
+          <div class="pf-step"><div class="pf-badge us-direct">Backbone Direct</div><div><div class="pf-title">WorkSafeBC filing — we file this</div><div class="pf-desc">We are an authorized representative for WorkSafeBC. Payroll reporting and annual reconciliation filed directly — no scrambling at year-end.</div></div></div>
+          <div class="pf-step"><div class="pf-badge us-direct">Backbone Direct</div><div><div class="pf-title">Payroll remittances — we send these</div><div class="pf-desc">When you have employees, we handle the payroll remittances to CRA — CPP, EI, and income tax deductions — submitted on schedule as your authorized representative.</div></div></div>
+          <div class="pf-step"><div class="pf-badge us-direct">Backbone Direct</div><div><div class="pf-title">T4s — we prepare and file these</div><div class="pf-desc">Year-end T4 slips prepared and filed for all your employees directly with CRA. ROEs also prepared when needed.</div></div></div>
+          <div class="pf-step"><div class="pf-badge us-direct">Backbone Direct</div><div><div class="pf-title">T5018 slips — we file these</div><div class="pf-desc">If you pay subcontractors for construction services, CRA requires T5018 Statement of Contract Payments slips. We prepare and file them on your behalf — most trades companies miss this one.</div></div></div>
           <div class="pf-step"><div class="pf-badge us">Backbone</div><div><div class="pf-title">Quarterly P&amp;L review with you</div><div class="pf-desc">Every quarter we sit down with you and your stakeholders — owners, partners, foremen — and walk through where the business stands. Revenue, costs, margins per project. No surprises at year-end.</div></div></div>
-          <div class="pf-step"><div class="pf-badge us">Backbone</div><div><div class="pf-title">We prepare your corporate year-end package</div><div class="pf-desc">Income, expenses, payroll summaries — packaged cleanly for your CPA to file the T2 without back-and-forth.</div></div></div>
+          <div class="pf-step"><div class="pf-badge us">Backbone</div><div><div class="pf-title">We prepare your corporate year-end package</div><div class="pf-desc">Income, expenses, payroll summaries. Packaged cleanly for your CPA to file the T2 without back-and-forth. We work with your CPA or ours.</div></div></div>
           <div class="pf-step"><div class="pf-badge them">CPA Partner</div><div><div class="pf-title">They file your T2 corporate return</div><div class="pf-desc">Corporate income tax is filed by a licensed CPA. We hand off everything they need — clean, organized, ready to go.</div></div></div>
         </div>
       </div>
@@ -2749,7 +2689,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
           <div class="pc-row"><span class="pc-check" style="color:var(--bc);">✦</span><span>Year-end package handed to CPA — zero back-and-forth</span></div>
         </div>
         <div class="pc-note" style="background:rgba(122,151,107,0.08);border-color:rgba(122,151,107,0.2);">
-          <strong>T2 corporate income tax</strong> is filed by our CPA partner network — not by us. We are not a CPA firm and we're upfront about that. What we do is make sure your books are so clean that the CPA files fast and bills you less.
+          <strong>T2 corporate income tax</strong> is filed by a CPA, not by us. We are not a CPA firm and we're upfront about that. We work with our vetted CPA partners, or with yours if you already have one. Either way, we make sure your books are so clean that the CPA files fast and bills you less.
         </div>
       </div>
     </div>
@@ -2777,7 +2717,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
         <ul class="ts-price-list">
           <li>Job-by-job income &amp; expense tracking</li>
           <li>Subcontractor &amp; supplier records</li>
-          <li>Payroll records — T4s filed directly</li>
+          <li>Payroll records: T4s filed directly</li>
           <li>T5018 slips for subcontractors</li>
           <li>GST &amp; PST filing (authorized representative)</li>
           <li>EHT &amp; WorkSafeBC filing</li>
@@ -2805,7 +2745,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
           <li>Everything in Books Only</li>
           <li>Per-project P&amp;L report</li>
           <li>Revenue vs cost breakdown per job</li>
-          <li>Margin analysis — see which jobs made money</li>
+          <li>Margin analysis: see which jobs made money</li>
           <li>Monthly summary across all active projects</li>
           <li>Quarterly P&amp;L review with owners &amp; stakeholders</li>
           <li>Requires books managed by us first</li>
@@ -2815,7 +2755,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
 
     </div>
     <div class="ts-price-note-box">
-      <strong>All prices exclude GST (5%)</strong>, which will be added to all invoices. &nbsp;·&nbsp; <strong>All Trade Side engagements start with a 3-month initial term, then renew annually.</strong> This gives us enough time to properly set up your books, establish filing rhythms, and deliver reliable results. Hours scale with your operation — 10 hrs/week is the floor. We scope accurately in the free consultation so there are no surprises.
+      <strong>All prices exclude GST (5%)</strong>, added to all invoices. &nbsp;·&nbsp; <strong>All Trade Side engagements start with a 3-month initial term, then renew annually.</strong> This gives us enough time to properly set up your books, establish filing rhythms, and deliver reliable results. Hours scale with your operation — 10 hrs/week is the floor. We scope accurately in the free consultation so there are no surprises.
     </div>
   </section>
 
@@ -2836,7 +2776,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
       <div class="planner-intro">
         <p class="sec-tag" style="color:var(--bc);">Add-On · Physical Product</p>
         <h2 class="sec-h" style="color:#fff;">The Backbone<br><em style="color:var(--bc);">Annual Planner.</em></h2>
-        <p class="sec-p" style="color:rgba(255,255,255,0.5);">A physical desk calendar built around your trade business — CRA deadlines, GST &amp; PST filing dates, payroll remittances, WorkSafeBC, EHT, and every recurring date that keeps your crew running clean.</p>
+        <p class="sec-p" style="color:rgba(255,255,255,0.5);">A physical desk calendar built around your trade business. CRA deadlines, GST &amp; PST filing dates, payroll remittances, WorkSafeBC, EHT, and every recurring date that keeps your crew running clean.</p>
         <a href="planner.html?side=trade" target="_blank" class="planner-preview-link bc">Preview all 12 months →</a>
         <div class="planner-tags">
           <span class="planner-tag bc">CRA Deadlines</span>
@@ -2949,7 +2889,8 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
   </div>
 
   <div class="footer-bottom">
-    <p class="f-copy">© 2026 The Backbone Ops & Design Inc. · Vancouver, BC, Canada 🍁</p>
+    <p class="f-copy">© 2026 The Backbone Ops & Design Inc. · Surrey, BC, Canada 🍁</p>
+    <a href="privacy.html" class="f-copy" style="text-decoration:none;opacity:0.6;transition:opacity 0.2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.6">Privacy Policy</a>
     <div class="f-socials">
       <a class="f-social" href="https://instagram.com/thebackboneca" target="_blank" rel="noopener" title="Instagram">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
@@ -3041,8 +2982,8 @@ function goToSlide(n) {
   }));
 
   clearTimeout(autoTimer);
-  // Only reschedule auto-advance if user is at the top
-  if (window.scrollY < 100) autoTimer = setTimeout(nextSlide, DURATION + 2000);
+  // Only reschedule auto-advance on desktop and only at the top
+  if (window.scrollY < 100 && window.innerWidth > 768) autoTimer = setTimeout(nextSlide, DURATION + 2000);
 }
 
 function nextSlide() { goToSlide((current + 1) % 2); }
@@ -3063,7 +3004,7 @@ slider.addEventListener('touchend', e => {
 });
 
 slider.addEventListener('mouseenter', () => clearTimeout(autoTimer));
-slider.addEventListener('mouseleave', () => { autoTimer = setTimeout(nextSlide, DURATION); });
+slider.addEventListener('mouseleave', () => { if (window.innerWidth > 768) autoTimer = setTimeout(nextSlide, DURATION); });
 
 // Stop auto-advance when user scrolls down — never interrupt reading
 window.addEventListener('scroll', () => {
@@ -3071,7 +3012,7 @@ window.addEventListener('scroll', () => {
     clearTimeout(autoTimer);
     autoTimer = null;
   } else if (!autoTimer) {
-    autoTimer = setTimeout(nextSlide, DURATION);
+    if (window.innerWidth > 768) autoTimer = setTimeout(nextSlide, DURATION);
   }
 }, { passive: true });
 
@@ -3092,7 +3033,7 @@ requestAnimationFrame(() => requestAnimationFrame(() => {
   fills[0].style.transition = 'width '+(DURATION/1000)+'s linear';
   fills[0].style.width = '100%';
 }));
-autoTimer = setTimeout(nextSlide, DURATION);
+if (window.innerWidth > 768) autoTimer = setTimeout(nextSlide, DURATION);
 </script>
 
 
@@ -3144,19 +3085,21 @@ const navObserver = new MutationObserver(() => {
 navObserver.observe(document.getElementById('mainNav'), { attributes: true, attributeFilter: ['class'] });
 
 // ── WHO CARD SELECTION + SERVICES PANEL ──
-function selectWho(key, el) {
+function selectWho(key, el, noScroll) {
   document.querySelectorAll('.who-card-selectable').forEach(c => c.classList.remove('active-who'));
   el.classList.add('active-who');
   document.querySelectorAll('.wsp-set').forEach(s => s.classList.remove('active'));
   const target = document.getElementById('wsp-' + key);
   if (target) target.classList.add('active');
-  const panel = document.getElementById('whoServicesPanel');
-  if (panel) setTimeout(() => panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
+  if (!noScroll) {
+    const panel = document.getElementById('whoServicesPanel');
+    if (panel) setTimeout(() => panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
+  }
 }
-// Default: show influencers on load
+// Default: show influencers on load — no scroll
 document.addEventListener('DOMContentLoaded', () => {
   const def = document.getElementById('who-influencers');
-  if (def) selectWho('influencers', def);
+  if (def) selectWho('influencers', def, true);
 });
 </script>
 
@@ -3186,54 +3129,7 @@ function plSwitch(view, btn) {
 </script>
 
 <script>
-// ── HERO WORD WHEEL ──
-(function() {
-  const track = document.getElementById('wheelTrack');
-  if (!track) return;
-  const words = track.querySelectorAll('.wheel-word');
-  const count = words.length;
-  let current = 0;
-  let wheelTimer = null;
 
-  function itemH() {
-    return words[0].getBoundingClientRect().height || 60;
-  }
-
-  function goToWord(idx) {
-    words[current].classList.remove('active');
-    current = (idx + count) % count;
-    words[current].classList.add('active');
-    // shift so active word sits in the vertical centre of the container (approx 2 items above centre)
-    const h = itemH();
-    const containerH = track.parentElement.offsetHeight;
-    const offset = current * h - (containerH / 2) + (h / 2);
-    track.style.transform = 'translateY(-' + Math.max(0, offset) + 'px)';
-  }
-
-  function start() {
-    goToWord(0);
-    wheelTimer = setInterval(() => goToWord(current + 1), 2200);
-  }
-
-  function stop() {
-    clearInterval(wheelTimer);
-    wheelTimer = null;
-  }
-
-  // only run while Studio Side slide is active
-  const slide0 = document.getElementById('slide0');
-  const slideObserver = new MutationObserver(() => {
-    if (slide0.classList.contains('active')) {
-      if (!wheelTimer) start();
-    } else {
-      stop();
-    }
-  });
-  slideObserver.observe(slide0, { attributes: true, attributeFilter: ['class'] });
-
-  // boot after a short delay for fonts/layout to settle
-  setTimeout(start, 400);
-})();
 </script>
 
 
