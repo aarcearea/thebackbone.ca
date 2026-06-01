@@ -27,7 +27,7 @@
 
 <!-- ── LOCAL BUSINESS SEO ── -->
 <meta name="geo.region" content="CA-BC">
-<meta name="geo.placename" content="Vancouver, British Columbia, Canada">
+<meta name="geo.placename" content="Surrey, British Columbia, Canada">
 
 <!-- ── STRUCTURED DATA (Google rich results) ── -->
 <script type="application/ld+json">
@@ -38,7 +38,7 @@
   "alternateName": ["Studio Side", "Trade Side"],
   "description": "Bookkeeping, document digitization, and admin support for Canadian creatives, influencers, entrepreneurs, and small construction companies. Studio Side and Trade Side.",
   "url": "https://thebackbone.ca",
-  "email": "hello@thebackbone.ca",
+  "email": "support@thebackbone.ca",
   "areaServed": [
     {"@type": "City", "name": "Vancouver", "sameAs": "https://www.wikidata.org/wiki/Q24639"},
     {"@type": "Place", "name": "Vancouver Island"},
@@ -54,8 +54,10 @@
   "priceRange": "From $320/week CAD",
   "address": {
     "@type": "PostalAddress",
-    "addressLocality": "Vancouver",
+    "streetAddress": "#201 - 15350 Croydon Drive",
+    "addressLocality": "Surrey",
     "addressRegion": "BC",
+    "postalCode": "V3S 0G5",
     "addressCountry": "CA"
   }
 }
@@ -94,10 +96,26 @@ nav {
   border-bottom: 1px solid var(--border);
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 3rem; height: 4rem;
+  gap: 0.5rem;
 }
-.nav-logo { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 700; color: var(--ink); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; white-space: nowrap; }
+.nav-logo { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 700; color: var(--ink); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; white-space: nowrap; flex-shrink: 0; }
 .nav-logo em { font-style: italic; color: var(--ss); }
 .nav-logo .nav-divider-text { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.65rem; font-weight: 400; letter-spacing: 0.05em; color: var(--mist); font-style: normal; }
+
+/* anchor links always visible */
+.nav-anchors { display: flex; gap: 0; list-style: none; flex-shrink: 0; }
+.nav-anchors a {
+  display: block; padding: 0 1.1rem; height: 4rem; line-height: 4rem;
+  font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600;
+  color: var(--mist); text-decoration: none; transition: color 0.2s;
+  border-bottom: 2px solid transparent;
+}
+.nav-anchors a:hover { color: var(--ink); }
+.nav-anchors a.ss-link:hover { border-bottom-color: var(--ss); color: var(--ss); }
+.nav-anchors a.bc-link:hover { border-bottom-color: var(--bc); color: var(--bc); }
+.nav-divider { width: 1px; height: 1.5rem; background: var(--border); margin: 0 0.5rem; flex-shrink: 0; }
+
+/* collapsed links */
 .nav-links { display: flex; gap: 0; list-style: none; }
 .nav-links a {
   display: block; padding: 0 1.1rem; height: 4rem; line-height: 4rem;
@@ -108,14 +126,82 @@ nav {
 .nav-links a:hover { color: var(--ink); }
 .nav-links a.ss-link:hover { border-bottom-color: var(--ss); color: var(--ss); }
 .nav-links a.bc-link:hover { border-bottom-color: var(--bc); color: var(--bc); }
+
 .nav-cta {
   font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
   padding: 0.55rem 1.4rem; text-decoration: none;
   background: var(--ink); color: #fff; border-radius: 2px;
-  transition: background 0.2s;
+  transition: background 0.2s; flex-shrink: 0; white-space: nowrap;
 }
 .nav-cta:hover { background: var(--ss); }
-.nav-divider { width: 1px; height: 1.5rem; background: var(--border); margin: 0 0.5rem; }
+
+/* hamburger button */
+.nav-hamburger {
+  display: none;
+  flex-direction: column; justify-content: center; align-items: center;
+  gap: 5px; width: 2.2rem; height: 2.2rem;
+  background: none; border: 1px solid var(--border); border-radius: 2px;
+  cursor: pointer; flex-shrink: 0; transition: border-color 0.2s;
+}
+.nav-hamburger span {
+  display: block; width: 1.1rem; height: 1.5px;
+  background: var(--ink); transition: all 0.25s;
+}
+nav.on-bc .nav-hamburger { border-color: rgba(255,255,255,0.2); }
+nav.on-bc .nav-hamburger span { background: #fff; }
+.nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* dropdown drawer */
+.nav-drawer {
+  display: none;
+  position: absolute; top: 4rem; right: 0; left: 0;
+  background: rgba(255,255,255,0.98); backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 3rem 1.5rem;
+  z-index: 199;
+}
+.nav-drawer.open { display: block; }
+nav.on-bc + .nav-drawer,
+.nav-drawer.on-bc {
+  background: rgba(20,22,28,0.98);
+  border-bottom-color: rgba(122,151,107,0.2);
+}
+.nav-drawer-section {
+  display: flex; flex-wrap: wrap; gap: 0; margin-bottom: 0.25rem;
+}
+.nav-drawer-label {
+  width: 100%; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
+  font-weight: 700; padding: 0.75rem 0 0.25rem;
+  border-top: 1px solid var(--border);
+}
+.nav-drawer.on-bc .nav-drawer-label { border-top-color: rgba(255,255,255,0.08); }
+.nav-drawer a {
+  display: block; padding: 0.5rem 1.2rem 0.5rem 0;
+  font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600;
+  color: var(--mist); text-decoration: none; transition: color 0.2s; white-space: nowrap;
+}
+.nav-drawer a:hover { color: var(--ink); }
+.nav-drawer.on-bc a { color: rgba(255,255,255,0.45); }
+.nav-drawer.on-bc a:hover { color: #fff; }
+.nav-drawer a.ss-link:hover { color: var(--ss); }
+.nav-drawer a.bc-link:hover { color: var(--bc); }
+.nav-drawer.on-bc .nav-drawer-label.ss-label { color: var(--ss); }
+.nav-drawer.on-bc .nav-drawer-label.bc-label { color: var(--bc); }
+.nav-drawer-label.ss-label { color: var(--ss); }
+.nav-drawer-label.bc-label { color: var(--bc); }
+
+/* detail links always in hamburger — never inline */
+.nav-links { display: none !important; }
+.nav-hamburger { display: flex; }
+
+/* on mobile — also tighten padding */
+@media (max-width: 600px) {
+  nav { padding: 0 1.2rem; }
+  .nav-drawer { padding: 1rem 1.2rem 1.5rem; }
+  .nav-logo .nav-divider-text { display: none; }
+}
 
 /* ─── HERO SLIDER ─── */
 .hero-slider {
@@ -847,13 +933,13 @@ nav.on-bc .nav-cta { background: var(--bc); }
 .btn-outline-white:hover { border-color: #fff; transform: translateY(-2px); }
 
 /* ─── FOOTER ─── */
-footer { background: var(--ink); padding: 4rem 4rem 2.5rem; }
-.footer-top { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.07); }
+footer { background: var(--ink); padding: 5rem 5rem 2.5rem; }
+.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 4rem; margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.07); }
 .footer-brand {}
-.f-logo { font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 700; color: #fff; text-decoration: none; display: block; margin-bottom: 0.25rem; }
+.f-logo { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; display: block; margin-bottom: 0.5rem; }
 .f-logo em { font-style: italic; color: var(--ss); transition: color 0.5s ease; }
 body.on-construction .f-logo em { color: var(--bc); }
-.f-tagline { font-family: 'Outfit', sans-serif; font-size: 0.85rem; line-height: 1.7; color: rgba(255,255,255,0.35); max-width: 280px; margin-bottom: 1.2rem; margin-top: 0.75rem; }
+.f-tagline { font-family: 'Outfit', sans-serif; font-size: 0.85rem; line-height: 1.7; color: rgba(255,255,255,0.35); max-width: 360px; margin-bottom: 1.4rem; margin-top: 1rem; }
 .f-badges { display: flex; gap: 0.5rem; flex-wrap: wrap; }
 .f-badge {
   font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
@@ -872,6 +958,19 @@ body.on-construction .f-logo em { color: var(--bc); }
 .footer-col a { font-size: 0.83rem; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
 .footer-col a:hover { color: #fff; }
 .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; }
+.f-address { font-family: 'Outfit', sans-serif; font-size: 0.72rem; color: rgba(255,255,255,0.3); margin-top: 0.75rem; margin-bottom: 1.2rem; letter-spacing: 0.03em; }
+.land-ack {
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding: 1.5rem 0 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.land-ack-text {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.28);
+  max-width: 820px;
+}
 .f-copy { font-size: 0.7rem; color: rgba(255,255,255,0.2); letter-spacing: 0.06em; }
 .f-socials { display: flex; gap: 0.6rem; align-items: center; }
 .f-social {
@@ -902,12 +1001,14 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
   opacity: 0.55;
 }
 .ms-btn.active { opacity: 1; }
-.ms-btn.ss { background: var(--ss); color: #fff; }
-.ms-btn.bc { background: #222018; color: var(--bc); border-top: 2px solid var(--ss); }
+.ms-btn.ss { background: var(--ink); color: rgba(255,255,255,0.6); border-top: 3px solid transparent; }
+.ms-btn.ss.active { color: #fff; border-top-color: var(--ss); }
+.ms-btn.bc { background: var(--ink); color: rgba(255,255,255,0.6); border-top: 3px solid transparent; }
+.ms-btn.bc.active { color: var(--bc); border-top-color: var(--bc); }
 .ms-dot {
-  width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.5);
+  width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.3);
 }
-.ms-btn.active .ms-dot { background: #fff; }
+.ms-btn.active .ms-dot { background: currentColor; }
 
 /* ─── RESPONSIVE ─── */
 @media (max-width: 768px) {
@@ -1410,27 +1511,107 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
 }
 .pl-format-note::before { content: '↳'; color: var(--bc); font-weight: 700; }
 
+/* ─── HERO WORD WHEEL ─── */
+.hero-wheel {
+  position: absolute;
+  right: 0;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 14rem;
+  overflow: hidden;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
+}
+
+.wheel-track {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  transition: transform 0.65s cubic-bezier(0.77, 0, 0.18, 1);
+}
+
+.wheel-word {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(1.6rem, 2.8vw, 2.8rem);
+  line-height: 1;
+  color: var(--ss);
+  opacity: 0.12;
+  padding: 1.1rem 0;
+  white-space: nowrap;
+  transition: opacity 0.65s ease, transform 0.65s ease;
+  display: block;
+  transform: scale(0.88);
+}
+
+.wheel-word.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* hide wheel at narrow widths where slide is single-column */
+@media (max-width: 900px) {
+  .hero-wheel { display: none; }
+}
+
 </style>
 </head>
 <body>
 
 <!-- NAV -->
-<nav>
+<nav id="mainNav">
   <a class="nav-logo" href="#">The <em>Backbone</em> <span class="nav-divider-text">| Ops &amp; Design</span></a>
-  <ul class="nav-links">
+
+  <!-- always-visible top-level anchors -->
+  <ul class="nav-anchors">
     <li><a class="ss-link" href="#" onclick="goToSlide(0);window.scrollTo({top:0});return false;">Studio Side</a></li>
+    <div class="nav-divider"></div>
+    <li><a class="bc-link" href="#" onclick="goToSlide(1);window.scrollTo({top:0});return false;">Trade Side</a></li>
+  </ul>
+
+  <!-- detail links — hidden at medium widths -->
+  <ul class="nav-links">
     <li><a class="ss-link" href="#" onclick="goToSlide(0);setTimeout(()=>{document.getElementById('ss-how').scrollIntoView({behavior:'smooth'})},100);return false;">How It Works</a></li>
     <li><a class="ss-link" href="#" onclick="goToSlide(0);setTimeout(()=>{document.getElementById('digitization').scrollIntoView({behavior:'smooth'})},100);return false;">Digitization</a></li>
     <li><a class="ss-link" href="#" onclick="goToSlide(0);setTimeout(()=>{document.getElementById('pricing').scrollIntoView({behavior:'smooth'})},100);return false;">Bookkeeping Pricing</a></li>
     <div class="nav-divider"></div>
-    <li><a class="bc-link" href="#" onclick="goToSlide(1);window.scrollTo({top:0});return false;">Trade Side</a></li>
     <li><a class="bc-link" href="#" onclick="goToSlide(1);setTimeout(()=>{document.getElementById('pl-analysis').scrollIntoView({behavior:'smooth'})},100);return false;">P&amp;L Analysis</a></li>
     <li><a class="bc-link" href="#" onclick="goToSlide(1);setTimeout(()=>{document.getElementById('bc-tax').scrollIntoView({behavior:'smooth'})},100);return false;">Tax Partners</a></li>
     <li><a class="bc-link" href="#" onclick="goToSlide(1);setTimeout(()=>{document.getElementById('ts-pricing').scrollIntoView({behavior:'smooth'})},100);return false;">Pricing</a></li>
     <li><a class="bc-link" href="#" onclick="goToSlide(0);setTimeout(()=>{document.getElementById('digitization').scrollIntoView({behavior:'smooth'})},100);return false;">Digitization</a></li>
   </ul>
+
+  <!-- hamburger button (shown when nav-links collapse) -->
+  <button class="nav-hamburger" id="navHamburger" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+
   <a class="nav-cta" href="#" onclick="goToSlide(0);setTimeout(()=>{document.getElementById('contact').scrollIntoView({behavior:'smooth'})},100);return false;">Get a Quote</a>
 </nav>
+
+<!-- drawer — sits just below nav -->
+<div class="nav-drawer" id="navDrawer">
+  <div class="nav-drawer-section">
+    <span class="nav-drawer-label ss-label">Studio Side</span>
+    <a class="ss-link" href="#" onclick="closeDrawer();goToSlide(0);setTimeout(()=>{document.getElementById('ss-how').scrollIntoView({behavior:'smooth'})},100);return false;">How It Works</a>
+    <a class="ss-link" href="#" onclick="closeDrawer();goToSlide(0);setTimeout(()=>{document.getElementById('digitization').scrollIntoView({behavior:'smooth'})},100);return false;">Digitization</a>
+    <a class="ss-link" href="#" onclick="closeDrawer();goToSlide(0);setTimeout(()=>{document.getElementById('pricing').scrollIntoView({behavior:'smooth'})},100);return false;">Bookkeeping Pricing</a>
+  </div>
+  <div class="nav-drawer-section">
+    <span class="nav-drawer-label bc-label">Trade Side</span>
+    <a class="bc-link" href="#" onclick="closeDrawer();goToSlide(1);setTimeout(()=>{document.getElementById('pl-analysis').scrollIntoView({behavior:'smooth'})},100);return false;">P&amp;L Analysis</a>
+    <a class="bc-link" href="#" onclick="closeDrawer();goToSlide(1);setTimeout(()=>{document.getElementById('bc-tax').scrollIntoView({behavior:'smooth'})},100);return false;">Tax Partners</a>
+    <a class="bc-link" href="#" onclick="closeDrawer();goToSlide(1);setTimeout(()=>{document.getElementById('ts-pricing').scrollIntoView({behavior:'smooth'})},100);return false;">Pricing</a>
+    <a class="bc-link" href="#" onclick="closeDrawer();goToSlide(0);setTimeout(()=>{document.getElementById('digitization').scrollIntoView({behavior:'smooth'})},100);return false;">Digitization</a>
+  </div>
+</div>
 
 <!-- MOBILE SWITCHER BAR — fixed at bottom on phones -->
 <div class="mobile-switcher" id="mobileSwitcher">
@@ -1438,7 +1619,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
     <span class="ms-dot"></span> For Creatives
   </button>
   <button class="ms-btn bc" id="msBtnBC" onclick="goToSlide(1);window.scrollTo({top:0});">
-    <span class="ms-dot"></span> Construction
+    <span class="ms-dot"></span> Trade Side
   </button>
 </div>
 
@@ -1466,6 +1647,18 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
     <!-- SLIDE 1 — Studio Side -->
     <div class="slide ss active" id="slide0">
       <div class="slide-bg-word">Studio</div>
+
+      <!-- WORD WHEEL — right side of hero -->
+      <div class="hero-wheel" aria-hidden="true">
+        <div class="wheel-track" id="wheelTrack">
+          <span class="wheel-word">Bookkeeping</span>
+          <span class="wheel-word">GST / HST Filing</span>
+          <span class="wheel-word">Doc Digitization</span>
+          <span class="wheel-word">Admin Support</span>
+          <span class="wheel-word">Financial Clarity</span>
+        </div>
+      </div>
+
       <div class="slide-content">
         <p class="slide-tag">For Creatives</p>
         <h1 class="slide-subbrand">Studio<br><em>Side</em></h1>
@@ -2156,7 +2349,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
         <div class="faq-item"><div class="faq-q">How does the weekly retainer work? <span class="faq-toggle">+</span></div><div class="faq-a">$256 CAD per week covers 8 hours of dedicated work at $32/hr. Before we start, we tell you exactly what those hours will be used for. No surprise invoices.</div></div>
         <div class="faq-item"><div class="faq-q">Do I need to sign a long-term contract? <span class="faq-toggle">+</span></div><div class="faq-a">It depends on the plan. Basic is month-to-month — cancel anytime. Standard requires a 3-month minimum so we can actually build a reliable routine with your books. Full Service is a 6-month commitment given the complexity of managing multiple business structures. Catch-up projects are flat-quoted separately.</div></div>
         <div class="faq-item"><div class="faq-q">I'm on Vancouver Island — can I still use Studio Side? <span class="faq-toggle">+</span></div><div class="faq-a">Yes — all bookkeeping, admin, and tax services are available remotely. For document digitization, you mail your physical receipts via Canada Post and we handle everything from there. The only thing not available for VI clients is in-person drop-off.</div></div>
-        <div class="faq-item"><div class="faq-q">Why does Full Service require a 3-month contract? <span class="faq-toggle">+</span></div><div class="faq-a">Full Service involves managing books across multiple structures — corporation, sole proprietorship, and personal finances. The setup phase alone takes time: getting full access to all bank statements, building the right categorization structure, and making sure nothing is mixed. Six months ensures we can actually deliver clean, reliable results across all three. We'll walk you through exactly what's needed in your free consultation. We'll walk you through exactly what's needed in your free consultation.</div></div>
+        <div class="faq-item"><div class="faq-q">Why does Full Service require a 3-month contract? <span class="faq-toggle">+</span></div><div class="faq-a">Full Service involves managing books across multiple structures — corporation, sole proprietorship, and personal finances. The setup phase alone takes time: getting full access to all bank statements, building the right categorization structure, and making sure nothing is mixed. Six months ensures we can actually deliver clean, reliable results across all three. We'll walk you through exactly what's needed in your free consultation.</div></div>
         <div class="faq-item"><div class="faq-q">What happens if I get audited? <span class="faq-toggle">+</span></div><div class="faq-a">We've got you. If CRA reviews your file, we work directly with your CPA to organize your records exactly the way they need them for the audit. You don't have to figure out what to pull together or how to present it — that's our job. Your CPA handles all communication with CRA on your behalf.</div></div>
         <div class="faq-item"><div class="faq-q">Do I still need to find a tax person? <span class="faq-toggle">+</span></div><div class="faq-a">No. We have a network of trusted Canadian CPAs — including Liberty Tax — who handle annual tax filing for our clients. We prepare your year-end package and connect you with the right professional.</div></div>
         <div class="faq-item"><div class="faq-q">How long does receipt digitization take? <span class="faq-toggle">+</span></div><div class="faq-a">Standard turnaround is 1 week for up to 200 receipts. If you need it faster, we offer a 48-hour fast-track option at a premium rate — just ask when you reach out and we'll quote you.</div></div>
@@ -2173,7 +2366,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
       <h2 class="cta-h">Ready to get your books<br><em>off your plate?</em></h2>
       <p class="cta-p">Free 30-minute consultation. We figure out exactly what you need and quote clearly — no pressure, no commitment.</p>
       <div class="cta-btns">
-        <a class="btn-white" href="mailto:hello@thebackbone.ca">Email Studio Side</a>
+        <a class="btn-white" href="mailto:support@thebackbone.ca">Email Us</a>
         <a class="btn-outline-white" href="tel:+1">Book a Free Call</a>
       </div>
     </div>
@@ -2465,7 +2658,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
       <h2 class="cta-h">Let's talk about <em>your books.</em></h2>
       <p class="cta-p">Free consultation for construction clients. We'll scope your bookkeeping needs, show you what per-project P&amp;L analysis looks like, and connect you with the right CPA for your year-end filing.</p>
       <div class="cta-btns">
-        <a class="btn-white" href="mailto:construction@thebackbone.ca">Email Construction Team</a>
+        <a class="btn-white" href="mailto:support@thebackbone.ca">Email Us</a>
         <a class="btn-outline-white" href="tel:+1">Book a Free Call</a>
       </div>
     </div>
@@ -2482,10 +2675,12 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
     <div class="footer-brand">
       <a class="f-logo" href="#">The <em>Backbone</em></a>
       <p class="f-tagline">Bookkeeping, admin, and staffing services for Canadian creatives and construction companies (Trade Side). Vancouver · Vancouver Island · BC.</p>
+      <p class="f-address">#201 – 15350 Croydon Drive, Surrey, BC</p>
       <div class="f-badges">
         <span class="f-badge ss active" id="badgeSS" onclick="goToSlide(0);window.scrollTo({top:0});">Studio Side</span>
         <span class="f-badge bc" id="badgeBC" onclick="goToSlide(1);window.scrollTo({top:0});">Trade Side</span>
       </div>
+
     </div>
     <div class="footer-col">
       <h4>Studio Side</h4>
@@ -2510,11 +2705,16 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
       <ul>
         <li><a href="#studio-side">Studio Side</a></li>
         <li><a href="#construction-side">Trade Side</a></li>
-        <li><a href="mailto:hello@thebackbone.ca">hello@thebackbone.ca</a></li>
+        <li><a href="mailto:support@thebackbone.ca">support@thebackbone.ca</a></li>
         <li><a href="#">Privacy Policy</a></li>
       </ul>
     </div>
   </div>
+  <!-- LAND ACKNOWLEDGMENT -->
+  <div class="land-ack">
+    <p class="land-ack-text">The Backbone operates on the unceded traditional territories of the xʷməθkʷəy̓əm (Musqueam), Sḵwx̱wú7mesh (Squamish), and səlilwətaɬ (Tsleil-Waututh) Nations in Vancouver, and the lək̓ʷəŋən (Lekwungen) and W̱SÁNEĆ peoples on Vancouver Island. We are grateful to live and work on this land.</p>
+  </div>
+
   <div class="footer-bottom">
     <p class="f-copy">© 2026 The Backbone Ops & Design Inc. · Vancouver, BC, Canada 🍁</p>
     <div class="f-socials">
@@ -2666,6 +2866,50 @@ autoTimer = setTimeout(nextSlide, DURATION);
 
 
 <script>
+// ── HAMBURGER MENU ──
+const hamburger = document.getElementById('navHamburger');
+const drawer = document.getElementById('navDrawer');
+
+function closeDrawer() {
+  hamburger.classList.remove('open');
+  drawer.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
+}
+
+hamburger.addEventListener('click', () => {
+  const isOpen = drawer.classList.contains('open');
+  if (isOpen) {
+    closeDrawer();
+  } else {
+    hamburger.classList.add('open');
+    drawer.classList.add('open');
+    hamburger.setAttribute('aria-expanded', 'true');
+    // match dark theme if on Trade Side
+    if (document.querySelector('nav').classList.contains('on-bc')) {
+      drawer.classList.add('on-bc');
+    } else {
+      drawer.classList.remove('on-bc');
+    }
+  }
+});
+
+// close drawer on outside click
+document.addEventListener('click', e => {
+  if (!hamburger.contains(e.target) && !drawer.contains(e.target)) closeDrawer();
+});
+
+// keep drawer theme in sync when slide changes
+const origGoToSlide = goToSlide;
+// sync drawer theme whenever nav class changes
+const navObserver = new MutationObserver(() => {
+  if (document.getElementById('mainNav').classList.contains('on-bc')) {
+    drawer.classList.add('on-bc');
+  } else {
+    drawer.classList.remove('on-bc');
+  }
+});
+navObserver.observe(document.getElementById('mainNav'), { attributes: true, attributeFilter: ['class'] });
+
 // ── WHO CARD SELECTION + SERVICES PANEL ──
 function selectWho(key, el) {
   document.querySelectorAll('.who-card-selectable').forEach(c => c.classList.remove('active-who'));
@@ -2706,6 +2950,57 @@ function plSwitch(view, btn) {
   document.getElementById('pl-' + view).classList.add('active');
   btn.classList.add('active');
 }
+</script>
+
+<script>
+// ── HERO WORD WHEEL ──
+(function() {
+  const track = document.getElementById('wheelTrack');
+  if (!track) return;
+  const words = track.querySelectorAll('.wheel-word');
+  const count = words.length;
+  let current = 0;
+  let wheelTimer = null;
+
+  function itemH() {
+    return words[0].getBoundingClientRect().height || 60;
+  }
+
+  function goToWord(idx) {
+    words[current].classList.remove('active');
+    current = (idx + count) % count;
+    words[current].classList.add('active');
+    // shift so active word sits in the vertical centre of the container (approx 2 items above centre)
+    const h = itemH();
+    const containerH = track.parentElement.offsetHeight;
+    const offset = current * h - (containerH / 2) + (h / 2);
+    track.style.transform = 'translateY(-' + Math.max(0, offset) + 'px)';
+  }
+
+  function start() {
+    goToWord(0);
+    wheelTimer = setInterval(() => goToWord(current + 1), 2200);
+  }
+
+  function stop() {
+    clearInterval(wheelTimer);
+    wheelTimer = null;
+  }
+
+  // only run while Studio Side slide is active
+  const slide0 = document.getElementById('slide0');
+  const slideObserver = new MutationObserver(() => {
+    if (slide0.classList.contains('active')) {
+      if (!wheelTimer) start();
+    } else {
+      stop();
+    }
+  });
+  slideObserver.observe(slide0, { attributes: true, attributeFilter: ['class'] });
+
+  // boot after a short delay for fonts/layout to settle
+  setTimeout(start, 400);
+})();
 </script>
 
 </body>
