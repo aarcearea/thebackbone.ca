@@ -2870,7 +2870,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
     <div class="footer-col">
       <h4>Studio Side</h4>
       <ul>
-        <li><a href="#contact">Book a Call</a></li>
+        <li><a href="#" onclick="goToSlide(0);setTimeout(()=>{document.getElementById('contact').scrollIntoView({behavior:'smooth'})},100);return false;">Book a Call</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -2887,8 +2887,8 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
     <div class="footer-col">
       <h4>Company</h4>
       <ul>
-        <li><a href="#studio-side">Studio Side</a></li>
-        <li><a href="#construction-side">Trade Side</a></li>
+        <li><a href="#" onclick="goToSlide(0);window.scrollTo({top:0});return false;">Studio Side</a></li>
+        <li><a href="#" onclick="goToSlide(1);window.scrollTo({top:0});return false;">Trade Side</a></li>
         <li><a href="mailto:support@thebackbone.ca">support@thebackbone.ca</a></li>
         <li><a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a></li>
       </ul>
