@@ -575,14 +575,28 @@ nav.on-bc .nav-cta { background: var(--bc); }
   font-size: 0.8rem; color: var(--mist);
 }
 
+.catchup-banner {
+  display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+  background: var(--ss); padding: 0.75rem 2rem;
+  margin-bottom: 0;
+}
+.catchup-banner-tag {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: #fff;
+}
+.catchup-banner-note {
+  font-size: 0.72rem; color: rgba(255,255,255,0.7);
+  font-family: 'Outfit', sans-serif;
+}
 .catchup-box {
   display: grid; grid-template-columns: 1fr 1fr;
   gap: 3rem; margin-top: 3rem; margin-bottom: 2rem;
   background: var(--ink); padding: 3rem;
 }
 .catchup-label {
-  font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700;
-  color: var(--ss); margin-bottom: 0.75rem;
+  font-size: 0.75rem; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 700;
+  color: #fff; background: var(--ss); display: inline-block;
+  padding: 0.35rem 0.9rem; margin-bottom: 1.25rem;
 }
 .catchup-title {
   font-family: 'Fraunces', serif;
@@ -619,7 +633,20 @@ nav.on-bc .nav-cta { background: var(--bc); }
 .catchup-step-title { font-size: 0.85rem; font-weight: 700; color: #fff; margin-bottom: 0.2rem; }
 .catchup-step-desc { font-family: 'Outfit', sans-serif; font-size: 0.78rem; line-height: 1.55; color: rgba(255,255,255,0.4); }
 
-@media (max-width: 1024px) { .catchup-box { grid-template-columns: 1fr; padding: 2rem 1.5rem; } }
+@media (max-width: 1024px) { .catchup-banner {
+  display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+  background: var(--ss); padding: 0.75rem 2rem;
+  margin-bottom: 0;
+}
+.catchup-banner-tag {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: #fff;
+}
+.catchup-banner-note {
+  font-size: 0.72rem; color: rgba(255,255,255,0.7);
+  font-family: 'Outfit', sans-serif;
+}
+.catchup-box { grid-template-columns: 1fr; padding: 2rem 1.5rem; } }
 
 /* ── STORY BOX ── */
 .story-box {
@@ -1017,7 +1044,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
   .mobile-switcher { display: none !important; }
 
   /* add padding so content doesn't hide behind switcher */
-  .page-panels { padding-bottom: 56px; }
+  .page-panels { padding-bottom: 0; }
   footer { padding-bottom: calc(3rem + 56px) !important; }
 
   /* nav */
@@ -1030,6 +1057,9 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
   /* hero slider — full height, content centered */
   /* global mobile overflow fix */
   .sec, .pl-section, .why-section, .receipt-section { overflow-x: hidden; padding-left: 1.5rem !important; padding-right: 1.5rem !important; }
+  .pl-report-meta { display: none; }
+  .pl-swipe-hint { display: block; }
+  .why-video-wrap { display: none; }
 
   /* mobile: stack slides, show/hide instead of horizontal track */
   .hero-slider { height: auto !important; min-height: auto !important; overflow: visible !important; padding-top: 0 !important; }
@@ -1494,17 +1524,20 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
 /* Detail report mock */
 .pl-report {
   background: var(--white); border: 1px solid var(--border);
-  overflow: hidden;
+  overflow: visible;
 }
 .pl-report-header {
   background: var(--bc); padding: 1rem 1.4rem;
-  display: flex; justify-content: space-between; align-items: center;
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;
 }
 .pl-report-title { font-family: 'Fraunces', serif; font-size: 1rem; font-weight: 700; color: #fff; }
 .pl-report-sub { font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.6); }
-.pl-report-meta { font-size: 0.65rem; color: rgba(255,255,255,0.6); font-family: 'Outfit', sans-serif; text-align: right; }
-.pl-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-.pl-report-table { width: 100%; border-collapse: collapse; min-width: 420px; }
+.pl-report-meta { font-size: 0.65rem; color: rgba(255,255,255,0.6); font-family: 'Outfit', sans-serif; text-align: right; line-height: 1.5; }
+.pl-table-wrap { overflow-x: scroll; -webkit-overflow-scrolling: touch; cursor: grab; }
+.pl-table-wrap::-webkit-scrollbar { height: 3px; }
+.pl-table-wrap::-webkit-scrollbar-thumb { background: var(--ss); border-radius: 2px; }
+.pl-swipe-hint { display: none; font-size: 0.65rem; color: var(--ss); letter-spacing: 0.1em; text-transform: uppercase; text-align: center; padding: 0.5rem 0; font-family: 'Outfit', sans-serif; }
+.pl-report-table { width: 100%; border-collapse: collapse; min-width: 500px; }
 .pl-report-table th {
   font-size: 0.6rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
   color: var(--mist); padding: 0.75rem 1.4rem; text-align: left;
@@ -1658,7 +1691,6 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
 
   <!-- detail links — hidden at medium widths -->
   <ul class="nav-links">
-    <li><a class="ss-link" href="#" onclick="goToSlide(0);setTimeout(()=>{document.getElementById('ss-how').scrollIntoView({behavior:'smooth'})},100);return false;">How It Works</a></li>
     <li><a class="ss-link" href="#" onclick="goToSlide(0);setTimeout(()=>{document.getElementById('digitization').scrollIntoView({behavior:'smooth'})},100);return false;">Digitization</a></li>
     <li><a class="ss-link" href="#" onclick="goToSlide(0);setTimeout(()=>{document.getElementById('pricing').scrollIntoView({behavior:'smooth'})},100);return false;">Bookkeeping Pricing</a></li>
     <div class="nav-divider"></div>
@@ -1680,7 +1712,6 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
 <div class="nav-drawer" id="navDrawer">
   <div class="nav-drawer-section">
     <span class="nav-drawer-label ss-label">Studio Side</span>
-    <a class="ss-link" href="#" onclick="closeDrawer();goToSlide(0);setTimeout(()=>{document.getElementById('ss-how').scrollIntoView({behavior:'smooth'})},100);return false;">How It Works</a>
     <a class="ss-link" href="#" onclick="closeDrawer();goToSlide(0);setTimeout(()=>{document.getElementById('digitization').scrollIntoView({behavior:'smooth'})},100);return false;">Digitization</a>
     <a class="ss-link" href="#" onclick="closeDrawer();goToSlide(0);setTimeout(()=>{document.getElementById('pricing').scrollIntoView({behavior:'smooth'})},100);return false;">Bookkeeping Pricing</a>
   </div>
@@ -2017,7 +2048,6 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
 
     <div class="pricing-track-label">
       <span class="ptl-tag">Monthly Retainers</span>
-      <span class="ptl-note">Basic: month-to-month · Standard: 3-month min · Full Service: 6-month min</span>
       <span class="ptl-note" style="color:var(--ss);font-weight:700;">All prices exclude GST (5%)</span>
     </div>
 
@@ -2310,29 +2340,6 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
   </section>
 
   <!-- HOW IT WORKS -->
-  <section class="sec" id="ss-how" style="background:var(--white);">
-    <div class="how-grid">
-      <div>
-        <p class="sec-tag" style="color:var(--ss);">The Process</p>
-        <h2 class="sec-h" style="color:var(--ink);">Simple from <em style="color:var(--ss);">day one.</em></h2>
-        <p class="sec-p">No complicated contracts. No software to learn. You tell us what you need, we get to work.</p>
-        <div class="rate-box">
-          <div class="rb-num">$320</div>
-          <div class="rb-detail">
-            <div class="rb-per">Starting From / Week CAD</div>
-            <div class="rb-note">8 hrs · from $40/hr · No contracts · Pause anytime</div>
-          </div>
-        </div>
-      </div>
-      <div class="how-steps">
-        <div class="how-step"><div class="hs-num">01</div><div><div class="hs-title">Free 30-min consultation</div><div class="hs-desc">We learn about your business and what's piling up. No commitment, no sales pitch.</div></div></div>
-        <div class="how-step"><div class="hs-num">02</div><div><div class="hs-title">We give you a clear quote</div><div class="hs-desc">Estimated hours, breakdown of work. You approve before we start anything.</div></div></div>
-        <div class="how-step"><div class="hs-num">03</div><div><div class="hs-title">Drop off or mail your documents</div><div class="hs-desc">Vancouver — local drop-off. Vancouver Island — Canada Post. We handle it from there.</div></div></div>
-        <div class="how-step"><div class="hs-num">04</div><div><div class="hs-title">We work, you stay informed</div><div class="hs-desc">Updates as we go. When done, we walk you through the results.</div></div></div>
-        <div class="how-step"><div class="hs-num">05</div><div><div class="hs-title">Ongoing or one-time. Your call</div><div class="hs-desc">Monthly retainer or a one-time catch-up. No pressure either way.</div></div></div>
-      </div>
-    </div>
-  </section>
 
   <!-- TAX PARTNER -->
   <section class="sec" style="background:var(--light);">
@@ -2630,6 +2637,7 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
                 <tr class="total-row"><td>Net Profit</td><td>$13,500</td><td>$15,500</td><td style="color:#059669">+$2,000</td></tr>
               </tbody>
             </table></div>
+            <div class="pl-swipe-hint">← swipe to see all columns →</div>
             <div class="pl-report-footer">
               <div class="pl-report-footer-note">Margin: 32.2% · All figures CAD · GST excluded</div>
               <div class="pl-report-footer-badge">PDF + Excel delivered</div>
@@ -2862,7 +2870,6 @@ body.on-construction .f-social:hover { border-color: var(--bc); color: var(--bc)
     <div class="footer-col">
       <h4>Studio Side</h4>
       <ul>
-        <li><a href="#ss-how">How It Works</a></li>
         <li><a href="#contact">Book a Call</a></li>
       </ul>
     </div>
