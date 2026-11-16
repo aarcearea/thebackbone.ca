@@ -23,6 +23,7 @@ h1 em,h2 em,h3 em{font-style:normal}
 .ind-photo{background-image:url(images/bc-coast-beach-forest.webp);background-size:cover;background-position:center}
 .stories-bg{background-image:linear-gradient(rgba(174,184,156,0.84),rgba(174,184,156,0.84)),url(images/snowy-fjord-bc.webp);background-size:cover;background-position:center 60%}
 .contact-bg{background-image:linear-gradient(rgba(54,69,35,0.72),rgba(54,69,35,0.72)),url(images/the-backbone-studio.webp);background-size:cover;background-position:center}
+.nl-input::placeholder{color:rgba(246,237,215,0.55);opacity:1}
 .holes{display:flex;gap:13px;padding:5px 0 5px 8px;overflow:hidden;white-space:nowrap}
 .hole{flex:0 0 auto;width:15px;height:11px;border-radius:3px;background:#F6EDD7;box-shadow:inset 0 1px 2px rgba(0,0,0,.35)}
 .reel{width:22%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#272726 0 18%,#F6EDD7 19% 28%,transparent 29%),repeating-conic-gradient(#F6EDD7 0 12deg,#272726 12deg 60deg);border:3px solid #F6EDD7;box-sizing:border-box;animation:bb-reel 4s linear infinite}
@@ -246,7 +247,7 @@ input:focus-visible,a:focus-visible,button:focus-visible,summary:focus-visible{o
 
 <section id="contact" class="contact-bg" style="position: relative; background-color: #364523; color: #F6EDD7; font-family: 'DM Sans', system-ui, sans-serif">
 <div aria-hidden="true" style="position: absolute; top: -1px; left: 0; right: 0; height: clamp(40px, 6vw, 90px); background: url(images/brush-divider-cream.png) center/100% 100% no-repeat; pointer-events: none;"></div>
-<div style="max-width: 760px; margin: 0 auto; padding: 72px 24px 200px; text-align: center">
+<div style="max-width: 760px; margin: 0 auto; padding: clamp(130px, 12vw, 180px) 24px 200px; text-align: center">
 <h2 style="margin: 0; font-size: clamp(36px, 5vw, 64px); line-height: 1.04">Take it <span style="color: #F29F1C">off your plate.</span></h2>
 <p style="margin: 22px auto 0; font-size: 20px; color: rgba(246,237,215,0.82); max-width: 560px">Join our newsletter and get a code for a free 30-minute intro call.</p>
 <form style="margin: 32px auto 0; max-width: 520px">
@@ -255,7 +256,7 @@ input:focus-visible,a:focus-visible,button:focus-visible,summary:focus-visible{o
 <input id="nl-email" class="nl-input" type="email" name="newsletter-email" autocomplete="off" required="" placeholder="you@studio.com" style="flex: 1 1 auto; min-width: 0; font-family: 'DM Sans', system-ui, sans-serif; font-size: 17px; padding: 14px 16px; border: 1px solid rgba(246,237,215,0.4); border-right: none; background: #364523; color: #F6EDD7; min-height: 56px; box-sizing: border-box">
 <button type="submit" class="brk" style="position: relative; flex: 0 0 auto; font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; background: #F6EDD7; color: #272726; border: 1px solid #F6EDD7; padding: 0 24px; min-height: 56px; cursor: pointer"><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span>Get my code</button>
 </div>
-<p style="margin: 10px 0 0; font-size: 13px; color: rgba(246,237,215,0.7)">Plus CRA deadline reminders. No spam. Unsubscribe anytime.</p>
+<p style="margin: 10px 0 0; font-size: 13px; color: rgba(246,237,215,0.7)">Plus CRA deadline reminders. No spam. Unsubscribe anytime. <a href="privacy.html" style="color: inherit">Privacy policy</a></p>
 </form>
 <p style="margin: 28px 0 0; font-size: 16px; color: rgba(246,237,215,0.9)">Already have a code? <a href="mailto:info@thebackbone.ca?subject=Intro%20call" style="color: #F29F1C">Book your intro call →</a></p>
 </div>
@@ -273,6 +274,7 @@ input:focus-visible,a:focus-visible,button:focus-visible,summary:focus-visible{o
 <a href="mailto:info@thebackbone.ca" style="color: #F6EDD7">Email</a>
 <a href="https://www.instagram.com/thebackbone.ca/" target="_blank" rel="noopener" style="color: #F6EDD7">Instagram</a>
 <a href="#page-top" style="color: #F6EDD7">Back to top ↑</a>
+<a href="privacy.html" style="color: #F6EDD7">Privacy</a>
 </div>
 <div style="flex: 1 1 100%; border-top: 1px solid rgba(246,237,215,0.16); padding-top: 28px">
 <p style="margin: 0 0 10px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #AEB89C">Territory acknowledgement</p>
@@ -298,6 +300,7 @@ h1 em,h2 em,h3 em{font-style:normal}
 .ind-photo{background-image:url(images/bc-coast-beach-forest.webp);background-size:cover;background-position:center}
 .stories-bg{background-image:linear-gradient(rgba(174,184,156,0.84),rgba(174,184,156,0.84)),url(images/snowy-fjord-bc.webp);background-size:cover;background-position:center 60%}
 .contact-bg{background-image:linear-gradient(rgba(54,69,35,0.72),rgba(54,69,35,0.72)),url(images/the-backbone-studio.webp);background-size:cover;background-position:center}
+.nl-input::placeholder{color:rgba(246,237,215,0.55);opacity:1}
 .holes{display:flex;gap:13px;padding:5px 0 5px 8px;overflow:hidden;white-space:nowrap}
 .hole{flex:0 0 auto;width:15px;height:11px;border-radius:3px;background:#F6EDD7;box-shadow:inset 0 1px 2px rgba(0,0,0,.35)}
 .reel{width:22%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#272726 0 18%,#F6EDD7 19% 28%,transparent 29%),repeating-conic-gradient(#F6EDD7 0 12deg,#272726 12deg 60deg);border:3px solid #F6EDD7;box-sizing:border-box;animation:bb-reel 4s linear infinite}
@@ -533,7 +536,7 @@ input:focus-visible,a:focus-visible,button:focus-visible,summary:focus-visible{o
 <!-- CONTACT (dark) -->
 <section id="contact" class="contact-bg" style="position: relative; background-color: #364523; color: #F6EDD7; font-family: 'DM Sans', system-ui, sans-serif">
 <div aria-hidden="true" style="position: absolute; top: -1px; left: 0; right: 0; height: clamp(40px, 6vw, 90px); background: url(images/brush-divider-cream.png) center/100% 100% no-repeat; pointer-events: none;"></div>
-<div style="max-width: 760px; margin: 0 auto; padding: 72px 24px 200px; text-align: center">
+<div style="max-width: 760px; margin: 0 auto; padding: clamp(130px, 12vw, 180px) 24px 200px; text-align: center">
 <h2 style="margin: 0; font-size: clamp(36px, 5vw, 64px); line-height: 1.04">Take it <span style="color: #F29F1C">off your plate.</span></h2>
 <p style="margin: 22px auto 0; font-size: 20px; color: rgba(246,237,215,0.82); max-width: 560px">Join our newsletter and get a code for a free 30-minute intro call.</p>
 <form onSubmit="{{subscribe}}" style="margin: 32px auto 0; max-width: 520px">
@@ -542,7 +545,7 @@ input:focus-visible,a:focus-visible,button:focus-visible,summary:focus-visible{o
 <input id="nl-email" class="nl-input" type="email" name="newsletter-email" autocomplete="off" required placeholder="you@studio.com" style="flex: 1 1 auto; min-width: 0; font-family: 'DM Sans', system-ui, sans-serif; font-size: 17px; padding: 14px 16px; border: 1px solid rgba(246,237,215,0.4); border-right: none; background: #364523; color: #F6EDD7; min-height: 56px; box-sizing: border-box">
 <button type="submit" class="brk" style="position: relative; flex: 0 0 auto; font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; background: #F6EDD7; color: #272726; border: 1px solid #F6EDD7; padding: 0 24px; min-height: 56px; cursor: pointer"><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span>{{subLabel}}</button>
 </div>
-<p style="margin: 10px 0 0; font-size: 13px; color: rgba(246,237,215,0.7)">Plus CRA deadline reminders. No spam. Unsubscribe anytime.</p>
+<p style="margin: 10px 0 0; font-size: 13px; color: rgba(246,237,215,0.7)">Plus CRA deadline reminders. No spam. Unsubscribe anytime. <a href="privacy.html" style="color: inherit">Privacy policy</a></p>
 </form>
 <p style="margin: 28px 0 0; font-size: 16px; color: rgba(246,237,215,0.9)">Already have a code? <a href="mailto:info@thebackbone.ca?subject=Intro%20call" style="color: #F29F1C">Book your intro call →</a></p>
 </div>
@@ -560,6 +563,7 @@ input:focus-visible,a:focus-visible,button:focus-visible,summary:focus-visible{o
 <a href="mailto:info@thebackbone.ca" style="color: #F6EDD7">Email</a>
 <a href="https://www.instagram.com/thebackbone.ca/" target="_blank" rel="noopener" style="color: #F6EDD7">Instagram</a>
 <a href="#page-top" style="color: #F6EDD7">Back to top ↑</a>
+<a href="privacy.html" style="color: #F6EDD7">Privacy</a>
 </div>
 <div style="flex: 1 1 100%; border-top: 1px solid rgba(246,237,215,0.16); padding-top: 28px">
 <p style="margin: 0 0 10px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #AEB89C">Territory acknowledgement</p>
