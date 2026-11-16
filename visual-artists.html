@@ -1,0 +1,692 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Visual artists &amp; illustrators | The Backbone</title>
+<meta name="description" content="Back office for creatives in BC: bookkeeping, payroll, GST, admin and workshops. Under NDA, zero judgment.">
+<link rel="icon" href="images/the-backbone-logo-mark.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&amp;family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..500&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;background:#364523}
+h1,h2,h3,blockquote,.bricolage{font-family:'Bricolage Grotesque','DM Sans',sans-serif !important;font-weight:800 !important;font-optical-sizing:none;font-variation-settings:'opsz' 14;letter-spacing:-0.02em}
+blockquote{font-style:normal !important}
+h1 em,h2 em,h3 em{font-style:normal}
+.hero-bg{background-image:url(images/bookkeeping-for-creatives-bc-forest.webp);background-size:cover;background-position:center}
+.team-bg{background-image:url(images/bc-mountains-green.webp);background-size:cover;background-position:center bottom}
+.waves{background-image:url(images/brand-hills-divider.png);background-size:100% 100%;background-repeat:no-repeat}
+.ind-photo{background-image:url(images/bc-coast-beach-forest.webp);background-size:cover;background-position:center}
+.stories-bg{background-image:linear-gradient(rgba(174,184,156,0.84),rgba(174,184,156,0.84)),url(images/snowy-fjord-bc.webp);background-size:cover;background-position:center 60%}
+.contact-bg{background-image:linear-gradient(rgba(54,69,35,0.72),rgba(54,69,35,0.72)),url(images/the-backbone-studio.webp);background-size:cover;background-position:center}
+.holes{display:flex;gap:13px;padding:5px 0 5px 8px;overflow:hidden;white-space:nowrap}
+.hole{flex:0 0 auto;width:15px;height:11px;border-radius:3px;background:#F6EDD7;box-shadow:inset 0 1px 2px rgba(0,0,0,.35)}
+.reel{width:22%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#272726 0 18%,#F6EDD7 19% 28%,transparent 29%),repeating-conic-gradient(#F6EDD7 0 12deg,#272726 12deg 60deg);border:3px solid #F6EDD7;box-sizing:border-box;animation:bb-reel 4s linear infinite}
+@keyframes bb-reel{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion: reduce){.reel{animation:none}}
+.stroke-div{background-image:url(images/brush-divider-green.png);background-size:100% 100%;background-repeat:no-repeat}
+a{color:#AD6A46}a:hover{color:#70501C}
+.navlink{text-decoration:none;color:#F6EDD7}
+.navdrop{position:relative}
+.navmenu{display:none;position:absolute;top:100%;left:-16px;padding-top:12px;z-index:60}
+.navmenu-in{background:#364523;border:1px solid rgba(246,237,215,0.25);box-shadow:0 14px 30px rgba(0,0,0,0.3);min-width:260px;padding:6px 0}
+.navdrop:hover .navmenu,.navdrop:focus-within .navmenu{display:block}
+.navmenu a{display:block;padding:11px 18px;color:#F6EDD7;text-decoration:none;font-family:'DM Sans',system-ui,sans-serif;font-size:15px;letter-spacing:0;text-transform:none}
+.navmenu a:hover{color:#F29F1C}
+.navlink:hover{color:#F29F1C !important}
+.brk{position:relative;transition:background .15s ease}
+.brk:hover{background:#F29F1C !important}
+.c{position:absolute;width:12px;height:12px;border-color:#272726;border-style:solid;border-width:0}
+.tl{top:7px;left:7px;border-top-width:1.5px;border-left-width:1.5px}
+.tr{top:7px;right:7px;border-top-width:1.5px;border-right-width:1.5px}
+.bl{bottom:7px;left:7px;border-bottom-width:1.5px;border-left-width:1.5px}
+.br{bottom:7px;right:7px;border-bottom-width:1.5px;border-right-width:1.5px}
+.ghost{transition:background .15s ease,color .15s ease}
+.ghost:hover{background:#F6EDD7 !important;color:#272726 !important}
+.card-link:hover{border-color:#F29F1C !important}
+summary{cursor:pointer;list-style:none}
+summary::-webkit-details-marker{display:none}
+details[open] .plus{transform:rotate(45deg)}
+.plus{transition:transform .15s ease}
+.word{position:relative;isolation:isolate;display:inline-block;transition:color .4s ease,transform .5s ease,letter-spacing .5s ease}
+.word::before{content:"";position:absolute;inset:-18% -14%;z-index:-1;background:radial-gradient(closest-side,var(--glow,rgba(242,159,28,.35)),transparent);filter:blur(14px);animation:bb-glow 3.2s ease-in-out infinite}
+@keyframes bb-glow{0%,100%{opacity:.5;transform:scale(.97)}50%{opacity:.75;transform:scale(1.03)}}
+@keyframes bb-upside{0%{transform:rotate(0)}100%{transform:rotate(180deg)}}
+@keyframes bb-rise{0%{opacity:0;transform:translateY(.35em)}100%{opacity:1;transform:translateY(0)}}
+@keyframes bb-tilt{0%{transform:rotate(0)}40%{transform:rotate(-6deg)}70%{transform:rotate(2deg)}100%{transform:rotate(-3deg)}}
+@keyframes bb-type{0%{clip-path:inset(-60% 100% -60% -30%)}100%{clip-path:inset(-60% -30% -60% -30%)}}
+@keyframes bb-wiggle{0%,100%{transform:rotate(0)}20%{transform:rotate(-12deg)}40%{transform:rotate(9deg)}60%{transform:rotate(-5deg)}80%{transform:rotate(0)}}
+@keyframes bb-bob{0%,100%{transform:translateY(0)}25%{transform:translateY(-5px) rotate(-6deg)}50%{transform:translateY(0)}75%{transform:translateY(-3px) rotate(5deg)}}
+@keyframes bb-flash{0%,70%,100%{transform:scale(1)}78%{transform:scale(1.18)}86%{transform:scale(.94)}}
+@keyframes bb-sway{0%,100%{transform:translateX(0)}30%{transform:translateX(-3px)}60%{transform:translateX(3px)}}
+.ico{transform-origin:center}
+.tile:hover .ico1{animation:bb-wiggle 1.2s ease-in-out}
+.tile:hover .ico2{animation:bb-bob 1.2s ease-in-out}
+.tile:hover .ico3{animation:bb-flash 1s ease-in-out}
+.tile:hover .ico4{animation:bb-sway 1.2s ease-in-out}
+@media (prefers-reduced-motion: reduce){.ico{animation:none !important}}
+@keyframes bb-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.marquee{animation:bb-marquee 75s linear infinite}
+.marquee:hover{animation-play-state:paused}
+@media (prefers-reduced-motion: reduce){.marquee{animation:none !important}}
+.tile{box-shadow:5px 5px 0 #272726;transition:transform .2s ease,box-shadow .2s ease}
+.tile:hover{transform:translate(-3px,-3px);box-shadow:8px 8px 0 #272726}
+.tile-dark{box-shadow:5px 5px 0 #AEB89C}
+.tile-dark:hover{box-shadow:8px 8px 0 #AEB89C}
+
+@keyframes bb-grain{0%{transform:translate(0,0)}17%{transform:translate(-4%,3%)}33%{transform:translate(3%,-5%)}50%{transform:translate(-6%,1%)}67%{transform:translate(5%,4%)}83%{transform:translate(-2%,-3%)}100%{transform:translate(0,0)}}
+.grain{animation:bb-grain 2.4s steps(6) infinite}
+@keyframes bb-flicker{0%,100%{opacity:1}48%{opacity:.82}50%{opacity:1}92%{opacity:.88}}
+@media (prefers-reduced-motion: reduce){.grain,.stamp{animation:none !important}}
+.sprockets{background-image:repeating-linear-gradient(90deg,transparent 0 10px,#F6EDD7 10px 26px,transparent 26px 36px);opacity:.9;border-radius:2px}
+@media (max-width: 600px){.hide-sm{display:none}}
+.story{animation:bb-rise .6s ease both}
+.story-btn{transition:background .15s ease,color .15s ease}
+.story-btn:hover{background:#F6EDD7 !important;color:#272726 !important}
+.svc-row{transition:background .2s ease,padding .2s ease}
+.svc-row:hover{background:rgba(198,161,140,0.25);padding-left:20px !important}
+.svc-arrow{transition:transform .2s ease}
+.svc-row:hover .svc-arrow{transform:translateX(8px)}
+.dl summary{cursor:pointer;list-style:none}
+.dl-chev{transition:transform .2s ease;display:inline-block}
+details.dl[open] .dl-chev{transform:rotate(180deg)}
+@media (max-width: 700px){
+ .timeline ol{flex-direction:column;gap:32px !important}
+ .tl-line{top:0 !important;bottom:0;left:14px !important;right:auto !important;border-top:none !important;border-left:2px dashed rgba(246,237,215,0.22)}
+ .tl-step{padding-top:0 !important;padding-left:48px}
+}
+.tl-fill{transition:width 1s cubic-bezier(.6,0,.2,1)}
+.tl-step{transition:opacity .5s ease}
+.tl-dot{transition:transform .4s ease,background .4s ease,box-shadow .4s ease}
+@media (max-width: 700px){.tl-fill{display:none}}
+@media (prefers-reduced-motion: reduce){.tl-fill,.tl-step,.tl-dot{transition:none !important}}
+.av:hover > span:first-child{box-shadow:0 0 0 3px #F6EDD7, 0 0 0 5px #F29F1C}
+.av:focus-visible{outline:3px solid #F29F1C;outline-offset:4px;border-radius:8px}
+@media (max-width: 760px){.wordmark{font-size:21px}.menu-btn{padding:10px 14px !important;font-size:12px !important;gap:10px !important}}
+@media (max-width: 760px){.desk-nav{display:none !important}.menu-btn{display:inline-flex !important}}
+@media (min-width: 761px){.mob-menu{display:none !important}}
+.price-grid > div + div{border-left:none !important}
+@media (max-width: 860px){.price-grid{grid-template-columns:minmax(0,1fr) !important}.price-grid > div + div{border-left:1px solid #272726 !important;border-top:none !important}}
+.lead-story:hover > span:nth-child(2){color:#AD6A46}
+.more-link:hover .more-title{color:#AD6A46}
+@media (max-width: 600px){.team-row{gap:16px !important;margin-top:28px !important}.av{width:auto !important}.av > span:last-child{display:none !important}.av > span:first-child{width:50px !important;height:50px !important;font-size:16px !important}}
+@media (max-width: 600px){.cta{font-size:13px !important;letter-spacing:.06em !important;padding:20px 16px !important;width:100%;text-align:center}}
+@media (prefers-reduced-motion: reduce){.word,.word::before{animation:none !important;transition:none !important}}
+input:focus-visible,a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #F29F1C;outline-offset:2px}
+</style>
+
+<script src="runtime.js"></script>
+</head>
+<body>
+<div id="app">
+
+
+<div style="font-family: 'DM Sans', system-ui, sans-serif; color: #F6EDD7; background: #364523; font-size: 18px; line-height: 1.6; position: relative">
+<div aria-hidden="true" style="position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 60">
+<div class="grain" style="position: absolute; inset: -20%; opacity: 0.25; mix-blend-mode: overlay">
+<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><filter id="bbgrain"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"></feTurbulence><feColorMatrix type="saturate" values="0"></feColorMatrix></filter><rect width="100%" height="100%" filter="url(#bbgrain)"></rect></svg>
+</div>
+</div>
+
+
+<span id="page-top"></span>
+<header style="background: #364523; border-bottom: 1px solid rgba(246,237,215,0.14)">
+<div style="max-width: 1200px; margin: 0 auto; padding: 18px 24px; display: flex; flex-wrap: nowrap; align-items: center; justify-content: space-between; gap: 16px">
+<a href="index.html" class="navlink" style="font-family: 'DM Sans', system-ui, sans-serif; font-size: 26px; font-weight: 700; letter-spacing: -0.01em; display: inline-flex; align-items: center; gap: 10px"><img src="images/the-backbone-logo-mark.png" alt="" width="34" height="33" style="display: block"><span class="wordmark">the<span style="color: #AEB89C">backbone</span>.ca</span></a>
+<nav aria-label="Main" class="desk-nav" style="display: flex; flex-wrap: wrap; align-items: center; gap: 26px; font-family: 'IBM Plex Mono', monospace; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase">
+<div class="navdrop"><a class="navlink" href="index.html#who">Who we help ▾</a><div class="navmenu"><div class="navmenu-in"><a href="visual-artists.html">Visual artists &amp; illustrators</a><a href="musicians.html">Performers &amp; musicians</a><a href="designers-photographers.html">Designers &amp; photographers</a><a href="studios.html">Small studios &amp; agencies</a></div></div></div>
+<a class="navlink" href="index.html">Services</a>
+<a class="navlink" href="index.html">Pricing</a>
+<a class="navlink" href="workshops.html">Workshops</a>
+<a class="navlink" href="free-tools.html">Free tools</a>
+<a class="navlink" href="index.html">About</a>
+<a class="ghost" href="index.html" style="border: 1px solid rgba(246,237,215,0.4); color: #F6EDD7; padding: 12px 18px; text-decoration: none; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Free call code</a>
+</nav>
+<button type="button" class="menu-btn" aria-expanded="false" aria-controls="mobile-menu" style="display: none; align-items: center; gap: 12px; background: transparent; color: #F6EDD7; border: 1px solid rgba(246,237,215,0.4); padding: 12px 18px; min-height: 44px; cursor: pointer; font-family: 'IBM Plex Mono', monospace; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase"><svg aria-hidden="true" width="22" height="14" viewBox="0 0 22 14" fill="none" stroke="#F6EDD7" stroke-width="1.6"><path d="M0 1 H22 M0 7 H22 M0 13 H22"></path></svg>Menu</button>
+</div>
+
+
+</header>
+
+
+<section class="hero-bg" style="background-color: #364523; position: relative; color: #F6EDD7; box-shadow: inset 0 0 180px 40px rgba(0,0,0,0.5)">
+<div aria-hidden="true" style="position: absolute; inset: 0; background: rgba(30,38,20,0.55)"></div>
+<div style="position: relative; max-width: 1100px; margin: 0 auto; padding: 120px 24px 112px">
+<p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #AEB89C">For visual artists &amp; illustrators</p>
+<h1 style="margin: 18px 0 0; font-size: clamp(42px, 6.4vw, 86px); line-height: 1.02; max-width: 900px">You make the work.<br>We'll handle <span style="color: #F29F1C">the grant report.</span></h1>
+<p style="margin: 26px 0 0; font-size: clamp(18px, 1.6vw, 21px); max-width: 560px; color: rgba(246,237,215,0.86)">Bookkeeping and admin for artists who sell commissions, prints and originals, and apply for grants.</p>
+<div style="margin-top: 36px; display: flex; flex-wrap: wrap; gap: 16px 28px; align-items: center">
+<a class="brk cta" href="#contact" style="position: relative; background: #F6EDD7; color: #272726; padding: 18px 26px; text-decoration: none; font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; display: inline-block"><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span>Get your free call code →</a>
+<a href="index.html#pricing" style="color: #F6EDD7; font-size: 16px">See pricing</a>
+</div>
+</div>
+</section>
+
+
+<div style="background: #F6EDD7; position: relative; overflow: hidden; padding: 72px 0 24px">
+<div style="display: flex; justify-content: center; padding: 0 24px">
+<div role="img" aria-label="Paint swatch card: You make the art. We keep the paper trail." style="position: relative; width: min(760px, 100%); transform: rotate(-2deg); background: #FBF6EA; box-shadow: 0 18px 40px rgba(39,39,38,0.22), 0 2px 6px rgba(39,39,38,0.25); padding: 14px 14px 18px">
+<span aria-hidden="true" style="position: absolute; top: -12px; left: 12%; width: 90px; height: 24px; background: rgba(242,159,28,0.55); transform: rotate(-6deg)"></span>
+<span aria-hidden="true" style="position: absolute; top: -10px; right: 10%; width: 80px; height: 22px; background: rgba(242,159,28,0.55); transform: rotate(5deg)"></span>
+<div style="display: flex; gap: 6px; height: clamp(90px, 16vw, 150px)"><div style="flex: 1 1 0; min-width: 0; background: #364523; color: #F6EDD7; display: flex; align-items: flex-end; padding: 10px 8px; font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.16em; text-transform: uppercase; font-size: clamp(7px, 1.1vw, 10px); letter-spacing: 0.1em">Highland</div><div style="flex: 1 1 0; min-width: 0; background: #AEB89C; color: #272726; display: flex; align-items: flex-end; padding: 10px 8px; font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.16em; text-transform: uppercase; font-size: clamp(7px, 1.1vw, 10px); letter-spacing: 0.1em">Lichen</div><div style="flex: 1 1 0; min-width: 0; background: #F29F1C; color: #272726; display: flex; align-items: flex-end; padding: 10px 8px; font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.16em; text-transform: uppercase; font-size: clamp(7px, 1.1vw, 10px); letter-spacing: 0.1em">Sun</div><div style="flex: 1 1 0; min-width: 0; background: #C6A18C; color: #272726; display: flex; align-items: flex-end; padding: 10px 8px; font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.16em; text-transform: uppercase; font-size: clamp(7px, 1.1vw, 10px); letter-spacing: 0.1em">Sandstone</div><div style="flex: 1 1 0; min-width: 0; background: #AD6A46; color: #F6EDD7; display: flex; align-items: flex-end; padding: 10px 8px; font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.16em; text-transform: uppercase; font-size: clamp(7px, 1.1vw, 10px); letter-spacing: 0.1em">Clay</div><div style="flex: 1 1 0; min-width: 0; background: #70501C; color: #F6EDD7; display: flex; align-items: flex-end; padding: 10px 8px; font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.16em; text-transform: uppercase; font-size: clamp(7px, 1.1vw, 10px); letter-spacing: 0.1em">Deep ochre</div></div>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 6px 16px; margin-top: 14px">
+<p class="bricolage" style="margin: 0; font-size: clamp(18px, 3vw, 28px); line-height: 1.15">You make the art. <span style="color: #AD6A46">We keep the paper trail.</span></p>
+<span style="font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.16em; text-transform: uppercase; font-size: 10px; color: #70501C">The Backbone palette</span>
+</div>
+</div>
+</div>
+</div>
+
+
+<section class="ind-photo" style="background-color: #F6EDD7; color: #272726">
+<div style="max-width: 1100px; margin: 0 auto; padding: 96px 24px 24px"><div style="background: rgba(246,237,215,0.95); border: 1px solid rgba(39,39,38,0.18); padding: 28px">
+<p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #70501C">Sound familiar?</p>
+<ul style="list-style: none; margin: 24px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 28px 40px"><li style="flex: 1 1 240px; min-width: 0; border-top: 1.5px solid #272726; padding-top: 16px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #AD6A46">01</span>
+<p class="bricolage" style="margin: 10px 0 0; font-size: clamp(20px, 2vw, 24px); line-height: 1.25">Grant deadline next week, and the budget isn't done.</p>
+</li><li style="flex: 1 1 240px; min-width: 0; border-top: 1.5px solid #272726; padding-top: 16px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #AD6A46">02</span>
+<p class="bricolage" style="margin: 10px 0 0; font-size: clamp(20px, 2vw, 24px); line-height: 1.25">Commissions paid by e-transfer, PayPal and cash, all mixed together.</p>
+</li><li style="flex: 1 1 240px; min-width: 0; border-top: 1.5px solid #272726; padding-top: 16px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #AD6A46">03</span>
+<p class="bricolage" style="margin: 10px 0 0; font-size: clamp(20px, 2vw, 24px); line-height: 1.25">A gallery sold a piece and you're not sure what your split was.</p>
+</li></ul>
+</div></div>
+<div style="max-width: 1100px; margin: 0 auto; padding: 24px 24px 96px"><div style="background: rgba(246,237,215,0.95); border: 1px solid rgba(39,39,38,0.18); padding: 28px">
+<p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #70501C">What we take off your plate</p>
+<h2 style="margin: 12px 0 0; font-size: clamp(30px, 3.6vw, 46px); line-height: 1.08; max-width: 720px">So you can get back to <span style="color: #AD6A46">the work you love.</span></h2>
+<ol style="list-style: none; margin: 36px 0 0; padding: 0; border-bottom: 1px solid rgba(39,39,38,0.2)"><li style="display: flex; gap: 18px; padding: 20px 0; border-top: 1px solid rgba(39,39,38,0.2)">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #70501C; flex: 0 0 28px; padding-top: 4px">01</span>
+<div style="flex: 1 1 auto; min-width: 0; display: flex; flex-wrap: wrap; gap: 4px 32px"><strong style="flex: 1 1 240px; font-size: 20px; font-weight: 600">Grant budgets &amp; final reports</strong><span style="flex: 2 1 320px; font-size: 16px; color: #272726">We build the budget, gather the receipts and prepare the final report your funder asks for.</span></div>
+</li><li style="display: flex; gap: 18px; padding: 20px 0; border-top: 1px solid rgba(39,39,38,0.2)">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #70501C; flex: 0 0 28px; padding-top: 4px">02</span>
+<div style="flex: 1 1 auto; min-width: 0; display: flex; flex-wrap: wrap; gap: 4px 32px"><strong style="flex: 1 1 240px; font-size: 20px; font-weight: 600">Commissions &amp; invoices</strong><span style="flex: 2 1 320px; font-size: 16px; color: #272726">Clear quotes, deposits and invoices, and we follow up when someone pays late.</span></div>
+</li><li style="display: flex; gap: 18px; padding: 20px 0; border-top: 1px solid rgba(39,39,38,0.2)">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #70501C; flex: 0 0 28px; padding-top: 4px">03</span>
+<div style="flex: 1 1 auto; min-width: 0; display: flex; flex-wrap: wrap; gap: 4px 32px"><strong style="flex: 1 1 240px; font-size: 20px; font-weight: 600">Print shop &amp; Shopify</strong><span style="flex: 2 1 320px; font-size: 16px; color: #272726">Orders, payouts, fees and inventory, reconciled every month.</span></div>
+</li><li style="display: flex; gap: 18px; padding: 20px 0; border-top: 1px solid rgba(39,39,38,0.2)">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #70501C; flex: 0 0 28px; padding-top: 4px">04</span>
+<div style="flex: 1 1 auto; min-width: 0; display: flex; flex-wrap: wrap; gap: 4px 32px"><strong style="flex: 1 1 240px; font-size: 20px; font-weight: 600">Gallery &amp; consignment splits</strong><span style="flex: 2 1 320px; font-size: 16px; color: #272726">We track what sold, where, and what you're owed.</span></div>
+</li><li style="display: flex; gap: 18px; padding: 20px 0; border-top: 1px solid rgba(39,39,38,0.2)">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #70501C; flex: 0 0 28px; padding-top: 4px">05</span>
+<div style="flex: 1 1 auto; min-width: 0; display: flex; flex-wrap: wrap; gap: 4px 32px"><strong style="flex: 1 1 240px; font-size: 20px; font-weight: 600">Outreach</strong><span style="flex: 2 1 320px; font-size: 16px; color: #272726">Emails to galleries, residencies and calls for submissions, drafted and tracked.</span></div>
+</li><li style="display: flex; gap: 18px; padding: 20px 0; border-top: 1px solid rgba(39,39,38,0.2)">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #70501C; flex: 0 0 28px; padding-top: 4px">06</span>
+<div style="flex: 1 1 auto; min-width: 0; display: flex; flex-wrap: wrap; gap: 4px 32px"><strong style="flex: 1 1 240px; font-size: 20px; font-weight: 600">Shipping &amp; customs</strong><span style="flex: 2 1 320px; font-size: 16px; color: #272726">Sending originals and prints abroad, with the customs forms and duties handled.</span></div>
+</li><li style="display: flex; gap: 18px; padding: 20px 0; border-top: 1px solid rgba(39,39,38,0.2)">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #70501C; flex: 0 0 28px; padding-top: 4px">07</span>
+<div style="flex: 1 1 auto; min-width: 0; display: flex; flex-wrap: wrap; gap: 4px 32px"><strong style="flex: 1 1 240px; font-size: 20px; font-weight: 600">GST &amp; taxes</strong><span style="flex: 2 1 320px; font-size: 16px; color: #272726">We watch the $30,000 line and file GST for you.</span></div>
+</li></ol>
+</div></div>
+</section>
+
+
+<section class="stories-bg" style="background-color: #AEB89C; color: #272726; border-top: 1.5px solid #272726">
+<div style="max-width: 1100px; margin: 0 auto; padding: 88px 24px; display: flex; flex-wrap: wrap; gap: 48px 72px; align-items: center">
+<figure style="flex: 1 1 420px; min-width: 0; margin: 0">
+<p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #70501C">Under NDA</p>
+<blockquote style="margin: 16px 0 0; font-size: clamp(24px, 2.6vw, 34px); line-height: 1.22">"I have a corporation, but I'm also self-employed, and I mix it all together. They know exactly what to do and where everything goes."</blockquote>
+<figcaption style="margin-top: 18px; display: flex; align-items: center; gap: 10px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-size: 11px"><span>Name:</span><span aria-label="Name hidden" style="display: inline-block; width: 64px; height: 10px; background: #272726"></span><span>Artist</span></figcaption>
+</figure>
+<div style="flex: 1 1 300px; min-width: 0; background: #F6EDD7; border: 1.5px solid #272726; padding: 28px">
+<p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #70501C">Suggested plan</p>
+<p class="bricolage" style="margin: 10px 0 0; font-size: 30px">Essentials</p>
+<p style="margin: 4px 0 0; font-size: 15px">from <strong style="font-size: 26px">$475</strong> /month</p>
+<p style="margin: 8px 0 0; font-size: 15px; color: #70501C">Most artists start here.</p>
+<ul style="list-style: none; margin: 18px 0 0; padding: 0; font-size: 15px"><li style="padding: 8px 0; border-top: 1px solid rgba(39,39,38,0.15)">→ Monthly bookkeeping</li><li style="padding: 8px 0; border-top: 1px solid rgba(39,39,38,0.15)">→ GST/HST filing</li><li style="padding: 8px 0; border-top: 1px solid rgba(39,39,38,0.15)">→ Year-end package for your accountant</li></ul>
+<a href="index.html#pricing" style="display: inline-block; margin-top: 16px; color: #70501C; font-size: 15px">Compare all plans →</a>
+</div>
+</div>
+</section>
+
+
+<section id="contact" class="contact-bg" style="position: relative; background-color: #364523; color: #F6EDD7; font-family: 'DM Sans', system-ui, sans-serif">
+<div aria-hidden="true" style="position: absolute; top: -1px; left: 0; right: 0; height: clamp(40px, 6vw, 90px); background: url(images/brush-divider-cream.png) center/100% 100% no-repeat; pointer-events: none;"></div>
+<div style="max-width: 760px; margin: 0 auto; padding: 72px 24px 200px; text-align: center">
+<h2 style="margin: 0; font-size: clamp(36px, 5vw, 64px); line-height: 1.04">Take it <span style="color: #F29F1C">off your plate.</span></h2>
+<p style="margin: 22px auto 0; font-size: 20px; color: rgba(246,237,215,0.82); max-width: 560px">Join our newsletter and get a code for a free 30-minute intro call.</p>
+<form style="margin: 32px auto 0; max-width: 520px">
+<label for="nl-email" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Email address</label>
+<div style="display: flex; gap: 0">
+<input id="nl-email" class="nl-input" type="email" name="newsletter-email" autocomplete="off" required="" placeholder="you@studio.com" style="flex: 1 1 auto; min-width: 0; font-family: 'DM Sans', system-ui, sans-serif; font-size: 17px; padding: 14px 16px; border: 1px solid rgba(246,237,215,0.4); border-right: none; background: #364523; color: #F6EDD7; min-height: 56px; box-sizing: border-box">
+<button type="submit" class="brk" style="position: relative; flex: 0 0 auto; font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; background: #F6EDD7; color: #272726; border: 1px solid #F6EDD7; padding: 0 24px; min-height: 56px; cursor: pointer"><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span>Get my code</button>
+</div>
+<p style="margin: 10px 0 0; font-size: 13px; color: rgba(246,237,215,0.7)">Plus CRA deadline reminders. No spam. Unsubscribe anytime.</p>
+</form>
+<p style="margin: 28px 0 0; font-size: 16px; color: rgba(246,237,215,0.9)">Already have a code? <a href="mailto:info@thebackbone.ca?subject=Intro%20call" style="color: #F29F1C">Book your intro call →</a></p>
+</div>
+</section>
+<div aria-hidden="true" class="waves" style="position: relative; z-index: 1; height: clamp(68px, 10vw, 156px); margin-top: calc(-1 * clamp(68px, 10vw, 156px)); margin-bottom: -1px; background-color: transparent"></div>
+
+<footer style="font-family: 'DM Sans', system-ui, sans-serif; background: #364523; color: rgba(246,237,215,0.82); border-top: none">
+<div style="max-width: 1200px; margin: 0 auto; padding: 40px 24px 64px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px; font-size: 16px">
+<div style="display: flex; flex-direction: column; gap: 0">
+<img src="images/the-backbone-logo.png" alt="The Backbone: Structure for your next move" width="180" height="60" style="display: block; height: auto; margin-bottom: 28px">
+<span style="font-size: 15px; color: #F6EDD7">The Backbone Ops &amp; Design Inc.</span>
+<span style="margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.9; color: #AEB89C">Vancouver · White Rock · South Surrey · Vancouver Island</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start; font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase">
+<a href="mailto:info@thebackbone.ca" style="color: #F6EDD7">Email</a>
+<a href="https://www.instagram.com/thebackbone.ca/" target="_blank" rel="noopener" style="color: #F6EDD7">Instagram</a>
+<a href="#page-top" style="color: #F6EDD7">Back to top ↑</a>
+</div>
+<div style="flex: 1 1 100%; border-top: 1px solid rgba(246,237,215,0.16); padding-top: 28px">
+<p style="margin: 0 0 10px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #AEB89C">Territory acknowledgement</p>
+<p style="margin: 0; max-width: 760px; font-size: 14px; line-height: 1.7; color: rgba(246,237,215,0.72)">We live and work on the traditional, ancestral and unceded territories of the Coast Salish Peoples, including the xʷməθkʷəy̓əm (Musqueam), Sḵwx̱wú7mesh (Squamish) and səl̓ilw̓ətaʔɬ (Tsleil-Waututh) Nations in Vancouver, and the Semiahmoo, Katzie and Kwantlen Nations in South Surrey and White Rock. We are grateful to the many Nations of Vancouver Island whose lands we visit, and to the Indigenous clients and communities we work alongside.</p>
+</div>
+</div>
+</footer>
+
+</div>
+</div>
+<template id="tpl">
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&amp;family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..500&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;background:#364523}
+h1,h2,h3,blockquote,.bricolage{font-family:'Bricolage Grotesque','DM Sans',sans-serif !important;font-weight:800 !important;font-optical-sizing:none;font-variation-settings:'opsz' 14;letter-spacing:-0.02em}
+blockquote{font-style:normal !important}
+h1 em,h2 em,h3 em{font-style:normal}
+.hero-bg{background-image:url(images/bookkeeping-for-creatives-bc-forest.webp);background-size:cover;background-position:center}
+.team-bg{background-image:url(images/bc-mountains-green.webp);background-size:cover;background-position:center bottom}
+.waves{background-image:url(images/brand-hills-divider.png);background-size:100% 100%;background-repeat:no-repeat}
+.ind-photo{background-image:url(images/bc-coast-beach-forest.webp);background-size:cover;background-position:center}
+.stories-bg{background-image:linear-gradient(rgba(174,184,156,0.84),rgba(174,184,156,0.84)),url(images/snowy-fjord-bc.webp);background-size:cover;background-position:center 60%}
+.contact-bg{background-image:linear-gradient(rgba(54,69,35,0.72),rgba(54,69,35,0.72)),url(images/the-backbone-studio.webp);background-size:cover;background-position:center}
+.holes{display:flex;gap:13px;padding:5px 0 5px 8px;overflow:hidden;white-space:nowrap}
+.hole{flex:0 0 auto;width:15px;height:11px;border-radius:3px;background:#F6EDD7;box-shadow:inset 0 1px 2px rgba(0,0,0,.35)}
+.reel{width:22%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#272726 0 18%,#F6EDD7 19% 28%,transparent 29%),repeating-conic-gradient(#F6EDD7 0 12deg,#272726 12deg 60deg);border:3px solid #F6EDD7;box-sizing:border-box;animation:bb-reel 4s linear infinite}
+@keyframes bb-reel{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion: reduce){.reel{animation:none}}
+.stroke-div{background-image:url(images/brush-divider-green.png);background-size:100% 100%;background-repeat:no-repeat}
+a{color:#AD6A46}a:hover{color:#70501C}
+.navlink{text-decoration:none;color:#F6EDD7}
+.navdrop{position:relative}
+.navmenu{display:none;position:absolute;top:100%;left:-16px;padding-top:12px;z-index:60}
+.navmenu-in{background:#364523;border:1px solid rgba(246,237,215,0.25);box-shadow:0 14px 30px rgba(0,0,0,0.3);min-width:260px;padding:6px 0}
+.navdrop:hover .navmenu,.navdrop:focus-within .navmenu{display:block}
+.navmenu a{display:block;padding:11px 18px;color:#F6EDD7;text-decoration:none;font-family:'DM Sans',system-ui,sans-serif;font-size:15px;letter-spacing:0;text-transform:none}
+.navmenu a:hover{color:#F29F1C}
+.navlink:hover{color:#F29F1C !important}
+.brk{position:relative;transition:background .15s ease}
+.brk:hover{background:#F29F1C !important}
+.c{position:absolute;width:12px;height:12px;border-color:#272726;border-style:solid;border-width:0}
+.tl{top:7px;left:7px;border-top-width:1.5px;border-left-width:1.5px}
+.tr{top:7px;right:7px;border-top-width:1.5px;border-right-width:1.5px}
+.bl{bottom:7px;left:7px;border-bottom-width:1.5px;border-left-width:1.5px}
+.br{bottom:7px;right:7px;border-bottom-width:1.5px;border-right-width:1.5px}
+.ghost{transition:background .15s ease,color .15s ease}
+.ghost:hover{background:#F6EDD7 !important;color:#272726 !important}
+.card-link:hover{border-color:#F29F1C !important}
+summary{cursor:pointer;list-style:none}
+summary::-webkit-details-marker{display:none}
+details[open] .plus{transform:rotate(45deg)}
+.plus{transition:transform .15s ease}
+.word{position:relative;isolation:isolate;display:inline-block;transition:color .4s ease,transform .5s ease,letter-spacing .5s ease}
+.word::before{content:"";position:absolute;inset:-18% -14%;z-index:-1;background:radial-gradient(closest-side,var(--glow,rgba(242,159,28,.35)),transparent);filter:blur(14px);animation:bb-glow 3.2s ease-in-out infinite}
+@keyframes bb-glow{0%,100%{opacity:.5;transform:scale(.97)}50%{opacity:.75;transform:scale(1.03)}}
+@keyframes bb-upside{0%{transform:rotate(0)}100%{transform:rotate(180deg)}}
+@keyframes bb-rise{0%{opacity:0;transform:translateY(.35em)}100%{opacity:1;transform:translateY(0)}}
+@keyframes bb-tilt{0%{transform:rotate(0)}40%{transform:rotate(-6deg)}70%{transform:rotate(2deg)}100%{transform:rotate(-3deg)}}
+@keyframes bb-type{0%{clip-path:inset(-60% 100% -60% -30%)}100%{clip-path:inset(-60% -30% -60% -30%)}}
+@keyframes bb-wiggle{0%,100%{transform:rotate(0)}20%{transform:rotate(-12deg)}40%{transform:rotate(9deg)}60%{transform:rotate(-5deg)}80%{transform:rotate(0)}}
+@keyframes bb-bob{0%,100%{transform:translateY(0)}25%{transform:translateY(-5px) rotate(-6deg)}50%{transform:translateY(0)}75%{transform:translateY(-3px) rotate(5deg)}}
+@keyframes bb-flash{0%,70%,100%{transform:scale(1)}78%{transform:scale(1.18)}86%{transform:scale(.94)}}
+@keyframes bb-sway{0%,100%{transform:translateX(0)}30%{transform:translateX(-3px)}60%{transform:translateX(3px)}}
+.ico{transform-origin:center}
+.tile:hover .ico1{animation:bb-wiggle 1.2s ease-in-out}
+.tile:hover .ico2{animation:bb-bob 1.2s ease-in-out}
+.tile:hover .ico3{animation:bb-flash 1s ease-in-out}
+.tile:hover .ico4{animation:bb-sway 1.2s ease-in-out}
+@media (prefers-reduced-motion: reduce){.ico{animation:none !important}}
+@keyframes bb-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.marquee{animation:bb-marquee 75s linear infinite}
+.marquee:hover{animation-play-state:paused}
+@media (prefers-reduced-motion: reduce){.marquee{animation:none !important}}
+.tile{box-shadow:5px 5px 0 #272726;transition:transform .2s ease,box-shadow .2s ease}
+.tile:hover{transform:translate(-3px,-3px);box-shadow:8px 8px 0 #272726}
+.tile-dark{box-shadow:5px 5px 0 #AEB89C}
+.tile-dark:hover{box-shadow:8px 8px 0 #AEB89C}
+
+@keyframes bb-grain{0%{transform:translate(0,0)}17%{transform:translate(-4%,3%)}33%{transform:translate(3%,-5%)}50%{transform:translate(-6%,1%)}67%{transform:translate(5%,4%)}83%{transform:translate(-2%,-3%)}100%{transform:translate(0,0)}}
+.grain{animation:bb-grain 2.4s steps(6) infinite}
+@keyframes bb-flicker{0%,100%{opacity:1}48%{opacity:.82}50%{opacity:1}92%{opacity:.88}}
+@media (prefers-reduced-motion: reduce){.grain,.stamp{animation:none !important}}
+.sprockets{background-image:repeating-linear-gradient(90deg,transparent 0 10px,#F6EDD7 10px 26px,transparent 26px 36px);opacity:.9;border-radius:2px}
+@media (max-width: 600px){.hide-sm{display:none}}
+.story{animation:bb-rise .6s ease both}
+.story-btn{transition:background .15s ease,color .15s ease}
+.story-btn:hover{background:#F6EDD7 !important;color:#272726 !important}
+.svc-row{transition:background .2s ease,padding .2s ease}
+.svc-row:hover{background:rgba(198,161,140,0.25);padding-left:20px !important}
+.svc-arrow{transition:transform .2s ease}
+.svc-row:hover .svc-arrow{transform:translateX(8px)}
+.dl summary{cursor:pointer;list-style:none}
+.dl-chev{transition:transform .2s ease;display:inline-block}
+details.dl[open] .dl-chev{transform:rotate(180deg)}
+@media (max-width: 700px){
+ .timeline ol{flex-direction:column;gap:32px !important}
+ .tl-line{top:0 !important;bottom:0;left:14px !important;right:auto !important;border-top:none !important;border-left:2px dashed rgba(246,237,215,0.22)}
+ .tl-step{padding-top:0 !important;padding-left:48px}
+}
+.tl-fill{transition:width 1s cubic-bezier(.6,0,.2,1)}
+.tl-step{transition:opacity .5s ease}
+.tl-dot{transition:transform .4s ease,background .4s ease,box-shadow .4s ease}
+@media (max-width: 700px){.tl-fill{display:none}}
+@media (prefers-reduced-motion: reduce){.tl-fill,.tl-step,.tl-dot{transition:none !important}}
+.av:hover > span:first-child{box-shadow:0 0 0 3px #F6EDD7, 0 0 0 5px #F29F1C}
+.av:focus-visible{outline:3px solid #F29F1C;outline-offset:4px;border-radius:8px}
+@media (max-width: 760px){.wordmark{font-size:21px}.menu-btn{padding:10px 14px !important;font-size:12px !important;gap:10px !important}}
+@media (max-width: 760px){.desk-nav{display:none !important}.menu-btn{display:inline-flex !important}}
+@media (min-width: 761px){.mob-menu{display:none !important}}
+.price-grid > div + div{border-left:none !important}
+@media (max-width: 860px){.price-grid{grid-template-columns:minmax(0,1fr) !important}.price-grid > div + div{border-left:1px solid #272726 !important;border-top:none !important}}
+.lead-story:hover > span:nth-child(2){color:#AD6A46}
+.more-link:hover .more-title{color:#AD6A46}
+@media (max-width: 600px){.team-row{gap:16px !important;margin-top:28px !important}.av{width:auto !important}.av > span:last-child{display:none !important}.av > span:first-child{width:50px !important;height:50px !important;font-size:16px !important}}
+@media (max-width: 600px){.cta{font-size:13px !important;letter-spacing:.06em !important;padding:20px 16px !important;width:100%;text-align:center}}
+@media (prefers-reduced-motion: reduce){.word,.word::before{animation:none !important;transition:none !important}}
+input:focus-visible,a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #F29F1C;outline-offset:2px}
+</style>
+</helmet>
+
+<div style="font-family: 'DM Sans', system-ui, sans-serif; color: #F6EDD7; background: #364523; font-size: 18px; line-height: 1.6; position: relative">
+<div aria-hidden="true" style="position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 60">
+<div class="grain" style="position: absolute; inset: -20%; opacity: {{grainOpacity}}; mix-blend-mode: overlay">
+<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><filter id="bbgrain"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter><rect width="100%" height="100%" filter="url(#bbgrain)"/></svg>
+</div>
+</div>
+
+<!-- NAV -->
+<span id="page-top"></span>
+<header style="background: #364523; border-bottom: 1px solid rgba(246,237,215,0.14)">
+<div style="max-width: 1200px; margin: 0 auto; padding: 18px 24px; display: flex; flex-wrap: nowrap; align-items: center; justify-content: space-between; gap: 16px">
+<a href="index.html" class="navlink" style="font-family: 'DM Sans', system-ui, sans-serif; font-size: 26px; font-weight: 700; letter-spacing: -0.01em; display: inline-flex; align-items: center; gap: 10px"><img src="images/the-backbone-logo-mark.png" alt="" width="34" height="33" style="display: block"><span class="wordmark">the<span style="color: #AEB89C">backbone</span>.ca</span></a>
+<nav aria-label="Main" class="desk-nav" style="display: flex; flex-wrap: wrap; align-items: center; gap: 26px; font-family: 'IBM Plex Mono', monospace; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase">
+<div class="navdrop"><a class="navlink" href="index.html#who">Who we help ▾</a><div class="navmenu"><div class="navmenu-in"><a href="visual-artists.html">Visual artists & illustrators</a><a href="musicians.html">Performers & musicians</a><a href="designers-photographers.html">Designers & photographers</a><a href="studios.html">Small studios & agencies</a></div></div></div>
+<a class="navlink" href="index.html">Services</a>
+<a class="navlink" href="index.html">Pricing</a>
+<a class="navlink" href="workshops.html">Workshops</a>
+<a class="navlink" href="free-tools.html">Free tools</a>
+<a class="navlink" href="index.html">About</a>
+<a class="ghost" href="index.html" style="border: 1px solid rgba(246,237,215,0.4); color: #F6EDD7; padding: 12px 18px; text-decoration: none; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Free call code</a>
+</nav>
+<button type="button" class="menu-btn" onClick="{{toggleMenu}}" aria-expanded="{{menuExpanded}}" aria-controls="mobile-menu" style="display: none; align-items: center; gap: 12px; background: transparent; color: #F6EDD7; border: 1px solid rgba(246,237,215,0.4); padding: 12px 18px; min-height: 44px; cursor: pointer; font-family: 'IBM Plex Mono', monospace; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase"><svg aria-hidden="true" width="22" height="14" viewBox="0 0 22 14" fill="none" stroke="#F6EDD7" stroke-width="1.6"><path d="{{menuIconPath}}"/></svg>{{menuLabel}}</button>
+</div>
+
+<sc-if value="{{menuOpen}}" hint-placeholder-val="{{ false }}">
+<div id="mobile-menu" role="dialog" aria-label="Menu" class="mob-menu" style="position: fixed; inset: 0; z-index: 200; background: #364523; color: #F6EDD7; overflow-y: auto; display: flex; flex-direction: column; padding: 18px 24px 32px; box-sizing: border-box">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 16px">
+<a href="index.html" onClick="{{closeMenu}}" style="display: inline-flex; align-items: center; gap: 10px; color: #F6EDD7; text-decoration: none; font-size: 21px; font-weight: 700"><img src="images/the-backbone-logo-mark.png" alt="" width="34" height="33" style="display: block"><span>the<span style="color: #AEB89C">backbone</span>.ca</span></a>
+<button type="button" onClick="{{toggleMenu}}" aria-label="Close menu" style="display: inline-flex; align-items: center; gap: 10px; background: transparent; color: #F6EDD7; border: 1px solid rgba(246,237,215,0.4); padding: 10px 14px; min-height: 44px; cursor: pointer; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#F6EDD7" stroke-width="1.6"><path d="M1 1 L13 13 M13 1 L1 13"/></svg>Close</button>
+</div>
+<nav aria-label="Mobile" style="margin-top: 40px; display: flex; flex-direction: column; border-top: 1px solid rgba(246,237,215,0.14)">
+<div style="padding: 14px 0; border-bottom: 1px solid rgba(246,237,215,0.14)"><a href="index.html#who" onClick="{{closeMenu}}" style="display: flex; align-items: baseline; gap: 16px; color: #F6EDD7; text-decoration: none"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; color: #AEB89C">01</span><span class="bricolage" style="font-size: 30px; line-height: 1.1">Who we help</span></a><div style="display: flex; flex-direction: column; padding: 8px 0 0 34px"><a href="visual-artists.html" onClick="{{closeMenu}}" style="color: #F6EDD7; text-decoration: none; font-size: 16px; padding: 6px 0">Visual artists & illustrators</a><a href="musicians.html" onClick="{{closeMenu}}" style="color: #F6EDD7; text-decoration: none; font-size: 16px; padding: 6px 0">Performers & musicians</a><a href="designers-photographers.html" onClick="{{closeMenu}}" style="color: #F6EDD7; text-decoration: none; font-size: 16px; padding: 6px 0">Designers & photographers</a><a href="studios.html" onClick="{{closeMenu}}" style="color: #F6EDD7; text-decoration: none; font-size: 16px; padding: 6px 0">Small studios & agencies</a></div></div>
+<a href="index.html" onClick="{{closeMenu}}" style="display: flex; align-items: baseline; gap: 16px; padding: 14px 0; border-bottom: 1px solid rgba(246,237,215,0.14); color: #F6EDD7; text-decoration: none"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; color: #AEB89C">02</span><span class="bricolage" style="font-size: 30px; line-height: 1.1">Services</span></a>
+<a href="index.html" onClick="{{closeMenu}}" style="display: flex; align-items: baseline; gap: 16px; padding: 14px 0; border-bottom: 1px solid rgba(246,237,215,0.14); color: #F6EDD7; text-decoration: none"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; color: #AEB89C">03</span><span class="bricolage" style="font-size: 30px; line-height: 1.1">Pricing</span></a>
+<a href="workshops.html" onClick="{{closeMenu}}" style="display: flex; align-items: baseline; gap: 16px; padding: 14px 0; border-bottom: 1px solid rgba(246,237,215,0.14); color: #F6EDD7; text-decoration: none"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; color: #AEB89C">04</span><span class="bricolage" style="font-size: 30px; line-height: 1.1">Workshops</span></a>
+<a href="free-tools.html" onClick="{{closeMenu}}" style="display: flex; align-items: baseline; gap: 16px; padding: 14px 0; border-bottom: 1px solid rgba(246,237,215,0.14); color: #F6EDD7; text-decoration: none"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; color: #AEB89C">05</span><span class="bricolage" style="font-size: 30px; line-height: 1.1">Free tools</span></a>
+<a href="index.html" onClick="{{closeMenu}}" style="display: flex; align-items: baseline; gap: 16px; padding: 14px 0; border-bottom: 1px solid rgba(246,237,215,0.14); color: #F6EDD7; text-decoration: none"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; color: #AEB89C">06</span><span class="bricolage" style="font-size: 30px; line-height: 1.1">About</span></a>
+</nav>
+<a class="brk" href="index.html" onClick="{{closeMenu}}" style="position: relative; margin-top: 32px; display: block; box-sizing: border-box; width: 100%; background: #F6EDD7; color: #272726; padding: 20px 16px; text-decoration: none; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase"><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span>Get your free call code →</a>
+<p style="margin: auto 0 0; padding-top: 32px; display: flex; flex-wrap: wrap; gap: 8px 20px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase"><a href="mailto:info@thebackbone.ca" style="color: rgba(246,237,215,0.8)">info@thebackbone.ca</a><a href="https://www.instagram.com/thebackbone.ca/" target="_blank" rel="noopener" style="color: rgba(246,237,215,0.8)">Instagram</a></p>
+</div>
+</sc-if>
+</header>
+
+<!-- LANDING HERO -->
+<section class="hero-bg" style="background-color: #364523; position: relative; color: #F6EDD7; box-shadow: inset 0 0 180px 40px rgba(0,0,0,0.5)">
+<div aria-hidden="true" style="position: absolute; inset: 0; background: rgba(30,38,20,0.55)"></div>
+<div style="position: relative; max-width: 1100px; margin: 0 auto; padding: 120px 24px 112px">
+<p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #AEB89C">For visual artists &amp; illustrators</p>
+<h1 style="margin: 18px 0 0; font-size: clamp(42px, 6.4vw, 86px); line-height: 1.02; max-width: 900px">You make the work.<br>We&#x27;ll handle <span style="color: #F29F1C">the grant report.</span></h1>
+<p style="margin: 26px 0 0; font-size: clamp(18px, 1.6vw, 21px); max-width: 560px; color: rgba(246,237,215,0.86)">Bookkeeping and admin for artists who sell commissions, prints and originals, and apply for grants.</p>
+<div style="margin-top: 36px; display: flex; flex-wrap: wrap; gap: 16px 28px; align-items: center">
+<a class="brk cta" href="#contact" style="position: relative; background: #F6EDD7; color: #272726; padding: 18px 26px; text-decoration: none; font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; display: inline-block"><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span>Get your free call code →</a>
+<a href="index.html#pricing" style="color: #F6EDD7; font-size: 16px">See pricing</a>
+</div>
+</div>
+</section>
+
+<!-- MOTIF -->
+<div style="background: #F6EDD7; position: relative; overflow: hidden; padding: 72px 0 24px">
+<div style="display: flex; justify-content: center; padding: 0 24px">
+<div role="img" aria-label="Paint swatch card: You make the art. We keep the paper trail." style="position: relative; width: min(760px, 100%); transform: rotate(-2deg); background: #FBF6EA; box-shadow: 0 18px 40px rgba(39,39,38,0.22), 0 2px 6px rgba(39,39,38,0.25); padding: 14px 14px 18px">
+<span aria-hidden="true" style="position: absolute; top: -12px; left: 12%; width: 90px; height: 24px; background: rgba(242,159,28,0.55); transform: rotate(-6deg)"></span>
+<span aria-hidden="true" style="position: absolute; top: -10px; right: 10%; width: 80px; height: 22px; background: rgba(242,159,28,0.55); transform: rotate(5deg)"></span>
+<div style="display: flex; gap: 6px; height: clamp(90px, 16vw, 150px)"><div style="flex: 1 1 0; min-width: 0; background: #364523; color: #F6EDD7; display: flex; align-items: flex-end; padding: 10px 8px; font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.16em; text-transform: uppercase; font-size: clamp(7px, 1.1vw, 10px); letter-spacing: 0.1em">Highland</div><div style="flex: 1 1 0; min-width: 0; background: #AEB89C; color: #272726; display: flex; align-items: flex-end; padding: 10px 8px; font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.16em; text-transform: uppercase; font-size: clamp(7px, 1.1vw, 10px); letter-spacing: 0.1em">Lichen</div><div style="flex: 1 1 0; min-width: 0; background: #F29F1C; color: #272726; display: flex; align-items: flex-end; padding: 10px 8px; font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.16em; text-transform: uppercase; font-size: clamp(7px, 1.1vw, 10px); letter-spacing: 0.1em">Sun</div><div style="flex: 1 1 0; min-width: 0; background: #C6A18C; color: #272726; display: flex; align-items: flex-end; padding: 10px 8px; font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.16em; text-transform: uppercase; font-size: clamp(7px, 1.1vw, 10px); letter-spacing: 0.1em">Sandstone</div><div style="flex: 1 1 0; min-width: 0; background: #AD6A46; color: #F6EDD7; display: flex; align-items: flex-end; padding: 10px 8px; font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.16em; text-transform: uppercase; font-size: clamp(7px, 1.1vw, 10px); letter-spacing: 0.1em">Clay</div><div style="flex: 1 1 0; min-width: 0; background: #70501C; color: #F6EDD7; display: flex; align-items: flex-end; padding: 10px 8px; font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.16em; text-transform: uppercase; font-size: clamp(7px, 1.1vw, 10px); letter-spacing: 0.1em">Deep ochre</div></div>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 6px 16px; margin-top: 14px">
+<p class="bricolage" style="margin: 0; font-size: clamp(18px, 3vw, 28px); line-height: 1.15">You make the art. <span style="color: #AD6A46">We keep the paper trail.</span></p>
+<span style="font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.16em; text-transform: uppercase; font-size: 10px; color: #70501C">The Backbone palette</span>
+</div>
+</div>
+</div>
+</div>
+
+<!-- PAINS + PLATE (photo) -->
+<section class="ind-photo" style="background-color: #F6EDD7; color: #272726">
+<div style="max-width: 1100px; margin: 0 auto; padding: 96px 24px 24px"><div style="background: rgba(246,237,215,0.95); border: 1px solid rgba(39,39,38,0.18); padding: 28px">
+<p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #70501C">Sound familiar?</p>
+<ul style="list-style: none; margin: 24px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 28px 40px"><li style="flex: 1 1 240px; min-width: 0; border-top: 1.5px solid #272726; padding-top: 16px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #AD6A46">01</span>
+<p class="bricolage" style="margin: 10px 0 0; font-size: clamp(20px, 2vw, 24px); line-height: 1.25">Grant deadline next week, and the budget isn&#x27;t done.</p>
+</li><li style="flex: 1 1 240px; min-width: 0; border-top: 1.5px solid #272726; padding-top: 16px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #AD6A46">02</span>
+<p class="bricolage" style="margin: 10px 0 0; font-size: clamp(20px, 2vw, 24px); line-height: 1.25">Commissions paid by e-transfer, PayPal and cash, all mixed together.</p>
+</li><li style="flex: 1 1 240px; min-width: 0; border-top: 1.5px solid #272726; padding-top: 16px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #AD6A46">03</span>
+<p class="bricolage" style="margin: 10px 0 0; font-size: clamp(20px, 2vw, 24px); line-height: 1.25">A gallery sold a piece and you&#x27;re not sure what your split was.</p>
+</li></ul>
+</div></div>
+<div style="max-width: 1100px; margin: 0 auto; padding: 24px 24px 96px"><div style="background: rgba(246,237,215,0.95); border: 1px solid rgba(39,39,38,0.18); padding: 28px">
+<p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #70501C">What we take off your plate</p>
+<h2 style="margin: 12px 0 0; font-size: clamp(30px, 3.6vw, 46px); line-height: 1.08; max-width: 720px">So you can get back to <span style="color: #AD6A46">the work you love.</span></h2>
+<ol style="list-style: none; margin: 36px 0 0; padding: 0; border-bottom: 1px solid rgba(39,39,38,0.2)"><li style="display: flex; gap: 18px; padding: 20px 0; border-top: 1px solid rgba(39,39,38,0.2)">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #70501C; flex: 0 0 28px; padding-top: 4px">01</span>
+<div style="flex: 1 1 auto; min-width: 0; display: flex; flex-wrap: wrap; gap: 4px 32px"><strong style="flex: 1 1 240px; font-size: 20px; font-weight: 600">Grant budgets &amp; final reports</strong><span style="flex: 2 1 320px; font-size: 16px; color: #272726">We build the budget, gather the receipts and prepare the final report your funder asks for.</span></div>
+</li><li style="display: flex; gap: 18px; padding: 20px 0; border-top: 1px solid rgba(39,39,38,0.2)">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #70501C; flex: 0 0 28px; padding-top: 4px">02</span>
+<div style="flex: 1 1 auto; min-width: 0; display: flex; flex-wrap: wrap; gap: 4px 32px"><strong style="flex: 1 1 240px; font-size: 20px; font-weight: 600">Commissions &amp; invoices</strong><span style="flex: 2 1 320px; font-size: 16px; color: #272726">Clear quotes, deposits and invoices, and we follow up when someone pays late.</span></div>
+</li><li style="display: flex; gap: 18px; padding: 20px 0; border-top: 1px solid rgba(39,39,38,0.2)">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #70501C; flex: 0 0 28px; padding-top: 4px">03</span>
+<div style="flex: 1 1 auto; min-width: 0; display: flex; flex-wrap: wrap; gap: 4px 32px"><strong style="flex: 1 1 240px; font-size: 20px; font-weight: 600">Print shop &amp; Shopify</strong><span style="flex: 2 1 320px; font-size: 16px; color: #272726">Orders, payouts, fees and inventory, reconciled every month.</span></div>
+</li><li style="display: flex; gap: 18px; padding: 20px 0; border-top: 1px solid rgba(39,39,38,0.2)">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #70501C; flex: 0 0 28px; padding-top: 4px">04</span>
+<div style="flex: 1 1 auto; min-width: 0; display: flex; flex-wrap: wrap; gap: 4px 32px"><strong style="flex: 1 1 240px; font-size: 20px; font-weight: 600">Gallery &amp; consignment splits</strong><span style="flex: 2 1 320px; font-size: 16px; color: #272726">We track what sold, where, and what you&#x27;re owed.</span></div>
+</li><li style="display: flex; gap: 18px; padding: 20px 0; border-top: 1px solid rgba(39,39,38,0.2)">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #70501C; flex: 0 0 28px; padding-top: 4px">05</span>
+<div style="flex: 1 1 auto; min-width: 0; display: flex; flex-wrap: wrap; gap: 4px 32px"><strong style="flex: 1 1 240px; font-size: 20px; font-weight: 600">Outreach</strong><span style="flex: 2 1 320px; font-size: 16px; color: #272726">Emails to galleries, residencies and calls for submissions, drafted and tracked.</span></div>
+</li><li style="display: flex; gap: 18px; padding: 20px 0; border-top: 1px solid rgba(39,39,38,0.2)">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #70501C; flex: 0 0 28px; padding-top: 4px">06</span>
+<div style="flex: 1 1 auto; min-width: 0; display: flex; flex-wrap: wrap; gap: 4px 32px"><strong style="flex: 1 1 240px; font-size: 20px; font-weight: 600">Shipping &amp; customs</strong><span style="flex: 2 1 320px; font-size: 16px; color: #272726">Sending originals and prints abroad, with the customs forms and duties handled.</span></div>
+</li><li style="display: flex; gap: 18px; padding: 20px 0; border-top: 1px solid rgba(39,39,38,0.2)">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #70501C; flex: 0 0 28px; padding-top: 4px">07</span>
+<div style="flex: 1 1 auto; min-width: 0; display: flex; flex-wrap: wrap; gap: 4px 32px"><strong style="flex: 1 1 240px; font-size: 20px; font-weight: 600">GST &amp; taxes</strong><span style="flex: 2 1 320px; font-size: 16px; color: #272726">We watch the $30,000 line and file GST for you.</span></div>
+</li></ol>
+</div></div>
+</section>
+
+<!-- PROOF + PLAN (sage) -->
+<section class="stories-bg" style="background-color: #AEB89C; color: #272726; border-top: 1.5px solid #272726">
+<div style="max-width: 1100px; margin: 0 auto; padding: 88px 24px; display: flex; flex-wrap: wrap; gap: 48px 72px; align-items: center">
+<figure style="flex: 1 1 420px; min-width: 0; margin: 0">
+<p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #70501C">Under NDA</p>
+<blockquote style="margin: 16px 0 0; font-size: clamp(24px, 2.6vw, 34px); line-height: 1.22">"I have a corporation, but I&#x27;m also self-employed, and I mix it all together. They know exactly what to do and where everything goes."</blockquote>
+<figcaption style="margin-top: 18px; display: flex; align-items: center; gap: 10px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-size: 11px"><span>Name:</span><span aria-label="Name hidden" style="display: inline-block; width: 64px; height: 10px; background: #272726"></span><span>Artist</span></figcaption>
+</figure>
+<div style="flex: 1 1 300px; min-width: 0; background: #F6EDD7; border: 1.5px solid #272726; padding: 28px">
+<p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #70501C">Suggested plan</p>
+<p class="bricolage" style="margin: 10px 0 0; font-size: 30px">Essentials</p>
+<p style="margin: 4px 0 0; font-size: 15px">from <strong style="font-size: 26px">$475</strong> /month</p>
+<p style="margin: 8px 0 0; font-size: 15px; color: #70501C">Most artists start here.</p>
+<ul style="list-style: none; margin: 18px 0 0; padding: 0; font-size: 15px"><li style="padding: 8px 0; border-top: 1px solid rgba(39,39,38,0.15)">→ Monthly bookkeeping</li><li style="padding: 8px 0; border-top: 1px solid rgba(39,39,38,0.15)">→ GST/HST filing</li><li style="padding: 8px 0; border-top: 1px solid rgba(39,39,38,0.15)">→ Year-end package for your accountant</li></ul>
+<a href="index.html#pricing" style="display: inline-block; margin-top: 16px; color: #70501C; font-size: 15px">Compare all plans →</a>
+</div>
+</div>
+</section>
+
+<!-- CONTACT (dark) -->
+<section id="contact" class="contact-bg" style="position: relative; background-color: #364523; color: #F6EDD7; font-family: 'DM Sans', system-ui, sans-serif">
+<div aria-hidden="true" style="position: absolute; top: -1px; left: 0; right: 0; height: clamp(40px, 6vw, 90px); background: url(images/brush-divider-cream.png) center/100% 100% no-repeat; pointer-events: none;"></div>
+<div style="max-width: 760px; margin: 0 auto; padding: 72px 24px 200px; text-align: center">
+<h2 style="margin: 0; font-size: clamp(36px, 5vw, 64px); line-height: 1.04">Take it <span style="color: #F29F1C">off your plate.</span></h2>
+<p style="margin: 22px auto 0; font-size: 20px; color: rgba(246,237,215,0.82); max-width: 560px">Join our newsletter and get a code for a free 30-minute intro call.</p>
+<form onSubmit="{{subscribe}}" style="margin: 32px auto 0; max-width: 520px">
+<label for="nl-email" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Email address</label>
+<div style="display: flex; gap: 0">
+<input id="nl-email" class="nl-input" type="email" name="newsletter-email" autocomplete="off" required placeholder="you@studio.com" style="flex: 1 1 auto; min-width: 0; font-family: 'DM Sans', system-ui, sans-serif; font-size: 17px; padding: 14px 16px; border: 1px solid rgba(246,237,215,0.4); border-right: none; background: #364523; color: #F6EDD7; min-height: 56px; box-sizing: border-box">
+<button type="submit" class="brk" style="position: relative; flex: 0 0 auto; font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; background: #F6EDD7; color: #272726; border: 1px solid #F6EDD7; padding: 0 24px; min-height: 56px; cursor: pointer"><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span>{{subLabel}}</button>
+</div>
+<p style="margin: 10px 0 0; font-size: 13px; color: rgba(246,237,215,0.7)">Plus CRA deadline reminders. No spam. Unsubscribe anytime.</p>
+</form>
+<p style="margin: 28px 0 0; font-size: 16px; color: rgba(246,237,215,0.9)">Already have a code? <a href="mailto:info@thebackbone.ca?subject=Intro%20call" style="color: #F29F1C">Book your intro call →</a></p>
+</div>
+</section>
+<div aria-hidden="true" class="waves" style="position: relative; z-index: 1; height: clamp(68px, 10vw, 156px); margin-top: calc(-1 * clamp(68px, 10vw, 156px)); margin-bottom: -1px; background-color: transparent"></div>
+<!-- FOOTER -->
+<footer style="font-family: 'DM Sans', system-ui, sans-serif; background: #364523; color: rgba(246,237,215,0.82); border-top: none">
+<div style="max-width: 1200px; margin: 0 auto; padding: 40px 24px 64px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px; font-size: 16px">
+<div style="display: flex; flex-direction: column; gap: 0">
+<img src="images/the-backbone-logo.png" alt="The Backbone: Structure for your next move" width="180" height="60" style="display: block; height: auto; margin-bottom: 28px">
+<span style="font-size: 15px; color: #F6EDD7">The Backbone Ops &amp; Design Inc.</span>
+<span style="margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.9; color: #AEB89C">Vancouver · White Rock · South Surrey · Vancouver Island</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start; font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase">
+<a href="mailto:info@thebackbone.ca" style="color: #F6EDD7">Email</a>
+<a href="https://www.instagram.com/thebackbone.ca/" target="_blank" rel="noopener" style="color: #F6EDD7">Instagram</a>
+<a href="#page-top" style="color: #F6EDD7">Back to top ↑</a>
+</div>
+<div style="flex: 1 1 100%; border-top: 1px solid rgba(246,237,215,0.16); padding-top: 28px">
+<p style="margin: 0 0 10px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #AEB89C">Territory acknowledgement</p>
+<p style="margin: 0; max-width: 760px; font-size: 14px; line-height: 1.7; color: rgba(246,237,215,0.72)">We live and work on the traditional, ancestral and unceded territories of the Coast Salish Peoples, including the xʷməθkʷəy̓əm (Musqueam), Sḵwx̱wú7mesh (Squamish) and səl̓ilw̓ətaʔɬ (Tsleil-Waututh) Nations in Vancouver, and the Semiahmoo, Katzie and Kwantlen Nations in South Surrey and White Rock. We are grateful to the many Nations of Vancouver Island whose lands we visit, and to the Indigenous clients and communities we work alongside.</p>
+</div>
+</div>
+</footer>
+
+</div>
+</template>
+<script>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { q1: '', q2: '', q3: '', q4: '', subscribed: false, tick: 0, story: 0, member: 0, tl: 0, tlAuto: true, menuOpen: false };
+  }
+  componentDidMount() {
+    this.timer = setInterval(() => this.setState({ tick: this.state.tick + 1 }), 2800);
+    this.tlTimer = setInterval(() => { if (this.state.tlAuto) this.setState({ tl: (this.state.tl + 1) % 3 }); }, 3600);
+  }
+  componentWillUnmount() {
+    clearInterval(this.timer);
+    clearInterval(this.tlTimer);
+  }
+  renderVals() {
+    const s = this.state;
+    const words = [
+      "font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-optical-sizing: none; font-variation-settings: 'opsz' 14; font-style: normal; color: #F29F1C; animation: bb-rise .6s ease both; --glow: rgba(242,159,28,0.16); text-shadow: 0 0 10px rgba(242,159,28,0.22)",
+      "font-family: 'IBM Plex Mono', monospace; font-weight: 500; font-style: normal; letter-spacing: -0.02em; color: #F29F1C; animation: bb-rise .6s ease both; --glow: rgba(242,159,28,0.16); text-shadow: 0 0 10px rgba(242,159,28,0.22)",
+      "font-family: 'DM Sans', sans-serif; font-weight: 400; font-style: italic; color: #F29F1C; animation: bb-tilt .8s ease both; --glow: rgba(242,159,28,0.16); text-shadow: 0 0 10px rgba(242,159,28,0.22)"
+    ];
+    const wordStyle = words[s.tick % words.length];
+    const num = (v) => { const n = parseFloat(v); return isNaN(n) || n < 0 ? 0 : n; };
+    const qs = [num(s.q1), num(s.q2), num(s.q3), num(s.q4)];
+    const total = qs[0] + qs[1] + qs[2] + qs[3];
+    const anyEntered = (s.q1 + s.q2 + s.q3 + s.q4).length > 0;
+    const maxQ = Math.max(qs[0], qs[1], qs[2], qs[3]);
+    const fmt = (n) => '$' + Math.round(n).toLocaleString('en-CA');
+    const base = 'padding: 16px 18px; display: flex; flex-direction: column; gap: 4px; ';
+    let resultTitle, resultBody, resultStyle;
+    if (!anyEntered) {
+      resultTitle = 'Enter your sales to see where you stand';
+      resultBody = 'Use your gross taxable sales for each of the last four calendar quarters.';
+      resultStyle = base + 'background: rgba(198,161,140,0.25); color: #272726';
+    } else if (maxQ > 30000) {
+      resultTitle = 'Register now: one quarter is over $30,000';
+      resultBody = 'Passing the threshold in a single quarter means you must charge GST on the sale that put you over. Book a call and we will get you registered.';
+      resultStyle = base + 'background: #364523; color: #F6EDD7; border-left: 4px solid #F29F1C';
+    } else if (total > 30000) {
+      resultTitle = 'You need to register for GST';
+      resultBody = 'Your last four quarters add up to more than $30,000. You generally have about a month after that quarter ends to register and start charging GST.';
+      resultStyle = base + 'background: #364523; color: #F6EDD7; border-left: 4px solid #F29F1C';
+    } else if (total > 24000) {
+      resultTitle = 'Close to the line: ' + fmt(30000 - total) + ' to go';
+      resultBody = 'You are still a small supplier, but a busy quarter could tip you over. It may be worth registering early.';
+      resultStyle = base + 'background: rgba(242,159,28,0.28); color: #272726';
+    } else {
+      resultTitle = 'Not required yet';
+      resultBody = 'You are under the $30,000 small-supplier threshold. You can still register voluntarily to claim back GST on your expenses.';
+      resultStyle = base + 'background: #AEB89C; color: #272726';
+    }
+    const setter = (k) => (e) => this.setState({ [k]: e.target.value });
+    const d = new Date();
+    const pad = (n) => String(n).padStart(2, '0');
+    const stamp = "'" + pad(d.getFullYear() % 100) + "  " + pad(d.getMonth() + 1) + "  " + pad(d.getDate());
+    const grainOpacity = this.props.grain ?? 0.25;
+    const stories = [
+      { q: "I trust them. I don't know how, but they always get me back on track.", l: 'Performing artist' },
+      { q: "I was four years behind, with receipts all over the place. They sorted every transaction and were so understanding.", l: 'Catch-up client' },
+      { q: "I have a corporation, but I'm also self-employed, and I mix it all together. They know exactly what to do and where everything goes.", l: 'Artist' }
+    ];
+    const si = ((s.story % stories.length) + stories.length) % stories.length;
+    const L = { en: { code: 'en', label: 'English' }, es: { code: 'es', label: 'Español' }, pt: { code: 'pt', label: 'Português' }, tl: { code: 'tl', label: 'Tagalog' } };
+    const members = [
+      { name: 'Alejandra Arce', first: 'Alejandra', heading: "Hi, I'm Alejandra.", role: 'Founder · CRA authorized representative', langs: [L.en, L.es], bio: "I manage payroll and finance across BC and Alberta, with a degree in International Business and a post-degree diploma in Marketing Management. The Backbone brings that same care to creatives." },
+      { name: 'Karla Yovera', first: 'Karla', heading: "Hi, I'm Karla.", role: 'Shipping, Shopify & Cross-border', langs: [L.en, L.es, L.pt], bio: "I help creatives sell and ship beyond BC, from Shopify logistics to customs paperwork and supplier deals, with a degree in global business and a postgraduate degree in logistics and supply chain. I also co-lead our workshops on incorporation, licences and tools for creators." },
+      { name: 'Sydney Cho', first: 'Sydney', heading: "Hi, I'm Sydney.", role: 'Accounts Payable · Financial Statements', langs: [L.en, L.tl], bio: "I oversee accounts payable and help prepare financial statements, with a bachelor's in finance and banking experience in fixed income and foreign exchange. Bills and vendors in multiple currencies are my specialty." },
+      { name: 'Valentina Reyes', first: 'Valentina', heading: "Hi, I'm Valentina.", role: 'Human Resources · Safety & Security', langs: [L.en, L.es], bio: "I oversee human resources, from hiring and training to the workplace policies that go with them, with a degree in Psychology and a post-degree diploma in Marketing Management. I also run our safety and security workshops, and co-lead our policy workshops with Alejandra." },
+      { name: 'Maria Nolasco', first: 'Maria', heading: "Hi, I'm Maria.", role: 'Outreach · Digital Campaigns', langs: [L.en, L.es], bio: "I lead our outreach, analyze digital campaigns and help prepare slide decks. I also keep the agenda on track and set the tone for how we talk with clients, with a degree in Business Communications and Advertising and a post-degree diploma in Marketing Management." }
+    ];
+    const mi = s.member;
+    const avBase = "width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'DM Sans', system-ui, sans-serif; font-size: 19px; font-weight: 500; transition: background .2s ease, box-shadow .2s ease; ";
+    const team = members.map((m, i) => ({
+      name: m.name, first: m.first,
+      initials: m.name.split(' ').map((w) => w[0]).join(''),
+      pressed: i === mi ? 'true' : 'false',
+      style: avBase + (i === mi ? 'background: #364523; color: #F6EDD7; box-shadow: 0 0 0 3px #F6EDD7, 0 0 0 5px #AD6A46' : 'background: rgba(198,161,140,0.35); color: #272726'),
+      labelStyle: "font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: " + (i === mi ? '#272726' : '#272726'),
+      pick: () => this.setState({ member: i })
+    }));
+    const tlData = [
+      { when: 'Day 1', title: 'Intro call', desc: "30 minutes to get to know each other. Free with the code you get when you join our newsletter.", get: "A feel for whether we're the right fit" },
+      { when: 'First few weeks', title: 'Setup & catch-up', desc: 'We clean up the past and set things up right.', get: 'Clean books, every registration in place' },
+      { when: 'Every month after', title: 'Monthly rhythm', desc: 'Books current, deadlines handled.', get: 'A short note on where you stand' }
+    ];
+    const ti = s.tl;
+    const dotBase = "position: absolute; top: 0; left: 0; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 500; ";
+    const tlSteps = tlData.map((d, i) => ({
+      ...d, n: i + 1,
+      pressed: i === ti ? 'true' : 'false',
+      liStyle: 'flex: 1 1 0; min-width: 0; position: relative; padding-top: 44px; opacity: ' + (i <= ti ? '1' : '0.45'),
+      dotStyle: dotBase + (i <= ti ? 'background: #F29F1C; color: #272726; ' : 'background: #364523; color: #AEB89C; border: 1px solid rgba(246,237,215,0.22); ') + (i === ti ? 'transform: scale(1.3); box-shadow: 0 0 0 6px rgba(242,159,28,0.18), 0 0 18px rgba(242,159,28,0.55)' : 'transform: scale(1)'),
+      pick: () => this.setState({ tl: i, tlAuto: false })
+    }));
+    const tlFill = ti === 0 ? '15px' : 'calc(' + ti + ' * (100% - 80px) / 3 + ' + (ti * 40 + 15) + 'px)';
+    return {
+      menuOpen: s.menuOpen, menuExpanded: s.menuOpen ? 'true' : 'false',
+      menuLabel: s.menuOpen ? 'Close' : 'Menu',
+      menuIconPath: s.menuOpen ? 'M4 1 L18 13 M18 1 L4 13' : 'M0 1 H22 M0 7 H22 M0 13 H22',
+      toggleMenu: () => this.setState({ menuOpen: !this.state.menuOpen }),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      tlSteps, tlFill,
+      team,
+      memberLangs: members[mi].langs, memberLangText: members[mi].langs.map((l) => l.label).join(' · '), memberSpeaks: 'I speak',
+      memberHeading: members[mi].heading, memberRole: members[mi].role, memberBio: members[mi].bio,
+      memberPhoto: '[Photo of ' + members[mi].name + ']', memberPhotoLabel: 'Photo of ' + members[mi].name,
+      storyQuote: stories[si].q, storyLabel: stories[si].l,
+      storyCount: '0' + (si + 1) + ' / 0' + stories.length,
+      prevStory: () => this.setState({ story: si - 1 }),
+      nextStory: () => this.setState({ story: si + 1 }),
+      wordStyle, stamp, grainOpacity,
+      q1: s.q1, q2: s.q2, q3: s.q3, q4: s.q4,
+      setQ1: setter('q1'), setQ2: setter('q2'), setQ3: setter('q3'), setQ4: setter('q4'),
+      totalFmt: fmt(total), resultTitle, resultBody, resultStyle,
+      subLabel: s.subscribed ? 'Check your inbox' : 'Get my code',
+      subscribe: (e) => { e.preventDefault(); this.setState({ subscribed: true }); }
+    };
+  }
+}
+__boot(Component, {"grain": 0.25});
+</script>
+</body>
+</html>
